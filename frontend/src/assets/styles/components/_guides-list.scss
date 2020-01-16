@@ -1,20 +1,21 @@
 .cards-list {
   display: grid;
-  grid-template-columns: repeat(5, minmax(200px, 1fr));
-  grid-auto-rows: 200px;
+  grid-template-columns: repeat(3, minmax(400px, 1fr));
+  grid-auto-rows: 352px;
   grid-gap: 5x;
   margin-top: 35px;
   margin-bottom: 13px;
+
   }
 
 
-  .country-list{
-    display: grid;
-    grid-template-columns: repeat(5, minmax(200px, 1fr));
-    grid-auto-rows: 200px;
-    grid-gap: 5x;
-    margin-top: 35px;
-    margin-bottom: 13px;
+  // .country-list{
+  //   display: grid;
+  //   grid-template-columns: repeat(5, minmax(200px, 1fr));
+  //   grid-auto-rows: 200px;
+  //   grid-gap: 5x;
+  //   margin-top: 35px;
+  //   margin-bottom: 13px;
     // width: 90%;
     // margin: auto;
     // display: grid;
@@ -26,7 +27,7 @@
     // font-weight: 700;
     // font-family: Raleway-Bold;
     // background-color: red;
-  }
+  // }
 
   .cards-list > *:first-child {
     grid-row: 1 / 1;
@@ -35,10 +36,6 @@
   
   /* Just to make the grid visible */
   
-  .cards-list > * {
-    background: rgba(0,0,0,0.1);
-    border: 1px white solid;
-  }
 
 
   .first-header-section{

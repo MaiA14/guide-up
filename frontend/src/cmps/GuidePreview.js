@@ -7,8 +7,8 @@ export default class GuidePreview extends Component {
     render() {
         const { props } = this
         return (
-            <Link to={`/guides/?guide_id=${props.guide._id}`}>  <div>
-                <div className="guide-preview-card">{props.guide.name}</div>
+            <Link className="guide-preview-card" to={`/guides/?guide_id=${props.guide._id}`}>  <div>
+                <div >{props.guide.name}</div>
             </div></Link>
         )
     }
