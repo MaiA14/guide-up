@@ -32,10 +32,25 @@ export default class GuideListFiltered extends Component {
     render() {
         return (
             <div>
-                <section className="cards-list">
+                <h1 className="filtered-guides-header space">Guides</h1>
+                choose tags:<input type="checkbox" checked="checked"></input>
+                <span class="checkmark"></span>
+                <label class="container">Art</label>
+                <input type="checkbox" checked="checked"></input>
+                <span class="checkmark"></span>
+                <label class="container">Art</label>
+                <input type="checkbox" checked="checked"></input>
+                <span class="checkmark"></span>
+                <label class="container">Art</label>
+                <input type="checkbox" checked="checked"></input>
+                <span class="checkmark"></span>
+                <label class="container">Art</label>
+
+                <section className="cards-list main-container">
                     {this.state.filterGuides.map(guide => <GuidePreview key={guide._id} guide={guide}></GuidePreview>)}
                 </section>
             </div>
+
         )
     }
 }

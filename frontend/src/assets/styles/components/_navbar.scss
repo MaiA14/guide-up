@@ -1,5 +1,11 @@
 .main-navbar{
     display: flex;
+    border-style: solid;
+    border-width: 1px;
+    border-top: none;
+    border-left:none;
+    border-right: none;
+    border-color: rgb(194,178,165);
 }
 .nav-link{
     margin-left: 15px;
@@ -26,6 +32,7 @@
     height: 46px;
     margin-top: 3px;
     margin-bottom: 10px;
+    margin-left: 20px;
 }
 
 .logo-text{

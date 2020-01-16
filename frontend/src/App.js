@@ -25,14 +25,13 @@ function App() {
       <Navbar></Navbar>       
           <Switch>
             <Route component={LocalGuideApp} path="/" exact></Route>
-            <div className="main-container">
+ 
             <Route component={GuideDetails} path="/guides" exact></Route>
             <Route component={FilteredGuideList} path="/location" exact></Route>
             <Route component={Login} path="/login" exact></Route>
           {/* <Route component={Signup} path="/signup" exact></Route>
           <Route component={AddGuide} path="/addGuide" exact></Route>  */}
             {/* <Route component={EditProfile} path="edit" exact></Route>  */}
-            </div>
           </Switch>
        
       </Router>
