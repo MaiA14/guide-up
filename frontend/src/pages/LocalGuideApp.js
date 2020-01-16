@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
+import Header from '../cmps/Header.js'
 import List from '../cmps/List.js'
 
 // import {loadTodos, removeTodo} from '../actions';
@@ -42,9 +43,12 @@ export default  class LocalGuideApp extends Component {
     // }
     render() {
         return (
+            <div>
+                <Header></Header>
             <section>
                 <List guides={this.state.guides} countries={this.state.countries}></List>
             </section>
+            </div>
         )
     }
 }

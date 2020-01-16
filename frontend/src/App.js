@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 import LocalGuideApp from './pages/LocalGuideApp.js'
 import GuideDetails from '../src/pages/GuideDetails.js';
 import FilteredGuideList from '../src/pages/FilteredGuideList.js'
-import Header from '../src/cmps/Header.js'
+
 import Footer from '../src/cmps/Footer.js'
 import Navbar from '../src/cmps/Navbar.js'
 import global from '../src/assets/styles/global.scss'
@@ -22,25 +22,23 @@ function App() {
   return (
     <div className="App">
         <Router>
-      <Navbar></Navbar>
-      <Header></Header>
-    
-
-        <div className="main-container">
+      <Navbar></Navbar>       
           <Switch>
             <Route component={LocalGuideApp} path="/" exact></Route>
+            {/* <div className="main-container"> */}
             <Route component={GuideDetails} path="/guides" exact></Route>
             <Route component={FilteredGuideList} path="/location" exact></Route>
             <Route component={Login} path="/login" exact></Route>
           {/* <Route component={Signup} path="/signup" exact></Route>
           <Route component={AddGuide} path="/addGuide" exact></Route>  */}
             {/* <Route component={EditProfile} path="edit" exact></Route>  */}
+            {/* </div> */}
           </Switch>
-        </div>
+       
       </Router>
 
 
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </div>
   );
 }
