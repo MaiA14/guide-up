@@ -6,12 +6,14 @@ export default class ContryPreview extends Component {
     render() {
 
 
-        const {props} = this
+        const { props } = this
         return (
-            <Link  to={`/location/?city=${props.country}`}>
-                <div>
-              <div className="country-preview-card">{props.country}</div>
-            </div></Link>
-        ) 
+         
+                <Link className={props.country} to={`/location/?city=${props.country}`}>
+                    <div>
+                        <div className="country-preview-card">{props.country}</div>
+                    </div></Link>
+        
+        )
     }
 }

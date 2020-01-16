@@ -12,7 +12,7 @@ export default class GuideListFiltered extends Component {
 
             { name: 'ben', _id: '321', city: 'paris' },
             { name: 'or', _id: '323', city: 'barcelona' },
-            { name: 'puki', _id: '623', city: 'new york' },
+            { name: 'puki', _id: '623', city: 'new-york' },
             { name: 'puki', _id: '654', city: 'mexico' }
         ],
         filterGuides: []

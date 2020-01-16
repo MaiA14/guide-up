@@ -17,14 +17,14 @@ export default  class LocalGuideApp extends Component {
     state = {
         guides: [
             { name: 'mai', _id: '123',country:'israel', imgUrl: ''},
-            { name: 'ben', _id: '321',country:'paris', imgUrl: ''},
-            { name: 'or', _id: '323',country:'barcelona', imgUrl: ''},
-            { name: 'puki', _id: '623',country:'new york', imgUrl: ''},
-            { name: 'puki', _id: '654',country:'mexico', imgUrl: ''}
+            { name: 'ben', _id: '321',country:'paris', imgUrl: 'https://imgbbb.com/images/2020/01/16/paris.jpg'},
+            { name: 'or', _id: '323',country:'barcelona', imgUrl: 'https://imgbbb.com/images/2020/01/16/barceolna.jpg'},
+            { name: 'puki', _id: '623',country:'new-york', imgUrl: 'https://imgbbb.com/images/2020/01/16/ny.jpg'},
+            { name: 'puki', _id: '654',country:'mexico', imgUrl: 'https://imgbbb.com/images/2020/01/16/mexico.jpg'}
 
 
         ],
-        countries: ['israel','paris','barcelona','new york','mexico'],
+        countries: ['israel','paris','barcelona','new-york','mexico'],
         filterBy: {}
     }
     componentDidMount() {
