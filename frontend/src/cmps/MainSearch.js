@@ -12,8 +12,6 @@ class MainSearch extends Component {
         ev.target.value = city
         console.log(city)
         this.setState({ city })
-
-
     }
 
     onSearch = (ev) => {
@@ -25,13 +23,13 @@ class MainSearch extends Component {
     render() {
         return (
             <div className="search-container flex" >
-                <select  value={this.state.city} onChange={this.onChange}>
-                    <option value="london">London</option>
+                <select value={this.state.city} onChange={this.onChange}>
+                    <option value="" disabled selected>select you distention</option>
+
+                    <option value="israel">Israel</option>
                     <option value="paris">Paris</option>
-                    <option value="rome">Rome</option>
-                    <option value="berlin">Berlin</option>
-                    <option value="tokyo">Tokyo</option>
-                    <option value="israel">israel</option>
+                    <option value="new york">New York</option>
+                    <option value="mexico-city">Mexico-city</option>
                     <option value="barcelona">Barcelona</option>
                 </select>
                 <button className="search-btn" onClick={this.onSearch}>Search</button>

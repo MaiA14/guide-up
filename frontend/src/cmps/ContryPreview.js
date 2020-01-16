@@ -8,9 +8,10 @@ export default class ContryPreview extends Component {
 
         const {props} = this
         return (
-            <div>
-            <Link  to={`/location/?city=${props.country}`}>  <div className="country-preview-card">{props.country}</div></Link>
-            </div>
+            <Link  to={`/location/?city=${props.country}`}>
+                <div>
+              <div className="country-preview-card">{props.country}</div>
+            </div></Link>
         ) 
     }
 }

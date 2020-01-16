@@ -16,11 +16,11 @@ import GuideDetails from "./GuideDetails.js";
 export default  class LocalGuideApp extends Component {
     state = {
         guides: [
-            { name: 'mai', _id: '123',country:'israel' },
-            { name: 'ben', _id: '321',country:'paris'  },
-            { name: 'or', _id: '323',country:'barcelona'  },
-            { name: 'puki', _id: '623',country:'new york'  },
-            { name: 'puki', _id: '654',country:'mexico'}
+            { name: 'mai', _id: '123',country:'israel', imgUrl: ''},
+            { name: 'ben', _id: '321',country:'paris', imgUrl: ''},
+            { name: 'or', _id: '323',country:'barcelona', imgUrl: ''},
+            { name: 'puki', _id: '623',country:'new york', imgUrl: ''},
+            { name: 'puki', _id: '654',country:'mexico', imgUrl: ''}
 
 
         ],
