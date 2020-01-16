@@ -45,7 +45,7 @@ export default  class LocalGuideApp extends Component {
         return (
             <div>
                 <Header></Header>
-            <section>
+            <section className="main-container">
                 <List guides={this.state.guides} countries={this.state.countries}></List>
             </section>
             </div>
