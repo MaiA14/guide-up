@@ -45,3 +45,9 @@ a{
 body{
     color: black;
 }
+
+ .aspect-ratio{
+
+    @include aspect-ratio(1, 1);
+
+ }

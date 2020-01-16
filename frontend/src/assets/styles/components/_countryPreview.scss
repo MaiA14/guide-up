@@ -3,39 +3,38 @@
     width: 100%;
     /* height: 250px; */
     grid-template-areas:
-        "israel paris "
-        "barcelona new-york"
-        "barcelona mexico";
+        "paris paris israel "
+        "barcelona new-york israel"
+        "barcelona mexico israel ";
     grid-gap: 10px;
-    grid-template-rows: 160px 134px 146px;
-    grid-template-columns: 264px 4fr;
-    margin-bottom: 15px;           
+    grid-template-rows: 239px 191px 195px;
+    grid-template-columns: 326px 2fr 2fr;
+    margin-bottom: 15px;         
 }
 
 // countries: ['israel','paris','barcelona','new york','mexico'],
 
-.country-list> .israel{
-    grid-area: israel;
-    // background-image: url("https://imgbbb.com/images/2020/01/16/paris.jpg");
-    background-color: #ed6f25;
-}
+
 .country-list> .paris{
     grid-area: paris;
-    background-color: #ed6f25;
-    // background-image: url("https://imgbbb.com/images/2020/01/16/paris.jpg");
+    background-image: url("https://imgbbb.com/images/2020/01/16/paris.jpg");
+    background-position: center;
+    background-size: cover;
 
 }
 .country-list> .barcelona{
     grid-area: barcelona;
-    // background-image: url("https://imgbbb.com/images/2020/01/16/barceolna.jpg");
+    background-image: url("https://imgbbb.com/images/2020/01/16/barceolna.jpg");
+    background-position: center;
+    background-size: cover;
 
-    background-color: #ed6f25;
 
 }
 .country-list> .new-york{
     grid-area: new-york;
-    background-color: #ed6f25;
-    // background-image: url("https://i.ibb.co/2N6Tpw6/tel-aviv.jpg");
+    background-image: url("https://images.unsplash.com/photo-1532960401447-7dd05bef20b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1958&q=80");
+    background-position: center;
+    background-size: cover;
 }
 
 .country-list> .mexico{
@@ -43,7 +42,18 @@
     // width: 100%;
     object-fit: cover;
     grid-area: mexico;
-    // background-image: url("https://imgbbb.com/images/2020/01/16/mexico.jpg");
-    background-color: #ed6f25;
+    background-image: url("https://imgbbb.com/images/2020/01/16/mexico.jpg");
+    background-position: center;
+    background-size: cover;
+
+}
+.country-list> .israel{
+    // @include aspect-ratio(100%);
+    // width: 100%;
+    object-fit: cover;
+    grid-area: israel;
+    background-image: url("https://i.ibb.co/2N6Tpw6/tel-aviv.jpg");
+    background-position: center;
+    background-size: cover;
 
 }
