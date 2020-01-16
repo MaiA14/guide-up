@@ -24,7 +24,7 @@ class MainSearch extends Component {
         return (
             <div className="search-container flex" >
                 <select value={this.state.city} onChange={this.onChange}>
-                    <option value="" disabled selected>select you distention</option>
+                    <option value="" disabled selected>select your destination</option>
 
                     <option value="israel">Israel</option>
                     <option value="paris">Paris</option>
