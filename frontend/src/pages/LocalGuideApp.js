@@ -24,7 +24,7 @@ export default  class LocalGuideApp extends Component {
 
 
         ],
-        countries: ['israel','paris','barcelona','new yor','mexico'],
+        countries: ['israel','paris','barcelona','new york','mexico'],
         filterBy: {}
     }
     componentDidMount() {

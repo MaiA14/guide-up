@@ -1,16 +1,20 @@
 
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import React from 'react';
 
 export default function Navbar(props) {
 
     return <div className="main-navbar">
-        <div className="logo">
-            <div className="nav-link"><NavLink activeClassName="active" to='/'>
+        <Link to="/" > <div className="flex logo">
 
-                <img src="https://i.ibb.co/Sc5KnfL/logo.png" alt="logo"></img></NavLink></div>
+            <img src="https://i.ibb.co/Sc5KnfL/logo.png" alt="logo"></img>
+            <div className="logo-text">Local Guide</div>
+        </div></Link>
+        <div>
+            <NavLink activeClassName="active" to='/'>
+            </NavLink>
         </div>
-        <div className="nav-links">
+        <div className=" nav-links">
             <div className="nav-link"><NavLink activeClassName="active" to='/'>Home</NavLink></div>
             <div className="nav-link"><NavLink activeClassName="active" to='/'>Login</NavLink></div>
             <div className="nav-link"><NavLink activeClassName="active" to='/'>Become a guide</NavLink></div>

@@ -14,8 +14,8 @@ export default class GuideDetails extends Component {
         ]
     }
 
-
     componentWillMount() {
+        // m guidiD = props.match.params.id
        const items = quoryString.parse(this.props.location.search)
         const guide = this.state.guides.find(guide => guide._id === items.guide_id)
         this.setState({ guide })

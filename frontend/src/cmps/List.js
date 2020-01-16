@@ -8,7 +8,7 @@ function List(props) {
     return (
         <React.Fragment>
                 <h1 className="first-header-section">Popular tours</h1>
-            <section>
+            <section className="cards-list">
                 {props.countries.map(country => <ContryPreview key={country} country={country}></ContryPreview>)}
             </section>
             <h1 className="second-header-section">Popular guides</h1>

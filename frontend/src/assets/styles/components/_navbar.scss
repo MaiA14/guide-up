@@ -13,12 +13,28 @@
 }
 
 .nav-links{
+    align-items: center;
     display: flex;
     justify-content: flex-end;
     width: 100%;
     margin-right: 25px;
     justify-content: flex-end
 }
+
+.logo{
+    width: 50%;
+    height: 46px;
+    margin-top: 3px;
+}
+
+.logo-text{
+    width: 265px;
+    display: flex;
+    align-items: center;
+}
+
+
+
 
 
 

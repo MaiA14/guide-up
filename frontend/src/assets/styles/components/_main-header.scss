@@ -1,3 +1,4 @@
+
 .main-header {
         height: 80vh;
         background-image: url("../../imgs/header.jpg");
@@ -12,6 +13,15 @@
                 color: white;
                 text-shadow: 2px 2px 1px rgba(150, 150, 150, 1);
                 text-align: center;
+        }
+
+        .a{
+                display: flex;
+                justify-content: space-around;
+        }
+
+        .logo{
+                padding-left: 10px;
         }
 }
 
