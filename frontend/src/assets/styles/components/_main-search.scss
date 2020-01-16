@@ -1,0 +1,26 @@
+.main-search{
+    width: 20%;
+    height: 10px;
+    padding: rem(20px); 
+    border-radius: 3px;
+    // margin-bottom: 20px;
+}
+
+select {
+    border:0px;
+    outline:0px;
+ }
+
+ .search-btn{
+    font-family: 'Lato';
+    border-radius: 3px;
+    background-color: rgb(237,111,37);
+    border: none;
+    color: white;
+ }
+
+ .search-container {
+     justify-content: center;
+ }
+
+

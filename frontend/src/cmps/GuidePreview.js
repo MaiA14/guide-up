@@ -1,29 +1,18 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import quoryString from 'query-string'
 
 export default class GuidePreview extends Component {
+
     render() {
-        const divStyle = {
-            width: "100px",
-            height: "100px",
-            backgroundColor: "green",
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            margin: '5px'
-
-        }
-
         const { props } = this
-        console.log(props);
-
         return (
-    
-                <div style={divStyle}>
-                    {props.guide.name}
-                </div>
-        
-
+            <div>
+                <Link to={`/guides/?guide_id=${props.guide._id}`}>  <div className="guide-preview-card">{props.guide.name}</div></Link>
+            </div>
         )
     }
+
 }
+
+

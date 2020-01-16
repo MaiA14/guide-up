@@ -2,18 +2,17 @@ import React from 'react';
 import ContryPreview from './ContryPreview.js'
 import GuidePreview from './GuidePreview.js'
 import { withRouter } from "react-router";
-import { Link } from 'react-router-dom';
 
 
 function List(props) {
-    console.log(props.guides[0]._id)
     return (
         <React.Fragment>
             <section>
-                {props.countries.map(country => <Link to={country} key={country}> <ContryPreview key={country+'1'} country={country}></ContryPreview></Link>)}
+                {props.countries.map(country => <ContryPreview key={country} country={country}></ContryPreview>)}
             </section>
-            <section>
-                {props.guides.map(guide => <Link  to={`/guides/${guide._id}`} key={guide._id}> <GuidePreview key={guide._id+'1'}  guide={guide}></GuidePreview></Link>)}
+            <h1 className="guides-header">Popular guides</h1>
+            <section className="cards-list">
+                {props.guides.map(guide => <GuidePreview key={guide._id}  guide={guide}></GuidePreview>)}
             </section>
         </React.Fragment>
     )

@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: montserrat, sans-serif;
+    line-height: 1.6;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+img {
+    width: 100%;
+}
+
+h1, h3, h4, h5, h6 {
+    font-family: schoolbell, serif;
+    margin-top: 0;
+    font-weight: normal;
+}
+
+h2{
+    font-size: rem(15px);
+}
+
+h1 {
+    font-size: rem(60px);
+}
+
+p {
+    margin: 0 0 rem(12px);
+    max-width: 60ch;
+}
+
+.main-container{
+    margin-left: 10%;
+    margin-right: 10%
+}
+
+body::-webkit-scrollbar {
+    width: 0.4em;
+  }
+   
+  body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+   
+  body::-webkit-scrollbar-thumb {
+    background-color: rgb(237,111,37);
+    outline: 1px solid rgb(150, 61, 9);
+  }

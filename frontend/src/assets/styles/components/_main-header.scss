@@ -1,0 +1,21 @@
+.main-header {
+        height: 80vh;
+        background-image: url("../../imgs/header.jpg");
+        object-fit: cover;
+        margin-bottom: 10px;
+
+        h1{
+                font-family: 'Lato-Bold';
+                padding: 110px;
+                font-size: 40px;
+                color: white;
+                text-shadow: 2px 2px 1px rgba(150, 150, 150, 1);
+                text-align: center;
+        }
+}
+
+
+img{
+        width: 100%;
+}
+
