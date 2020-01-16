@@ -13,14 +13,23 @@ select {
 
  .search-btn{
     font-family: 'Lato';
+    font-size: 20px;
     border-radius: 3px;
+    width: 110px;
     background-color: rgb(237,111,37);
     border: none;
     color: white;
+    cursor: pointer;
  }
+
+ .search-btn:hover{
+    background-color: rgb(247, 135, 71);
+    border: none;
+}
 
  .search-container {
      justify-content: center;
+     margin-top: 30px;
  }
 
 

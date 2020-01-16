@@ -14,6 +14,8 @@ import global from '../src/assets/styles/global.scss'
 // import AddGuide from '../src/pages/AddGuide.js'
 // import EditGuide from '../src/pages/EditGuide.js';
 // import Login from '../src/pages/Login.js'
+// const { createBrowserHistory } = History
+// const history = createBrowserHistory()
 
 
 function App() {

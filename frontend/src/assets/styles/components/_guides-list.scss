@@ -9,12 +9,19 @@
     padding: 0;
   }
 
-  .guides-header{
-    border-top: 2px solid rgb(237,111,37);
+  .first-header-section{
     font-family: "Lato-Bold";
- 
     font-size: 40px;
     color: rgb(237,111,37);
+    text-transform: uppercase;
+  }
+
+  .second-header-section{
+    border-top: 2px solid rgb(237,111,37);
+    font-family: "Lato-Bold";
+    font-size: 40px;
+    color: rgb(237,111,37);
+    text-transform: uppercase;
   }
 
   .guide-preview-card{
