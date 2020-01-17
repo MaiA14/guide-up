@@ -7,7 +7,7 @@ import { loadGuides } from '../reducers/guide/actionGuide.js'
 class GuideDetails extends Component {
 
     state = {
-        guide:''
+        guide: ''
     }
 
     componentWillMount() {
@@ -23,10 +23,13 @@ class GuideDetails extends Component {
             <div>
                 {this.state.guide &&
                     <div>
+                        <button className="back-btn space">Back</button>
                         <h1 className="guide-header space">{this.state.guide.name}</h1>
                         <img src={this.state.guide.imgUrl} className="guide-img-details space" ></img>
-                        <div>{this.state.guide.city}</div>
-                        <div>{this.state.guide.langugages}</div>
+                        <h2 className="guide-desc space">{this.state.guide.description}</h2>
+                       <span className="space"> From: {this.state.guide.city}</span>
+                        <span className="space">Langugages: {this.state.guide.langugages}</span>
+                        <div className="guide-reviews-title space">Reviews(0):</div>
                     </div>
                 }
             </div>

@@ -6,6 +6,34 @@
     padding: 0;
 }
 
+.back-btn{
+    font-family: 'Lato';
+    font-size: 15px;
+    border-radius: 3px;
+    width: 50px;
+    background-color: white;
+    border: 1px solid rgb(237,111,37);
+    cursor: pointer;
+    margin-top: 10px;
+}
+
 .guide-img-details{
     width: 30%;
+}
+
+.guide-desc{
+    font-family: "Lato";
+    font-size: rem(25px);
+    color: rgb(237,111,37);
+    margin-right: 10%;
+    padding: 0;    
+}
+
+.guide-reviews-title{
+    font-family: "Lato";
+    font-size: rem(20px);
+    color: rgb(237,111,37);
+    border-top: solid;
+    margin-right: 10%;
+    padding: 0;
 }
