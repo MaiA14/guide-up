@@ -2,6 +2,7 @@ const guides= [
     { name: 'Ron Levi', description:'about me', langugages:'Hebrew, English', _id: '123',city:'tel-aviv', imgUrl: 'https://i.imgur.com/PjT8rth.png'},
     { name: 'Michèle Krüsi', description:'about me', langugages:'French,Swedish',_id: '321',city:'paris', imgUrl: 'https://i.imgur.com/IvVU9Z1.png'},
     { name: 'Philip montre', description:'about me', langugages:'French,Swedish',_id: '321',city:'paris', imgUrl: 'https://i.imgur.com/UyDensn.png'},
+    { name: 'Sara Sanchezss', description:'about me', langugages:'French,Swedish',_id: '321',city:'paris', imgUrl: 'https://i.imgur.com/scq2FiT.png'},
     { name: 'Aida Domenech',description:'about me', langugages:'Spanish, Italian',_id: '323',city:'barcelona', imgUrl: 'https://i.imgur.com/3SYbClk.png'},
     { name: 'Looise Cooney', description:'about me', langugages:'English, Spanish', _id: '623',city:'new-york', imgUrl: 'https://i.imgur.com/SXXdCG4.jpg3'},
     { name: 'Andy Torres', description:'about me', langugages:'English, Spanish',_id: '654',city:'mexico', imgUrl: 'https://i.imgur.com/0KKU0VA.png'}
