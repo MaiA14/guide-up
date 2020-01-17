@@ -15,9 +15,6 @@ import { loadGuids } from '../reducers/guide/actionGuide.js'
 
 class LocalGuideApp extends Component {
     state = {
-
-        guides: [],
-
         countries: ['israel', 'paris', 'barcelona', 'new-york', 'mexico'],
         filterBy: {}
     }
