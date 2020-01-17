@@ -10,9 +10,15 @@
     grid-template-rows: 120px 131px 105px;
     grid-template-columns: 156px 2.5fr 0.8fr;
     margin-bottom: 15px;
+    font-size: 0px;
     :hover{
         background-color: white;
-        opacity: 0.6;
+        opacity: 0.7;
+        font-size: 20px;
+        font-weight: bold;
+        color: black;
+        text-transform: uppercase;
+        text-align: center;
     }         
 }
 
