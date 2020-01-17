@@ -4,8 +4,10 @@ const guides= [
     { name: 'Philip montre', description:'about me', langugages:'French,Swedish',_id: '321',city:'paris', imgUrl: 'https://i.imgur.com/UyDensn.png'},
     { name: 'Sara Sanchezss', description:'about me', langugages:'French,Swedish',_id: '321',city:'paris', imgUrl: 'https://i.imgur.com/scq2FiT.png'},
     { name: 'Aida Domenech',description:'about me', langugages:'Spanish, Italian',_id: '323',city:'barcelona', imgUrl: 'https://i.imgur.com/3SYbClk.png'},
+    { name: 'Pablo Habrez',description:'about me', langugages:'Spanish, Italian',_id: '323',city:'barcelona', imgUrl: 'https://i.imgur.com/bWsYMbG.png'},
     { name: 'Looise Cooney', description:'about me', langugages:'English, Spanish', _id: '623',city:'new-york', imgUrl: 'https://i.imgur.com/SXXdCG4.jpg3'},
-    { name: 'Andy Torres', description:'about me', langugages:'English, Spanish',_id: '654',city:'mexico', imgUrl: 'https://i.imgur.com/0KKU0VA.png'}
+    { name: 'Andy Torres', description:'about me', langugages:'English, Spanish',_id: '654',city:'mexico', imgUrl: 'https://i.imgur.com/0KKU0VA.png'},
+    { name: 'Melissa Alatorre', description:'about me', langugages:'English, Spanish',_id: '654',city:'mexico', imgUrl: 'https://i.imgur.com/YUfx8Zs.png'}
 ]
 
 export function rootReducer(state = { guides: [] }, action = {}) {
