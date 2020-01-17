@@ -23,7 +23,8 @@ class GuideDetails extends Component {
             <div>
                 {this.state.guide &&
                     <div>
-                        <h1>{this.state.guide.name}</h1>
+                        <h1 className="guide-header space">{this.state.guide.name}</h1>
+                        <img src={this.state.guide.imgUrl} className="guide-img-details space" ></img>
                         <div>{this.state.guide.city}</div>
                         <div>{this.state.guide.langugages}</div>
                     </div>
