@@ -27,6 +27,7 @@ class GuideListFiltered extends Component {
         return (
             <div>
                 <h1 className="filtered-guides-header space">Guides</h1>
+                <h2 className="guides-short-content space">Find your guides, let them share with you the insight on the city.  Enjoy from unforgatable trip</h2>
                 choose tags:<input type="checkbox" checked="checked"></input>
                 <span class="checkmark"></span>
                 <label class="container">Art</label>
