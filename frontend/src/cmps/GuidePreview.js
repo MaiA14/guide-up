@@ -5,7 +5,7 @@ import quoryString from 'query-string'
 export default class GuidePreview extends Component {
 
     render() {
-     
+
         const { props } = this
         console.log(props)
         return (
@@ -13,8 +13,9 @@ export default class GuidePreview extends Component {
                 <div >{props.guide.name}</div>
                 <div >{props.guide.city}</div>
                 <div >{props.guide.description}</div>
+                <div className="guide-preview"><img src={props.guide.img}></img></div>
                 <div >{props.guide.langugages}</div>
-                            </div></Link>
+            </div></Link>
         )
     }
 
