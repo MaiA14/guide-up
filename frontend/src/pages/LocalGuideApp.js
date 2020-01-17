@@ -17,7 +17,7 @@ import GuideDetails from "./GuideDetails.js";
 export default  class LocalGuideApp extends Component {
     state = {
         guides: [
-            { name: 'Kelly Jones', description:'about me', langugages:'Hebrew, English', _id: '123',city:'israel', imgUrl: ''},
+            { name: 'Kelly Jones', description:'about me', country:'Hebrew, English', _id: '123',city:'israel', imgUrl: ''},
             { name: 'Ben Yager', description:'about me', langugages:'Hebrew, English',_id: '321',city:'paris', imgUrl: 'https://imgbbb.com/images/2020/01/16/paris.jpg'},
             { name: 'or',description:'about me', langugages:'Hebrew, English',_id: '323',city:'barcelona', imgUrl: 'https://imgbbb.com/images/2020/01/16/barceolna.jpg'},
             { name: 'puki', description:'about me', langugages:'Hebrew, English', _id: '623',city:'new-york', imgUrl: 'https://imgbbb.com/images/2020/01/16/ny.jpg'},
