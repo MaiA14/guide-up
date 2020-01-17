@@ -19,6 +19,7 @@ const guides= [
     { name: 'Donna Smith', description:'about me', langugages:'English, Spanish', _id: '623',city:'new-york', imgUrl: 'https://i.imgur.com/VxGl3q0.png'},
     { name: 'Brianna Williams', description:'about me', langugages:'English, Spanish', _id: '623',city:'new-york', imgUrl: 'https://i.imgur.com/G8frw5M.png'},
 
+    { name: 'Johanna_Nelsson', description:'about me', langugages:'English, Spanish',_id: '654',city:'mexico', imgUrl: 'https://i.imgur.com/f6ofX2Z.png'},
     { name: 'Andy Torres', description:'about me', langugages:'English, Spanish',_id: '654',city:'mexico', imgUrl: 'https://i.imgur.com/0KKU0VA.png'},
     { name: 'Jordan Clarke', description:'about me', langugages:'English, Spanish',_id: '654',city:'mexico', imgUrl: 'https://i.imgur.com/V1KvTQX.jpg'},
     { name: 'Melissa Alatorre', description:'about me', langugages:'English, Spanish',_id: '654',city:'mexico', imgUrl: 'https://i.imgur.com/YUfx8Zs.png'}
