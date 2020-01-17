@@ -13,7 +13,6 @@ function setGuides(todos) {
     }
 }
 
-
 // // THUNK
 // export function removeTodo(todoId) {
 //     return (dispatch) => {

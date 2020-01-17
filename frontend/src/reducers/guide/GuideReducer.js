@@ -1,14 +1,10 @@
 const guides= [
-    { name: 'Kelly Jones', description:'about me', langugages:'Hebrew, English', _id: '123',city:'israel', imgUrl: ''},
-    { name: 'Ben Yager', description:'about me', langugages:'Hebrew, English',_id: '321',city:'paris', imgUrl: 'https://imgbbb.com/images/2020/01/16/paris.jpg'},
-    { name: 'or',description:'about me', langugages:'Hebrew, English',_id: '323',city:'barcelona', imgUrl: 'https://imgbbb.com/images/2020/01/16/barceolna.jpg'},
-    { name: 'puki', description:'about me', langugages:'Hebrew, English', _id: '623',city:'new-york', imgUrl: 'https://imgbbb.com/images/2020/01/16/ny.jpg'},
-    { name: 'puki', description:'about me', langugages:'Hebrew, English',_id: '654',city:'mexico', imgUrl: 'https://imgbbb.com/images/2020/01/16/mexico.jpg'}
-
-
+    { name: 'Ron Levi', description:'about me', langugages:'Hebrew, English', _id: '123',city:'tel-aviv', imgUrl: 'https://i.imgur.com/fKyMAOo.png'},
+    { name: 'Michèle Krüsi', description:'about me', langugages:'French,Swedish',_id: '321',city:'paris', imgUrl: 'https://i.imgur.com/IvVU9Z1.png'},
+    { name: 'Aida Domenech',description:'about me', langugages:'Spanish, Italian',_id: '323',city:'barcelona', imgUrl: 'https://i.imgur.com/3SYbClk.png'},
+    { name: 'Looise Cooney', description:'about me', langugages:'English, Spanish', _id: '623',city:'new-york', imgUrl: 'https://i.imgur.com/SXXdCG4.jpg3'},
+    { name: 'Andy Torres', description:'about me', langugages:'English, Spanish',_id: '654',city:'mexico', imgUrl: 'https://i.imgur.com/0KKU0VA.png'}
 ]
-
-
 
 export function rootReducer(state = { guides: [] }, action = {}) {
     switch (action.type) {
@@ -40,7 +36,6 @@ export function rootReducer(state = { guides: [] }, action = {}) {
         //         ...state, guides: [...state.guides.reviews, action.guides.review]
         //     }
         // }
-
     }
     return state;
 }

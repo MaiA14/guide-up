@@ -10,11 +10,11 @@ export default class GuidePreview extends Component {
         console.log(props)
         return (
             <Link className="guide-preview-card" to={`/guides/?guide_id=${props.guide._id}`}>  <div>
-                <div >{props.guide.name}</div>
-                <div >{props.guide.city}</div>
+                <div className="guide-img"><img src={props.guide.imgUrl}></img></div>
+                <div >{props.guide.name}  ({props.guide.langugages})</div>
                 <div >{props.guide.description}</div>
+                <div>From:{props.guide.city}</div>    
                 <div className="guide-preview"><img src={props.guide.img}></img></div>
-                <div >{props.guide.langugages}</div>
             </div></Link>
         )
     }
