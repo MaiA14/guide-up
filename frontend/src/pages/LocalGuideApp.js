@@ -17,11 +17,11 @@ import GuideDetails from "./GuideDetails.js";
 export default  class LocalGuideApp extends Component {
     state = {
         guides: [
-            { name: 'mai', _id: '123',country:'israel', imgUrl: ''},
-            { name: 'ben', _id: '321',country:'paris', imgUrl: 'https://imgbbb.com/images/2020/01/16/paris.jpg'},
-            { name: 'or', _id: '323',country:'barcelona', imgUrl: 'https://imgbbb.com/images/2020/01/16/barceolna.jpg'},
-            { name: 'puki', _id: '623',country:'new-york', imgUrl: 'https://imgbbb.com/images/2020/01/16/ny.jpg'},
-            { name: 'puki', _id: '654',country:'mexico', imgUrl: 'https://imgbbb.com/images/2020/01/16/mexico.jpg'}
+            { name: 'Kelly Jones', description:'about me', langugages:'Hebrew, English', _id: '123',city:'israel', imgUrl: ''},
+            { name: 'Ben Yager', description:'about me', langugages:'Hebrew, English',_id: '321',city:'paris', imgUrl: 'https://imgbbb.com/images/2020/01/16/paris.jpg'},
+            { name: 'or',description:'about me', langugages:'Hebrew, English',_id: '323',city:'barcelona', imgUrl: 'https://imgbbb.com/images/2020/01/16/barceolna.jpg'},
+            { name: 'puki', description:'about me', langugages:'Hebrew, English', _id: '623',city:'new-york', imgUrl: 'https://imgbbb.com/images/2020/01/16/ny.jpg'},
+            { name: 'puki', description:'about me', langugages:'Hebrew, English',_id: '654',city:'mexico', imgUrl: 'https://imgbbb.com/images/2020/01/16/mexico.jpg'}
 
 
         ],
