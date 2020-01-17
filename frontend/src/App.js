@@ -1,22 +1,21 @@
 import React from 'react';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+import { createStore, applyMiddleware, compose } from 'redux'
+import thunk from 'redux-thunk';
 
-// import './App.css';
 import LocalGuideApp from './pages/LocalGuideApp.js'
 import GuideDetails from '../src/pages/GuideDetails.js';
 import FilteredGuideList from '../src/pages/FilteredGuideList.js'
-
 import Footer from '../src/cmps/Footer.js'
 import Navbar from '../src/cmps/Navbar.js'
 import global from '../src/assets/styles/global.scss'
-// import Navbar from '../src/cmps/Navbar.js';
-// import AddGuide from '../src/pages/AddGuide.js'
-// import EditGuide from '../src/pages/EditGuide.js';
 import Login from '../src/pages/Login.js'
-// const { createBrowserHistory } = History
-// const history = createBrowserHistory()
+import {rootReducer} from './reducers/guide/GuideReducer.js'
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 
 function App() {
   return (
