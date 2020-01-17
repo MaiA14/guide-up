@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import Image from 'material-ui-image'
 
 export default class ContryPreview extends Component {
 
     render() {
-
 
         const { props } = this
         return (

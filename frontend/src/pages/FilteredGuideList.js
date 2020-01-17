@@ -1,33 +1,27 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import quoryString from 'query-string'
 
 import GuidePreview from '../cmps/GuidePreview.js'
+import { loadGuides } from '../reducers/guide/actionGuide.js'
 
 
-export default class GuideListFiltered extends Component {
+
+class GuideListFiltered extends Component {
     state = {
-        guides: [
-            { name: 'Kelly Jones', description:'about me', _id: '123', city: 'israel' },
-            { name: 'Ben Yager', description:'about me',_id: '321',country:'paris', imgUrl: 'https://imgbbb.com/images/2020/01/16/paris.jpg'},
-
-            { name: 'ben',  description:'about me', langugages:'Hebrew, English', _id: '321', city: 'paris' },
-            { name: 'or',   description:'about me', langugages:'Hebrew, English',  _id: '323', city: 'barcelona' },
-            { name: 'puki',  description:'about me', langugages:'Hebrew, English', _id: '623', city: 'new-york' },
-            { name: 'puki',   description:'about me',langugages:'Hebrew, English', _id: '654', city: 'mexico' }
-        ],
+  
         filterGuides: []
     }
 
+    componentDidMount() {
+        this.props.loadGuides();
+    }
 
     componentWillMount() {
         const items = quoryString.parse(this.props.location.search)
-        console.log(this.state.guides[1].city)
-
-        const filterGuides = this.state.guides.filter(guides => guides.city === items.city)
-        console.log(filterGuides)
-        this.setState({ filterGuides })
+        const filterGuides = this.props.guides.filter(guides => guides.city === items.city)
+        this.setState({filterGuides})
     }
-
 
     render() {
         return (
@@ -54,3 +48,18 @@ export default class GuideListFiltered extends Component {
         )
     }
 }
+
+const mappropsToProps = (state) => {
+    return {
+        guides: state.guides
+    }
+}
+const mapDispatchToProps = {
+    loadGuides,
+
+}
+
+export default connect(
+    mappropsToProps,
+    mapDispatchToProps
+)(GuideListFiltered)
