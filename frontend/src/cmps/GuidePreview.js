@@ -19,7 +19,9 @@ const cursor = {
 // .eq-card.ui.card {
 
 const imgStyle = {
-    // height: "315px",
+    cursor: "pointer",
+    height: '300px'
+
     // backgroundSize: "cover"
 
 }
@@ -40,7 +42,7 @@ class GuidePreviewCard extends Component {
         return (
 
             < Card style={cardStyle} >
-                <Image onClick={this.onLink} style={cursor} src={props.guide.imgUrl} wrapped ui={false} />
+                <Image  onClick={this.onLink}  style={imgStyle} src={props.guide.imgUrl}  />
                 <Card.Content onClick={this.onLink} style={cursor} >
                     <Card.Header >{props.guide.name}</Card.Header>
                     <Card.Meta>
@@ -50,7 +52,7 @@ class GuidePreviewCard extends Component {
                         {props.guide.description}
                     </Card.Description>
                 </Card.Content>
-                <Card.Content link={false} extra>
+                <Card.Content  extra>
                     <a>
                         <Icon name='like' />
 
