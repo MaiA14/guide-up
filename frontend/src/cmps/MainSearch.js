@@ -24,10 +24,10 @@ class MainSearch extends Component {
                 <select value={this.state.city} onChange={this.onChange}>
                     <option value="" disabled selected>select your destination</option>
 
-                    <option value="israel">Israel</option>
+                    <option value="tel-aviv">Tel Aviv</option>
                     <option value="paris">Paris</option>
-                    <option value="new york">New York</option>
-                    <option value="mexico-city">Mexico-city</option>
+                    <option value="new-york">New York</option>
+                    <option value="mexico">Mexico-city</option>
                     <option value="barcelona">Barcelona</option>
                 </select>
                 <button className="search-btn" onClick={this.onSearch}>Search</button>

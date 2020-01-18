@@ -2,25 +2,16 @@ import React, { Component } from 'react'
 import quoryString from 'query-string'
 import { connect } from 'react-redux'
 
-import { getGuide } from '../reducers/guide/actionGuide.js'
 
+import {getGuide} from '../reducers/guide/actionGuide.js'
 
 class GuideDetails extends Component {
 
-    state = {
-
-        guide:null
-
-    }
-
+  
 
     componentWillMount() {
-
-     
-
         const items = quoryString.parse(this.props.location.search)
         this.props.getGuide( items.guide_id);
-        console.log(this.props.guide)
 
 
         // const guide = this.props.guides.find(guide => guide._id === items.guide_id)
@@ -32,9 +23,13 @@ class GuideDetails extends Component {
             <div>
                 {this.props.guide &&
                     <div>
-                        <h1>{this.props.guide.name}</h1>
-                        <div>{this.props.guide.city}</div>
-                        <div>{this.props.guide.langugages}</div>
+                        <button className="back-btn space">Back</button>
+                        <h1 className="guide-header space">{this.props.guide.name}</h1>
+                        <img src={this.props.guide.imgUrl} className="guide-img-details space" ></img>
+                        <h2 className="guide-desc space">{this.props.guide.description}</h2>
+                       <span className="space"> From: {this.props.guide.city}</span>
+                        <span className="space">Langugages: {this.props.guide.langugages}</span>
+                        <div className="guide-reviews-title space">Reviews(0):</div>
                     </div>
                 }
             </div>

@@ -71,12 +71,3 @@ export default withRouter(GuidePreviewCard);
 
 
 
-// const { props } = this
-// return (
-//     <Link className="guide-preview-card" to={`/guides/?guide_id=${props.guide._id}`}>  <div>
-//         <div >{props.guide.name}</div>
-//         <div >{props.guide.city}</div>
-//         <div >{props.guide.description}</div>
-//         <div >{props.guide.langugages}</div>
-//                     </div></Link>
-// )

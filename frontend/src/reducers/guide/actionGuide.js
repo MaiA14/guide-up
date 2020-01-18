@@ -1,17 +1,12 @@
-
-
-
-
-
 // THUNK
-export function loadGuids() {
+export function loadGuides() {
     return (dispatch) => {
 
-        dispatch(setGuids())
+        dispatch(setGuides())
     }
 }
 
-function setGuids() {
+function setGuides() {
     return {
         type: 'SET_GUIDES',
         
@@ -25,7 +20,6 @@ export function getGuide(guidId){
         dispatch({type: 'GET_GUIDS',  guidId})
     }
 }
-
 
 
 // // THUNK
@@ -47,6 +41,3 @@ export function getGuide(guidId){
 //             })
 //     }
 // }
-
-
-
