@@ -42,7 +42,7 @@ class GuidePreviewCard extends Component {
         return (
 
             < Card style={cardStyle} >
-                <Image  onClick={this.onLink}  style={imgStyle} src={props.guide.imgUrl}  />
+                <Image  onClick={this.onLink} style={cursor}  src={props.guide.imgUrl}  />
                 <Card.Content onClick={this.onLink} style={cursor} >
                     <Card.Header >{props.guide.name}</Card.Header>
                     <Card.Meta>

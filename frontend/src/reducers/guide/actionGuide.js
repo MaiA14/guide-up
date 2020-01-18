@@ -26,13 +26,13 @@ function setGuides(guides) {
 // THUNK
 export function getGuide(guidId) {
 
-    return (dispatch) => {
+    return async (dispatch) => {
 
+        const guide = await guideService.getGuideById(guidId)
 
-        dispatch({ type: 'GET_GUIDS', guidId })
+        dispatch({ type: 'GET_GUID', guide })
     }
 }
-
 
 // // THUNK
 // export function removeTodo(todoId) {

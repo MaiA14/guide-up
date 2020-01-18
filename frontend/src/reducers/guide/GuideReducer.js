@@ -11,10 +11,9 @@ export function rootReducer(state = { guides: [] }, action = {}) {
                 ...state, guides: [...state.guides, action.guide]
             }
 
-        case 'GET_GUIDS':
-            console.log(action)
+        case 'GET_GUID':
 
-            return { ...state, guide: state.guides.find(guide => guide._id === action.guidId) }
+            return { ...state, guide: action.guide }
         // case 'UPDATE_ORDER':
         //     return {
 
