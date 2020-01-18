@@ -11,12 +11,21 @@ export function loadGuids() {
     }
 }
 
-function setGuids(todos) {
+function setGuids() {
     return {
         type: 'SET_GUIDES',
-        todos
+        
     }
 }
+// THUNK
+export function getGuide(guidId){
+
+    return (dispatch) => {
+
+        dispatch({type: 'GET_GUIDS',  guidId})
+    }
+}
+
 
 
 // // THUNK

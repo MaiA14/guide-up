@@ -1,23 +1,82 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import quoryString from 'query-string'
+import { Card, Icon, Image } from 'semantic-ui-react'
+import { withRouter } from 'react-router-dom';
 
-export default class GuidePreview extends Component {
 
-    render() {
-     
-        const { props } = this
-        console.log(props)
-        return (
-            <Link className="guide-preview-card" to={`/guides/?guide_id=${props.guide._id}`}>  <div>
-                <div >{props.guide.name}</div>
-                <div >{props.guide.city}</div>
-                <div >{props.guide.description}</div>
-                <div >{props.guide.langugages}</div>
-                            </div></Link>
-        )
-    }
+const cardStyle = {
+    marginTop: 0,
+    height: "100%",
+    flex: 1, /* Shrink and grow according to available height */
+    flexBasis: 0,
+
+}
+const cursor = {
+    cursor: "pointer"
+
+}
+// .eq-card.ui.card {
+
+const imgStyle = {
+    // height: "315px",
+    // backgroundSize: "cover"
 
 }
 
+class GuidePreviewCard extends Component {
 
+    onLink = () => {
+        const { props } = this
+
+        this.props.history.push(`/guides/?guide_id=${props.guide._id}`)
+
+    }
+
+
+
+    render() {
+        const { props } = this
+        return (
+
+            < Card style={cardStyle} >
+                <Image onClick={this.onLink} style={cursor} src={props.guide.imgUrl} wrapped ui={false} />
+                <Card.Content onClick={this.onLink} style={cursor} >
+                    <Card.Header >{props.guide.name}</Card.Header>
+                    <Card.Meta>
+                        <span>{props.guide.city}</span>
+                    </Card.Meta>
+                    <Card.Description >
+                        {props.guide.description}
+                    </Card.Description>
+                </Card.Content>
+                <Card.Content link={false} extra>
+                    <a>
+                        <Icon name='like' />
+
+                        22 Like
+                        </a>
+                </Card.Content>
+            </Card >
+
+        )
+    }
+
+
+
+}
+
+export default withRouter(GuidePreviewCard);
+
+
+
+
+// const { props } = this
+// return (
+//     <Link className="guide-preview-card" to={`/guides/?guide_id=${props.guide._id}`}>  <div>
+//         <div >{props.guide.name}</div>
+//         <div >{props.guide.city}</div>
+//         <div >{props.guide.description}</div>
+//         <div >{props.guide.langugages}</div>
+//                     </div></Link>
+// )

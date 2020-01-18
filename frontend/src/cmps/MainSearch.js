@@ -10,12 +10,10 @@ class MainSearch extends Component {
 
         const city = ev.target.value;
         ev.target.value = city
-        console.log(city)
         this.setState({ city })
     }
 
     onSearch = (ev) => {
-        console.log(this.state.city)
 
         this.props.history.push(`/location/?city=${this.state.city}`)
     }

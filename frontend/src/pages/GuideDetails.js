@@ -2,53 +2,58 @@ import React, { Component } from 'react'
 import quoryString from 'query-string'
 import { connect } from 'react-redux'
 
-import { loadGuids } from '../reducers/guide/actionGuide.js'
+import { getGuide } from '../reducers/guide/actionGuide.js'
 
 
 class GuideDetails extends Component {
 
     state = {
 
-        guide:''
+        guide:null
 
     }
 
 
     componentWillMount() {
 
-        this.props.loadGuids();
-        console.log(this.props.guides)
+     
+
         const items = quoryString.parse(this.props.location.search)
-        const guide = this.props.guides.find(guide => guide._id === items.guide_id)
-        this.setState({ guide })
+        this.props.getGuide( items.guide_id);
+        console.log(this.props.guide)
+
+
+        // const guide = this.props.guides.find(guide => guide._id === items.guide_id)
+        // this.setState({ guide })
     }
     render() {
         return (
 
             <div>
-                {this.state.guide &&
+                {this.props.guide &&
                     <div>
-                        <h1>{this.state.guide.name}</h1>
-                        <div>{this.state.guide.city}</div>
-                        <div>{this.state.guide.langugages}</div>
+                        <h1>{this.props.guide.name}</h1>
+                        <div>{this.props.guide.city}</div>
+                        <div>{this.props.guide.langugages}</div>
                     </div>
                 }
             </div>
         )
     }
 }
-const mappropsToProps = (state) => {
+const mapStateToProps = (state) => {
+    console.log(state)
     return {
-        guides: state.guides
+        guide: state.guide
     }
 }
 const mapDispatchToProps = {
-    loadGuids,
+    getGuide,
 
 }
 
 export default connect(
-    mappropsToProps,
+    mapStateToProps,
     mapDispatchToProps
 )(GuideDetails)
 

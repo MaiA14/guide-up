@@ -29,7 +29,6 @@ class LocalGuideApp extends Component {
     // }
 
     render() {
-        console.log(this.props.guides)
         return (
             <div>
                 <Header></Header>

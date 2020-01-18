@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import quoryString from 'query-string'
 
-import GuidePreview from '../cmps/GuidePreview.js'
+import GuidePreviewCard from '../cmps/GuidePreview.js'
 import { loadGuids } from '../reducers/guide/actionGuide.js'
 
 
@@ -33,20 +33,20 @@ class GuideListFiltered extends Component {
             <div>
                 <h1 className="filtered-guides-header space">Guides</h1>
                 choose tags:<input type="checkbox" checked="checked"></input>
-                <span class="checkmark"></span>
-                <label class="container">Art</label>
+                <span className="checkmark"></span>
+                <label className="container">Art</label>
                 <input type="checkbox" checked="checked"></input>
-                <span class="checkmark"></span>
-                <label class="container">Coffe</label>
+                <span className="checkmark"></span>
+                <label className="container">Coffe</label>
                 <input type="checkbox" checked="checked"></input>
-                <span class="checkmark"></span>
-                <label class="container">Music</label>
+                <span className="checkmark"></span>
+                <label className="container">Music</label>
                 <input type="checkbox" checked="checked"></input>
-                <span class="checkmark"></span>
-                <label class="container">Movies</label>
+                <span className="checkmark"></span>
+                <label className="container">Movies</label>
 
                 <section className="cards-list main-container">
-                    {this.state.filterGuides.map(guide => <GuidePreview key={guide._id} guide={guide}></GuidePreview>)}
+                    {this.state.filterGuides.map(guide => <GuidePreviewCard key={guide._id} guide={guide}></GuidePreviewCard>)}
                 </section>
             </div>
 
