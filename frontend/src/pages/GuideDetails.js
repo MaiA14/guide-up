@@ -19,6 +19,7 @@ class GuideDetails extends Component {
         // this.setState({ guide })
     }
     render() {
+        console.log(this.props)
         return (
 
             <div>
@@ -46,7 +47,6 @@ class GuideDetails extends Component {
     }
 }
 const mapStateToProps = (state) => {
-    console.log(state)
     return {
         guide: state.guide
     }

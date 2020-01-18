@@ -2,7 +2,8 @@ const guideService = require('./guide.service')
 
 async function getGuide(req, res) {
     const guide = await guideService.getGuideById(req.params.id)
-    res.send(guide)
+    console.log(guide)
+    res.json(guide)
 }
 
 async function getGuides(req, res) {

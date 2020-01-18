@@ -19,7 +19,8 @@ function query(filterBy = '') {
 
 
 function getGuideById(guideId) {
-    return HttpService.get(`guides${guideId}`).then(res => res.data);
+    return HttpService.get(`guides/${guideId}`)
+
 }
 
 
