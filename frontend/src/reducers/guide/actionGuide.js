@@ -1,23 +1,35 @@
+import guideService from '../../service/guideService.js'
+
 // THUNK
 export function loadGuides() {
-    return (dispatch) => {
+    return async (dispatch) => {
+        try {
 
-        dispatch(setGuides())
+            const guides = await guideService.query('');
+            dispatch(setGuides(guides))
+
+        } catch (err) {
+            console.log('GuideActions: err in loadGuides', err);
+
+        }
+
     }
 }
 
-function setGuides() {
+function setGuides(guides) {
     return {
         type: 'SET_GUIDES',
-        
+        guides
+
     }
 }
 // THUNK
-export function getGuide(guidId){
+export function getGuide(guidId) {
 
     return (dispatch) => {
 
-        dispatch({type: 'GET_GUIDS',  guidId})
+
+        dispatch({ type: 'GET_GUIDS', guidId })
     }
 }
 

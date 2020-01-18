@@ -6,8 +6,16 @@ async function getGuide(req, res) {
 }
 
 async function getGuides(req, res) {
-    const guides = await guideService.query(req.query)
-    res.send(guides)
+    try{
+        const guides = await guideService.query(req.query)
+        res.json(guides)
+
+
+    }catch{
+        res.status(500).json({ err })
+    }
+ 
+
 }
 
 async function deleteGuide(req, res) {
