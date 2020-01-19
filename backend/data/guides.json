@@ -22,37 +22,7 @@
         "createdAt": 1579439594010,
         "rank": 5,
         "txt": "testsText"
-      },
-      [
-        {
-          "id": "21124414",
-          "title": "testingr",
-          "createBy": {
-            "_id": "6436373453",
-            "userName": "testName1",
-            "fullName": "testName1",
-            "imgUrl": "http://img.com"
-          },
-          "createdAt": 1579439594010,
-          "rank": 5,
-          "txt": "testsText"
-        }
-      ],
-      [
-        {
-          "id": "21124414",
-          "title": "testingmai",
-          "createBy": {
-            "_id": "6436373453",
-            "userName": "testNamemai",
-            "fullName": "testNamemai",
-            "imgUrl": "http://img.com"
-          },
-          "createdAt": 1579439594010,
-          "rank": 2,
-          "txt": "testsText"
-        }
-      ]
+      }
     ]
   },
   {

@@ -52,8 +52,8 @@ class GuideDetails extends Component {
                             {  this.props.guide.reviews &&  this.props.guide.reviews.map(review => {
                                 return (
                                     <React.Fragment>
-                                        <h1> {review.title}</h1> ,
-                                        <h2> {review.txt}</h2> ,
+                                        <h1> {review.title}</h1> 
+                                        <h2> {review.txt}</h2> 
                                         <h2> {review.createdAt}</h2>
                                     </React.Fragment>
                                 )
