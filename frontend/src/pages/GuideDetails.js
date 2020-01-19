@@ -44,9 +44,9 @@ class GuideDetails extends Component {
                             </div>
                         </div>
                         </div>
-
-                        <div className="guide-reviews-title space">Reviews(0):</div>
                         <Review></Review>
+                        <div className="guide-reviews-title space">Reviews(0):</div>
+                        
                     </div>
                 }
             </div>
