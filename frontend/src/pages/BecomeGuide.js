@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class BecameGuide extends Component {
+export default class BecomeGuide extends Component {
     render() {
         return (
             <div>
