@@ -31,7 +31,7 @@ function App() {
             <Route component={FilteredGuideList} path="/location" exact></Route>
             <Route component={Login} path="/login" exact></Route>
             <Route component={Signup} path="/signup" exact></Route>
-            <Route component={BecomeGuide} path="/BecomeGuide"></Route>
+            <Route component={BecomeGuide} path="/join_us"></Route>
 
           {/* <Route component={Signup} path="/signup" exact></Route>
           <Route component={AddGuide} path="/addGuide" exact></Route>  */}

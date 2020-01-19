@@ -22,8 +22,3 @@ export default function Navbar(props) {
     </div>
 
 }
-// display: flex;
-//     justify-content: flex-end;
-//     width: 100%;
-//     margin-right: 25px;
-//     justify-content: flex-end
