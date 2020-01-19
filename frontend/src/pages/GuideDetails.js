@@ -8,12 +8,9 @@ import { getGuide } from '../reducers/guide/actionGuide.js'
 
 class GuideDetails extends Component {
 
-
-
     componentWillMount() {
         const items = quoryString.parse(this.props.location.search)
         this.props.getGuide(items.guide_id);
-
 
         // const guide = this.props.guides.find(guide => guide._id === items.guide_id)
         // this.setState({ guide })

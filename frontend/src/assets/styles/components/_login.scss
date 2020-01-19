@@ -1,0 +1,79 @@
+.login-header{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.login-btn {
+    font-family: "Lato";
+    text-align: center;
+    font-size: 15px;
+    border-radius: 3px;
+    width: 70px;
+    padding: 10px;
+    background-color: rgb(0,123, 255);
+    border: 1px solid rgb(0,123, 255); 
+    color: white;
+    cursor: pointer;
+    margin-right: 7px;
+    margin-left: 18px;
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.login-btn:hover { 
+    opacity: 0.8;
+}
+
+.reset-btn {
+    font-family: "Lato";
+    text-align: center;
+    font-size: 15px;
+    border-radius: 3px;
+    width: 70px;
+    padding: 10px;
+    background-color: rgb(236, 243, 252);
+    border: 1px solid rgb(0,123, 255); 
+    color:  rgb(0,123, 255);
+    cursor: pointer;
+    margin-right: 7px;
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.reset-btn:hover { 
+    color: white;
+    background: rgb(0,123, 255);
+    opacity: 0.8;
+}
+
+.login-input{
+    border-radius: 5px;
+    width: 180px;
+    padding: 10px;
+    margin-top: 3px;
+    margin-bottom: 15px;
+    border: 1px solid;
+    border-color: rgb(220, 223, 230);
+    outline: none;
+}
+
+.join-header{
+    margin-top: 10px;
+}
+
+.login-input:focus{
+    border: 1px solid rgb(0,123, 255);
+}
+
+.join-header{
+    color: rgb(0,123, 255);
+}
+
+.join-header:hover{
+    border-bottom: solid 1px rgb(0,123, 255);
+    display: inline;
+    padding-bottom: 1px;
+}
