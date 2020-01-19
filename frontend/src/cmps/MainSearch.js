@@ -30,9 +30,14 @@ class MainSearch extends Component {
     }
 
     render() {
+
+        const selectStyle ={
+            background:""
+
+        }
         return (
             <div className="search-container flex" >
-                <select value={this.state.city} onChange={this.onChange}>
+                <select style={this.props.style} value={this.state.city} onChange={this.onChange}>
                     <option value="" disabled selected>{
                         this.state.city ?
                             this.state.city : 'select your destination'

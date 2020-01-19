@@ -4,35 +4,41 @@ import quoryString from 'query-string'
 
 import GuidePreview from '../cmps/GuidePreview.js'
 import { loadGuides } from '../reducers/guide/actionGuide.js'
-import  MainSearch from '../cmps/MainSearch.js'
+import MainSearch from '../cmps/MainSearch.js'
 
 
 
 
 class GuideListFiltered extends Component {
     state = {
-  
+
         filterGuides: []
     }
 
     componentDidMount() {
         this.props.loadGuides();
     }
-    componentWillReceiveProps(newProps){
+    componentWillReceiveProps(newProps) {
         const items = quoryString.parse(newProps.location.search)
         const filterGuides = this.props.guides.filter(guides => guides.city === items.city)
-        this.setState({filterGuides})
+        this.setState({ filterGuides })
 
     }
 
-  
+
 
     render() {
+        const selectStyle ={
+            border:'1px solid'
+
+        }
         return (
             <div>
                 <h1 className="filtered-guides-header space">Guides</h1>
                 <h2 className="guides-short-content space">Find your guides, let them share with you the insight on the city.  Enjoy from unforgatable trip</h2>
-                <MainSearch></MainSearch>
+                <div>
+                    <MainSearch style ={selectStyle} ></MainSearch>
+                </div>
                 choose tags:<input type="checkbox" checked="checked"></input>
                 <span className="checkmark"></span>
                 <label className="container">Art</label>
