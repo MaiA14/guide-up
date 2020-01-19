@@ -1,20 +1,35 @@
+.calendar-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
 .guide-header{
-    font-family: "Lato";
-    text-shadow: 0px 1px, 1px 0px, 1px 0px;
+    font-family: "Lato-Bold";
     font-size: rem(40px);
     color: rgb(237,111,37);
     padding: 0;
 }
 
-.back-btn{
-    font-family: 'Lato';
+.back-btn {
+    font-family: "Lato";
+    text-align: center;
     font-size: 15px;
     border-radius: 3px;
-    width: 50px;
-    background-color: white;
-    border: 1px solid rgb(237,111,37);
+    width: 70px;
+    padding: 10px;
+    background-color: rgb(237,111,37);
+    border: 1px solid rgb(237,111,37); 
+    color: white;
     cursor: pointer;
+    margin-right: 7px;
+    opacity: 1;
+    transition: 0.3s;
     margin-top: 10px;
+}
+
+.back-btn:hover { 
+    opacity: 0.8;
 }
 
 .guide-img-details{
@@ -36,4 +51,52 @@
     border-top: solid;
     margin-right: 10%;
     padding: 0;
+}
+
+.calendar-header{
+    font-family: "Lato";
+    font-size: rem(45px);
+    color: rgb(237,111,37);
+    margin-right: 10%;
+    padding: 0;
+}
+
+.num-of-guests-header{
+    font-family: "Lato";
+    font-size: rem(25px);
+    color: rgb(237,111,37);
+    margin-right: 10%;
+    padding: 0;
+}
+
+
+.book-btn {
+    font-family: "Lato";
+    text-align: center;
+    font-size: 15px;
+    border-radius: 3px;
+    width: 70px;
+    padding: 10px;
+    background-color: rgb(237,111,37);
+    border: 1px solid rgb(237,111,37); 
+    color: white;
+    cursor: pointer;
+    margin-right: 7px;
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.book-btn:hover { 
+    opacity: 0.8;
+}
+
+.num-of-guests{
+    border-radius: 5px;
+    width: 180px;
+    padding: 10px;
+    margin-top: 3px;
+    margin-bottom: 15px;
+    border: 1px solid;
+    border-color: rgb(220, 223, 230);
+    outline: none;
 }

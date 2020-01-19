@@ -13,7 +13,7 @@ import global from '../src/assets/styles/global.scss'
 import Login from '../src/pages/Login.js'
 import Signup from '../src/pages/Signup'
 import {rootReducer} from './reducers/guide/GuideReducer.js'
-import BecameGuide from './pages/BecameGuide.js'
+import BecomeGuide from './pages/BecomeGuide.js'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -31,7 +31,7 @@ function App() {
             <Route component={FilteredGuideList} path="/location" exact></Route>
             <Route component={Login} path="/login" exact></Route>
             <Route component={Signup} path="/signup" exact></Route>
-            <Route component={BecameGuide} path="/BecameGuide" exact></Route>
+            <Route component={BecomeGuide} path="/BecomeGuide"></Route>
 
           {/* <Route component={Signup} path="/signup" exact></Route>
           <Route component={AddGuide} path="/addGuide" exact></Route>  */}

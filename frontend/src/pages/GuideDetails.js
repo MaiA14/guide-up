@@ -15,7 +15,7 @@ class GuideDetails extends Component {
         // const guide = this.props.guides.find(guide => guide._id === items.guide_id)
         // this.setState({ guide })
     }
-    backToListOfGuids = ()=>{
+    backToListOfGuids = () => {
 
         this.props.history.goBack()
 
@@ -32,10 +32,16 @@ class GuideDetails extends Component {
                         <h2 className="guide-desc space">{this.props.guide.description}</h2>
                         <span className="space"> From: {this.props.guide.city}</span>
                         <span className="space">Langugages: {this.props.guide.langugages}</span>
-                        <div  className="Calendar-container">
-
-                        <Calendar></Calendar>
-
+                        <div className="calendar-warpper">
+                        <div className="calendar-container">
+                            <h2 className="calendar-header space">Pick a date</h2>
+                            <Calendar></Calendar>
+                            <h2 className="num-of-guests-header space">How many people?</h2>
+                            <div className="flex column">
+                                <div><input type="text" className="num-of-guests space" placeholder="0"></input></div>
+                                <div><button className="book-btn">Book</button></div>
+                            </div>
+                        </div>
                         </div>
 
                         <div className="guide-reviews-title space">Reviews(0):</div>
