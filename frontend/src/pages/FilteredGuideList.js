@@ -29,7 +29,7 @@ class GuideListFiltered extends Component {
 
     render() {
         const selectStyle ={
-            border:'1px solid'
+            border:'1px solid #ed6f25'
 
         }
         return (
