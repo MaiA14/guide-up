@@ -15,13 +15,18 @@ class GuideDetails extends Component {
         // const guide = this.props.guides.find(guide => guide._id === items.guide_id)
         // this.setState({ guide })
     }
+    backToListOfGuids = ()=>{
+
+        this.props.history.goBack()
+
+    }
     render() {
         return (
 
             <div>
                 {this.props.guide &&
                     <div>
-                        <button className="back-btn space">Back</button>
+                        <button onClick={this.backToListOfGuids} className="back-btn space">Back</button>
                         <h1 className="guide-header space">{this.props.guide.name}</h1>
                         <img src={this.props.guide.imgUrl} className="guide-img-details space" ></img>
                         <h2 className="guide-desc space">{this.props.guide.description}</h2>
