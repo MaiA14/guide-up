@@ -1,0 +1,26 @@
+.review-input{
+    border: none;
+    border-bottom: 2px solid;
+    margin-bottom: 20px;
+}
+
+.send-btn {
+    font-family: "Lato";
+    text-align: center;
+    font-size: 15px;
+    border-radius: 3px;
+    width: 70px;
+    padding: 10px;
+    background-color: rgb(237,111,37);
+    border: 1px solid rgb(237,111,37); 
+    color: white;
+    cursor: pointer;
+    margin-right: 7px;
+    opacity: 1;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.send-btn:hover { 
+    opacity: 0.8;
+}

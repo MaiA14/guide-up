@@ -12,7 +12,8 @@ import MainSearch from '../cmps/MainSearch.js'
 class GuideListFiltered extends Component {
     state = {
 
-        filterGuides: []
+        filterGuides: [],
+        city:''
     }
 
     componentDidMount() {
@@ -20,8 +21,9 @@ class GuideListFiltered extends Component {
     }
     componentWillReceiveProps(newProps) {
         const items = quoryString.parse(newProps.location.search)
-        const filterGuides = this.props.guides.filter(guides => guides.city === items.city)
-        this.setState({ filterGuides })
+        const city = items.city
+        const filterGuides = this.props.guides.filter(guides => guides.city === city )
+        this.setState({ filterGuides,city })
 
     }
 
@@ -34,7 +36,7 @@ class GuideListFiltered extends Component {
         }
         return (
             <div>
-                <h1 className="filtered-guides-header space">Guides</h1>
+    <h1 className="filtered-guides-header space">{this.state.city}'s Guides</h1>
                 <h2 className="guides-short-content space">Find your guides, let them share with you the insight on the city.  Enjoy from unforgatable trip</h2>
                 <div>
                     <MainSearch style ={selectStyle} ></MainSearch>

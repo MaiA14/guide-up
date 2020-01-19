@@ -71,10 +71,15 @@
 
 .join-header{
     color: rgb(0,123, 255);
+    margin-bottom: 23px;
 }
 
 .join-header:hover{
     border-bottom: solid 1px rgb(0,123, 255);
     display: inline;
     padding-bottom: 1px;
+}
+
+.btn-container{
+    margin-bottom: 23px;
 }

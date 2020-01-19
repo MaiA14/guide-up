@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 
 import Calendar from '../cmps/Calendar.js'
 import { getGuide } from '../reducers/guide/actionGuide.js'
+import Review from '../cmps/Review.js'
 
 class GuideDetails extends Component {
 
@@ -45,10 +46,9 @@ class GuideDetails extends Component {
                         </div>
 
                         <div className="guide-reviews-title space">Reviews(0):</div>
-
+                        <Review></Review>
                     </div>
                 }
-
             </div>
         )
     }
