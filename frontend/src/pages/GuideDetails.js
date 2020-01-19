@@ -22,6 +22,8 @@ class GuideDetails extends Component {
 
     }
     render() {
+        console.log(this.props.guide)
+
         return (
 
             <div>
@@ -34,19 +36,29 @@ class GuideDetails extends Component {
                         <span className="space"> From: {this.props.guide.city}</span>
                         <span className="space">Langugages: {this.props.guide.langugages}</span>
                         <div className="calendar-warpper">
-                        <div className="calendar-container">
-                            <h2 className="calendar-header space">Pick a date</h2>
-                            <Calendar></Calendar>
-                            <h2 className="num-of-guests-header space">How many people?</h2>
-                            <div className="flex column">
-                                <div><input type="text" className="num-of-guests space" placeholder="0"></input></div>
-                                <div><button className="book-btn">Book</button></div>
+                            <div className="calendar-container">
+                                <h2 className="calendar-header space">Pick a date</h2>
+                                <Calendar></Calendar>
+                                <h2 className="num-of-guests-header space">How many people?</h2>
+                                <div className="flex column">
+                                    <div><input type="text" className="num-of-guests space" placeholder="0"></input></div>
+                                    <div><button className="book-btn">Book</button></div>
+                                </div>
                             </div>
                         </div>
-                        </div>
                         <Review></Review>
-                        <div className="guide-reviews-title space">Reviews(0):</div>
-                        
+                        <div className="guide-reviews-title space">
+
+                            {  this.props.guide.reviews &&  this.props.guide.reviews.map(review => {
+                                return (
+                                    <React.Fragment>
+                                        <h1> {review.title}</h1> ,
+                                        <h2> {review.txt}</h2> ,
+                                        <h2> {review.createdAt}</h2>
+                                    </React.Fragment>
+                                )
+                            })}
+                        </div>
                     </div>
                 }
             </div>
