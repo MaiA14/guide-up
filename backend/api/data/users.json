@@ -1,0 +1,23 @@
+[
+   {
+      "_id": "6436b",
+      "username": "ben123",
+      "fullname": "ben yager",
+      "password": "1234",
+      "imgUrl": "http://img.com"
+   },
+   {
+      "_id": "64acb",
+      "username": "mai123",
+      "fullname": "mai aloni",
+      "password": "12345",
+      "imgUrl": "http://img.com"
+   },
+   {
+      "_id": "6sdsa",
+      "username": "Tal123",
+      "fullname": "tal hop",
+      "password": "123456",
+      "imgUrl": "http://img.com"
+   }
+]
