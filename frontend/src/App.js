@@ -11,6 +11,7 @@ import Footer from '../src/cmps/Footer.js'
 import Navbar from '../src/cmps/Navbar.js'
 import global from '../src/assets/styles/global.scss'
 import Login from '../src/pages/Login.js'
+import Signup from '../src/pages/Signup'
 import {rootReducer} from './reducers/guide/GuideReducer.js'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -28,6 +29,7 @@ function App() {
             <Route component={GuideDetails} path="/guides" exact></Route>
             <Route component={FilteredGuideList} path="/location" exact></Route>
             <Route component={Login} path="/login" exact></Route>
+            <Route component={Signup} path="/signup" exact></Route>
           {/* <Route component={Signup} path="/signup" exact></Route>
           <Route component={AddGuide} path="/addGuide" exact></Route>  */}
             {/* <Route component={EditProfile} path="edit" exact></Route>  */}

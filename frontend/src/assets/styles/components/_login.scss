@@ -5,7 +5,9 @@
     margin-bottom: 20px;
     text-transform: uppercase;
 }
-
+.login-btns-warpper{
+    text-align: center;
+}
 .login-btn {
     font-family: "Lato";
     text-align: center;
@@ -18,7 +20,6 @@
     color: white;
     cursor: pointer;
     margin-right: 7px;
-    margin-left: 18px;
     opacity: 1;
     transition: 0.3s;
 }
@@ -38,7 +39,7 @@
     border: 1px solid rgb(0,123, 255); 
     color:  rgb(0,123, 255);
     cursor: pointer;
-    margin-right: 7px;
+    // margin-right: 7px;
     opacity: 1;
     transition: 0.3s;
 }
@@ -61,7 +62,7 @@
 }
 
 .join-header{
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 .login-input:focus{
