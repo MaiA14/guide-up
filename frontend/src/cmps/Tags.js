@@ -4,7 +4,8 @@ export default class Tags extends Component {
     render() {
         return (
             <div className="flex column align-center justify-center">
-             choose tags:<input type="checkbox" checked="checked"></input>
+                <div><h2>Pick at least 2 interests that describe you the best:</h2></div>
+                <input type="checkbox" checked="checked"></input>
                 <span className="checkmark"></span>
                 <label className="container">Art</label>
                 <input type="checkbox" checked="checked"></input>
