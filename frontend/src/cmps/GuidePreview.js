@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom';
 
 const cardStyle = {
     marginTop: 0,
-    height: "100%",
+    // height: "100%",
     flex: 1, /* Shrink and grow according to available height */
     flexBasis: 0,
 
@@ -20,7 +20,7 @@ const cursor = {
 
 const imgStyle = {
     cursor: "pointer",
-    height: '300px'
+    height: '100px'
 
     // backgroundSize: "cover"
 
