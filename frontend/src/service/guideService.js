@@ -24,6 +24,7 @@ function getGuideById(guideId) {
 }
 
 
+
 function editGuide(guide,guideId) {
     return HttpService.put(`guides${guideId}`, guide).then(res => res.data);
 }
