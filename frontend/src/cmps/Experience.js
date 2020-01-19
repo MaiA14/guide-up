@@ -30,9 +30,9 @@ export default class Experience extends Component {
                 <div>Write a short description about yourself</div>
                 <div><input type="text" className="experience-input"></input></div>
                 <div>Add a profile picture</div>
-                <input onchange="uploadImg(event)" type="file"></input>
+                <input onChange="uploadImg(event)" type="file"></input>
                 <div>Add photos that describes you best</div>
-                <input onchange="uploadImg(event)" type="file"></input>
+                <input onChange="uploadImg(event)" type="file"></input>
             </div>
         )
     }
