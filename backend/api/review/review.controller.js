@@ -4,7 +4,6 @@ const reviewService = require('./review.service')
 // TODO: needs error handling! try, catch
 
 async function getReviews(req, res) {
-    console.log(req.query);
     try {
         const reviews = await reviewService.query(req.query)
         var num =9;

@@ -16,7 +16,6 @@ class GuideDetails extends Component {
         // this.setState({ guide })
     }
     render() {
-        console.log(this.props)
         return (
 
             <div>

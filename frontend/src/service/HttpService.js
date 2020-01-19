@@ -27,7 +27,6 @@ export default {
 
 
 async function ajax(endpoint, method='get', data=null , dispatch) {
-    console.log(endpoint)
     try {
         const res = await Axios({
             url: `${BASE_URL}${endpoint}`,

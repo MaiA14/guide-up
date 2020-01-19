@@ -1,11 +1,22 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
+import quoryString from 'query-string'
+
 
 class MainSearch extends Component {
     state = {
-        city: ''
+        city: null
 
     }
+
+    componentDidMount() {
+
+        const city = quoryString.parse(this.props.location.search)
+        this.setState({ ...city })
+
+
+    }
+
     onChange = (ev) => {
 
         const city = ev.target.value;
@@ -22,7 +33,10 @@ class MainSearch extends Component {
         return (
             <div className="search-container flex" >
                 <select value={this.state.city} onChange={this.onChange}>
-                    <option value="" disabled selected>select your destination</option>
+                    <option value="" disabled selected>{
+                        this.state.city ?
+                            this.state.city : 'select your destination'
+                    }    </option>
 
                     <option value="tel-aviv">Tel Aviv</option>
                     <option value="paris">Paris</option>
