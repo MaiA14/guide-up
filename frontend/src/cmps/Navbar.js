@@ -5,7 +5,7 @@ import React from 'react';
 export default function Navbar(props) {
 
     return <div className="main-navbar">
-        <Link to="/" > <div className="flex logo">
+        <Link to="/home" > <div className="flex logo">
 
             <img src="https://i.ibb.co/Sc5KnfL/logo.png" alt="logo"></img>
             <div className="logo-text">Local Guide</div>

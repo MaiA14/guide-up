@@ -34,22 +34,17 @@ export function getGuide(guidId) {
     }
 }
 
-// // THUNK
-// export function removeTodo(todoId) {
-//     return (dispatch) => {
-//         TodoService.remove(todoId)
-//             .then(() => {
-//                 dispatch({type: 'TODO_REMOVE',  todoId})
-//             })
-//     }
-// }
-// export function saveTodo(todo) {
-//     console.log('action ',todo)
-//    return (dispatch) => {
-//         const actionType = (todo._id) ? 'TODO_UPDATE' : 'TODO_ADD'; 
-//         TodoService.save(todo)
-//             .then((todo) => {
-//                 dispatch({type: actionType,  todo})
-//             })
-//     }
-// }
+export function saveGuide(guide) {
+    return async (dispatch) => {
+        const actionType = (guide._id) ? 'GUIDE_UPDATE' : 'GUIDE_ADD';
+
+        const newGuide = await guideService.save(guide, guide._id)
+
+        dispatch({ type: actionType, newGuide })
+
+    }
+
+
+
+
+}

@@ -9,7 +9,7 @@ module.exports = {
     query
 };
 
-let gUsers = require('../data/users.json')
+let gUsers = require('../../data/users.json')
 
 function query(filterBy) {
     var res = gUsers;

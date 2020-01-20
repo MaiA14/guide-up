@@ -1,4 +1,5 @@
 const fs = require('fs')
+require('../../data/guides.json')
 
 module.exports = {
     remove,
@@ -23,13 +24,12 @@ function getGuideById(guideId) {
 }
 
 function update(id, newGuide) {
-    debugger
     let guide = gGuides.find(guide => guide._id === id)
     let idx = gGuides.findIndex(guide => guide._id === id)
     if(newGuide.review){
         guide.reviews.push(newGuide.review)
         _saveguidesToFile()
-        return
+        return guide
     }
     if (!guide) return Promise.reject('Wrong Id');
     let newGuideData = { ...guide, ...newGuide }

@@ -3,9 +3,9 @@ import axios from 'axios';
 export default {
     query,
     deleteGuide,
-    addGuide,
     getGuideById,
-    editGuide,
+    save
+
 };
 const url = "http://localhost:3001/api/guides"
 var Axios = axios.create({
@@ -25,22 +25,21 @@ function getGuideById(guideId) {
 
 
 
-function editGuide(guide,guideId) {
-    return HttpService.put(`guides${guideId}`, guide).then(res => res.data);
-}
+// function editGuide(guide,guideId) {
+//     return HttpService.put(`guides${guideId}`, guide).then(res => res.data);
+// }
 
-function addGuide(name, guide) {
-    return HttpService.post('guides', guide).then(res => res.data);
+// function addGuide(name, guide) {
+//     return HttpService.post('guides', guide).then(res => res.data);
+// }
+
+function save(guide,guideId) {
+
+    if (guide._id)
+        return HttpService.put(`guides/${guideId}`,guide)
+    return HttpService.post(`guides,${guide}`)
 }
 
 function deleteGuide(guideId) {
     return HttpService.delete(`guides${guideId}`).then(res => res.data);
 }
-
-
-
-
-// function getguideById(guideId){
-//     return  axios.get('/guides/' +guideId)
-// }
-

@@ -13,8 +13,7 @@ class GuideDetails extends Component {
         const items = quoryString.parse(this.props.location.search)
         this.props.getGuide(items.guide_id);
 
-        // const guide = this.props.guides.find(guide => guide._id === items.guide_id)
-        // this.setState({ guide })
+  
     }
     backToListOfGuids = () => {
 
@@ -22,7 +21,6 @@ class GuideDetails extends Component {
 
     }
     render() {
-        console.log(this.props.guide)
 
         return (
 
@@ -46,14 +44,13 @@ class GuideDetails extends Component {
                                 </div>
                             </div>
                         </div>
-                        <Review></Review>
+                        <Review ></Review>
                         <div className="guide-reviews-title space">
-                            {  this.props.guide.reviews &&  this.props.guide.reviews.map(review => {
-                                debugger
+                            {this.props.guide.reviews && this.props.guide.reviews.map(review => {
                                 return (
-                                    <React.Fragment>
-                                        <h1> {review.title}</h1> 
-                                        <h2> {review.txt}</h2> 
+                                    <React.Fragment key={review.id}>
+                                        <h1> {review.title}</h1>
+                                        <h2> {review.txt}</h2>
                                         <h2> {review.createdAt}</h2>
                                     </React.Fragment>
                                 )
