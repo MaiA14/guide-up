@@ -26,6 +26,8 @@ function getGuideById(guideId) {
 function update(id, newGuide) {
     let guide = gGuides.find(guide => guide._id === id)
     let idx = gGuides.findIndex(guide => guide._id === id)
+
+
     if(newGuide.review){
         guide.reviews.push(newGuide.review)
         _saveguidesToFile()
@@ -64,14 +66,7 @@ function remove(guideId) {
     return Promise.resolve(true)
 }
 
-// function getguides(filterBy) {
-//     const guides = (!filterBy) ? 
-//           gGuides
-//         : gGuides.filter(guide => guide.name.includes(filterBy.name)
-//                               && guide.numOfLegs === filterBy.numOfLegs);
 
-//     return Promise.resolve(guides)
-// }
 
 function _saveguidesToFile() {
     fs.writeFile('data/guides.json', JSON.stringify(gGuides, null, 2), () => { console.log('filllle'); });

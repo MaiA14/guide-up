@@ -35,7 +35,7 @@ function getGuideById(guideId) {
 
 function save(guide,guideId) {
 
-    if (guide._id)
+    if (guideId)
         return HttpService.put(`guides/${guideId}`,guide)
     return HttpService.post(`guides,${guide}`)
 }
