@@ -54,10 +54,9 @@ class GuideDetails extends Component {
                             {this.props.guide.reviews && this.props.guide.reviews.map(review => {
                                 return (
                                     <div className="review-contaner" key={review.id}>
-                                        <h1> {review.title}</h1>
+                                        <h1>{review.title}</h1>
                                         <h2> {review.txt}</h2>
-                                        <h2> {review.createBy.createdAt}</h2>
-                                        <h2> {review.createBy.rank}</h2>
+                                        <h2> {review.rank} Stars</h2>
                                     </div>
                                 )
                             })}
