@@ -42,8 +42,8 @@ app.use('/api/guides', guideRoutes)
 app.use('/api/review', reviewRoutes)
 connectSockets(io)
 
-const logger = require('./services/logger.service')
+// const logger = require('./services/logger.service')
 const port = process.env.PORT || 3001;
-http.listen(port, () => {
-    logger.info('Server is running on port: ' + port)
-});
+// http.listen(port, () => {
+//     logger.info('Server is running on port: ' + port)
+// });
