@@ -16,14 +16,14 @@ select {
     font-size: 20px;
     border-radius: 3px;
     width: 110px;
-    background-color: rgb(237,111,37);
+    background-color: $clr2;
     border: none;
     color: white;
     cursor: pointer;
  }
 
  .search-btn:hover{
-    background-color: rgb(247, 135, 71);
+    background-color: $clr2;
     border: none;
 }
 

@@ -23,15 +23,15 @@
   .first-header-section{
     font-family: "Lato-Bold";
     font-size: 40px;
-    color: rgb(237,111,37);
+    color:$clr2;
     text-transform: uppercase;
   }
 
   .second-header-section{
-    border-top: 2px solid rgb(237,111,37);
+    border-top: 2px solid$clr2;
     font-family: "Lato-Bold";
     font-size: 40px;
-    color: rgb(237,111,37);
+    color: $clr2;
     text-transform: uppercase;
   }
 

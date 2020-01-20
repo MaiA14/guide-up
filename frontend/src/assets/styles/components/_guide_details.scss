@@ -7,7 +7,7 @@
 .guide-header{
     font-family: "Lato-Bold";
     font-size: rem(40px);
-    color: rgb(237,111,37);
+    color: $clr2;
     padding: 0;
 }
 
@@ -18,8 +18,8 @@
     border-radius: 3px;
     width: 70px;
     padding: 10px;
-    background-color: rgb(237,111,37);
-    border: 1px solid rgb(237,111,37); 
+    background-color:$clr2;
+    border: 1px solid $clr2; 
     color: white;
     cursor: pointer;
     margin-right: 7px;
@@ -39,7 +39,7 @@
 .guide-desc{
     font-family: "Lato";
     font-size: rem(25px);
-    color: rgb(237,111,37);
+    color:$clr2;
     margin-right: 10%;
     padding: 0;    
 }
@@ -47,7 +47,7 @@
 .guide-reviews-title{
     font-family: "Lato";
     font-size: rem(20px);
-    color: rgb(237,111,37);
+    color:$clr2;
     border-top: solid;
     margin-right: 10%;
     margin-top: 30px;
@@ -58,7 +58,7 @@
 .calendar-header{
     font-family: "Lato";
     font-size: rem(45px);
-    color: rgb(237,111,37);
+    color: $clr2;
     margin-right: 10%;
     padding: 0;
 }
@@ -66,7 +66,7 @@
 .num-of-guests-header{
     font-family: "Lato";
     font-size: rem(25px);
-    color: rgb(237,111,37);
+    color: $clr2;
     margin-right: 10%;
     padding: 0;
 }
@@ -79,8 +79,8 @@
     border-radius: 3px;
     width: 70px;
     padding: 10px;
-    background-color: rgb(237,111,37);
-    border: 1px solid rgb(237,111,37); 
+    background-color:$clr2;
+    border: 1px solid $clr2; 
     color: white;
     cursor: pointer;
     margin-right: 7px;
