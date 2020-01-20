@@ -57,6 +57,7 @@ class GuideDetails extends Component {
                                         <h1> {review.title}</h1>
                                         <h2> {review.txt}</h2>
                                         <h2> {review.createBy.createdAt}</h2>
+                                        <h2> {review.createBy.rank}</h2>
                                     </div>
                                 )
                             })}

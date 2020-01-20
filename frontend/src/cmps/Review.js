@@ -13,7 +13,6 @@ class Review extends Component {
             title: '',
             createBy: {
                 id: getRandomID(),
-                title: "testingr",
                 createBy: {
                     _id: "6436373453",
                     userName: "testName",
@@ -23,7 +22,6 @@ class Review extends Component {
                 createdAt: Date.now(),
                 rank: null,
                 txt: ''
-
             }
         }
 
