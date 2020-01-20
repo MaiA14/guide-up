@@ -23,10 +23,12 @@ function getGuideById(guideId) {
 }
 
 function update(id, newGuide) {
+    debugger
     let guide = gGuides.find(guide => guide._id === id)
     let idx = gGuides.findIndex(guide => guide._id === id)
     if(newGuide.review){
         guide.reviews.push(newGuide.review)
+        _saveguidesToFile()
         return
     }
     if (!guide) return Promise.reject('Wrong Id');

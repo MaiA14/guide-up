@@ -48,8 +48,8 @@ class GuideDetails extends Component {
                         </div>
                         <Review></Review>
                         <div className="guide-reviews-title space">
-
                             {  this.props.guide.reviews &&  this.props.guide.reviews.map(review => {
+                                debugger
                                 return (
                                     <React.Fragment>
                                         <h1> {review.title}</h1> 
