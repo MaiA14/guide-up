@@ -35,12 +35,15 @@ class Review extends Component {
         const value = ev.target.value
         let review = this.state.review
         review[field] = value
-
+        this.setState((prevState) => {
+            return { review: { ...prevState.review, [field]: value } }
+        })
         this.setState({ review })
     }
 
 
     render() {
+        console.log(this.props)
         return (
             <div>
                 <div>
@@ -60,7 +63,7 @@ class Review extends Component {
                         <option value="5">5</option>
                     </select>
                 </div>
-                <button className="send-btn" onClick={() => this.props.saveGuide(this.state,this.props.guide._id)}>Send</button>
+                <button className="send-btn" onClick={() => this.props.saveGuide(this.state, this.propsguide._id)}>Send</button>
             </div>
         )
     }

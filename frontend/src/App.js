@@ -23,15 +23,14 @@ function App() {
   return (
     <div className="App">
         <Router>
-      <Navbar></Navbar>       
+      <Navbar ></Navbar>       
           <Switch>
-            <Route component={LocalGuideApp} path="/home" exact></Route>
- 
-            <Route component={GuideDetails} path="/guides" exact></Route>
+            <Route component={LocalGuideApp} path="/" exact ></Route>
+            <Route component={GuideDetails} path="/guides"exact  ></Route>
             <Route component={FilteredGuideList} path="/location" exact></Route>
             <Route component={Login} path="/login" exact></Route>
             <Route component={Signup} path="/signup" exact></Route>
-            <Route component={BecomeGuide} path="/join_us"></Route>
+            <Route component={BecomeGuide} path="/join_us"exact></Route>
 
           {/* <Route component={Signup} path="/signup" exact></Route>
           <Route component={AddGuide} path="/addGuide" exact></Route>  */}
