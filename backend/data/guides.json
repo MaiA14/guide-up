@@ -22,32 +22,6 @@
         "createdAt": 1579439594010,
         "rank": 5,
         "txt": "testsText"
-      },
-      {
-        "id": "21124414",
-        "title": "testing2",
-        "createBy": {
-          "_id": "6436373453",
-          "userName": "testName2",
-          "fullName": "testName2",
-          "imgUrl": "http://img.com"
-        },
-        "createdAt": 1579439594010,
-        "rank": 3,
-        "txt": "testsTesx"
-      },
-      {
-        "id": "21124414",
-        "title": "testing23",
-        "createBy": {
-          "_id": "6436373453",
-          "userName": "testName313",
-          "fullName": "testName313",
-          "imgUrl": "http://img.com"
-        },
-        "createdAt": 1579439594010,
-        "rank": 3,
-        "txt": "testsTesx"
       }
     ]
   },

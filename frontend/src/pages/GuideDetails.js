@@ -52,8 +52,8 @@ class GuideDetails extends Component {
                                 debugger
                                 return (
                                     <React.Fragment>
-                                        <h1> {review.title}</h1> ,
-                                        <h2> {review.txt}</h2> ,
+                                        <h1> {review.title}</h1> 
+                                        <h2> {review.txt}</h2> 
                                         <h2> {review.createdAt}</h2>
                                     </React.Fragment>
                                 )
