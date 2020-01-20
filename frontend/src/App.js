@@ -25,7 +25,7 @@ function App() {
         <Router>
       <Navbar></Navbar>       
           <Switch>
-            <Route component={LocalGuideApp} path="/" exact></Route>
+            <Route component={LocalGuideApp} path="/home" exact></Route>
  
             <Route component={GuideDetails} path="/guides" exact></Route>
             <Route component={FilteredGuideList} path="/location" exact></Route>

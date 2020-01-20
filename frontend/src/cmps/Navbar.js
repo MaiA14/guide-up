@@ -11,11 +11,10 @@ export default function Navbar(props) {
             <div className="logo-text">Local Guide</div>
         </div></Link>
         <div>
-            <NavLink activeClassName="active" to='/'>
-            </NavLink>
+         
         </div>
         <div className=" nav-links">
-            <div className="nav-link"><NavLink activeClassName="active" to='/'>Home</NavLink></div>
+            <div className="nav-link"><NavLink activeClassName="active" to='/home'>Home</NavLink></div>
             <div className="nav-link"><NavLink activeClassName="active" to='/login'>Login</NavLink></div>
             <div className="nav-link"><NavLink activeClassName="active" to='/join_us'>Become a guide</NavLink></div>
         </div>
