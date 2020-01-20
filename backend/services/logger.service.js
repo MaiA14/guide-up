@@ -5,7 +5,7 @@ if (!fs.existsSync(logsDir)) {
     fs.mkdirSync(logsDir);
 }
 
-//define the time format
+// define the time format
 function getTime() {
     let now = new Date();
     return now.toUTCString();
