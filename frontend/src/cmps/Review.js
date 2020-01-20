@@ -9,14 +9,11 @@ import {getRandomID} from '../service/utilsService.js'
 
 class Review extends Component {
     state = {
-
         _id:'',
-       
         review: {
             title: '',
             createBy: {
                 id: getRandomID(),
-                title: "testingr",
                 createBy: {
                     _id: "6436373453",
                     userName: "testName",
@@ -26,11 +23,11 @@ class Review extends Component {
                 createdAt: Date.now(),
                 rank:null,
                 txt: ''
-
             }
         }
-    
     }
+
+    
     componentDidMount(){
         const _id = this.props.guide._id
         this.setState({_id})

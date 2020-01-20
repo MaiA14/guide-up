@@ -7,7 +7,7 @@ export default function Navbar(props) {
     return <div className="main-navbar">
         <Link to="/home" > <div className="flex logo">
 
-            <img src="https://i.ibb.co/Sc5KnfL/logo.png" alt="logo"></img>
+            <img src="https://i.ibb.co/8BxPMdT/logo.png" alt="logo"></img>
             <div className="logo-text">Local Guide</div>
         </div></Link>
         <div>

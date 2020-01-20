@@ -1,10 +1,19 @@
 .lets-go-btn {
     font-family: "Lato";
-    font-size: 20px;
+    text-align: center;
+    font-size: 15px;
     border-radius: 3px;
-    width: 110px;
-    background-color: $clr2;
-    border: none;
+    width: 90px;
+    padding: 10px;
+    background-color:$clr2;
+    border: 1px solid $clr2; 
     color: white;
     cursor: pointer;
+    margin-right: 7px;
+    opacity: 1;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+.lets-go-btn :hover { 
+    opacity: 0.8;
 }

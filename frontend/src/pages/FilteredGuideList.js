@@ -31,16 +31,17 @@ class GuideListFiltered extends Component {
 
     render() {
         const selectStyle ={
-            border:'1px solid #ed6f25'
+            border:'1px solid rgb(54, 71, 153)'
 
         }
         return (
             <div>
     <h1 className="filtered-guides-header space">{this.state.city}'s Guides</h1>
                 <h2 className="guides-short-content space">Find your guides, let them share with you the insight on the city.  Enjoy from unforgatable trip</h2>
-                <div>
+                <div className="filtered-glist-container">
+            
                     <MainSearch style ={selectStyle} ></MainSearch>
-                </div>
+               
                 choose tags:<input type="checkbox" checked="checked"></input>
                 <span className="checkmark"></span>
                 <label className="container">Art</label>
@@ -53,11 +54,12 @@ class GuideListFiltered extends Component {
                 <input type="checkbox" checked="checked"></input>
                 <span className="checkmark"></span>
                 <label className="container">Movies</label>
-
+                </div>
                 <section className="cards-list main-container">
                     {this.state.filterGuides.map(guide => <GuidePreview key={guide._id} guide={guide}></GuidePreview>)}
                 </section>
-            </div>
+                </div>
+
 
         )
     }

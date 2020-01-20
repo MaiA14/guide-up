@@ -44,7 +44,7 @@ class GuideDetails extends Component {
                                 </div>
                             </div>
                         </div>
-                        <Review ></Review>
+                        <Review></Review>
                         <div className="guide-reviews-title space">
                             {this.props.guide.reviews && this.props.guide.reviews.map(review => {
                                 return (
