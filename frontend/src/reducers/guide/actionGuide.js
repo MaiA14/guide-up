@@ -34,11 +34,13 @@ export function getGuide(guidId) {
     }
 }
 
-export function saveGuide(guide) {
+export function saveGuide(guide,guideId) {
+    console.log(guide)
+    console.log(guideId)
     return async (dispatch) => {
-        const actionType = (guide._id) ? 'GUIDE_UPDATE' : 'GUIDE_ADD';
+        const actionType = (guideId) ? 'GUIDE_UPDATE' : 'GUIDE_ADD';
 
-        const newGuide = await guideService.save(guide, guide._id)
+        const newGuide = await guideService.save(guide, guideId)
 
         dispatch({ type: actionType, newGuide })
 

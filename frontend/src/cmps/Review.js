@@ -2,14 +2,13 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { saveGuide } from '../reducers/guide/actionGuide.js'
-import {getRandomID} from '../service/utilsService.js'
+import { getRandomID } from '../service/utilsService.js'
 
 
 
 
 class Review extends Component {
     state = {
-        _id:'',
         review: {
             title: '',
             createBy: {
@@ -21,32 +20,23 @@ class Review extends Component {
                     imgUrl: "http://img.com"
                 },
                 createdAt: Date.now(),
-                rank:null,
+                rank: null,
                 txt: ''
             }
         }
-    }
-
-    
-    componentDidMount(){
-        const _id = this.props.guide._id
-        this.setState({_id})
 
     }
+
     onChange = (ev) => {
         ev.preventDefault();
         const field = ev.target.name
         const value = ev.target.value
-        let review=this.state.review
-        review[field]=value
+        let review = this.state.review
+        review[field] = value
 
-        this.setState({review})  
+        this.setState({ review })
     }
 
-    onNewReview = (ev) => {
-        ev.preventDefault();
-        this.props.saveGuide(this.state)
-    }
 
     render() {
         return (
@@ -55,7 +45,7 @@ class Review extends Component {
                     <input onChange={this.onChange} name="title" type="text" className="review-input" placeholder="Title"></input>
                 </div>
                 <div>
-                    <input onChange={this.onChange} name="txt"  type="text" className="review-input" placeholder="What do you think about me?"></input>
+                    <input onChange={this.onChange} name="txt" type="text" className="review-input" placeholder="What do you think about me?"></input>
                 </div>
                 <div>Rate</div>
                 <div>
@@ -68,7 +58,7 @@ class Review extends Component {
                         <option value="5">5</option>
                     </select>
                 </div>
-                <button className="send-btn" onClick={this.onNewReview}>Send</button>
+                <button className="send-btn" onClick={() => this.props.saveGuide(this.state,this.props.guide._id)}>Send</button>
             </div>
         )
     }

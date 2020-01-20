@@ -20,8 +20,13 @@ class GuideDetails extends Component {
         this.props.history.goBack()
 
     }
-    render() {
 
+    onNewReview = (ev) => {
+        console.log(this.state)
+        console.log('this.state')
+        this.props.saveGuide(this.state)
+    }
+    render() {
         return (
 
             <div>
@@ -44,15 +49,16 @@ class GuideDetails extends Component {
                                 </div>
                             </div>
                         </div>
-                        <Review></Review>
+                        <Review guide={this.onNewReview} ></Review>
                         <div className="guide-reviews-title space">
                             {this.props.guide.reviews && this.props.guide.reviews.map(review => {
                                 return (
-                                    <React.Fragment key={review.id}>
+                                    <div className="review-contaner" key={review.id}>
                                         <h1> {review.title}</h1>
                                         <h2> {review.txt}</h2>
-                                        <h2> {review.createdAt}</h2>
-                                    </React.Fragment>
+                                        <h2> {review.createBy.createdAt}</h2>
+                                        <h2> {review.createBy.rank}</h2>
+                                    </div>
                                 )
                             })}
                         </div>
