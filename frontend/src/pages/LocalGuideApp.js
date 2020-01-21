@@ -1,43 +1,31 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
-
 import Header from '../cmps/Header.js'
 import List from '../cmps/List.js'
 import { loadGuides } from '../reducers/guide/actionGuide.js'
 
 class LocalGuideApp extends Component {
     state = {
-        countries: ['tel-aviv', 'paris', 'barcelona', 'new-york', 'mexico'],
+        countries: ['tel-aviv', 'paris', 'barcelona', 'new-york', 'mexico','berlin'],
         filterBy: {}
     }
     componentDidMount() {
-
         this.props.loadGuides();
-
     }
-    onSearch = (city) => {
-
-
-        this.props.history.push(`/location/?city=${city}`)
-
-    }
-
     render() {
         return (
             <div>
-                <Header onSearch={this.onSearch}></Header>
+                <Header></Header>
                 {
                     this.props.guides &&
                     <section className="main-container">
                         <List guides={this.props.guides} countries={this.state.countries}></List>
                     </section>
                 }
-
             </div>
         )
     }
 }
-
 const mapStateToProps = (state) => {
     return {
         guides: state.guides
@@ -46,9 +34,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
     loadGuides,
 }
-
 export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(LocalGuideApp)
-// export default withRouter(LocalGuideApp);
