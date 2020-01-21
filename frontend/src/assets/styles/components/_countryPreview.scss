@@ -1,67 +1,76 @@
-.country-list{
-    display: grid;
-    width: 100%;
-    grid-template-areas:
-        "tel-aviv tel-aviv paris "
-        "barcelona new-york paris"
-        "barcelona mexico paris ";
-    grid-gap: 10px;
-    grid-template-rows: 120px 131px 105px;
-    grid-template-columns: 156px 2.5fr 0.8fr;
-    margin-bottom: 15px;
-    font-size: 0px;
-    :hover{
-        background-color: white;
-        opacity: 0.7;
-        font-size: 20px;
-        font-weight: bold;
-        color: black;
-        text-transform: uppercase;
-        text-align: center;
-    }         
+.country-list {
+  display: grid;
+  max-width: 100%;
+  grid-template-columns: repeat(3, auto);
+  grid-auto-rows: auto;
+  grid-gap: 10px;
+  margin-bottom: 10px;
+
+  // grid-gap: 5x;
+//   margin-top: 35px;
+//   margin-bottom: 13px;
+//   justify-content: space-between;
+  // margin: 5px;
+//   justify-content: space-between;
+
 }
+
+
+
+.country-list > *:first-child {
+    // grid-row: 1 / 1;
+    // grid-column: 1 / 1;
+  }
 
 // countries: ['israel','paris','barcelona','new york','mexico'],
-
-
-.country-list> .paris{
-    grid-area: paris;
-    background-image: url("https://www.jetsetter.com/uploads/sites/7/2019/04/GettyImages-924894324-1380x690.jpg");
-    background-position: center;
-    background-size: cover;
+.country-list > *{
+    width: 150px;
+    height: 250px;
 }
-.country-list> .barcelona{
-    grid-area: barcelona;
-    background-image: url("https://imgbbb.com/images/2020/01/16/barceolna.jpg");
-    background-position: center;
-    background-size: cover;
-
-
+.country-list > .paris {
+//   grid-area: paris;
+  background-image: url("https://www.jetsetter.com/uploads/sites/7/2019/04/GettyImages-924894324-1380x690.jpg");
+  background-position: center;
+  background-size: cover;
 }
-.country-list> .new-york{
-    grid-area: new-york;
-    background-image: url("https://cdn.vox-cdn.com/thumbor/pJNAu3BqjuI1gThp4iH1AFWoaP0=/0x0:3000x2247/1200x800/filters:focal(1260x884:1740x1364)/cdn.vox-cdn.com/uploads/chorus_image/image/57788013/timessquare.0.jpg");
-    background-position: center;
-    background-size: cover;
+.country-list > .barcelona {
+//   grid-area: barcelona;
+  background-image: url("https://imgbbb.com/images/2020/01/16/barceolna.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.country-list > .new-york {
+//   grid-area: new-york;
+  background-image: url("https://cdn.vox-cdn.com/thumbor/pJNAu3BqjuI1gThp4iH1AFWoaP0=/0x0:3000x2247/1200x800/filters:focal(1260x884:1740x1364)/cdn.vox-cdn.com/uploads/chorus_image/image/57788013/timessquare.0.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
-.country-list> .mexico{
+.country-list > .mexico {
+  // @include aspect-ratio(100%);
+  // width: 100%;
+  object-fit: cover;
+//   grid-area: mexico;
+  background-image: url("https://live.staticflickr.com/651/20211311773_1f880d1afd_b.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.country-list > .tel-aviv {
+  // @include aspect-ratio(100%);
+  // width: 100%;
+  object-fit: cover;
+//   grid-area: tel-aviv;
+  background-image: url("https://www.leonardo-hotels.com/octopus/upload/images/pages/110904200-1-.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.country-list > .berlin {
     // @include aspect-ratio(100%);
     // width: 100%;
     object-fit: cover;
-    grid-area: mexico;
-    background-image: url("https://live.staticflickr.com/651/20211311773_1f880d1afd_b.jpg");
+  //   grid-area: tel-aviv;
+    background-image: url("https://images.unsplash.com/photo-1560969184-10fe8719e047?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
     background-position: center;
     background-size: cover;
+  }
 
-}
-.country-list> .tel-aviv{
-    // @include aspect-ratio(100%);
-    // width: 100%;
-    object-fit: cover;
-    grid-area: tel-aviv;
-    background-image: url("https://www.leonardo-hotels.com/octopus/upload/images/pages/110904200-1-.jpg");
-    background-position: center;
-    background-size: cover;
-
-}

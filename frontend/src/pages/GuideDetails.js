@@ -41,15 +41,22 @@ class GuideDetails extends Component {
                         <div className="calendar-warpper">
                             <div className="calendar-container">
                                 <h2 className="calendar-header space">Pick a date</h2>
+                                <div className="main-container">
                                 <Calendar></Calendar>
-                                <h2 className="num-of-guests-header space">How many people?</h2>
-                                <div className="flex column">
-                                    <div><input type="text" className="num-of-guests space" placeholder="0"></input></div>
+                                </div>
+                                <div className="main-container">
+                                <h2 className="num-of-guests-header">How many people?</h2>
+                                <div className="flex">
+                                    <div><input type="text" className="num-of-guests" placeholder="0"></input></div>
                                     <div><button className="book-btn">Book</button></div>
+                                </div>
                                 </div>
                             </div>
                         </div>
+                        <h1 className="guide-header space">Write a review about {this.props.guide.name}</h1>
+                        <div className="space">
                         <Review guide={this.onNewReview} ></Review>
+                        </div>
                         <div className="guide-reviews-title space">
                             {this.props.guide.reviews && this.props.guide.reviews.map(review => {
                                 return (
