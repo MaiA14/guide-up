@@ -14,7 +14,7 @@ async function query(filterBy) {
     const criteria = _buildCriteria(filterBy)
     const collection = await dbService.getCollection('guide')
     try {
-        const guides = await collection.find(criteria).toArray();
+        const guides = await collection.find().toArray();
         return guides
     } catch (err) {
         console.log('ERROR: cannot find guides')
