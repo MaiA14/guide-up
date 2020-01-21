@@ -13,7 +13,6 @@ export function rootReducer(state = { guides: [] }, action = {}) {
         case 'GET_GUID':
             return { ...state, guide: action.guide }
         case 'GUIDE_UPDATE':
-            console.log(action)
             return { ...state, guide: action.newGuide }
 
 

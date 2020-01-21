@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="App">
         <Router>
-      <Navbar ></Navbar>       
+      <Navbar></Navbar>       
           <Switch>
             <Route component={LocalGuideApp} path="/" exact></Route>
             <Route component={GuideDetails} path="/guides" exact></Route>

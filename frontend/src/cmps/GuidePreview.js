@@ -8,8 +8,8 @@ import { withRouter } from 'react-router-dom';
 const cardStyle = {
     marginTop: 0,
     // height: "100%",
-
-    maxWidth :'100%'
+    flex: 1, /* Shrink and grow according to available height */
+    flexBasis: 0,
 
 }
 const cursor = {
@@ -20,8 +20,7 @@ const cursor = {
 
 const imgStyle = {
     cursor: "pointer",
-    height: '200px',
-    objectFit: 'cover'
+    height: '100px'
 
     // backgroundSize: "cover"
 
@@ -43,7 +42,7 @@ class GuidePreviewCard extends Component {
         return (
 
             < Card style={cardStyle} >
-                <Image  onClick={this.onLink} style={imgStyle}  src={props.guide.imgUrl}  />
+                <Image  onClick={this.onLink} style={cursor}  src={props.guide.imgUrl}  />
                 <Card.Content onClick={this.onLink} style={cursor} >
                     <Card.Header >{props.guide.name}</Card.Header>
                     <Card.Meta>
@@ -55,7 +54,7 @@ class GuidePreviewCard extends Component {
                 </Card.Content>
                 <Card.Content  extra>
                     <a>
-                        <Icon name='star' />
+                        <Icon name='like' />
 
                         22 Like
                         </a>

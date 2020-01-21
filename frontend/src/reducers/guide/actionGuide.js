@@ -1,11 +1,11 @@
 import guideService from '../../service/guideService.js'
 
 // THUNK
-export function loadGuides() {
+export function loadGuides(filterBy ='') {
     return async (dispatch) => {
         try {
 
-            const guides = await guideService.query('');
+            const guides = await guideService.query(filterBy);
             dispatch(setGuides(guides))
 
         } catch (err) {

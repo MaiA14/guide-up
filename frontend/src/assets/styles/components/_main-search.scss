@@ -8,13 +8,13 @@ select {
     outline:0px;
     width: 20%;
     padding: rem(15px); 
-    border-radius: 9px 0 0 9px;
+    border-radius: 3px;
  }
 
  .search-btn{
-    border-radius: 0 9px  9px 0;
     font-family: 'Lato';
     font-size: 20px;
+    border-radius: 3px;
     width: 110px;
     background-color: $clr2;
     border: none;

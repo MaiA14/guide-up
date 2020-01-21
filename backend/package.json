@@ -16,7 +16,7 @@
         "cors": "^2.8.5",
         "express": "^4.17.1",
         "express-session": "^1.16.2",
-        "mongodb": "^3.2.7",
+        "mongodb": "^3.5.2",
         "socket.io": "^2.2.0"
     },
     "devDependencies": {

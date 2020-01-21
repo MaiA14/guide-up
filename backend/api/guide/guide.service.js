@@ -1,77 +1,103 @@
-const fs = require('fs')
-require('../../data/guides.json')
+const dbService = require('../../services/db.service')
+const ObjectId = require('mongodb').ObjectId
 
 module.exports = {
     remove,
-    addguide,
     getGuideById,
     update,
-    query
+    query,
+    add
 };
 
-let gGuides = require('../../data/guides.json')
+async function query(filterBy) {
 
-function query(filterBy) {
-    var res = gGuides;
-    return Promise.resolve(res);
+    const criteria = _buildCriteria(filterBy)
+    const collection = await dbService.getCollection('guide')
+    try {
+        const guides = await collection.find(criteria).toArray();
+        return guides
+    } catch (err) {
+        console.log('ERROR: cannot find guides')
+        throw err;
+    }
 }
 
-function getGuideById(guideId) {
-
-    const guide = gGuides.find(guide => guide._id === guideId)
-    if (guide) return Promise.resolve(guide)
-    else return Promise.reject('wrong ID')
-}
-
-function update(id, newGuide) {
-    let guide = gGuides.find(guide => guide._id === id)
-    let idx = gGuides.findIndex(guide => guide._id === id)
-
-
-    if(newGuide.review){
-        guide.reviews.push(newGuide.review)
-        _saveguidesToFile()
+async function getGuideById(guideId) {
+    const collection = await dbService.getCollection('guide')
+    try {
+        const guide = await collection.findOne({ "_id": ObjectId(guideId) })
         return guide
+    } catch (err) {
+        console.log(`ERROR: cannot find guide ${guideId}`)
+        throw err;
     }
-    if (!guide) return Promise.reject('Wrong Id');
-    let newGuideData = { ...guide, ...newGuide }
-    if (idx === 0) {
-        gGuides = [
-            newGuideData,
-            ...gGuides.splice(1 + idx)
-        ]
-    } else {
-        gGuides = [
-            ...gGuides.splice(0, idx),
-            newGuideData,
-            ...gGuides.splice(0 + idx)
-        ]
+}
+
+async function update(id, guide) {
+    const collection = await dbService.getCollection('guide')
+    delete guide._id
+    try {
+        await collection.replaceOne({ "_id": ObjectId(id) }, { $set: guide })
+        guide._id = id;
+        return guide
+    } catch (err) {
+        console.log(`ERROR: cannot update guide ${guide._id}`)
+        throw err;
     }
-    _saveguidesToFile()
-    return Promise.resolve(guide)
 }
 
-function addguide(guide) {
-    const newguide = guide
-    gGuides.push(newguide)
-    _saveguidesToFile()
-    return Promise.resolve(newguide)
+async function add(guide) {
+    const collection = await dbService.getCollection('guide')
+    try {
+        await collection.insertOne(guide);
+        return guide;
+    } catch (err) {
+        console.log(`ERROR: cannot insert guide`)
+        throw err;
+    }
 }
 
-function remove(guideId) {
-    let guideIdx = gGuides.findIndex((currguide) => currguide.id === guideId)
-    if (guideIdx === -1) return Promise.reject('Wrong Id');
-    gGuides.splice(guideIdx, 1);
-    _saveguidesToFile()
-    return Promise.resolve(true)
+async function remove(guideId) {
+    const collection = await dbService.getCollection('guide')
+    try {
+        return await collection.deleteOne({ "_id": ObjectId(guideId) })
+    } catch (err) {
+        console.log(`ERROR: cannot remove guide ${guideId}`)
+        throw err;
+    }
 }
 
+// function _buildCriteria(filterBy) {
 
+//     const criteria = {}
+//     try {
+//         if (filterBy.city) {
 
-function _saveguidesToFile() {
-    fs.writeFile('data/guides.json', JSON.stringify(gGuides, null, 2), () => { console.log('filllle'); });
+//         }
+
+//     }
+
+// }
+
+function _buildCriteria(filterBy) {
+    let criteria = {}
+    console.log('_buildCriteria :',filterBy)
+
+    try {
+        if (filterBy) {
+            criteria.city = filterBy.filterBy
+        }
+
+    } catch (err) {
+        console.log(err)
+    }
+
+    // if (filterBy.wishedIds) {
+    //     criteria._id = {
+    //         $in: filterBy.wishedIds.map((id) => {
+    //             return ObjectId(id)
+    //         })
+    //     }
+    // }
+    return criteria;
 }
-
-
-
-

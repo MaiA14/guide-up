@@ -24,17 +24,10 @@ class MainSearch extends Component {
         this.setState({ city })
     }
 
-    onSearch = (ev) => {
-        ev.stopPropagation()
-        if (this.state.city) {
-            this.props.history.push(`/location/?city=${this.state.city}`)
 
-        }
-
-    }
 
     render() {
-
+        console.log(this.props)
         const selectStyle = {
             background: ""
 
@@ -47,15 +40,18 @@ class MainSearch extends Component {
                             this.state.city : 'select your destination'
                     }    </option>
 
-                    <option value="tel-aviv">Tel Aviv</option>
-                    <option value="paris">Paris</option>
-                    <option value="new-york">New York</option>
-                    <option value="mexico">Mexico-city</option>
-                    <option value="barcelona">Barcelona</option>
-                    <option value="berlin">berlin</option>
-
+                    <option value="tel-aviv">tel-aviv</option>
+                    <option value="paris">paris</option>
+                    <option value="new-york">new-york</option>
+                    <option value="mexico">mexico</option>
+                    <option value="barcelona">barcelona</option>
                 </select>
-                <button className="search-btn" onClick={this.onSearch}>Search</button>
+                <button className="search-btn" onClick={() => {
+                    this.props.onSearch(this.state.city)
+
+
+                }
+                }>Search</button>
             </div>
         )
     }

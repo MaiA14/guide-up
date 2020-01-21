@@ -1,6 +1,6 @@
 
 const MongoClient = require('mongodb').MongoClient;
-
+const uri = 'mongodb+srv://maiaa1993:12341234m@cluster0-lnrfd.mongodb.net/test?retryWrites=true&w=majority'
 const config  =  require('../config')
 
 module.exports = {
@@ -8,7 +8,7 @@ module.exports = {
 }
 
 // Database Name
-const dbName = 'tester_db';
+const dbName = 'guides_db';
 
 var dbConn = null;
 
@@ -20,7 +20,7 @@ async function getCollection(collectionName) {
 async function connect() {
     if (dbConn) return dbConn;
     try {
-        const client = await MongoClient.connect(config.dbURL, {useNewUrlParser: true});
+        const client = await MongoClient.connect(uri, {useNewUrlParser: true});
         const db = client.db(dbName);
         dbConn = db;
         return db;

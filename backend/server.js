@@ -38,7 +38,7 @@ if (process.env.NODE_ENV === 'production') {
 // routes
 app.use('/api/auth', authRoutes)
 app.use('/api/user', userRoutes)
-app.use('/api/guides', guideRoutes)
+app.use('/api/guide', guideRoutes)
 app.use('/api/review', reviewRoutes)
 connectSockets(io)
 

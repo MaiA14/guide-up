@@ -401,24 +401,7 @@
     "_id": "324",
     "city": "paris",
     "imgUrl": "https://i.imgur.com/scq2FiT.png",
-    "reviews": [
-      {
-        "title": "asdasd",
-        "createBy": {
-          "id": "rvrytfqsz8",
-          "createBy": {
-            "_id": "6436373453",
-            "userName": "testName",
-            "fullName": "testName",
-            "imgUrl": "http://img.com"
-          },
-          "createdAt": 1579529384302,
-          "rank": null,
-          "txt": ""
-        },
-        "txt": "fdsfsdf"
-      }
-    ]
+    "reviews": []
   },
   {
     "name": "Aida Domenech",
@@ -442,25 +425,7 @@
     "_id": "329",
     "city": "barcelona",
     "imgUrl": "https://i.imgur.com/bWsYMbG.png",
-    "reviews": [
-      {
-        "title": "its was a nice ",
-        "createBy": {
-          "id": "clmozvgsug",
-          "createBy": {
-            "_id": "6436373453",
-            "userName": "testName",
-            "fullName": "testName",
-            "imgUrl": "http://img.com"
-          },
-          "createdAt": 1579530240959,
-          "rank": null,
-          "txt": ""
-        },
-        "txt": "123",
-        "rank": "1"
-      }
-    ]
+    "reviews": []
   },
   {
     "name": "Rodrigo Labes",
@@ -544,24 +509,7 @@
     "_id": "6223",
     "city": "new-york",
     "imgUrl": "https://i.imgur.com/g5ia1n6.png",
-    "reviews": [
-      {
-        "title": "asdasd",
-        "createBy": {
-          "id": "8i3sasksie",
-          "createBy": {
-            "_id": "6436373453",
-            "userName": "testName",
-            "fullName": "testName",
-            "imgUrl": "http://img.com"
-          },
-          "createdAt": 1579527511819,
-          "rank": null,
-          "txt": ""
-        },
-        "txt": "sdfsdf"
-      }
-    ]
+    "reviews": []
   },
   {
     "name": "Donna Smith",

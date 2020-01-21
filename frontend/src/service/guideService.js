@@ -4,39 +4,39 @@ export default {
     query,
     deleteGuide,
     getGuideById,
-    save
-
+    save,
+    addGuide
 };
-const url = "http://localhost:3001/api/guides"
+const url = "http://localhost:3001/api/guide"
 var Axios = axios.create({
     withCredentials: true
 });
 
 
-function query(filterBy = '') {
-    return Axios.get(url).then(res => res.data)
-}
+function query(city ='') {
+    console.log(city)
 
+    return HttpService.get(`guide?filterBy=${city}`)
+
+
+}
 
 function getGuideById(guideId) {
     return HttpService.get(`guides/${guideId}`)
-
 }
-
-
 
 // function editGuide(guide,guideId) {
 //     return HttpService.put(`guides${guideId}`, guide).then(res => res.data);
 // }
 
-// function addGuide(name, guide) {
-//     return HttpService.post('guides', guide).then(res => res.data);
-// }
+function addGuide(name, guide) {
+    return HttpService.post('guides', guide).then(res => res.data);
+}
 
-function save(guide,guideId) {
+function save(guide, guideId) {
 
     if (guideId)
-        return HttpService.put(`guides/${guideId}`,guide)
+        return HttpService.put(`guides/${guideId}`, guide)
     return HttpService.post(`guides,${guide}`)
 }
 

@@ -1,65 +1,67 @@
-const fs = require('fs')
-const utilsService = require('../../services/utils.service.js');
+const dbService = require('../../services/db.service')
+const ObjectId = require('mongodb').ObjectId
 
 module.exports = {
     remove,
-    addUser,
+    add,
     getById,
     update,
     query
 };
 
-let gUsers = require('../../data/users.json')
-
-function query(filterBy) {
-    var res = gUsers;
-    return Promise.resolve(res);
-}
-
-function getById(userId) {
-
-    const user = gUsers.find(user => user._id === userId)
-    if (user) return Promise.resolve(user)
-    else return Promise.reject('wrong ID')
-}
-
-function update(id, newUser) {
-    let user = gUsers.find(user => user._id === id)
-    let idx = gUsers.findIndex(user => user._id === id)
-    if (!user) return Promise.reject('Wrong Id');
-    let newUserData = { ...user, ...newUser }
-    if (idx === 0) {
-        gUsers =
-        [
-            newUserData,
-            ...gUsers.splice(1 + idx)
-        ]
-    } else {
-        gUsers = [
-            ...gUsers.splice(0, idx),
-            newUserData,
-            ...gUsers.splice(0 + idx)
-        ]
+async function query(filterBy = {}) {
+    const collection = await dbService.getCollection('user')
+    try {
+        const users = await collection.find().toArray();
+        users.forEach(user => delete user.password);
+        return users
+    } catch (err) {
+        console.log('ERROR: cannot find users')
+        throw err;
     }
-    _saveUsersToFile()
-    return Promise.resolve(user)
 }
 
-function addUser(user) {
-    const newUser = {_id:utilsService.getRandomID(),username: user.username, fullname: user.fulllname, password: user.password, imgUrl: user.imgUrl}
-    gUsers.push(newUser)
-    _saveUsersToFile()
-    return Promise.resolve(newUser)
+async function getById(userId) {
+    const collection = await dbService.getCollection('user')
+    try {
+        const user = await collection.findOne({"_id":ObjectId(userId)})
+        return user
+    } catch (err) {
+        console.log(`ERROR: cannot find user ${userId}`)
+        throw err;
+    }
 }
 
-function remove(userId) {
-    let userIdx = gUsers.findIndex((currUser) => currUser.id === userId)
-    if (userIdx === -1) return Promise.reject('Wrong Id');
-    gUsers.splice(usersIdx, 1);
-    _saveUsersToFile()
-    return Promise.resolve(true)
+async function update(id,user) {
+    const collection = await dbService.getCollection('user')
+    delete user._id
+    try {
+        await collection.replaceOne({"_id":ObjectId(id)}, {$set : user})
+        user._id = id;
+        return user
+    } catch (err) {
+        console.log(`ERROR: cannot update user ${user._id}`)
+        throw err;
+    }
 }
 
-function _saveUsersToFile() {
-    fs.writeFile('data/users.json', JSON.stringify(gUsers, null, 2), () => { console.log('filllle'); });
+async function add(user) {
+    const collection = await dbService.getCollection('user')
+    try {
+        await collection.insertOne(user);
+        return user;
+    } catch (err) {
+        console.log(`ERROR: cannot insert user`)
+        throw err;
+    }
+}
+
+async function remove(userId) {
+    const collection = await dbService.getCollection('user')
+    try {
+        return await collection.deleteOne({"_id":ObjectId(userId)})
+    } catch (err) {
+        console.log(`ERROR: cannot remove user ${userId}`)
+        throw err;
+    }
 }

@@ -7,7 +7,7 @@ import { loadGuides } from '../reducers/guide/actionGuide.js'
 
 class LocalGuideApp extends Component {
     state = {
-        countries: ['tel-aviv', 'paris', 'barcelona', 'new-york', 'mexico','berlin'],
+        countries: ['tel-aviv', 'paris', 'barcelona', 'new-york', 'mexico'],
         filterBy: {}
     }
     componentDidMount() {
@@ -15,11 +15,17 @@ class LocalGuideApp extends Component {
         this.props.loadGuides();
 
     }
+    onSearch = (city) => {
+
+
+        this.props.history.push(`/location/?city=${city}`)
+
+    }
 
     render() {
         return (
             <div>
-                <Header></Header>
+                <Header onSearch={this.onSearch}></Header>
                 {
                     this.props.guides &&
                     <section className="main-container">
@@ -45,3 +51,4 @@ export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(LocalGuideApp)
+// export default withRouter(LocalGuideApp);

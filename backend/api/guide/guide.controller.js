@@ -8,14 +8,17 @@ async function getGuide(req, res) {
 async function getGuides(req, res) {
     try {
         const guides = await guideService.query(req.query)
+
         res.json(guides)
-
-
     } catch{
         res.status(500).json({ err })
     }
+}
 
-
+async function addGuide(req, res) {
+    var guide = req.body;
+    guide = await guideService.add(guide)
+    res.send(guide)
 }
 
 async function deleteGuide(req, res) {
@@ -35,5 +38,6 @@ module.exports = {
     getGuide,
     getGuides,
     deleteGuide,
-    updateGuide
+    updateGuide,
+    addGuide
 }
