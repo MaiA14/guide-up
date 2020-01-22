@@ -10,7 +10,6 @@ class LocalGuideApp extends Component {
         filterBy: {}
     }
     componentDidMount() {
-        console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
         this.props.loadGuides();
     }
     render() {

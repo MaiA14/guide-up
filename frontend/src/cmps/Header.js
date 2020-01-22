@@ -10,9 +10,7 @@ import React, { Component } from 'react'
 
 export default class Header extends Component {
 
-    onSearch = (city) => {
-        this.props.onSearch(city)
-    }
+
 
     render() {
         return (

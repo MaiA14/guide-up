@@ -17,15 +17,22 @@ class MainSearch extends Component {
 
     onSearch = (ev) => {
         ev.stopPropagation()
+
         if (this.state.city) {
             this.props.history.push(`/location/?city=${this.state.city}`)
+            console.log(this.props.onSearch)
+            if (this.props.onSearch) {
+                console.log('exixttterws5gerg')
+                this.props.onSearch(this.state.city)
+
+            }
 
         }
     }
 
     render() {
 
-    
+
         const selectStyle = {
             background: ""
 
