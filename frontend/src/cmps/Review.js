@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import { saveGuide } from '../reducers/guide/actionGuide.js'
+import { addReview } from '../reducers/guide/actionGuide.js'
 import { getRandomID } from '../service/utilsService.js'
 
 
@@ -9,21 +9,18 @@ import { getRandomID } from '../service/utilsService.js'
 
 class Review extends Component {
     state = {
-        review: {
-            title: '',
-            createBy: {
-                id: getRandomID(),
-                createBy: {
-                    _id: "6436373453",
-                    userName: "testName",
-                    fullName: "testName",
-                    imgUrl: "http://img.com"
-                },
-                createdAt: Date.now(),
-                rank: null,
-                txt: ''
-            }
-        }
+        id: getRandomID(),
+        title: '',
+        txt: '',
+        createBy: {
+            id: "6436373453",
+            userName: "testName",
+            fullName: "testName",
+            imgUrl: "http://img.com"
+        },
+
+        created_at: Date.now(),
+        rank: null,
 
     }
 
@@ -31,14 +28,19 @@ class Review extends Component {
         ev.preventDefault();
         const field = ev.target.name
         const value = ev.target.value
-        let review = this.state.review
-        review[field] = value
 
-        this.setState({ review })
+
+
+        this.setState((prevState) => {
+            return { ...prevState.reviews, [field]: value }
+        })
+
     }
 
 
     render() {
+
+
         return (
             <div>
                 <div>
@@ -58,7 +60,7 @@ class Review extends Component {
                         <option value="5">5</option>
                     </select>
                 </div>
-                <button className="send-btn" onClick={() => this.props.saveGuide(this.state,this.props.guide._id)}>Send</button>
+                <button className="send-btn" onClick={() => this.props.addReview(this.state, this.props.guide)}>Send</button>
             </div>
         )
     }
@@ -69,7 +71,7 @@ const mapStateToProps = (state) => {
     }
 }
 const mapDispatchToProps = {
-    saveGuide,
+    addReview,
 
 }
 

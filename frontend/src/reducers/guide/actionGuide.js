@@ -1,12 +1,11 @@
 import guideService from '../../service/guideService.js'
 
 // THUNK
-export function loadGuides(filterBy ='') {
+export function loadGuides(filterBy = '') {
     return async (dispatch) => {
         try {
 
             const guides = await guideService.query(filterBy);
-            console.log(filterBy)
             dispatch(setGuides(guides))
 
         } catch (err) {
@@ -35,19 +34,23 @@ export function getGuide(guidId) {
     }
 }
 
-export function saveGuide(guide,guideId) {
-    console.log(guide)
-    console.log(guideId)
+export function saveGuide(review, guide) {
     return async (dispatch) => {
-        const actionType = (guideId) ? 'GUIDE_UPDATE' : 'GUIDE_ADD';
+        const actionType = (guide._id) ? 'GUIDE_UPDATE' : 'GUIDE_ADD';
 
-        const newGuide = await guideService.save(guide, guideId)
+        const newGuide = await guideService.save(review, guide)
 
         dispatch({ type: actionType, newGuide })
 
     }
+}
 
+export function addReview(review, guide) {
+    return async (dispatch) => {
+        const actionType = 'REVIEW_UPDATE'
 
+        const newGuide = await guideService.addReview(review, guide)
+        dispatch({ type: actionType, newGuide })
 
-
+    }
 }

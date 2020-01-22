@@ -22,8 +22,7 @@ class GuideDetails extends Component {
     }
 
     onNewReview = (ev) => {
-        console.log(this.state)
-        console.log('this.state')
+
         this.props.saveGuide(this.state)
     }
     render() {
