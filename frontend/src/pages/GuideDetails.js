@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import quoryString from 'query-string'
 import { connect } from 'react-redux'
+import { Rating } from 'semantic-ui-react'
 
 
 import Calendar from '../cmps/Calendar.js'
@@ -62,7 +63,8 @@ class GuideDetails extends Component {
                                     <div className="review-contaner" key={review.id}>
                                         <h1>{review.title}</h1>
                                         <h2> {review.txt}</h2>
-                                        <h2> {review.rank} Stars</h2>
+                                        <Rating disabled maxRating={5} defaultRating={review.rank} icon='star' size='massive' />
+
                                     </div>
                                 )
                             })}
