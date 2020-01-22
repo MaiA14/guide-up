@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 
 import { addReview } from '../reducers/guide/actionGuide.js'
 import { getRandomID } from '../service/utilsService.js'
+import RatingStar from './RatingStar.js'
+
 
 
 
@@ -24,13 +26,19 @@ class Review extends Component {
 
     }
 
+    onChangeRateStar = (rating)=>{
+        console.log(rating)
+        this.setState((prevState) => {
+            return { ...prevState.reviews, ['rank']: rating }
+        })
+
+        
+    }
+
     onChange = (ev) => {
         ev.preventDefault();
         const field = ev.target.name
         const value = ev.target.value
-
-
-
         this.setState((prevState) => {
             return { ...prevState.reviews, [field]: value }
         })
@@ -39,6 +47,7 @@ class Review extends Component {
 
 
     render() {
+        console.log(this.state)
 
 
         return (
@@ -51,14 +60,8 @@ class Review extends Component {
                 </div>
                 <div>Rate</div>
                 <div>
-                    <select onChange={this.onChange} name="rank">
-                        <option value="" disabled selected> </option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
+   
+                    <RatingStar  onChangeRateStar={this.onChangeRateStar}></RatingStar>
                 </div>
                 <button className="send-btn" onClick={() => this.props.addReview(this.state, this.props.guide)}>Send</button>
             </div>

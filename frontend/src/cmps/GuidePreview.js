@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom';
 
 const cardStyle = {
     marginTop: 0,
-    maxWidth :'100%'
+    maxWidth: '100%'
 
 }
 const cursor = {
@@ -19,6 +19,11 @@ const imgStyle = {
     cursor: "pointer",
     height: '200px',
     objectFit: 'cover'
+}
+const icon = {
+    cursor: null,
+    color: 'rgb(255, 255, 6)'
+
 }
 
 class GuidePreviewCard extends Component {
@@ -37,7 +42,7 @@ class GuidePreviewCard extends Component {
         return (
 
             < Card style={cardStyle} >
-                   <Image  onClick={this.onLink} style={imgStyle}  src={props.guide.imgUrl}  />
+                <Image onClick={this.onLink} style={imgStyle} src={props.guide.imgUrl} />
                 <Card.Content onClick={this.onLink} style={cursor} >
                     <Card.Header >{props.guide.name}</Card.Header>
                     <Card.Meta>
@@ -47,12 +52,9 @@ class GuidePreviewCard extends Component {
                         {props.guide.description}
                     </Card.Description>
                 </Card.Content>
-                <Card.Content  extra>
-                    <a>
-                    <Icon name='star' />
-
-                        5 
-                        </a>
+                <Card.Content extra>
+                    <Icon size={'large'} disabled style={icon} name='star' />
+                    {props.guide.avgRank}
                 </Card.Content>
             </Card >
 
