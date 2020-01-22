@@ -7,7 +7,8 @@ import { withRouter } from 'react-router-dom';
 
 const cardStyle = {
     marginTop: 0,
-    maxWidth: '100%'
+    maxWidth: '100%',
+    margin: 0
 
 }
 const cursor = {

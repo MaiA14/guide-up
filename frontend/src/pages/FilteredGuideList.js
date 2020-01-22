@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import queryString from 'query-string'
+
+
 import GuidePreview from '../cmps/GuidePreview.js'
 import { loadGuides } from '../reducers/guide/actionGuide.js'
 import MainSearch from '../cmps/MainSearch.js'
+import Loading from '../cmps/Loading.js'
 class GuideListFiltered extends Component {
     state = {
         filterGuides: [],
@@ -27,7 +30,7 @@ class GuideListFiltered extends Component {
             border: '1px solid rgb(54, 71, 153)'
         }
         if (!this.props.guides.length) return(
-            <h1> loading</h1>
+            <Loading></Loading>
         )
 
 
