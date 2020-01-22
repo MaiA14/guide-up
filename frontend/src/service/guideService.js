@@ -15,8 +15,9 @@ var Axios = axios.create({
 
 function query(city ='') {
     console.log(city)
-
-    return HttpService.get(`guide?filterBy=${city}`)
+    let item =  HttpService.get(`guide?city=${city}`)
+    console.log(item)
+    return item
 
 
 }

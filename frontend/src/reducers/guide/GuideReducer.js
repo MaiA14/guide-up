@@ -4,7 +4,7 @@ export function rootReducer(state = { guides: [] }, action = {}) {
     switch (action.type) {
 
         case 'SET_GUIDES':
-
+        console.log('action.guides ',action.guides)
             return { ...state, guides: action.guides }
         case 'ADD_GUIDE':
             return {

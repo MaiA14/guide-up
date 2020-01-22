@@ -6,6 +6,7 @@ export function loadGuides(filterBy ='') {
         try {
 
             const guides = await guideService.query(filterBy);
+            console.log(filterBy)
             dispatch(setGuides(guides))
 
         } catch (err) {

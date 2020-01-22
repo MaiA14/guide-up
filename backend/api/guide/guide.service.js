@@ -13,8 +13,11 @@ async function query(filterBy) {
 
     const criteria = _buildCriteria(filterBy)
     const collection = await dbService.getCollection('guide')
+    
     try {
-        const guides = await collection.find().toArray();
+        const guides = await collection.find(criteria).toArray();
+        console.log(guides)
+
         return guides
     } catch (err) {
         console.log('ERROR: cannot find guides')
@@ -80,12 +83,12 @@ async function remove(guideId) {
 // }
 
 function _buildCriteria(filterBy) {
+    console.log(filterBy)
     let criteria = {}
-    console.log('_buildCriteria :',filterBy)
 
     try {
         if (filterBy) {
-            criteria.city = filterBy.filterBy
+            criteria.city = filterBy.city
         }
 
     } catch (err) {

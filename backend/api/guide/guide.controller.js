@@ -7,6 +7,7 @@ async function getGuide(req, res) {
 
 async function getGuides(req, res) {
     try {
+        console.log(req.query)
         const guides = await guideService.query(req.query)
 
         res.json(guides)
