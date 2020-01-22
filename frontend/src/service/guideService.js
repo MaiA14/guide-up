@@ -5,7 +5,8 @@ export default {
     deleteGuide,
     getGuideById,
     save,
-    addGuide
+    addGuide,
+    addReview
 };
 const url = "http://localhost:3001/api/guide"
 var Axios = axios.create({
@@ -13,17 +14,15 @@ var Axios = axios.create({
 });
 
 
-function query(city ='') {
-    console.log(city)
-    let item =  HttpService.get(`guide?city=${city}`)
-    console.log(item)
+function query(city = '') {
+    let item = HttpService.get(`guide?city=${city}`)
     return item
 
 
 }
 
 function getGuideById(guideId) {
-    return HttpService.get(`guides/${guideId}`)
+    return HttpService.get(`guide/${guideId}`)
 }
 
 // function editGuide(guide,guideId) {
@@ -32,15 +31,25 @@ function getGuideById(guideId) {
 
 function addGuide(name, guide) {
     return HttpService.post('guides', guide).then(res => res.data);
+    console.log('mmmmmmmmmmmmmmmmmmmm')
 }
 
-function save(guide, guideId) {
+function save(guide) {
+    console.log(guide)
 
-    if (guideId)
-        return HttpService.put(`guides/${guideId}`, guide)
-    return HttpService.post(`guides,${guide}`)
+    if (guide._id)
+        return HttpService.put(`guide/${guide._id}`, guide)
+    return HttpService.post(`guide,${guide}`)
 }
+function addReview(review, guide) {
 
+
+    let newGuide = { ...guide }
+    newGuide.reviews.push(review)
+  return  save(newGuide)
+
+
+}
 function deleteGuide(guideId) {
-    return HttpService.delete(`guides${guideId}`).then(res => res.data);
+    return HttpService.delete(`guide${guideId}`).then(res => res.data);
 }

@@ -16,7 +16,6 @@ async function query(filterBy) {
     
     try {
         const guides = await collection.find(criteria).toArray();
-        console.log(guides)
 
         return guides
     } catch (err) {
@@ -29,6 +28,7 @@ async function getGuideById(guideId) {
     const collection = await dbService.getCollection('guide')
     try {
         const guide = await collection.findOne({ "_id": ObjectId(guideId) })
+
         return guide
     } catch (err) {
         console.log(`ERROR: cannot find guide ${guideId}`)
@@ -39,6 +39,11 @@ async function getGuideById(guideId) {
 async function update(id, guide) {
     const collection = await dbService.getCollection('guide')
     delete guide._id
+
+
+
+
+
     try {
         await collection.replaceOne({ "_id": ObjectId(id) }, { $set: guide })
         guide._id = id;
@@ -83,11 +88,10 @@ async function remove(guideId) {
 // }
 
 function _buildCriteria(filterBy) {
-    console.log(filterBy)
     let criteria = {}
 
     try {
-        if (filterBy) {
+        if (filterBy.city) {
             criteria.city = filterBy.city
         }
 
