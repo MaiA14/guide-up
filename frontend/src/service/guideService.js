@@ -31,6 +31,7 @@ function getGuideById(guideId) {
 
 function addGuide(name, guide) {
     return HttpService.post('guides', guide).then(res => res.data);
+    console.log('mmmmmmmmmmmmmmmmmmmm')
 }
 
 function save(guide) {
