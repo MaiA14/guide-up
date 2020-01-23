@@ -1,21 +1,52 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
+
+
 import Header from '../cmps/Header.js'
 import List from '../cmps/List.js'
 import { loadGuides } from '../reducers/guide/actionGuide.js'
+import Navbar from '../cmps/Navbar.js'
+
 
 class LocalGuideApp extends Component {
     state = {
-        countries: ['tel-aviv', 'paris', 'barcelona', 'new-york', 'mexico','berlin'],
-        filterBy: {}
+        countries: ['tel-aviv', 'paris', 'barcelona', 'new-york', 'mexico', 'berlin'],
+        filterBy: {},
+        styleNavBar: {
+            backgroundColor: '',
+            transition:'backgroundColor'
+            
+        }
+
+
     }
     componentDidMount() {
         this.props.loadGuides();
+        document.body.style.paddingTop = 0
+
+        window.onscroll = () => {
+            let styleNavBar
+
+            if (document.documentElement.scrollTop > 500) {
+                styleNavBar = { backgroundColor: '#161f24',transition:' 0.5s' }
+                this.setState({ styleNavBar })
+
+
+            } else if (document.documentElement.scrollTop < 500)
+                styleNavBar = { backgroundColor: '',transition:'backgroundColor 5s' }
+            this.setState({ styleNavBar })
+
+        }
+
     }
+
     render() {
+
+
         return (
             <div>
-                <Header></Header>
+                <Navbar styleNavBar={this.state.styleNavBar}></Navbar>
+                <Header ></Header>
                 {
                     this.props.guides &&
                     <section className="main-container">

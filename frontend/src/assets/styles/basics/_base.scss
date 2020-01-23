@@ -36,8 +36,8 @@ p {
 }
 
 .main-container{
-    margin-left: 10%;
-    margin-right: 10%
+    margin: 0 auto;
+    max-width: 980px;
 }
 
 body::-webkit-scrollbar {
@@ -51,4 +51,8 @@ body::-webkit-scrollbar {
   body::-webkit-scrollbar-thumb {
     background-color: $clr2;
     outline: 1px solid $clr2;
+  }
+
+  i{
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   }

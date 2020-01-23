@@ -16,8 +16,8 @@ export default class Header extends Component {
         return (
             <div className="main-header flex">
                 
-            <p>Travel extrodinary places with
-                                                     local guides worldwide</p>
+            <h1>Travel extrodinary places with
+                                                     local guides worldwide</h1>
                 <div>                    
                 <MainSearch onSearch={this.onSearch} ></MainSearch>
                 </div>  

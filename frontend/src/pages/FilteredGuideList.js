@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import queryString from 'query-string'
+
+
 import GuidePreview from '../cmps/GuidePreview.js'
 import { loadGuides } from '../reducers/guide/actionGuide.js'
 import MainSearch from '../cmps/MainSearch.js'
+import Loading from '../cmps/Loading.js'
+import Navbar from '../cmps/Navbar.js'
+
 class GuideListFiltered extends Component {
     state = {
         filterGuides: [],
@@ -11,6 +16,7 @@ class GuideListFiltered extends Component {
     }
 
     componentDidMount() {
+        document.body.style.paddingTop = '60px'
         const items = queryString.parse(this.props.location.search)
         this.props.loadGuides(items.city);
 
@@ -20,19 +26,24 @@ class GuideListFiltered extends Component {
 
         const items = queryString.parse(this.props.location.search)
         this.props.loadGuides(city);
-        
+
     }
     render() {
         const selectStyle = {
             border: '1px solid rgb(54, 71, 153)'
         }
-        if (!this.props.guides.length) return(
-            <h1> loading</h1>
+        if (!this.props.guides.length) return (
+            <Loading></Loading>
         )
+        const styleNavBar = {
+            backgroundColor : '#161f24'
+        }
 
 
         return (
             <div>
+                <Navbar styleNavBar={styleNavBar} ></Navbar>
+
                 <h1 className="filtered-guides-header space">{this.props.guides[0].city + '\'s guides'}</h1>
                 <h2 className="guides-short-content space">Find your guides, let them share with you the insight on the city.  Enjoy from unforgatable trip</h2>
                 <div className="filtered-glist-container">

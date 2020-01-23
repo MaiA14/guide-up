@@ -1,13 +1,11 @@
 .cards-list {
   display: grid;
-  max-width: 100%;
-  max-width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(217px, 1fr));
   grid-auto-rows: auto;
   margin-top: 35px;
   margin-bottom: 13px;
   justify-items: center;
-  grid-gap: 10px;
+  grid-gap: 22px;
   justify-content: space-between;
   }
   // .cards-list {
@@ -30,7 +28,8 @@
 
   .first-header-section{
     font-family: "Lato-Bold";
-    font-size: 40px;
+    font-size: 30px;
+    padding-top: 28px;
     color:$clr2;
     text-transform: uppercase;
   }
@@ -38,7 +37,8 @@
   .second-header-section{
     border-top: 2px solid$clr2;
     font-family: "Lato-Bold";
-    font-size: 40px;
+    font-size: 30px;
+    padding-top: 28px;
     color: $clr2;
     text-transform: uppercase;
   }

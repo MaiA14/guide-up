@@ -7,7 +7,8 @@ import { withRouter } from 'react-router-dom';
 
 const cardStyle = {
     marginTop: 0,
-    maxWidth: '100%'
+    maxWidth: '100%',
+    margin: 0
 
 }
 const cursor = {
@@ -25,6 +26,10 @@ const icon = {
     color: 'rgb(255, 255, 6)'
 
 }
+const header = {
+    display: 'flex',
+    justifyContent: 'space-between'
+}
 
 class GuidePreviewCard extends Component {
 
@@ -39,23 +44,43 @@ class GuidePreviewCard extends Component {
 
     render() {
         const { props } = this
+        console.log()
         return (
 
             < Card style={cardStyle} >
                 <Image onClick={this.onLink} style={imgStyle} src={props.guide.imgUrl} />
                 <Card.Content onClick={this.onLink} style={cursor} >
-                    <Card.Header >{props.guide.name}</Card.Header>
-                    <Card.Meta>
+                    <Card.Header style={header} >
+                        {props.guide.name}
+
+                        <div className="container-extra">
+
+                            <Icon size={'large'} disabled style={icon} name='like' />
+                            {props.guide.avgRank}
+                        </div>
+
+
+                    </Card.Header>
+                    {
+                        props.guide.langugages.map((langugage, index) => {
+                            return (
+
+                                ((props.guide.langugages.length-1 > index)) ? <span>{langugage + ' , '}</span> : <span>{langugage}</span>
+                            )
+
+
+                        })}
+
+                    <div className="container-data">
                         <span>{props.guide.city}</span>
-                    </Card.Meta>
-                    <Card.Description >
-                        {props.guide.description}
-                    </Card.Description>
+                    </div>
+
+
                 </Card.Content>
-                <Card.Content extra>
-                    <Icon size={'large'} disabled style={icon} name='star' />
+                {/* <Card.Content extra>
+                    <Icon size={'large'} disabled style={icon} name='like' />
                     {props.guide.avgRank}
-                </Card.Content>
+                </Card.Content> */}
             </Card >
 
         )
