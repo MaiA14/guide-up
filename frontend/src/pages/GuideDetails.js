@@ -47,10 +47,10 @@ class GuideDetails extends Component {
                         <div className="calendar-warpper">
                             <div className="calendar-container">
                                 <h2 className="calendar-header space">Pick a date</h2>
-                                <div className="main-container">
+                                <div className="main-Calendar">
                                 <Calendar></Calendar>
                                 </div>
-                                <div className="main-container">
+                                <div className="main-num-of-guests">
                                 <h2 className="num-of-guests-header">How many people?</h2>
                                 <div className="flex">
                                     <div><input type="text" className="num-of-guests" placeholder="0"></input></div>

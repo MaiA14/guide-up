@@ -50,7 +50,7 @@ class GuideListFiltered extends Component {
 
                     <MainSearch onSearch={this.onSearch} style={selectStyle} ></MainSearch>
 
-                    choose tags:<input type="checkbox" checked="checked"></input>
+                    {/* choose tags:<input type="checkbox" checked="checked"></input>
                     <span className="checkmark"></span>
                     <label className="container">Art</label>
                     <input type="checkbox" checked="checked"></input>
@@ -61,7 +61,7 @@ class GuideListFiltered extends Component {
                     <label className="container">Music</label>
                     <input type="checkbox" checked="checked"></input>
                     <span className="checkmark"></span>
-                    <label className="container">Movies</label>
+                    <label className="container">Movies</label> */}
                 </div>
                 <section className="cards-list main-container">
                     {this.props.guides.map(guide => <GuidePreview key={guide._id} guide={guide}></GuidePreview>)}

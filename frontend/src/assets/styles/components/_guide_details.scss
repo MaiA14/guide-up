@@ -74,11 +74,11 @@
 
 .book-btn {
   font-family: "Lato";
+  border-radius: 0 9px 9px 0;
   text-align: center;
   font-size: 15px;
-  border-radius: 3px;
   width: 70px;
-  padding: 10px;
+  height: 38px;
   background-color: $clr2;
   border: 1px solid $clr2;
   color: white;
@@ -93,10 +93,9 @@
 }
 
 .num-of-guests {
-  border-radius: 5px;
+  border-radius: 9px 0 0 9px;
   width: 180px;
-  padding: 10px;
-  margin-top: 3px;
+  height: 38px;
   margin-bottom: 15px;
   border: 1px solid;
   border-color: rgb(220, 223, 230);
