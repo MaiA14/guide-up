@@ -26,6 +26,9 @@
         align-items: center;
     }
 }
+.row {
+    flex-direction: row;
+}
 
 // Media helpers
 
@@ -46,9 +49,6 @@ body{
     color: black;
 }
 
-.space{
-    margin-left: 35px;
-}
  .aspect-ratio{
 
     @include aspect-ratio(1, 1);

@@ -28,6 +28,9 @@
   transition: 0.3s;
   margin-top: 10px;
 }
+.container-book{
+  margin-top: 140px;
+}
 
 .back-btn:hover {
   opacity: 0.8;
@@ -43,6 +46,8 @@
   color: $clr2;
   margin-right: 10%;
   padding: 0;
+  word-break: break-word;
+  width: 417px;
 }
 
 .guide-reviews-title {
@@ -55,21 +60,14 @@
   margin-bottom: 30px;
   padding: 0;
 }
-
-.calendar-header {
-  font-family: "Lato";
-  font-size: rem(45px);
-  color: $clr2;
-  margin-right: 10%;
-  padding: 0;
+.contanier-Details{
+  border-bottom: 1px solid;
 }
+.guide-details{
+  margin: 100px auto;
+  max-width: 980px;
+  
 
-.num-of-guests-header {
-  font-family: "Lato";
-  font-size: rem(25px);
-  color: $clr2;
-  margin-right: 10%;
-  padding: 0;
 }
 
 .book-btn {

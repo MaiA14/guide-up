@@ -16,7 +16,7 @@ class GuideDetails extends Component {
         const items = quoryString.parse(this.props.location.search)
         this.props.getGuide(items.guide_id);
 
-  
+
     }
     backToListOfGuids = () => {
 
@@ -30,38 +30,53 @@ class GuideDetails extends Component {
     }
     render() {
         const styleNavBar = {
-            backgroundColor : '#161f24'
+            backgroundColor: '#161f24'
         }
         return (
 
             <div>
-                <Navbar  styleNavBar={styleNavBar} ></Navbar>
+                <Navbar styleNavBar={styleNavBar} ></Navbar>
                 {this.props.guide &&
-                    <div>
-                        <button onClick={this.backToListOfGuids} className="back-btn space">Back</button>
-                        <h1 className="guide-header space">{this.props.guide.name}</h1>
-                        <img src={this.props.guide.imgUrl} className="guide-img-details space" ></img>
-                        <h2 className="guide-desc space">{this.props.guide.description}</h2>
-                        <span className="space"> From: {this.props.guide.city}</span>
-                        <span className="space">Langugages: {this.props.guide.langugages}</span>
-                        <div className="calendar-warpper">
-                            <div className="calendar-container">
-                                <h2 className="calendar-header space">Pick a date</h2>
-                                <div className="main-Calendar">
+                    <div className="guide-details">
+                        <div className="flex row">
+                            <div>
+                                <button onClick={this.backToListOfGuids} className="back-btn space">Back</button>
+                                <h1 className="guide-header ">{this.props.guide.name}</h1>
+                                <img src={this.props.guide.imgUrl} className="guide-img-details space" ></img>
+                                <h2 className="guide-desc space">{this.props.guide.shortDescription}</h2>
+                                <span> From: {this.props.guide.city}</span>
+                                <span>Langugages: {this.props.guide.langugages}</span>
+                            </div>
+                            <div className="container-book">
+
                                 <Calendar></Calendar>
-                                </div>
-                                <div className="main-num-of-guests">
-                                <h2 className="num-of-guests-header">How many people?</h2>
-                                <div className="flex">
-                                    <div><input type="text" className="num-of-guests" placeholder="0"></input></div>
-                                    <div><button className="book-btn">Book</button></div>
-                                </div>
-                                </div>
                             </div>
                         </div>
-                        <h1 className="guide-header space">Write a review about {this.props.guide.name}</h1>
+                        <div className="flex row">
+                            <div className="contanier-Details">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                     Vestibulum vitae pulvinar felis,
+                                      in sagittis libero. Donec at libero pulvinar,
+                                       condimentum ex in, commodo quam. Nam et mollis nisl.
+                                        Phasellus fringilla libero tortor,
+                                        semper ultrices purus suscipit vel.
+                                        Pellentesque in metus quis metus egestas blandit
+                                         a sit amet purus. Vestibulum ante ipsum primis in
+                                         faucibus orci luctus et ultrices posuere cubilia Curae;
+                                         Maecenas rhoncus turpis porta rutrum pharetra. Fusce consectetur
+                                          malesuada volutpat. Cras volutpat nunc libero, sed fermentum
+                                          urna egestas congue. In vitae sapien mattis, vehicula lectus non,
+                                           eleifend quam. Aliquam vitae enim eget felis faucibus dictum.</p>
+
+
+
+                            </div>
+
+                        </div>
+
+
                         <div className="space">
-                        <Review guide={this.onNewReview} ></Review>
+                            <Review guide={this.onNewReview} ></Review>
                         </div>
                         <div className="guide-reviews-title space">
                             {this.props.guide.reviews && this.props.guide.reviews.map(review => {
