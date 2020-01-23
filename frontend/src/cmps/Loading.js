@@ -1,12 +1,16 @@
 import React from 'react'
-import { Loader } from 'semantic-ui-react'
+import { Dimmer, Loader, Image, Segment } from 'semantic-ui-react'
 
-const style = {
-    borderBottom: 'none',
-    marginTop: '229px'
-    
-}
+const loading = () => (
+  <div> 
+    <Segment>
+      <Dimmer active>
+        <Loader size='massive'>Loading</Loader>
+      </Dimmer>
 
-const loading = () => <Loader style={style} active inline='centered'  />
+   
+    </Segment>
+  </div>
+)
 
 export default loading
