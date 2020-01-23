@@ -1,4 +1,9 @@
-.guide-preview-card{
-    box-shadow: 6px 4px 13px 9px rgba(133,104,133,0.28);
-    margin: 10px;
+.guide-preview-card {
+  box-shadow: 6px 4px 13px 9px rgba(133, 104, 133, 0.28);
+  margin: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
 }

@@ -1,37 +1,35 @@
-
 .main-header {
-        height: 80vh;
-        background-image: url(https://res.cloudinary.com/dtwqtpteb/image/upload/v1579691847/xpozmmur9ztc6eziq1xl.jpg);
-        object-fit: cover;
-        margin-bottom: 10px;
-        background-repeat: no-repeat;
-        width: 100%;
-        background-size: cover;
-        background-position: 0px -163px;
-        
+  height: 80vh;
+  background-image: url(https://res.cloudinary.com/dtwqtpteb/image/upload/v1579691847/xpozmmur9ztc6eziq1xl.jpg);
+  object-fit: cover;
+  margin-bottom: 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-size: cover;
+  background-position: 0px -155px;
+  background-color: #7c9eab;
+  background-blend-mode: multiply;
+  background-attachment: fixed;
 
-        h1{
-                font-family: 'Lato-Bold';
-                padding: 110px;
-                padding-bottom:0;
-                font-size: 40px;
-                color: white;
-                text-shadow: 2px 2px 1px rgba(150, 150, 150, 1);
-                text-align: center;
-        }
+  h1 {
+    font-family: "Lato-Bold";
+    padding: 120px;
+    padding-bottom: 0;
+    font-size: 40px;
+    color: white;
+    text-align: center;
+  }
 
-        .a{
-                display: flex;
-                justify-content: space-around;
-        }
+  .a {
+    display: flex;
+    justify-content: space-around;
+  }
 
-        .logo{
-                padding-left: 10px;
-        }
+  .logo {
+    padding-left: 10px;
+  }
 }
 
-
-img{
-        width: 100%;
+img {
+  width: 100%;
 }
-

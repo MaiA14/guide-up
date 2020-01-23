@@ -1,18 +1,29 @@
 .main-navbar{
     display: flex;
-    border-style: solid;
+    /* border-style: solid; */
     border-width: 1px;
     border-top: none;
-    border-left:none;
+    border-left: none;
     border-right: none;
-    border-color: rgb(194,178,165);
+    border-color: #c2b2a5;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+    a{
+        color: white;
+        font-size: rem(20px);
+    }
 }
+
+
+
 .nav-link{
     margin-left: 15px;
    
-    a:hover{
-        text-shadow: 2px -1px 2px rgba(150, 150, 150, 1);
-    }
+    // a:hover{
+    //     text-shadow: 2px -1px 2px rgba(150, 150, 150, 1);
+    // }
     .nav-shadow{
         box-shadow: none;
     }

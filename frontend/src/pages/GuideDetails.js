@@ -7,6 +7,8 @@ import { Rating } from 'semantic-ui-react'
 import Calendar from '../cmps/Calendar.js'
 import { getGuide } from '../reducers/guide/actionGuide.js'
 import Review from '../cmps/Review.js'
+import Navbar from '../cmps/Navbar.js'
+
 
 class GuideDetails extends Component {
 
@@ -27,9 +29,13 @@ class GuideDetails extends Component {
         this.props.saveGuide(this.state)
     }
     render() {
+        const styleNavBar = {
+            backgroundColor : '#161f24'
+        }
         return (
 
             <div>
+                <Navbar  styleNavBar={styleNavBar} ></Navbar>
                 {this.props.guide &&
                     <div>
                         <button onClick={this.backToListOfGuids} className="back-btn space">Back</button>

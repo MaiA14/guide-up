@@ -3,11 +3,10 @@ import { NavLink, Link } from 'react-router-dom';
 import React from 'react';
 
 export default function Navbar(props) {
-
-    return <div className="main-navbar">
+    return <div className="main-navbar" style={props.styleNavBar}>
         <Link to="/" > <div className="flex logo">
 
-            <img src="https://i.ibb.co/8BxPMdT/logo.png" alt="logo"></img>
+            {/* <img src="https://i.ibb.co/8BxPMdT/logo.png" alt="logo"></img> */}
             <div className="logo-text">Local Guide</div>
         </div></Link>
         <div>

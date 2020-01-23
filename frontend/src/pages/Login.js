@@ -2,10 +2,19 @@
 import { NavLink, Link } from 'react-router-dom';
 import React, { Component } from 'react'
 
+import Navbar from '../cmps/Navbar.js'
+
+
 export default class Login extends Component {
     render() {
+        const styleNavBar = {
+            backgroundColor : '#161f24'
+        }
         return (
+
             <div className="flex column align-center justify-center">
+            <Navbar  styleNavBar={styleNavBar} ></Navbar>
+
                 <div className="login-header">Login</div>
                 <div>
                     <div> <input type="text" className="login-input" placeholder=" Username"></input></div>
