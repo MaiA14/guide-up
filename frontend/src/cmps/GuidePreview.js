@@ -55,7 +55,7 @@ class GuidePreviewCard extends Component {
 
                         <div className="container-extra">
 
-                            <Icon size={'large'} disabled style={icon} name='like' />
+                            <Icon size={'small'} disabled style={icon} name='star' />
                             {props.guide.avgRank}
                         </div>
 

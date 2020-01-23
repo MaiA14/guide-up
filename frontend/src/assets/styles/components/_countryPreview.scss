@@ -8,9 +8,12 @@
   margin-bottom: 10px;
 }
 .country-label {
-  font-size: 50px;
-  opacity: 0;
+  font-family: "Lato-Bold";
+ opacity: 0;
+ text-align: left;
 }
+
+
 
 // countries: ['israel','paris','barcelona','new york','mexico'],
 .country-list > * {
@@ -19,10 +22,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #7c9eab;
+  background-blend-mode: overlay;
+  text-transform: uppercase;
+  font-family: 'Lato-Bold';
 
  
 }
-
+.country-label{
+  color: black;
+}
 .country-list > .paris {
   background-image: url("https://www.jetsetter.com/uploads/sites/7/2019/04/GettyImages-924894324-1380x690.jpg");
   background-position: center;
@@ -50,9 +59,7 @@
   background-image: url("https://www.leonardo-hotels.com/octopus/upload/images/pages/110904200-1-.jpg");
   background-position: center;
   background-size: cover;
-  .country-label:hover {
-    opacity: 0;
-  }
+
 
 }
 
