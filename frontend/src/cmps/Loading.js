@@ -1,16 +1,14 @@
 import React from 'react'
-import { Dimmer, Loader, Image, Segment } from 'semantic-ui-react'
+import { Loader, Image, Segment } from 'semantic-ui-react'
 
-const loading = () => (
-  <div> 
-    <Segment>
-      <Dimmer active>
-        <Loader size='massive'>Loading</Loader>
-      </Dimmer>
+const LoaderStyle = {
+  borderBottom: 'none'
+}
 
-   
-    </Segment>
-  </div>
+
+const LoaderExampleActive = () => (
+  <Loader size={'massive'} style={LoaderStyle} active />
+
 )
 
-export default loading
+export default LoaderExampleActive

@@ -27,13 +27,13 @@ class LocalGuideApp extends Component {
         window.onscroll = () => {
             let styleNavBar
 
-            if (document.documentElement.scrollTop > 500) {
-                styleNavBar = { backgroundColor: '#161f24',transition:' 0.5s' }
+            if (document.documentElement.scrollTop > 110) {
+                styleNavBar = { backgroundColor: '#161f24',transition:' 0.8s' }
                 this.setState({ styleNavBar })
 
 
             } else if (document.documentElement.scrollTop < 500)
-                styleNavBar = { backgroundColor: '',transition:'backgroundColor 5s' }
+                styleNavBar = { backgroundColor: '',transition:' 0.8s' }
             this.setState({ styleNavBar })
 
         }
