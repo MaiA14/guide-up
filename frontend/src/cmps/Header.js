@@ -14,7 +14,7 @@ export default class Header extends Component {
 
     render() {
         return (
-            <div className="main-header flex">
+            <div className="main-header">
                 
             <h1>Travel extrodinary places with
                                                      local guides worldwide</h1>

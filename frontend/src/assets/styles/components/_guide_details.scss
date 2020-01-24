@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: flex-end;
 }
-
 .guide-header {
   font-family: "Lato-Bold";
   font-size: rem(40px);
@@ -11,7 +10,6 @@
   padding: 0;
   margin-top: 30px;
 }
-
 .back-btn {
   font-family: "Lato";
   text-align: center;
@@ -28,21 +26,25 @@
   transition: 0.3s;
   margin-top: 10px;
 }
+.container-book{
+  margin-top: 140px;
+}
 
 .back-btn:hover {
   opacity: 0.8;
 }
-
 .guide-img-details {
-  width: 30%;
+  width: 50%;
+  border-radius: 10px;
 }
-
 .guide-desc {
   font-family: "Lato";
   font-size: rem(25px);
   color: $clr2;
   margin-right: 10%;
   padding: 0;
+  word-break: break-word;
+  width: 417px;
 }
 
 .guide-reviews-title {
@@ -56,12 +58,12 @@
   padding: 0;
 }
 
-.calendar-header {
-  font-family: "Lato";
-  font-size: rem(45px);
-  color: $clr2;
-  margin-right: 10%;
-  padding: 0;
+.container-details{
+  // border-bottom: 1px solid;
+}
+.guide-details{
+  margin: 100px auto;
+  max-width: 980px;
 }
 
 .num-of-guests-header {
@@ -101,6 +103,7 @@
   border-color: rgb(220, 223, 230);
   outline: none;
 }
+
 .review-contaner {
   width: 75%;
   height: auto;

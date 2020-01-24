@@ -61,7 +61,10 @@ class GuidePreviewCard extends Component {
 
 
                     </Card.Header>
-                    {
+                
+
+                    <div className="container-data">
+                    ({
                         props.guide.langugages.map((langugage, index) => {
                             return (
 
@@ -69,18 +72,14 @@ class GuidePreviewCard extends Component {
                             )
 
 
-                        })}
-
-                    <div className="container-data">
-                        <span>{props.guide.city}</span>
+                        })})
+                        <div>From: {props.guide.city}</div>
                     </div>
+                   
 
 
                 </Card.Content>
-                {/* <Card.Content extra>
-                    <Icon size={'large'} disabled style={icon} name='like' />
-                    {props.guide.avgRank}
-                </Card.Content> */}
+           
             </Card >
 
         )
