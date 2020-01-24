@@ -8,7 +8,6 @@ import LocalGuideApp from './pages/LocalGuideApp.js'
 import GuideDetails from '../src/pages/GuideDetails copy.js';
 import FilteredGuideList from '../src/pages/FilteredGuideList.js'
 import Footer from '../src/cmps/Footer.js'
-import Navbar from '../src/cmps/Navbar.js'
 import global from '../src/assets/styles/global.scss'
 import Login from '../src/pages/Login.js'
 import Signup from '../src/pages/Signup'

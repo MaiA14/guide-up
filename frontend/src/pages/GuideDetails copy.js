@@ -104,13 +104,7 @@ class GuideDetails extends Component {
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
                     </div>
-
                 }
             </React.Fragment>
         )

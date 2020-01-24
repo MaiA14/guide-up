@@ -4,13 +4,13 @@
 
   padding: 40px;
 }
-.calendar-content{
+.calendar-content {
   border: 0.2px solid;
   padding: 23px;
   position: sticky;
   top: 80px;
 }
-.calendar-content > *{
+.calendar-content > * {
   margin-bottom: 60px;
 }
 
@@ -43,10 +43,6 @@
 
 .back-btn:hover {
   opacity: 0.8;
-}
-
-.guide-img-details {
-  width: 30%;
 }
 
 .guide-desc > * {
@@ -113,6 +109,14 @@
   border-color: rgb(220, 223, 230);
   outline: none;
 }
+// .header-filter > img{
+//   width: 100%;
+//   height: 380px;
+//   /* margin: 0; */
+//   padding: 0;
+//   object-fit: cover;
+//   margin-top: -1px;
+// }
 .review-contaner {
   width: 75%;
   height: auto;
@@ -128,6 +132,10 @@
 .guide-img-details {
   width: 500px;
 }
+.guide-img-details > * {
+  width: 52%;
+}
+
 .guide-desc > * {
   font-size: 30px;
 }
