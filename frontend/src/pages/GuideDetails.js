@@ -11,8 +11,26 @@ import Navbar from '../cmps/Navbar.js'
 
 
 class GuideDetails extends Component {
+    state = {
+        bookClassName: 'absolute'
+    }
 
     componentWillMount() {
+        window.onscroll = () => {
+            let bookClassName
+            if (document.documentElement.scrollTop === 0) {
+
+                bookClassName = 'absolute'
+                this.setState({ bookClassName })
+            } else {
+                bookClassName = 'fixed'
+                this.setState({ bookClassName })
+
+            }
+
+        }
+
+
         const items = quoryString.parse(this.props.location.search)
         this.props.getGuide(items.guide_id);
 
@@ -34,11 +52,11 @@ class GuideDetails extends Component {
         }
         return (
 
-            <div>
+            <div >
                 <Navbar styleNavBar={styleNavBar} ></Navbar>
                 {this.props.guide &&
-                    <div className="guide-details">
-                        <div className="flex row">
+                    <div className="guide-details relative  ">
+                        <div className="flex row ">
                             <div>
                                 <button onClick={this.backToListOfGuids} className="back-btn space">Back</button>
                                 <h1 className="guide-header ">{this.props.guide.name}</h1>
@@ -47,32 +65,32 @@ class GuideDetails extends Component {
                                 <span> From: {this.props.guide.city}</span>
                                 <span>Langugages: {this.props.guide.langugages}</span>
                             </div>
-                            <div className="container-book">
+                            <div >
 
                                 <Calendar></Calendar>
                             </div>
                         </div>
-                        <div className="flex row">
-                            <div className="contanier-Details">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                     Vestibulum vitae pulvinar felis,
-                                      in sagittis libero. Donec at libero pulvinar,
-                                       condimentum ex in, commodo quam. Nam et mollis nisl.
-                                        Phasellus fringilla libero tortor,
-                                        semper ultrices purus suscipit vel.
-                                        Pellentesque in metus quis metus egestas blandit
-                                         a sit amet purus. Vestibulum ante ipsum primis in
-                                         faucibus orci luctus et ultrices posuere cubilia Curae;
-                                         Maecenas rhoncus turpis porta rutrum pharetra. Fusce consectetur
-                                          malesuada volutpat. Cras volutpat nunc libero, sed fermentum
-                                          urna egestas congue. In vitae sapien mattis, vehicula lectus non,
+
+                        <div className="contanier-Details">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                 Vestibulum vitae pulvinar felis,
+                                  in sagittis libero. Donec at libero pulvinar,
+                                   condimentum ex in, commodo quam. Nam et mollis nisl.
+                                    Phasellus fringilla libero tortor,
+                                    semper ultrices purus suscipit vel.
+                                    Pellentesque in metus quis metus egestas blandit
+                                     a sit amet purus. Vestibulum ante ipsum primis in
+                                     faucibus orci luctus et ultrices posuere cubilia Curae;
+                                     Maecenas rhoncus turpis porta rutrum pharetra. Fusce consectetur
+                                      malesuada volutpat. Cras volutpat nunc libero, sed fermentum
+                                      urna egestas congue. In vitae sapien mattis, vehicula lectus non,
                                            eleifend quam. Aliquam vitae enim eget felis faucibus dictum.</p>
 
 
 
-                            </div>
-
                         </div>
+
+
 
 
                         <div className="space">

@@ -1,7 +1,17 @@
 .calendar-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+
+  padding: 40px;
+}
+.calendar-content{
+  border: 0.2px solid;
+  padding: 23px;
+  position: sticky;
+  top: 80px;
+}
+.calendar-content > *{
+  margin-bottom: 60px;
 }
 
 .guide-header {
@@ -23,12 +33,11 @@
   border: 1px solid $clr2;
   color: white;
   cursor: pointer;
-  margin-right: 7px;
   opacity: 1;
   transition: 0.3s;
   margin-top: 10px;
 }
-.container-book{
+.container-book {
   margin-top: 140px;
 }
 
@@ -40,14 +49,16 @@
   width: 30%;
 }
 
-.guide-desc {
+.guide-desc > * {
   font-family: "Lato";
   font-size: rem(25px);
   color: $clr2;
-  margin-right: 10%;
   padding: 0;
   word-break: break-word;
-  width: 417px;
+  width: 567px;
+}
+.From > * {
+  font-size: 34px;
 }
 
 .guide-reviews-title {
@@ -60,34 +71,37 @@
   margin-bottom: 30px;
   padding: 0;
 }
-.contanier-Details{
+.contanier-Details {
   border-bottom: 1px solid;
 }
-.guide-details{
+.guide-details {
   margin: 100px auto;
   max-width: 980px;
-  
-
+  // height: 200vh;
+}
+.context-container > * {
+  padding-bottom: 39px;
+}
+.btn-container {
+  padding: 0;
 }
 
 .book-btn {
   font-family: "Lato";
-  border-radius: 0 9px 9px 0;
+  // border-radius: 0 9px 9px 0;
+  // border-radius: 9px;
+  border: none;
   text-align: center;
-  font-size: 15px;
-  width: 70px;
+  font-size: 26px;
+  width: 130px;
   height: 38px;
   background-color: $clr2;
-  border: 1px solid $clr2;
+  // border: 1px solid $clr2;
   color: white;
   cursor: pointer;
   margin-right: 7px;
   opacity: 1;
   transition: 0.3s;
-}
-
-.book-btn:hover {
-  opacity: 0.8;
 }
 
 .num-of-guests {
@@ -107,4 +121,28 @@
   font-size: 3px;
   word-wrap: break-word;
   border-bottom: 0.5px solid;
+}
+.guide-header > * {
+  font-size: 7.75rem;
+}
+.guide-img-details {
+  width: 500px;
+}
+.guide-desc > * {
+  font-size: 30px;
+}
+.HowMany-people {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.HowMany-people > * {
+  font-size: 23px;
+}
+.bookBtn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
