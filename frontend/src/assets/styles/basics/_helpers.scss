@@ -26,7 +26,6 @@
         align-items: center;
     }
 }
-
 .row {
     flex-direction: row;
 }
@@ -50,9 +49,24 @@ body{
     color: black;
 }
 
-
  .aspect-ratio{
 
     @include aspect-ratio(1, 1);
 
  }
+ .absolute{
+    position: absolute;
+    right: 0;
+
+
+ }
+ .fixed{
+    position: fixed;
+    right: 275px;
+    // right: 0;
+ }
+ .relative{
+     position: relative;
+     right: 0;
+ }
+

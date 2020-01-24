@@ -5,7 +5,7 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk';
 
 import LocalGuideApp from './pages/LocalGuideApp.js'
-import GuideDetails from '../src/pages/GuideDetails.js';
+import GuideDetails from '../src/pages/GuideDetails copy.js';
 import FilteredGuideList from '../src/pages/FilteredGuideList.js'
 import Footer from '../src/cmps/Footer.js'
 import Navbar from '../src/cmps/Navbar.js'
@@ -31,8 +31,16 @@ function App() {
             <Route component={Login} path="/login" ></Route>
             <Route component={Signup} path="/signup" ></Route>
             <Route component={BecomeGuide} path="/join_us" ></Route>
+
+          {/* <Route component={Signup} path="/signup" exact></Route>
+          <Route component={AddGuide} path="/addGuide" exact></Route>  */}
+            {/* <Route component={EditProfile} path="edit" exact></Route>  */}
           </Switch>
+       
       </Router>
+
+
+      {/* <Footer></Footer> */}
     </div>
   );
 }

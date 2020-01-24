@@ -14,14 +14,8 @@ export default class Header extends Component {
 
     render() {
         return (
-            <div className="main-header">
-                
-            <h1>Travel extrodinary places with
-                                                     local guides worldwide</h1>
-                <div>                    
+            <div className="main-header"><h1>Travel extrodinary places with local guides worldwide</h1>
                 <MainSearch onSearch={this.onSearch} ></MainSearch>
-                </div>  
-        
             </div>
         )
     }
