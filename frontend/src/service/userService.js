@@ -12,17 +12,13 @@ var Axios = axios.create({
     withCredentials: true
 });
 
-
 function query(filterBy = '') {
     return Axios.get(url).then(res => res.data)
 }
 
-
 function getUserById(userId) {
     return HttpService.get(`user/${userId}`)
-
 }
-
 
 function editUser(user,userId) {
     return HttpService.put(`user${userId}`, user).then(res => res.data);
@@ -35,11 +31,4 @@ function addUser(name, user) {
 function deleteUser(userId) {
     return HttpService.delete(`user${userId}`).then(res => res.data);
 }
-
-
-
-
-// function getguideById(guideId){
-//     return  axios.get('/guides/' +guideId)
-// }
 
