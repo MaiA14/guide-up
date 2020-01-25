@@ -52,35 +52,21 @@ class GuidePreviewCard extends Component {
                 <Card.Content onClick={this.onLink} style={cursor} >
                     <Card.Header style={header} >
                         {props.guide.name}
-
                         <div className="container-extra">
-
                             <Icon size={'small'} disabled style={icon} name='star' />
                             {props.guide.avgRank}
                         </div>
-
-
                     </Card.Header>
                     {
                         props.guide.langugages.map((langugage, index) => {
                             return (
-
                                 ((props.guide.langugages.length-1 > index)) ? <span>{langugage + ' , '}</span> : <span>{langugage}</span>
                             )
-
-
                         })}
-
                     <div className="container-data">
-                        <span>{props.guide.city}</span>
+                        <span>From: {props.guide.city}</span>
                     </div>
-
-
                 </Card.Content>
-                {/* <Card.Content extra>
-                    <Icon size={'large'} disabled style={icon} name='like' />
-                    {props.guide.avgRank}
-                </Card.Content> */}
             </Card >
 
         )

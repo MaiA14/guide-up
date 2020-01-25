@@ -22,7 +22,6 @@ function App() {
   return (
     <div className="App">
         <Router>
- 
           <Switch>
             <Route component={LocalGuideApp} path="/" exact></Route>
             <Route component={GuideDetails} path="/guides" exact></Route>
@@ -30,16 +29,8 @@ function App() {
             <Route component={Login} path="/login" ></Route>
             <Route component={Signup} path="/signup" ></Route>
             <Route component={BecomeGuide} path="/join_us" ></Route>
-
-          {/* <Route component={Signup} path="/signup" exact></Route>
-          <Route component={AddGuide} path="/addGuide" exact></Route>  */}
-            {/* <Route component={EditProfile} path="edit" exact></Route>  */}
           </Switch>
-       
       </Router>
-
-
-      {/* <Footer></Footer> */}
     </div>
   );
 }

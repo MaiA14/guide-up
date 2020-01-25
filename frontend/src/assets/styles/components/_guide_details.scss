@@ -16,10 +16,25 @@
 
 .guide-header {
   font-family: "Lato-Bold";
-  font-size: rem(40px);
+  font-size: rem(50px);
   color: $clr2;
   padding: 0;
   margin-top: 30px;
+}
+
+.lang-from-guide{
+  display: flex;
+  background-color: #7482c4;
+  width: 100%;
+}
+
+.from-guide{
+  width: 950px;
+}
+
+.lang-guide{
+  justify-content: flex-end;
+  width: 50%;
 }
 
 .back-btn {
@@ -45,15 +60,17 @@
   opacity: 0.8;
 }
 
-.guide-desc > * {
+.guide-short-desc > * {
   font-family: "Lato";
-  font-size: rem(25px);
+  font-size: rem(35px);
+  line-height: 45px;
   color: $clr2;
   padding: 0;
   word-break: break-word;
   width: 567px;
 }
-.From > * {
+
+.from > * {
   font-size: 34px;
 }
 
@@ -75,11 +92,17 @@
 }
 .contanier-Details {
   border-bottom: 1px solid;
+  font-family: "Lato-Bold";
+  font-size: rem(20px);
+  line-height: 30px;
+  color: $clr2;
+  padding: 0;
+  word-break: break-word;
+  width: 567px;
 }
 .guide-details {
-  margin: 100px auto;
-  max-width: 980px;
-  // height: 200vh;
+  margin: 70px auto;
+  max-width: 1100px;
 }
 .context-container > * {
   padding-bottom: 39px;
@@ -91,15 +114,12 @@
 
 .book-btn {
   font-family: "Lato";
-  // border-radius: 0 9px 9px 0;
-  // border-radius: 9px;
   border: none;
   text-align: center;
   font-size: 26px;
   width: 130px;
   height: 38px;
   background-color: $clr2;
-  // border: 1px solid $clr2;
   color: white;
   cursor: pointer;
   margin-right: 7px;
@@ -116,14 +136,7 @@
   border-color: rgb(220, 223, 230);
   outline: none;
 }
-// .header-filter > img{
-//   width: 100%;
-//   height: 380px;
-//   /* margin: 0; */
-//   padding: 0;
-//   object-fit: cover;
-//   margin-top: -1px;
-// }
+
 .review-contaner {
   width: 75%;
   height: auto;
@@ -140,12 +153,10 @@
   width: 500px;
 }
 .guide-img-details > * {
-  width: 52%;
+  width: 68%;
 }
 
-.guide-desc > * {
-  font-size: 30px;
-}
+
 .HowMany-people {
   display: flex;
   justify-content: center;
@@ -161,3 +172,5 @@
   justify-content: center;
   margin-top: 10px;
 }
+
+  
