@@ -27,7 +27,6 @@ class Review extends Component {
     }
 
     onChangeRateStar = (rating)=>{
-        console.log(rating)
         this.setState((prevState) => {
             return { ...prevState.reviews, ['rank']: rating }
         })
@@ -47,7 +46,6 @@ class Review extends Component {
 
 
     render() {
-        console.log(this.state)
 
 
         return (

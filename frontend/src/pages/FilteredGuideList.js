@@ -16,8 +16,8 @@ class GuideListFiltered extends Component {
         cityImg: {
 
             barcelona: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1579885051/w89cx7ymcgp8aopjgp65.jpg',
-            'tel-aviv':'https://res.cloudinary.com/dtwqtpteb/image/upload/v1579885048/oevosllc1iala4gz1n2s.jpg',
-            'mexico-city':'https://res.cloudinary.com/dtwqtpteb/image/upload/v1579885052/xujbol455dfsibimzctv.jpg'
+            'tel-aviv': 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1579885048/oevosllc1iala4gz1n2s.jpg',
+            'mexico-city': 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1579885052/xujbol455dfsibimzctv.jpg'
 
         }
     }
@@ -61,7 +61,7 @@ class GuideListFiltered extends Component {
 
 
         return (
-            <div>
+            <React.Fragment>
                 {/* <Image   src={this.state.cityImg['barcelona']} size={'large'}> </Image > */}
                 <div>
                     <Navbar  ></Navbar>
@@ -69,30 +69,22 @@ class GuideListFiltered extends Component {
 
                 </div>
 
+                <div className="mainFilter-container">
+                    <h1 className="filtered-guides-header space">{this.props.guides[0].city + '\'s guides'}</h1>
+                    <h2 className="guides-short-content space">Find your guides, let them share with you the insight on the city.  Enjoy from unforgatable trip</h2>
+                    <div className="filtered-glist-container">
 
-                <h1 className="filtered-guides-header space">{this.props.guides[0].city + '\'s guides'}</h1>
-                <h2 className="guides-short-content space">Find your guides, let them share with you the insight on the city.  Enjoy from unforgatable trip</h2>
-                <div className="filtered-glist-container">
+                        <MainSearch onSearch={this.onSearch} style={selectStyle} ></MainSearch>
 
-                    <MainSearch onSearch={this.onSearch} style={selectStyle} ></MainSearch>
-
-                    {/* choose tags:<input type="checkbox" checked="checked"></input>
-                    <span className="checkmark"></span>
-                    <label className="container">Art</label>
-                    <input type="checkbox" checked="checked"></input>
-                    <span className="checkmark"></span>
-                    <label className="container">Coffe</label>
-                    <input type="checkbox" checked="checked"></input>
-                    <span className="checkmark"></span>
-                    <label className="container">Music</label>
-                    <input type="checkbox" checked="checked"></input>
-                    <span className="checkmark"></span>
-                    <label className="container">Movies</label> */}
+                    </div>
+                    <section className="cards-list main-container">
+                        {this.props.guides.map(guide => <GuidePreview key={guide._id} guide={guide}></GuidePreview>)}
+                    </section>
                 </div>
-                <section className="cards-list main-container">
-                    {this.props.guides.map(guide => <GuidePreview key={guide._id} guide={guide}></GuidePreview>)}
-                </section>
-            </div>
+
+
+
+            </React.Fragment>
         )
     }
 }

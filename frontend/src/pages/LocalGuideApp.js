@@ -10,7 +10,7 @@ import Navbar from '../cmps/Navbar.js'
 
 class LocalGuideApp extends Component {
     state = {
-        countries: ['tel-aviv', 'paris', 'barcelona', 'new-york', 'mexico-city', 'berlin'],
+        countries: ['tel-aviv', 'paris', 'barcelona', 'new-york', 'mexico', 'berlin'],
         filterBy: {},
         styleNavBar: {
             backgroundColor: '',

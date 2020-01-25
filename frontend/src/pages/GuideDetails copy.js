@@ -8,6 +8,7 @@ import Calendar from '../cmps/Calendar.js'
 import { getGuide } from '../reducers/guide/actionGuide.js'
 import Review from '../cmps/Review.js'
 import Navbar from '../cmps/Navbar.js'
+import ReviewView from '../cmps/Review-view.js'
 
 
 class GuideDetails extends Component {
@@ -62,19 +63,22 @@ class GuideDetails extends Component {
                             </div>
                             <div className="guide-header ">
                                 <h1>{this.props.guide.name}</h1>
+
                             </div>
                             <div className="guide-img-details">
                                 <img src={this.props.guide.imgUrl} ></img>
+                                <div className="From">
+                                    <span> From: {this.props.guide.city}</span>
+                                </div>
+                                <div className="Langugages">
+                                    <span>Langugages: {this.props.guide.langugages}</span>
+                                </div>
                             </div>
                             <div className="guide-desc">
                                 <h2>{this.props.guide.shortDescription}</h2>
                             </div>
-                            <div className="From">
-                                <span> From: {this.props.guide.city}</span>
-                            </div>
-                            <div className="Langugages">
-                                <span>Langugages: {this.props.guide.langugages}</span>
-                            </div>
+
+
 
                             <div className="contanier-Details">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -91,6 +95,17 @@ class GuideDetails extends Component {
                                           urna egestas congue. In vitae sapien mattis, vehicula lectus non,
                                            eleifend quam. Aliquam vitae enim eget felis faucibus dictum.</p>
                             </div>
+                            <Review guide={this.onNewReview} ></Review>
+                            {this.props.guide.reviews && this.props.guide.reviews.map(review => {
+                                return (
+
+
+                                    <ReviewView review={review}></ReviewView>
+
+                           
+                                )
+                            })}
+
                         </div>
                         <div className="calendar-container">
                             <div className="calendar-content">
@@ -104,8 +119,11 @@ class GuideDetails extends Component {
                                 </div>
                             </div>
                         </div>
+
                     </div>
+
                 }
+
             </React.Fragment>
         )
     }
