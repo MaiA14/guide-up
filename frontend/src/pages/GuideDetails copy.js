@@ -93,15 +93,15 @@ class GuideDetails extends Component {
                                     })}
                                 </div>
                                 <div class="divider"></div>
-
-
                                 <Review guide={this.onNewReview} ></Review>
+                                <div className="num-of-reviews">
+                                Reviews ({this.props.guide.reviews.length})
+                                </div>
                                 {this.props.guide.reviews && this.props.guide.reviews.map(review => {
                                     return (
                                         <ReviewView review={review}></ReviewView>
                                     )
                                 })}
-
                             </div>
                         </div>
 
