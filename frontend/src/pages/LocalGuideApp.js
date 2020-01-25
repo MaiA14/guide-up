@@ -14,35 +14,26 @@ class LocalGuideApp extends Component {
         filterBy: {},
         styleNavBar: {
             backgroundColor: '',
-            transition:'backgroundColor'
-            
+            transition:'backgroundColor'   
         }
-
-
     }
+
     componentDidMount() {
         this.props.loadGuides();
         document.body.style.paddingTop = 0
 
         window.onscroll = () => {
-            let styleNavBar
-
+            let styleNavBar;
             if (document.documentElement.scrollTop > 110) {
                 styleNavBar = { backgroundColor: '#161f24',transition:' 0.8s' }
                 this.setState({ styleNavBar })
-
-
             } else if (document.documentElement.scrollTop < 500)
                 styleNavBar = { backgroundColor: '',transition:' 0.8s' }
             this.setState({ styleNavBar })
-
         }
-
     }
 
     render() {
-
-
         return (
             <div>
                 <Navbar styleNavBar={this.state.styleNavBar}></Navbar>
@@ -62,9 +53,11 @@ const mapStateToProps = (state) => {
         guides: state.guides
     }
 }
+
 const mapDispatchToProps = {
     loadGuides,
 }
+
 export default connect(
     mapStateToProps,
     mapDispatchToProps
