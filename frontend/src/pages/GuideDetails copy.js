@@ -84,18 +84,27 @@ class GuideDetails extends Component {
                                         })}
                                 </div>
                             </div>
+                            
                             <div className="guide-desc">
                                 {this.props.guide.description}
+                                <div className="guide-activites">
+                                    {this.props.guide.pics.map(img => {
+                                        return <img src={img} alt="" className="img-responsive" />
+                                    })}
+                                </div>
+                                <div class="divider"></div>
+
+
+                                <Review guide={this.onNewReview} ></Review>
+                                {this.props.guide.reviews && this.props.guide.reviews.map(review => {
+                                    return (
+                                        <ReviewView review={review}></ReviewView>
+                                    )
+                                })}
+
                             </div>
-
-                            <Review guide={this.onNewReview} ></Review>
-                            {this.props.guide.reviews && this.props.guide.reviews.map(review => {
-                                return (
-                                    <ReviewView review={review}></ReviewView>
-                                )
-                            })}
-
                         </div>
+
                         <div className="calendar-container">
                             <div className="calendar-content">
                                 <Calendar></Calendar>
@@ -112,7 +121,7 @@ class GuideDetails extends Component {
                                         <Icon size={'small'} disabled name='star' />{this.props.guide.avgRank}
                                     </div>
                                 </div>
-                              
+
                             </div>
                         </div>
 
