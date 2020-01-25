@@ -1,3 +1,4 @@
+/* CALENDAR */
 .calendar-container {
   display: flex;
   flex-direction: column;
@@ -13,6 +14,8 @@
 .calendar-content > * {
   margin-bottom: 60px;
 }
+
+/* GUIDE DETAILS */
 
 .guide-header {
   font-family: "Lato-Bold";
@@ -56,51 +59,6 @@ linear-gradient(to bottom, rgba(#4238cc, 0.52), rgba($clr2, 0.90)),
   text-align: center;
 }
 
-.back-btn {
-  font-family: "Lato";
-  text-align: center;
-  font-size: 15px;
-  border-radius: 3px;
-  width: 70px;
-  padding: 10px;
-  background-color: $clr2;
-  border: 1px solid $clr2;
-  color: white;
-  cursor: pointer;
-  opacity: 1;
-  transition: 0.3s;
-  margin-top: 10px;
-}
-.container-book {
-  margin-top: 140px;
-}
-
-.back-btn:hover {
-  opacity: 0.8;
-}
-
-
-.book-btn {
-  font-family: "Lato";
-  text-align: center;
-  font-size: 15px;
-  border-radius: 0 9px 9px 0;
-  width: 70px;
-  padding: 5px;
-  background-color: $clr2;
-  border: 1px solid $clr2;
-  color: white;
-  cursor: pointer;
-  opacity: 1;
-  transition: 0.3s;
-  margin-top: 10px;
-}
-
-.book-btn:hover {
-  opacity: 0.8;
-}
-
-
 .guide-short-desc > * {
   font-family: "Lato";
   font-weight: normal;
@@ -138,63 +96,7 @@ border-bottom: 2px solid;
   margin: 70px auto;
   max-width: 1100px;
 }
-.context-container > * {
-  padding-bottom: 13px;
-  margin-bottom: 10px;
-}
-.btn-container {
-  padding: 0;
-  outline: none;
-}
 
-.book-btn {
-  font-family: "Lato";
-  border: none;
-  text-align: center;
-  font-size: 26px;
-  width: 130px;
-  height: 38px;
-  background-color: $clr2;
-  color: white;
-  cursor: pointer;
-  margin-right: 7px;
-  opacity: 1;
-  transition: 0.3s;
-}
-
-.book-btn:focus{
-  outline: none;
-}
-
-.book-input{
-  outline: none;
-  border: 1px solid $clr2;
-}
-
-.book-input:focus{
-  border: 1px solid #6376ce;
-  outline: none;
-}
-
-.num-of-guests {
-  border-radius: 9px 0 0 9px;
-  width: 180px;
-  height: 38px;
-  margin-bottom: 15px;
-  border: 1px solid;
-  border-color: rgb(220, 223, 230);
-  outline: none;
-}
-
-.review-container {
-  width: 75%;
-  height: auto;
-  color: black;
-  text-align: inherit;
-  font-size: 3px;
-  word-wrap: break-word;
-  border-bottom: 0.5px solid;
-}
 
 .guide-review-title{
   font-family: "Lato";
@@ -239,10 +141,116 @@ border-bottom: 2px solid;
   color: $clr2;
   font-size: 23px;
 }
+
+
+/* BUTTONS */
+.back-btn {
+  font-family: "Lato";
+  text-align: center;
+  font-size: 15px;
+  border-radius: 3px;
+  width: 70px;
+  padding: 10px;
+  background-color: $clr2;
+  border: 1px solid $clr2;
+  color: white;
+  cursor: pointer;
+  opacity: 1;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+.container-book {
+  margin-top: 140px;
+}
+
+.back-btn:hover {
+  opacity: 0.8;
+}
+
+.book-btn {
+  font-family: "Lato";
+  text-align: center;
+  font-size: 15px;
+  border-radius: 0 9px 9px 0;
+  width: 70px;
+  padding: 5px;
+  background-color: $clr2;
+  border: 1px solid $clr2;
+  color: white;
+  cursor: pointer;
+  opacity: 1;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.book-btn:hover {
+  opacity: 0.8;
+}
+
+.book-btn {
+  font-family: "Lato";
+  border: none;
+  text-align: center;
+  font-size: 26px;
+  width: 130px;
+  height: 38px;
+  background-color: $clr2;
+  color: white;
+  cursor: pointer;
+  margin-right: 7px;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.book-btn:focus{
+  outline: none;
+}
+
+.book-input{
+  outline: none;
+  border: 1px solid $clr2;
+}
+
+.book-input:focus{
+  border: 1px solid #6376ce;
+  outline: none;
+}
+
+.num-of-guests {
+  border-radius: 9px 0 0 9px;
+  width: 180px;
+  height: 38px;
+  margin-bottom: 15px;
+  border: 1px solid;
+  border-color: rgb(220, 223, 230);
+  outline: none;
+}
+
+
+/* CONTAINERS */
+.review-container {
+  width: 75%;
+  height: auto;
+  color: black;
+  text-align: inherit;
+  font-size: 3px;
+  word-wrap: break-word;
+  border-bottom: 0.5px solid;
+}
+
 .book-btn-container {
   display: flex;
   justify-content: center;
   margin-top: 10px;
+}
+
+.context-container > * {
+  padding-bottom: 13px;
+  margin-bottom: 10px;
+}
+.btn-container {
+  padding: 0;
+  outline: none;
 }
 
   
