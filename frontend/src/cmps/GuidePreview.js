@@ -24,7 +24,6 @@ const imgStyle = {
 const icon = {
     cursor: null,
     color: 'rgb(255, 255, 6)'
-
 }
 const header = {
     display: 'flex',
