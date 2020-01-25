@@ -102,16 +102,17 @@ class GuideDetails extends Component {
                                 <div className="num-of-people">
                                     <h2>How many people?</h2>
                                 </div>
+                                <div className="book-btn-container">
+                                    <input type="text" className="book-btn-container book-input"></input>
+                                    <button className="book-btn">Book</button>
+                                </div>
                                 <div class="price-rank flex column justify-center">
                                     <div className="guide-price">${this.props.guide.price}  For my tour</div>
                                     <div className="guide-rank">
                                         <Icon size={'small'} disabled name='star' />{this.props.guide.avgRank}
                                     </div>
                                 </div>
-                                <div className="book-btn-container">
-                                    <input type="text" className="book-btn-container book-input"></input>
-                                    <button className="book-btn">Book</button>
-                                </div>
+                              
                             </div>
                         </div>
 
