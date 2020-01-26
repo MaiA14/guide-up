@@ -56,9 +56,11 @@ function _calcGuideRank(guide) {
 }
 
 async function checkCredentials(loginData) {
+    console.log('loginData ',loginData)
     try {
         const res = await Axios.post("http://localhost:3001/api/auth" + '/login', loginData)
         const user = res.data;
+        console.log(user)
         if (user) {
             _saveLoggedin(user)
         }

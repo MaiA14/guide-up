@@ -5,17 +5,29 @@ import { Card, Icon, Image } from 'semantic-ui-react'
 
 
 import GuidePreview from '../cmps/GuidePreview.js'
-import { loadGuides } from '../reducers/guide/actionGuide.js'
+import { loadGuides ,loadTags } from '../reducers/guide/actionGuide.js'
 import MainSearch from '../cmps/MainSearch.js'
 import Loading from '../cmps/Loading.js'
 import Navbar from '../cmps/Navbar.js'
 class FilteredGuideList extends Component {
     state = {
-        filterGuides: []
+        filterGuides: [],
+        coffe: '<i class="fas fa-mug-hot"></i>',
+        outdoor: '<i class="fas fa-tree"></i>',
+        shopping: '<i class="fas fa-shopping-cart"></i>',
+        culture: '<i class="fas fa-university"></i>',
+        sport: '<i class="fas fa-futbol"></i>',
+        food: '<i class="fas fa-utensils"></i>',
+        music: '<i class="fas fa-music"></i>',
+        art: '<i class="fas fa-paint-brush"></i>',
+        photos: '<i class="fas fa-camera"></i>',
+        nightlife: '<i class="fas fa-cocktail"></i>',
     }
 
     componentDidMount() {
         document.body.style.paddingTop = '60px'
+
+        
     }
 
     componentWillMount() {
@@ -76,6 +88,7 @@ const mappropsToProps = (state) => {
 }
 const mapDispatchToProps = {
     loadGuides,
+    // loadTags
 }
 export default connect(
     mappropsToProps,

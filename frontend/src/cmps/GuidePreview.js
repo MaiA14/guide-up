@@ -8,9 +8,22 @@ import { withRouter } from 'react-router-dom';
 const cardStyle = {
     marginTop: 0,
     maxWidth: '100%',
-    margin: 0
-
+    margin: 0,
+    position: 'relative',
+    display: 'flex',
+    flexDirection: 'column',
+    width: '290px',
+    minHeight: 0,
+    background: '#fff',
+    padding: 0,
+    border: 'none',
+    borderadius: '.28571429rem 0 0',
+    boxShadow:'none',
+    paddingLeft: '2px',
+    paddingRight: '2px',
+    lineHeight : 2
 }
+
 const cursor = {
     cursor: "pointer"
 
@@ -27,7 +40,8 @@ const icon = {
 }
 const header = {
     display: 'flex',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    paddingTop: '16px'
 }
 
 class GuidePreviewCard extends Component {
@@ -42,7 +56,11 @@ class GuidePreviewCard extends Component {
 
 
     render() {
+       
         const { props } = this
+        if(!props.guide.langugages && !props.guide.city){
+            return <h1>loading</h1>
+        }
         return (
 
             <Card style={cardStyle} >
@@ -56,9 +74,7 @@ class GuidePreviewCard extends Component {
                         </div>
                     </Card.Header>
                     {
-                        
                         props.guide.langugages.map((langugage, index) => {
-                          
                             return (
                                 ((props.guide.langugages.length-1 > index)) ? <span key={index}>{langugage + ' , '}</span> : <span key={index}>{langugage}</span>
                             )

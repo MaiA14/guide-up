@@ -6,6 +6,7 @@ const guidsService = require('../../api/guide/guide.service.js')
 const saltRounds = 10
 
 async function login(name, password) {
+    console.log('name ',name)
     logger.debug(`auth.service - login with name: ${name}`)
 
     if (!name || !password) {
@@ -16,6 +17,7 @@ async function login(name, password) {
 
     if (!user) return Promise.reject('Invalid email or password')
     const match = await bcrypt.compare(password,user.password)
+    console.log(match)
 
     if (!match) return Promise.reject('Invalid email or password')
 

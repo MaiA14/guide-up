@@ -12,6 +12,12 @@
   font-size: 40px;
   color: $clr2;
   text-align: center;
+  z-index: 1;
+  position: relative;
+  .country-list > a:hover & {
+    visibility: visible;
+  }
+
 }
 
 
@@ -21,10 +27,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #7c9eab;
-  background-blend-mode: overlay;
+  // background-color: #7c9eab;
+  // background-blend-mode: overlay;
   text-transform: uppercase;
   font-family: 'Lato-Bold';
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+
+    transition: background .3s;
+  }
+  &:hover {
+    &::before {
+      background: hsla(0,6.5%,82%,.603);
+    }
+  }
 }
 
 .country-list > .paris {
@@ -50,6 +73,7 @@
 .country-list > .barcelona :hover .country-label{
   visibility:visible;
   color: black;
+  
 }
 
 
