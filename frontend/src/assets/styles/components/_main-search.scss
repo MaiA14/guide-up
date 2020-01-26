@@ -16,14 +16,13 @@ select {
     font-size: 20px;
     border-radius: 0 9px  9px 0;
     width: 110px;
-    background-color: #ef8758;
+    background-color: $clr3;
     opacity: 1;
     transition: 0.3s;
     border: none;
     color: white;
     cursor: pointer;
  }
-
 
  .search-btn:hover{
      opacity: 0.9;
@@ -34,7 +33,7 @@ select {
  }
 
  .search-btn:hover{
-    background-color: #faac88;
+    background-color: $clr4;
     border: none;
 }
 
