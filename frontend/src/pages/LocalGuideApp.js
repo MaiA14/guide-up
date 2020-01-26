@@ -25,6 +25,8 @@ class LocalGuideApp extends Component {
             const user = storageService.load('loggedinUser')
             this.props.setUserLogIn(user)
         }
+
+
         this.props.loadGuides();
         document.body.style.paddingTop = 0
 

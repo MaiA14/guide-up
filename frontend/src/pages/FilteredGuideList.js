@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import queryString from 'query-string'
 import { Card, Icon, Image } from 'semantic-ui-react'
 
-
 import GuidePreview from '../cmps/GuidePreview.js'
 import { loadGuides ,loadTags } from '../reducers/guide/actionGuide.js'
 import MainSearch from '../cmps/MainSearch.js'
@@ -27,22 +26,20 @@ class FilteredGuideList extends Component {
     }
 
     componentDidMount() {
-        document.body.style.paddingTop = '60px'
-
-        
+        document.body.style.paddingTop = '60px'  
     }
 
     componentWillMount() {
 
         const items = queryString.parse(this.props.location.search)
         this.props.loadGuides(items.city);
-
     }
 
     onSearch = (city) => {
         const items = queryString.parse(this.props.location.search)
         this.props.loadGuides(city);
     }
+
     render() {
         const selectStyle = {
             border: '1px solid #ef8758'
@@ -53,8 +50,6 @@ class FilteredGuideList extends Component {
         const styleNavBar = {
             backgroundColor: '#161f24'
         }
-
-        
         return (
             
             <div>
@@ -80,12 +75,9 @@ class FilteredGuideList extends Component {
                     {this.props.guides.map(guide => <GuidePreview key={guide._id} guide={guide}></GuidePreview>)}
                 </section>
                 <Footer ></Footer> 
-            </div>
-            
-        )
-        
+            </div>   
+        )   
     }
- 
 }
 const mappropsToProps = (state) => {
     return {
