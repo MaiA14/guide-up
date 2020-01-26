@@ -7,6 +7,7 @@ import { getGuide } from '../reducers/guide/actionGuide.js'
 import Review from '../cmps/Review.js'
 import Navbar from '../cmps/Navbar.js'
 import ReviewView from '../cmps/Review-view.js'
+import Footer from '../cmps/Footer.js'
 import { Icon } from 'semantic-ui-react'
 
 class GuideDetails extends Component {
@@ -128,11 +129,12 @@ class GuideDetails extends Component {
 
                             </div>
                         </div>
-
+                        
                     </div>
+                    
 
                 }
-
+    <Footer ></Footer>
             </React.Fragment>
         )
     }

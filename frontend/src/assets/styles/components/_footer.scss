@@ -1,12 +1,11 @@
 .main-footer {
     padding: 20px;
     text-align: center;
-    background:$clr2;
+    background: #161f24;
     color: white;
     border-bottom: 0.5px solid white;
     margin-top: 20px;
-    // position: fixed;
-    // margin-top: 430px;
+    font-size: rem(16px);
     width: 100%;
     bottom: 0;
 }

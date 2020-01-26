@@ -9,6 +9,8 @@ import { loadGuides ,loadTags } from '../reducers/guide/actionGuide.js'
 import MainSearch from '../cmps/MainSearch.js'
 import Loading from '../cmps/Loading.js'
 import Navbar from '../cmps/Navbar.js'
+import Footer from '../cmps/Footer.js'
+
 class FilteredGuideList extends Component {
     state = {
         filterGuides: [],
@@ -77,9 +79,13 @@ class FilteredGuideList extends Component {
                 <section className="cards-list main-container">
                     {this.props.guides.map(guide => <GuidePreview key={guide._id} guide={guide}></GuidePreview>)}
                 </section>
+                <Footer ></Footer> 
             </div>
+            
         )
+        
     }
+ 
 }
 const mappropsToProps = (state) => {
     return {

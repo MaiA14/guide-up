@@ -3,12 +3,11 @@ import { connect } from 'react-redux'
 
 
 import Header from '../cmps/Header.js'
+import Footer from '../cmps/Footer.js'
 import List from '../cmps/List.js'
 import { loadGuides,setUserLogIn } from '../reducers/guide/actionGuide.js'
 import Navbar from '../cmps/Navbar.js'
 import storageService from '../service/storageService.js'
-
-
 
 class LocalGuideApp extends Component {
     state = {
@@ -25,11 +24,7 @@ class LocalGuideApp extends Component {
         if(storageService.load('loggedinUser')){
             const user = storageService.load('loggedinUser')
             this.props.setUserLogIn(user)
-
-
         }
-
-
         this.props.loadGuides();
         document.body.style.paddingTop = 0
 
@@ -55,6 +50,7 @@ class LocalGuideApp extends Component {
                         <List guides={this.props.guides} countries={this.state.countries}></List>
                     </section>
                 }
+                <Footer ></Footer>
             </div>
         )
     }
