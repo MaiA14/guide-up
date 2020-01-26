@@ -31,7 +31,7 @@ class FilteredGuideList extends Component {
     }
     render() {
         const selectStyle = {
-            border: '1px solid rgb(54, 71, 153)'
+            border: '1px solid #ef8758'
         }
         if (!this.props.guides.length) return (
             <Loading></Loading>
