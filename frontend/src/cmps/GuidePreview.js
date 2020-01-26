@@ -18,15 +18,16 @@ const cardStyle = {
     padding: 0,
     border: 'none',
     borderadius: '.28571429rem 0 0',
-    boxShadow:'none',
     paddingLeft: '2px',
     paddingRight: '2px',
-    lineHeight : 2
+    lineHeight : 2,
+    boxShadow: 'none'
+    
 }
 
 const cursor = {
-    cursor: "pointer"
-
+    cursor: "pointer",
+    boxShadow: '0px 0px 0px 0.2px rgb(100,100,100)'
 }
 
 const imgStyle = {
