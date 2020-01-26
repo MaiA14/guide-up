@@ -44,10 +44,9 @@ class GuidePreviewCard extends Component {
 
     render() {
         const { props } = this
-        console.log()
         return (
 
-            < Card style={cardStyle} >
+            <Card style={cardStyle} >
                 <Image onClick={this.onLink} style={imgStyle} src={props.guide.imgUrl} />
                 <Card.Content onClick={this.onLink} style={cursor} >
                     <Card.Header style={header} >
@@ -58,9 +57,11 @@ class GuidePreviewCard extends Component {
                         </div>
                     </Card.Header>
                     {
+                        
                         props.guide.langugages.map((langugage, index) => {
+                          
                             return (
-                                ((props.guide.langugages.length-1 > index)) ? <span>{langugage + ' , '}</span> : <span>{langugage}</span>
+                                ((props.guide.langugages.length-1 > index)) ? <span key={index}>{langugage + ' , '}</span> : <span key={index}>{langugage}</span>
                             )
                         })}
                     <div className="container-data">

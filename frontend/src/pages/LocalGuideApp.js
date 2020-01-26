@@ -4,13 +4,15 @@ import { connect } from 'react-redux'
 
 import Header from '../cmps/Header.js'
 import List from '../cmps/List.js'
-import { loadGuides } from '../reducers/guide/actionGuide.js'
+import { loadGuides,setUserLogIn } from '../reducers/guide/actionGuide.js'
 import Navbar from '../cmps/Navbar.js'
+import storageService from '../service/storageService.js'
+
 
 
 class LocalGuideApp extends Component {
     state = {
-        countries: ['tel-aviv', 'paris', 'barcelona', 'new-york', 'mexico', 'berlin'],
+        countries: ['tel-aviv', 'paris', 'barcelona', 'new-york', 'mexico-city', 'berlin'],
         filterBy: {},
         styleNavBar: {
             backgroundColor: '',
@@ -21,6 +23,15 @@ class LocalGuideApp extends Component {
 
     }
     componentDidMount() {
+
+        if(storageService.load('loggedinUser')){
+            const user = storageService.load('loggedinUser')
+            this.props.setUserLogIn(user)
+
+
+        }
+
+
         this.props.loadGuides();
         document.body.style.paddingTop = 0
 
@@ -59,11 +70,13 @@ class LocalGuideApp extends Component {
 }
 const mapStateToProps = (state) => {
     return {
-        guides: state.guides
+        guides: state.guides,
+        user:state.user
     }
 }
 const mapDispatchToProps = {
     loadGuides,
+    setUserLogIn
 }
 export default connect(
     mapStateToProps,

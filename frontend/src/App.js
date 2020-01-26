@@ -13,6 +13,7 @@ import Login from '../src/pages/Login.js'
 import Signup from '../src/pages/Signup'
 import {rootReducer} from './reducers/guide/GuideReducer.js'
 import BecomeGuide from './pages/BecomeGuide.js'
+import profile from './pages/profile.js'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -29,6 +30,9 @@ function App() {
             <Route component={Login} path="/login" ></Route>
             <Route component={Signup} path="/signup" ></Route>
             <Route component={BecomeGuide} path="/join_us" ></Route>
+            <Route component={profile} path="/profile" ></Route>
+
+
           </Switch>
       </Router>
     </div>

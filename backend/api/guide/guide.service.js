@@ -6,7 +6,8 @@ module.exports = {
     getGuideById,
     update,
     query,
-    add
+    add,
+    getGuideByUserName
 };
 
 async function query(filterBy) {
@@ -36,13 +37,21 @@ async function getGuideById(guideId) {
     }
 }
 
+async function getGuideByUserName(name) {
+    const collection = await dbService.getCollection('guide')
+    try {
+        const guide = await collection.findOne({ "name": name })
+
+        return guide
+    } catch (err) {
+        console.log(`ERROR: cannot find guide ${name}`)
+        throw err;
+    }
+}
+
 async function update(id, guide) {
     const collection = await dbService.getCollection('guide')
     delete guide._id
-
-
-
-
 
     try {
         await collection.replaceOne({ "_id": ObjectId(id) }, { $set: guide })

@@ -1,12 +1,15 @@
-import HttpService from './HttpService.js'
 import axios from 'axios';
+
+import HttpService from './HttpService.js'
+import storageService from './storageService.js'
 export default {
     query,
     deleteGuide,
     getGuideById,
     save,
     addGuide,
-    addReview
+    addReview,
+    checkCredentials
 };
 
 const url = "http://localhost:3001/api/guide"
@@ -50,4 +53,23 @@ function _calcGuideRank(guide) {
         return acc + Number(currRank.rank)
     }, 0)
     return (guideRank / guide.reviews.length).toFixed(1);
+}
+
+async function checkCredentials(loginData) {
+    try {
+        const res = await Axios.post("http://localhost:3001/api/auth" + '/login', loginData)
+        const user = res.data;
+        if (user) {
+            _saveLoggedin(user)
+        }
+        return user
+
+        return res.data.answer
+    } catch (err) {
+        throw err
+    }
+}
+
+function _saveLoggedin(user) {
+    storageService.store('loggedinUser', user)
 }

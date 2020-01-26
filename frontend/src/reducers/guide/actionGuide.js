@@ -54,3 +54,23 @@ export function addReview(review, guide) {
 
     }
 }
+
+function setUser(user) {
+    return {
+        type: 'SET_USER',
+        user
+    }
+}
+
+export function logUser(user) {
+    return async (dispatch) => {
+        const loggedUser = await guideService.checkCredentials(user)
+        dispatch(setUser(loggedUser))
+    }
+}
+
+export function setUserLogIn(user){
+    return  (dispatch) => {
+        dispatch(setUser(user))
+    }
+}
