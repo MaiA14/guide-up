@@ -17,9 +17,20 @@ select {
     border-radius: 0 9px  9px 0;
     width: 110px;
     background-color: $clr2;
+    opacity: 1;
+    transition: 0.3s;
     border: none;
     color: white;
     cursor: pointer;
+ }
+
+
+ .search-btn:hover{
+     opacity: 0.9;
+ }
+
+ .search-btn:focus{
+     outline: none;
  }
 
  .search-btn:hover{

@@ -16,12 +16,10 @@ class LocalGuideApp extends Component {
         filterBy: {},
         styleNavBar: {
             backgroundColor: '',
-            transition:'backgroundColor'
-            
+            transition:'backgroundColor'   
         }
-
-
     }
+
     componentDidMount() {
 
         if(storageService.load('loggedinUser')){
@@ -36,24 +34,17 @@ class LocalGuideApp extends Component {
         document.body.style.paddingTop = 0
 
         window.onscroll = () => {
-            let styleNavBar
-
+            let styleNavBar;
             if (document.documentElement.scrollTop > 110) {
                 styleNavBar = { backgroundColor: '#161f24',transition:' 0.8s' }
                 this.setState({ styleNavBar })
-
-
             } else if (document.documentElement.scrollTop < 500)
                 styleNavBar = { backgroundColor: '',transition:' 0.8s' }
             this.setState({ styleNavBar })
-
         }
-
     }
 
     render() {
-
-
         return (
             <div>
                 <Navbar styleNavBar={this.state.styleNavBar}></Navbar>
@@ -74,10 +65,12 @@ const mapStateToProps = (state) => {
         user:state.user
     }
 }
+
 const mapDispatchToProps = {
     loadGuides,
     setUserLogIn
 }
+
 export default connect(
     mapStateToProps,
     mapDispatchToProps

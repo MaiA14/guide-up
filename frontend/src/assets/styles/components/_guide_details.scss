@@ -1,11 +1,12 @@
+/* CALENDAR */
 .calendar-container {
   display: flex;
   flex-direction: column;
-
   padding: 40px;
 }
 .calendar-content {
-  border: 0.2px solid;
+  border: 1px solid;
+  border-color: $clr2;
   padding: 23px;
   position: sticky;
   top: 80px;
@@ -13,6 +14,8 @@
 .calendar-content > * {
   margin-bottom: 60px;
 }
+
+/* GUIDE DETAILS */
 
 .guide-header {
   font-family: "Lato-Bold";
@@ -22,21 +25,124 @@
   margin-top: 30px;
 }
 
+.guide-tags{
+  border-bottom: 1px solid;
+  border-color: $clr2;
+}
+
 .lang-from-guide{
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
   display: flex;
-  background-color: #7482c4;
-  width: 100%;
+  background-image:
+linear-gradient(to bottom, rgba(#4238cc, 0.52), rgba($clr2, 0.90)),
+ url('https://olusegunobasanjofoundation.org/w/2019/09/texture-drawing-images-using-line-and-tone-art-abstract-250x250.jpg');
 }
 
 .from-guide{
-  width: 950px;
+  text-transform: capitalize;
+  width: 70%;
 }
 
 .lang-guide{
   justify-content: flex-end;
-  width: 50%;
+  flex-direction: row;
+  width: 80%;
 }
 
+.guide-price{
+  text-align: center;
+}
+
+.guide-rank{
+  text-align: center;
+}
+
+.guide-short-desc > * {
+  font-family: "Lato";
+  font-weight: normal;
+  font-size: rem(30px);
+  line-height: 35px;
+  color: $clr2;
+  padding: 0;
+  word-break: break-word;
+  width: 567px;
+}
+
+.guide-desc {
+font-family: "Lato";
+font-size: rem(20px);
+line-height: 30px;
+color: #364799;
+padding: 0;
+word-break: break-word;
+width: 567px;
+border-bottom: 1px solid;
+}
+
+.guide-reviews-title {
+  font-family: "Lato";
+  font-size: rem(20px);
+  color: $clr2;
+  margin-right: 10%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 0;
+}
+
+.guide-details {
+  margin: 70px auto;
+  max-width: 1100px;
+}
+
+
+.guide-review-title{
+  font-family: "Lato";
+  font-size: rem(27px);
+  line-height: 45px;
+  color: $clr2;
+  padding: 0;
+  word-break: break-word;
+  width: 567px;
+}
+
+.guide-header > * {
+  font-size: 7.75rem;
+}
+.guide-img-details {
+  width: 500px;
+}
+.guide-img-details > * {
+  width: 68%;
+}
+
+.price-rank{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;  
+  font-family: "Lato-Bold";
+  font-size: rem(22px);
+  line-height: 45px;
+  color: $clr2;
+  padding: 0;
+}
+
+.num-of-people {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.num-of-people > * {
+  color: $clr2;
+  font-size: 23px;
+}
+
+
+/* BUTTONS */
 .back-btn {
   font-family: "Lato";
   text-align: center;
@@ -60,56 +166,24 @@
   opacity: 0.8;
 }
 
-.guide-short-desc > * {
+.book-btn {
   font-family: "Lato";
-  font-size: rem(35px);
-  line-height: 45px;
-  color: $clr2;
-  padding: 0;
-  word-break: break-word;
-  width: 567px;
+  text-align: center;
+  font-size: 15px;
+  border-radius: 0 9px 9px 0;
+  width: 70px;
+  padding: 5px;
+  background-color: $clr2;
+  border: 1px solid $clr2;
+  color: white;
+  cursor: pointer;
+  opacity: 1;
+  transition: 0.3s;
+  margin-top: 10px;
 }
 
-.from > * {
-  font-size: 34px;
-}
-
-.From {
-  margin-bottom: 16px;
-  margin-top: 16px;
-}
-
-
-.guide-reviews-title {
-  font-family: "Lato";
-  font-size: rem(20px);
-  color: $clr2;
-  border-top: solid;
-  margin-right: 10%;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  padding: 0;
-}
-.contanier-Details {
-  border-bottom: 1px solid;
-  font-family: "Lato-Bold";
-  font-size: rem(20px);
-  line-height: 30px;
-  color: $clr2;
-  padding: 0;
-  word-break: break-word;
-  width: 567px;
-}
-.guide-details {
-  margin: 70px auto;
-  max-width: 1100px;
-}
-.context-container > * {
-  padding-bottom: 39px;
-  margin-bottom: 30px;
-}
-.btn-container {
-  padding: 0;
+.book-btn:hover {
+  opacity: 0.8;
 }
 
 .book-btn {
@@ -127,6 +201,20 @@
   transition: 0.3s;
 }
 
+.book-btn:focus{
+  outline: none;
+}
+
+.book-input{
+  outline: none;
+  border: 1px solid $clr2;
+}
+
+.book-input:focus{
+  border: 1px solid #6376ce;
+  outline: none;
+}
+
 .num-of-guests {
   border-radius: 9px 0 0 9px;
   width: 180px;
@@ -137,7 +225,9 @@
   outline: none;
 }
 
-.review-contaner {
+
+/* CONTAINERS */
+.review-container {
   width: 75%;
   height: auto;
   color: black;
@@ -146,31 +236,40 @@
   word-wrap: break-word;
   border-bottom: 0.5px solid;
 }
-.guide-header > * {
-  font-size: 7.75rem;
-}
-.guide-img-details {
-  width: 500px;
-}
-.guide-img-details > * {
-  width: 68%;
-}
 
-
-.HowMany-people {
-  display: flex;
-  justify-content: center;
+.num-of-reviews{
   margin-top: 20px;
-  margin-bottom: 20px;
+  border-top:1px solid;
 }
 
-.HowMany-people > * {
-  font-size: 23px;
-}
-.bookBtn-container {
+.book-btn-container {
   display: flex;
   justify-content: center;
   margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.context-container > * {
+  padding-bottom: 13px;
+  margin-bottom: 10px;
+}
+.btn-container {
+  padding: 0;
+  outline: none;
+}
+
+.guide-activites{
+  display: flex;
+  width: 50%;
+  img{
+    padding-top: 20px;
+    margin: 3px;
+  }
+}
+
+.divider{
+  padding-top: 15px;
+  border-bottom: 1px solid;
 }
 
   

@@ -7,7 +7,7 @@ import { withRouter } from "react-router";
 function List(props) {
     return (
         <React.Fragment>
-                <h1 className="first-header-section">Popular tours</h1>
+                <h1 className="first-header-section">Popular Destinations</h1>
             <section className="country-list">
                 {props.countries.map(country => <ContryPreview key={country} country={country}></ContryPreview>)}
             </section>
