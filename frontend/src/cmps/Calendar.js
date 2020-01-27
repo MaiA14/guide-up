@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Calendar from 'react-calendar';
-// import {CalendarGuide2} from 'react-css-calendar'
  
 export default class CalendarGuide extends Component {
   state = {
@@ -12,7 +11,7 @@ export default class CalendarGuide extends Component {
   render() {
     return (
       <div className='calendar'>
-        <Calendar selectRange
+        <Calendar selectRange={false}
           onChange={this.onChange}
           value={this.state.date}
         />
