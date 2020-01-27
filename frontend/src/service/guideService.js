@@ -2,6 +2,8 @@ import axios from 'axios';
 
 import HttpService from './HttpService.js'
 import storageService from './storageService.js'
+import { Comment, Icon } from 'semantic-ui-react'
+
 export default {
     query,
     deleteGuide,
@@ -10,8 +12,8 @@ export default {
     addGuide,
     addReview,
     checkCredentials,
-    // logIn
-};
+    
+}
 
 const url = "http://localhost:3001/api/guide"
 var Axios = axios.create({
@@ -55,11 +57,25 @@ function _calcGuideRank(guide) {
     }, 0)
     return (guideRank / guide.reviews.length).toFixed(1);
 }
-// logIn()
-// async function logIn(){
 
-//     return HttpService.post(`guide/`)
-// }
+
+
+export  function getIconTag() {
+     const tag = {
+        Coffe:   'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126710/nx4zhbrtkfp5vybo2tvt.png' ,  
+        Outdoor: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126496/lvydnjcii7euhydeh8bi.png',
+        Shopping: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580125153/musi4qk4n11vu1v2xcyp.png',
+        Culture: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126878/mcjofjlxdzma6w9grpgj.png',
+        Sport: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126246/uyzc16yl35u5j0pakrgq.png',
+        Food: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580125925/c4328sfxfhtobbhmeux3.png',
+        Music: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580124661/j4hs3vgcfjok0xsuffj4.png',
+        Art: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580125416/e7ncfe3ogdaeoajh83lx.png',
+        Photos: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126652/zeuynhclnuotvd5oat0s.png',
+        NightLife: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580125337/bjkqdxjjv2ifwrp4o9cz.png'
+    }
+    return tag
+
+}
 
 async function checkCredentials(loginData) {
     try {

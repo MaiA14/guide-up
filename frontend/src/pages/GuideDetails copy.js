@@ -11,7 +11,7 @@ import Review from '../cmps/Review.js'
 import Navbar from '../cmps/Navbar.js'
 import ReviewView from '../cmps/Review-view.js'
 import Loading from '../cmps/Loading.js'
-
+import GuideTags from '../cmps/GuideTags.js'
 import Footer from '../cmps/Footer.js'
 
 class GuideDetails extends Component {
@@ -53,6 +53,13 @@ class GuideDetails extends Component {
         }
 
 
+        const tagStyle = {
+            width: '10%;',
+            height: '100%;'
+        }
+        const iconClass = 'details-icon-style'
+
+
 
         return (
 
@@ -76,12 +83,7 @@ class GuideDetails extends Component {
 
                            
                             <div className="guide-tags">
-                                {
-                                    this.props.guide.tags.map((tag, index) => {
-                                        return (
-                                            ((this.props.guide.tags.length - 1 > index)) ? <span>{tag + '  '}</span> : <span>{tag}</span>
-                                        )
-                                    })}
+                            <GuideTags iconClass={iconClass} guide={this.props.guide} ></GuideTags>
                             </div>
                             <div class="lang-from-guide">
                                 <div className="from-guide">

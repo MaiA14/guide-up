@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Calendar from 'react-calendar';
-// import {CalendarGuide2} from 'react-css-calendar'
  
 export default class CalendarGuide extends Component {
   state = {

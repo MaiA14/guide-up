@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import quoryString from 'query-string'
 import { Card, Icon, Image } from 'semantic-ui-react'
 import { withRouter } from 'react-router-dom';
-
+import GuideTags from '../cmps/GuideTags.js'
 import Loader from '../cmps/Loading.js'
 
 
@@ -61,6 +61,7 @@ class GuidePreviewCard extends Component {
     render() {
 
 
+        const iconClass = 'home-icon-style'
 
         const { props } = this
         return (<Card style={cardStyle} >
@@ -79,9 +80,15 @@ class GuidePreviewCard extends Component {
                             ((props.guide.langugages.length - 1 > index)) ? <span key={index}>{langugage + ' , '}</span> : <span key={index}>{langugage}</span>
                         )
                     })}
+                <div className="container-tag">
+
+                  
+
+                </div>
                 <div className="container-data">
                     <span>From: {props.guide.city}</span>
                 </div>
+                <GuideTags iconClass={iconClass} guide={props.guide} ></GuideTags>
             </Card.Content>
         </Card >
 

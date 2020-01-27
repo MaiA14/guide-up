@@ -3,6 +3,7 @@ import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import thunk from 'redux-thunk';
 
+import  '../src/assets/css/all.min.css'
 import LocalGuideApp from './pages/LocalGuideApp.js'
 import GuideDetails from '../src/pages/GuideDetails copy.js';
 import FilteredGuideList from '../src/pages/FilteredGuideList.js'
@@ -12,6 +13,7 @@ import Login from '../src/pages/Login.js'
 import Signup from '../src/pages/Signup'
 import BecomeGuide from './pages/BecomeGuide.js'
 import profile from './pages/profile.js'
+
 
 
 

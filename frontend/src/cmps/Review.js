@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { addReview } from '../reducers/guide/actionGuide.js'
 import { getRandomID } from '../service/utilsService.js'
 import RatingStar from './RatingStar.js'
+import { Form, TextArea } from 'semantic-ui-react'
 
 class Review extends Component {
     state = {
@@ -44,9 +45,10 @@ class Review extends Component {
                     type="text" className="review-input" placeholder="Title"></input>
                 </div>
                 <div>
-                    <input onChange={this.onChange} name="txt" 
-                    type="text" className="review-input" 
-                    placeholder="What do you think about me?"></input>
+                  
+                   <Form className="review-text">
+                   <TextArea rows={2} placeholder='What do you think about me?' onChange={this.onChange} name="txt"/>
+                 </Form>
                 </div>
                 <div>Rate</div>
                 <div>
