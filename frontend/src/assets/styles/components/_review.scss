@@ -1,9 +1,28 @@
 .review-input{
     border: none;
-    border-bottom: 2px solid;
+    border-bottom: 1px solid;
     margin-bottom: 20px;
     width: 230px;
+    outline: none;
 }
+
+.review-text{
+    width: 350px;
+    margin-bottom: 10px;
+}
+
+
+.ui.star.rating:focus{
+    outline:none;
+}
+
+.ui.star.rating .active.icon {
+    border-bottom: none;
+    outline: none;
+}
+
+
+
 
 .send-btn {
     font-family: "Lato";

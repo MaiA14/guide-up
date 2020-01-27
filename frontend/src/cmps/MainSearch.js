@@ -23,22 +23,24 @@ class MainSearch extends Component {
             if (this.props.onSearch) {
                 console.log('exixttterws5gerg')
                 this.props.onSearch(this.state.city)
-
             }
-
         }
     }
 
     render() {
-
-
+        let style = ''
         const selectStyle = {
             background: ""
-
         }
+        if (this.props.style) {
+            style = this.props.style
+        } else style = ''
+
+        console.log(style)
+
         return (
-            <div className="search-container flex" >
-                <select style={this.props.style} value={this.state.city} onChange={this.onChange}>
+            <div style={style.contanerStyle} className="search-container flex" >
+                <select style={style.selectStyle} value={this.state.city} onChange={this.onChange}>
                     <option value="" disabled selected>{
                         this.state.city ?
                             this.state.city : 'select your destination'

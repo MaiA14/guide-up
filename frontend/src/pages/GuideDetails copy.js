@@ -11,6 +11,7 @@ import Review from '../cmps/Review.js'
 import Navbar from '../cmps/Navbar.js'
 import ReviewView from '../cmps/Review-view.js'
 import Loading from '../cmps/Loading.js'
+import GuideTags from '../cmps/GuideTags.js'
 import Footer from '../cmps/Footer.js'
 import Chat from '../cmps/Chat.js'
 
@@ -53,6 +54,13 @@ class GuideDetails extends Component {
         }
 
 
+        const tagStyle = {
+            width: '10%;',
+            height: '100%;'
+        }
+        const iconClass = 'details-icon-style'
+
+
 
         return (
 
@@ -74,28 +82,29 @@ class GuideDetails extends Component {
                                 <img src={this.props.guide.imgUrl} ></img>
                             </div>
 
-                           
+
                             <div className="guide-tags">
-                                {
-                                    this.props.guide.tags.map((tag, index) => {
-                                        return (
-                                            ((this.props.guide.tags.length - 1 > index)) ? <span>{tag + '  '}</span> : <span>{tag}</span>
-                                        )
-                                    })}
+                                <GuideTags iconClass={iconClass} guide={this.props.guide} ></GuideTags>
                             </div>
-                            <div class="lang-from-guide">
+                            <div className="lang-from-guide">
                                 <div className="from-guide">
                                     <span className="guide-field-title"> From:  </span><span>{this.props.guide.city}</span>
+
+
+                                    <div className="guide-lang">
+                                        <span className="guide-field-title">Langugages: </span>
+                                        {
+                                            this.props.guide.langugages.map((langugage, index) => {
+                                                return (
+                                                    ((this.props.guide.langugages.length - 1 > index)) ? <span>{langugage + ' , '}</span> : <span>{langugage}</span>
+                                                )
+                                            })}
+                                    </div>
                                 </div>
-                                <div className="guide-lang">
-                                    <span className="guide-field-title">Langugages: </span>
-                                    {
-                                        this.props.guide.langugages.map((langugage, index) => {
-                                            return (
-                                                ((this.props.guide.langugages.length - 1 > index)) ? <span>{langugage + ' , '}</span> : <span>{langugage}</span>
-                                            )
-                                        })}
-                                </div>
+                                <div className="container-chat"></div>
+                                <div className="container-main-chat"></div>
+                                <Chat guide={this.props.guide}></Chat>
+
                             </div>
 
                             <div className="guide-desc">
@@ -105,7 +114,7 @@ class GuideDetails extends Component {
                                         return <img src={img} alt="" className="img-responsive" />
                                     })}
                                 </div>
-                                <div class="divider"></div>
+                                <div className="divider"></div>
                                 <Review guide={this.props.guide} onNewReview={this.onNewReview} ></Review>
                                 <div className="num-of-reviews">
                                     Reviews ({this.props.guide.reviews.length})
@@ -119,9 +128,9 @@ class GuideDetails extends Component {
                         </div>
 
                         <div className="calendar-container">
-                        
+
                             <div className="calendar-content">
-                            {/* <h1 classname="calendar-title">Pick a date</h1> */}
+
                                 <Calendar></Calendar>
                                 <div className="num-of-people">
                                     <h2>How many people?</h2>
@@ -130,7 +139,7 @@ class GuideDetails extends Component {
                                     <input type="text" className="book-btn-container book-input"></input>
                                     <button className="book-btn">Book</button>
                                 </div>
-                                <div class="price-rank flex column justify-center">
+                                <div className="price-rank flex column justify-center">
                                     <div className="guide-price">${this.props.guide.price}  For my tour</div>
                                     <div className="guide-rank">
                                         <Icon size={'small'} disabled name='star' />{this.props.guide.avgRank}
@@ -139,13 +148,12 @@ class GuideDetails extends Component {
 
                             </div>
                         </div>
-                        
+
                     </div>
-                    
+
 
                 }
-                <Chat guide={this.props.guide}></Chat>
-    <Footer ></Footer>
+                <Footer ></Footer>
             </React.Fragment>
         )
     }

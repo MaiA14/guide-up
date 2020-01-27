@@ -1,0 +1,38 @@
+
+.tags-container{
+    background-color: #f0f0f0;
+    margin-top: 4px;
+    display: flex;
+    padding: 2px;
+    margin-right: 5px;
+    align-items: center;
+}
+
+
+.home-icon-style{
+    width : 10%;
+    height: 10%;
+}
+
+.details-icon-style{
+ 
+    width: 15%;
+    height: 88%;
+}
+
+
+
+.tag-label{
+    flex-direction: row;
+    width: 183px;
+    margin-left: 4px;
+}
+
+.tag-icon{
+    justify-content: flex-start;
+}
+
+.tag-icon img{
+    height: 25px;
+}
+

@@ -3,17 +3,15 @@ import React from 'react'
 import { Image } from 'semantic-ui-react'
 
 function Chat(props) {
-    console.log(props)
     return (
-        <div className="container-chat">
+        <React.Fragment>
+          
+                <div className="container-chat-icon">
+                    <Image src="https://res.cloudinary.com/dtwqtpteb/image/upload/v1580140663/q6heebl8noebf9mz2ocu.png"></Image>
+                </div>
 
-            <div className="container-chat-icon">
-            <Image  src={props.guide.imgUrl}     ></Image>
-
-
-            </div>
-            
-        </div>
+ 
+        </React.Fragment>
     )
 }
 

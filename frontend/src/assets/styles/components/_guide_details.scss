@@ -32,6 +32,7 @@
 .guide-tags{
   border-bottom: 1px solid;
   border-color: $clr2;
+  display: flex;
 }
 
 .lang-from-guide{
@@ -39,6 +40,7 @@
   color: $clr2;
   line-height: 1.8;
   border-radius: 15px;
+  display: flex;
 }
 
 .from-guide{

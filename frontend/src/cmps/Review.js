@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { addReview } from '../reducers/guide/actionGuide.js'
 import { getRandomID } from '../service/utilsService.js'
 import RatingStar from './RatingStar.js'
+import { Form, TextArea } from 'semantic-ui-react'
 
 class Review extends Component {
     state = {
@@ -12,27 +13,36 @@ class Review extends Component {
         txt: '',
         createBy: {
             id: "6436373453",
-            userName: "testName",
-            fullName: "testName",
+            testName: "",
+            fullName: "",
             imgUrl: "http://img.com"
         },
         created_at: Date.now(),
         rank: null,
     }
 
-    onChangeRateStar = (rating)=>{
+    onChangeRateStar = (rating) => {
         this.setState((prevState) => {
-            return { ...prevState.reviews, ['rank']: rating }
-        })   
+            return { ...prevState, ['rank']: rating }
+        })
     }
 
     onChange = (ev) => {
         ev.preventDefault();
         const field = ev.target.name
         const value = ev.target.value
-        this.setState((prevState) => {
-            return { ...prevState.reviews, [field]: value }
-        })
+        if (field === 'userName') {
+            this.setState(prevState => (
+
+
+                {
+                    createBy: { ...prevState.createBy, [field]: value }
+                }))
+        } else {
+            this.setState((prevState) => {
+                return { ...prevState, [field]: value }
+            })
+        }
     }
 
     render() {
@@ -40,19 +50,20 @@ class Review extends Component {
             <div>
                 <h2 className="guide-review-title">Write a review about {this.props.guide.name}</h2>
                 <div>
-                    <input onChange={this.onChange} name="title" 
-                    type="text" className="review-input" placeholder="Title"></input>
+                    <input onChange={this.onChange} name="userName"
+                        type="text" className="review-input" placeholder="user name"></input>
                 </div>
                 <div>
-                    <input onChange={this.onChange} name="txt" 
-                    type="text" className="review-input" 
-                    placeholder="What do you think about me?"></input>
+
+                    <Form className="review-text">
+                        <TextArea rows={2} placeholder='What do you think about me?' onChange={this.onChange} name="txt" />
+                    </Form>
                 </div>
                 <div>Rate</div>
                 <div>
-                    <RatingStar  onChangeRateStar={this.onChangeRateStar}></RatingStar>
+                    <RatingStar onChangeRateStar={this.onChangeRateStar}></RatingStar>
                 </div>
-                <button className="send-btn" onClick={() => 
+                <button className="send-btn" onClick={() =>
                     this.props.addReview(this.state, this.props.guide)}>Send</button>
             </div>
         )
