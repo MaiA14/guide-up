@@ -123,11 +123,9 @@ class GuideDetails extends Component {
                                 })}
                             </div>
                         </div>
-
+                     
                         <div className="calendar-container">
-                        
                             <div className="calendar-content">
-                            {/* <h1 classname="calendar-title">Pick a date</h1> */}
                                 <Calendar></Calendar>
                                 <div className="num-of-people">
                                     <h2>How many people?</h2>

@@ -11,7 +11,7 @@ export default class CalendarGuide extends Component {
   render() {
     return (
       <div className='calendar'>
-        <Calendar selectRange
+        <Calendar selectRange={false}
           onChange={this.onChange}
           value={this.state.date}
         />

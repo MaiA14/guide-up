@@ -13,9 +13,7 @@ import Login from '../src/pages/Login.js'
 import Signup from '../src/pages/Signup'
 import BecomeGuide from './pages/BecomeGuide.js'
 import profile from './pages/profile.js'
-
-
-
+import "react-datepicker/dist/react-datepicker.css";
 
 
 function App() {

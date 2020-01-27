@@ -40,6 +40,7 @@
   color: $clr2;
   line-height: 1.8;
   border-radius: 15px;
+  display: flex;
 }
 
 .from-guide{
@@ -157,6 +158,14 @@ border-bottom: 1px solid;
 }
 
 .num-of-people > * {
+  color: $clr2;
+  font-size: 23px;
+}
+
+.calendar-title{
+  font-family: "Lato";
+  font-size: rem(27px);
+  line-height: 45px;
   color: $clr2;
   font-size: 23px;
 }
