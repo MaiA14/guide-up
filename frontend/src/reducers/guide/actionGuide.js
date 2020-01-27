@@ -11,7 +11,6 @@ export function loadGuides(filterBy = '') {
             dispatch(loading());
 
             const guides = await guideService.query(filterBy);
-            console.log('guides',guides)
             dispatch(setGuides(guides))
             
 

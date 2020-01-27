@@ -1,8 +1,3 @@
-.main-search{
- 
-    // margin-bottom: 20px;
-}
-
 select {
     border:0px;
     outline:0px;
@@ -13,9 +8,10 @@ select {
 
  .search-btn{
     font-family: 'Lato';
-    font-size: 20px;
+    font-size: 16px;
     border-radius: 0 9px  9px 0;
-    width: 110px;
+    width: 70px;
+    background-color: #ef8758;
     background-color: $clr3;
     opacity: 1;
     transition: 0.3s;
@@ -39,7 +35,7 @@ select {
 
  .search-container {
      justify-content: center;
-     margin-top: 30px;
+     margin-top: 100px;
  }
 
 

@@ -12,6 +12,7 @@ import Navbar from '../cmps/Navbar.js'
 import ReviewView from '../cmps/Review-view.js'
 import Loading from '../cmps/Loading.js'
 
+import Footer from '../cmps/Footer.js'
 
 class GuideDetails extends Component {
     state = {
@@ -42,15 +43,14 @@ class GuideDetails extends Component {
 
         this.props.saveGuide(this.state)
     }
+
     render() {
         const styleNavBar = {
             backgroundColor: '#161f24'
         }
-        console.log(this.props.isLoading)
         if (this.props.isLoading) {
             return <Loading></Loading>
         }
-        console.log('@@@@@@@@: ', this.props.guide.name)
 
 
 
@@ -67,13 +67,14 @@ class GuideDetails extends Component {
                             <h1 className="guide-header ">
                                 {this.props.guide.name}
                             </h1>
+                            <div className="guide-short-desc">
+                                <div>{this.props.guide.shortDescription}</div>
+                            </div>
                             <div className="guide-img-details">
                                 <img src={this.props.guide.imgUrl} ></img>
                             </div>
 
-                            <div className="guide-short-desc">
-                                <h2>{this.props.guide.shortDescription}</h2>
-                            </div>
+                           
                             <div className="guide-tags">
                                 {
                                     this.props.guide.tags.map((tag, index) => {
@@ -84,10 +85,10 @@ class GuideDetails extends Component {
                             </div>
                             <div class="lang-from-guide">
                                 <div className="from-guide">
-                                    <div> From: {this.props.guide.city}</div>
+                                    <span className="guide-field-title"> From:  </span><span>{this.props.guide.city}</span>
                                 </div>
                                 <div className="guide-lang">
-                                    <span>Langugages: </span>
+                                    <span className="guide-field-title">Langugages: </span>
                                     {
                                         this.props.guide.langugages.map((langugage, index) => {
                                             return (
@@ -105,7 +106,7 @@ class GuideDetails extends Component {
                                     })}
                                 </div>
                                 <div class="divider"></div>
-                                <Review guide={this.onNewReview} ></Review>
+                                <Review guide={this.props.guide} onNewReview={this.onNewReview} ></Review>
                                 <div className="num-of-reviews">
                                     Reviews ({this.props.guide.reviews.length})
                                 </div>
@@ -118,7 +119,9 @@ class GuideDetails extends Component {
                         </div>
 
                         <div className="calendar-container">
+                        
                             <div className="calendar-content">
+                            {/* <h1 classname="calendar-title">Pick a date</h1> */}
                                 <Calendar></Calendar>
                                 <div className="num-of-people">
                                     <h2>How many people?</h2>
@@ -136,17 +139,17 @@ class GuideDetails extends Component {
 
                             </div>
                         </div>
-
+                        
                     </div>
+                    
 
                 }
-
+    <Footer ></Footer>
             </React.Fragment>
         )
     }
 }
 const mapStateToProps = (state) => {
-    console.log(state.guides.guide)
     return {
 
         guide: state.guides.guide,

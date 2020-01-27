@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
 
-
+import Loading from '../cmps/Loading.js'
 import Header from '../cmps/Header.js'
+import Footer from '../cmps/Footer.js'
 import List from '../cmps/List.js'
 import { loadGuides,setUserLogIn } from '../reducers/guide/actionGuide.js'
 import Navbar from '../cmps/Navbar.js'
 import storageService from '../service/storageService.js'
-
-
 
 class LocalGuideApp extends Component {
     state = {
@@ -25,8 +24,6 @@ class LocalGuideApp extends Component {
         if(storageService.load('loggedinUser')){
             const user = storageService.load('loggedinUser')
             this.props.setUserLogIn(user)
-
-
         }
 
 
@@ -45,6 +42,11 @@ class LocalGuideApp extends Component {
     }
 
     render() {
+
+        
+        if (this.props.isLoading) {
+            return <Loading></Loading>
+        }
         return (
             <div>
                 <Navbar styleNavBar={this.state.styleNavBar}></Navbar>
@@ -52,9 +54,11 @@ class LocalGuideApp extends Component {
                 {
                     this.props.guides &&
                     <section className="main-container">
+
                         <List guides={this.props.guides} countries={this.state.countries}></List>
                     </section>
                 }
+                <Footer ></Footer>
             </div>
         )
     }
@@ -62,7 +66,9 @@ class LocalGuideApp extends Component {
 const mapStateToProps = (state) => {
     return {
         guides: state.guides.guides,
-        user:state.user
+        user:state.user,
+        isLoading: state.system.isLoading,
+
     }
 }
 

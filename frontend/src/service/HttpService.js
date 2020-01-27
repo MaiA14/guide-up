@@ -18,7 +18,6 @@ export default {
         return ajax(endpoint, 'POST', data)
     },
     put(endpoint, data){
-        console.log(endpoint)
         return ajax(endpoint, 'PUT', data)
     },
     delete(endpoint, data){
@@ -37,8 +36,6 @@ async function ajax(endpoint, method='get', data=null , dispatch) {
           
 
         })
-        console.log('url: ',`${BASE_URL}${endpoint}`)
-        // console.log('res: ',res)
 
   
         return res.data;

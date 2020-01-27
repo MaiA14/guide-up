@@ -6,17 +6,6 @@ import React, { Component } from 'react'
 
 
 
-// async function userImag() {
-
-//   const user = await axios.get('https://randomuser.me/api/')
-//   console.log(user)
-//   return user
-
-// }
-// const userImg = userImag()
-
-
-// console.log(props.review)
 
 class CommentView extends Component {
 

@@ -3,15 +3,26 @@ import { connect } from 'react-redux'
 import queryString from 'query-string'
 import { Card, Icon, Image } from 'semantic-ui-react'
 
-
 import GuidePreview from '../cmps/GuidePreview.js'
-import { loadGuides } from '../reducers/guide/actionGuide.js'
+import { loadGuides, loadTags } from '../reducers/guide/actionGuide.js'
 import MainSearch from '../cmps/MainSearch.js'
 import Loading from '../cmps/Loading.js'
 import Navbar from '../cmps/Navbar.js'
+import Footer from '../cmps/Footer.js'
+
 class FilteredGuideList extends Component {
     state = {
-        filterGuides: []
+        filterGuides: [],
+        coffe: '<i class="fas fa-mug-hot"></i>',
+        outdoor: '<i class="fas fa-tree"></i>',
+        shopping: '<i class="fas fa-shopping-cart"></i>',
+        culture: '<i class="fas fa-university"></i>',
+        sport: '<i class="fas fa-futbol"></i>',
+        food: '<i class="fas fa-utensils"></i>',
+        music: '<i class="fas fa-music"></i>',
+        art: '<i class="fas fa-paint-brush"></i>',
+        photos: '<i class="fas fa-camera"></i>',
+        nightlife: '<i class="fas fa-cocktail"></i>',
     }
 
     componentDidMount() {
@@ -20,19 +31,22 @@ class FilteredGuideList extends Component {
         debugger
         this.props.loadGuides(items.city);
 
+        document.body.style.paddingTop = '60px'
     }
 
     componentDidUpdate(propPrev) {
-        console.log(propPrev)
 
 
 
+        const items = queryString.parse(this.props.location.search)
+        this.props.loadGuides(items.city);
     }
 
     onSearch = (city) => {
         const items = queryString.parse(this.props.location.search)
         this.props.loadGuides(city);
     }
+
     render() {
         const selectStyle = {
             border: '1px solid #ef8758'
@@ -41,12 +55,9 @@ class FilteredGuideList extends Component {
         const styleNavBar = {
             backgroundColor: '#161f24'
         }
-        console.log(this.props.isLoading)
 
 
-        if (this.props.isLoading) {
-            return <Loading></Loading>
-        }
+ 
 
 
 
@@ -79,7 +90,14 @@ class FilteredGuideList extends Component {
                     </React.Fragment>
                 }
 
-            </div>
+
+
+
+                <section className="cards-list main-container">
+                    {this.props.guides.map(guide => <GuidePreview key={guide._id} guide={guide}></GuidePreview>)}
+                </section>
+                <Footer ></Footer>
+            </div >
         )
     }
 }
@@ -92,6 +110,7 @@ const mappropsToProps = (state) => {
 }
 const mapDispatchToProps = {
     loadGuides,
+    // loadTags
 }
 export default connect(
     mappropsToProps,

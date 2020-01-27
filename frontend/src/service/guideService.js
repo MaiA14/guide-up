@@ -68,6 +68,9 @@ async function checkCredentials(loginData) {
         // if (user) {
         //     // _saveLoggedin(user)
         // }
+        if (user) {
+            // _saveLoggedin(user)
+        }
         return user
 
         return res.data.answer

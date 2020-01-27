@@ -30,7 +30,6 @@ async function updateGuide(req, res) {
     
     const guide = req.body;
     const id = req.params.id
-    console.log('updateGuide ',guide)
 
 
     const newGuide = await guideService.update(id, guide)

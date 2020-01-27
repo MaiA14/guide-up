@@ -5,7 +5,7 @@ export default function Footer(props) {
 
         return (
             <div className="main-footer">
-                <small>All rights reserved to Mai & Ben</small>
+                <div>© 2020 Mai Aloni & Ben Yager. &nbsp;  All rights reserved.</div>
             </div>
         )
     
