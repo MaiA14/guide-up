@@ -9,9 +9,9 @@ class Navbar extends Component {
 
     render() {
 
-        if (!this.props.guides.length) {
-            return <h1>loading....</h1>
-        }
+        // if (!this.props.guides.length) {
+        //     return <h1>loading....</h1>
+        // }
      
 
         return <div className="main-navbar" style={this.props.styleNavBar}>

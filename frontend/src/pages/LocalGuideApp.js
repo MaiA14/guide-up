@@ -61,7 +61,7 @@ class LocalGuideApp extends Component {
 }
 const mapStateToProps = (state) => {
     return {
-        guides: state.guides,
+        guides: state.guides.guides,
         user:state.user
     }
 }

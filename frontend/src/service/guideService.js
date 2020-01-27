@@ -9,7 +9,8 @@ export default {
     save,
     addGuide,
     addReview,
-    checkCredentials
+    checkCredentials,
+    // logIn
 };
 
 const url = "http://localhost:3001/api/guide"
@@ -54,14 +55,19 @@ function _calcGuideRank(guide) {
     }, 0)
     return (guideRank / guide.reviews.length).toFixed(1);
 }
+// logIn()
+// async function logIn(){
+
+//     return HttpService.post(`guide/`)
+// }
 
 async function checkCredentials(loginData) {
     try {
         const res = await Axios.post("http://localhost:3001/api/auth" + '/login', loginData)
         const user = res.data;
-        if (user) {
-            _saveLoggedin(user)
-        }
+        // if (user) {
+        //     // _saveLoggedin(user)
+        // }
         return user
 
         return res.data.answer
@@ -70,6 +76,6 @@ async function checkCredentials(loginData) {
     }
 }
 
-function _saveLoggedin(user) {
-    storageService.store('loggedinUser', user)
-}
+// function _saveLoggedin(user) {
+//     storageService.store('loggedinUser', user)
+// }

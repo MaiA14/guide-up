@@ -5,17 +5,16 @@ import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import 'semantic-ui-css/semantic.min.css'
 
-
+import Store from './store';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {rootReducer} from './reducers/guide/GuideReducer.js'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 
 ReactDOM.render(
-                 <Provider store={store}>
+                 <Provider store={Store}>
                     <App />
                 </Provider>
                 ,document.getElementById('root'));

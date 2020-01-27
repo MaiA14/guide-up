@@ -37,6 +37,9 @@ async function ajax(endpoint, method='get', data=null , dispatch) {
           
 
         })
+        console.log('url: ',`${BASE_URL}${endpoint}`)
+        // console.log('res: ',res)
+
   
         return res.data;
     } catch (err) {

@@ -3,8 +3,9 @@ import { Image } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 
 import { setUserLogIn } from '../reducers/guide/actionGuide.js'
-import Profile from '../cmps/ProfileTab.js'
+import ProfileTab from '../cmps/ProfileTab.js'
 import storageService from '../service/storageService.js'
+import Profile from '../cmps/Perview.js'
 class profile extends Component {
 
     componentDidMount() {
@@ -24,14 +25,9 @@ class profile extends Component {
 
         return (
             <div>
-                <Profile></Profile>
-                <div className="container-overview">
-                    asdasdasd
-                    <Image src={this.props.user.imgUrl}> </Image>
-
-
-                </div>
-
+                <ProfileTab></ProfileTab>
+                <Profile user={this.props.user}></Profile>
+             
 
 
 

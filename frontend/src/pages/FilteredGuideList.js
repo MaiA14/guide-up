@@ -16,12 +16,16 @@ class FilteredGuideList extends Component {
 
     componentDidMount() {
         document.body.style.paddingTop = '60px'
+        const items = queryString.parse(this.props.location.search)
+        debugger
+        this.props.loadGuides(items.city);
+
     }
 
-    componentWillMount() {
+    componentDidUpdate(propPrev) {
+        console.log(propPrev)
 
-        const items = queryString.parse(this.props.location.search)
-        this.props.loadGuides(items.city);
+
 
     }
 
@@ -33,23 +37,30 @@ class FilteredGuideList extends Component {
         const selectStyle = {
             border: '1px solid #ef8758'
         }
-        if (!this.props.guides.length) return (
-            <Loading></Loading>
-        )
+
         const styleNavBar = {
             backgroundColor: '#161f24'
         }
+        console.log(this.props.isLoading)
 
-        
+
+        if (this.props.isLoading) {
+            return <Loading></Loading>
+        }
+
+
+
         return (
-            
+
             <div>
-            <Navbar  styleNavBar={styleNavBar} ></Navbar>    
-                <h1 className="filtered-guides-header main-container">{this.props.guides[0].city + '\'s guides'}</h1>
-                <h2 className="guides-short-content main-container">Find your guides, let them share with you the insight on the city.  Enjoy from unforgatable trip</h2>
-                <div className="filtered-glist-container">
-                    <MainSearch onSearch={this.onSearch} style={selectStyle} ></MainSearch>
-                    {/* choose tags:<input type="checkbox" checked="checked"></input>
+                <Navbar styleNavBar={styleNavBar} ></Navbar>
+                {this.props.isLoading ? <Loading></Loading> :
+                    <React.Fragment>
+                        <h1 className="filtered-guides-header main-container">{this.props.guides[0].city + '\'s guides'}</h1>
+                        <h2 className="guides-short-content main-container">Find your guides, let them share with you the insight on the city.  Enjoy from unforgatable trip</h2>
+                        <div className="filtered-glist-container">
+                            <MainSearch onSearch={this.onSearch} style={selectStyle} ></MainSearch>
+                            {/* choose tags:<input type="checkbox" checked="checked"></input>
                     <span className="checkmark"></span>
                     <label className="container">Art</label>
                     <input type="checkbox" checked="checked"></input>
@@ -61,17 +72,22 @@ class FilteredGuideList extends Component {
                     <input type="checkbox" checked="checked"></input>
                     <span className="checkmark"></span>
                     <label className="container">Movies</label> */}
-                </div>
-                <section className="cards-list main-container">
-                    {this.props.guides.map(guide => <GuidePreview key={guide._id} guide={guide}></GuidePreview>)}
-                </section>
+                        </div>
+                        <section className="cards-list main-container">
+                            {this.props.guides.map(guide => <GuidePreview key={guide._id} guide={guide}></GuidePreview>)}
+                        </section>
+                    </React.Fragment>
+                }
+
             </div>
         )
     }
 }
 const mappropsToProps = (state) => {
     return {
-        guides: state.guides
+        guides: state.guides.guides,
+        isLoading: state.system.isLoading,
+
     }
 }
 const mapDispatchToProps = {

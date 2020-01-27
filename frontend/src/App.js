@@ -1,7 +1,6 @@
 import React from 'react';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
-import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk';
 
 import LocalGuideApp from './pages/LocalGuideApp.js'
@@ -11,13 +10,11 @@ import Footer from '../src/cmps/Footer.js'
 import global from '../src/assets/styles/global.scss'
 import Login from '../src/pages/Login.js'
 import Signup from '../src/pages/Signup'
-import {rootReducer} from './reducers/guide/GuideReducer.js'
 import BecomeGuide from './pages/BecomeGuide.js'
 import profile from './pages/profile.js'
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
+
 
 function App() {
   return (

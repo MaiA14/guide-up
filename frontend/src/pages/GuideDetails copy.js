@@ -2,12 +2,16 @@ import React, { Component } from 'react'
 import quoryString from 'query-string'
 import { connect } from 'react-redux'
 import { Rating } from 'semantic-ui-react'
+import { Icon } from 'semantic-ui-react'
+
+
 import Calendar from '../cmps/Calendar.js'
 import { getGuide } from '../reducers/guide/actionGuide.js'
 import Review from '../cmps/Review.js'
 import Navbar from '../cmps/Navbar.js'
 import ReviewView from '../cmps/Review-view.js'
-import { Icon } from 'semantic-ui-react'
+import Loading from '../cmps/Loading.js'
+
 
 class GuideDetails extends Component {
     state = {
@@ -42,6 +46,14 @@ class GuideDetails extends Component {
         const styleNavBar = {
             backgroundColor: '#161f24'
         }
+        console.log(this.props.isLoading)
+        if (this.props.isLoading) {
+            return <Loading></Loading>
+        }
+        console.log('@@@@@@@@: ', this.props.guide.name)
+
+
+
         return (
 
             <React.Fragment>
@@ -84,7 +96,7 @@ class GuideDetails extends Component {
                                         })}
                                 </div>
                             </div>
-                            
+
                             <div className="guide-desc">
                                 {this.props.guide.description}
                                 <div className="guide-activites">
@@ -95,7 +107,7 @@ class GuideDetails extends Component {
                                 <div class="divider"></div>
                                 <Review guide={this.onNewReview} ></Review>
                                 <div className="num-of-reviews">
-                                Reviews ({this.props.guide.reviews.length})
+                                    Reviews ({this.props.guide.reviews.length})
                                 </div>
                                 {this.props.guide.reviews && this.props.guide.reviews.map(review => {
                                     return (
@@ -134,12 +146,17 @@ class GuideDetails extends Component {
     }
 }
 const mapStateToProps = (state) => {
+    console.log(state.guides.guide)
     return {
-        guide: state.guide
+
+        guide: state.guides.guide,
+        isLoading: state.system.isLoading
+
     }
 }
 const mapDispatchToProps = {
     getGuide,
+
 
 }
 

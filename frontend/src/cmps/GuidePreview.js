@@ -4,6 +4,8 @@ import quoryString from 'query-string'
 import { Card, Icon, Image } from 'semantic-ui-react'
 import { withRouter } from 'react-router-dom';
 
+import Loader from '../cmps/Loading.js'
+
 
 const cardStyle = {
     marginTop: 0,
@@ -42,7 +44,15 @@ class GuidePreviewCard extends Component {
 
 
     render() {
+
+
+   
         const { props } = this
+        console.log(props)
+
+        if(!props.guide.langugages){
+            return <Loader></Loader>
+        }
         return (
 
             <Card style={cardStyle} >

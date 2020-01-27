@@ -61,7 +61,7 @@ class Review extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        guide: state.guide
+        guide: state.guides.guide
     }
 }
 

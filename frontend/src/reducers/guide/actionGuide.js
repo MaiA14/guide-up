@@ -1,15 +1,25 @@
 import guideService from '../../service/guideService.js'
+import { loading, doneLoading } from '../SystemActions.js'
 
 // THUNK
 export function loadGuides(filterBy = '') {
     return async (dispatch) => {
         try {
+            // console.log(loading())
+
+
+            dispatch(loading());
 
             const guides = await guideService.query(filterBy);
+            console.log('guides',guides)
             dispatch(setGuides(guides))
+            
 
         } catch (err) {
             console.log('GuideActions: err in loadGuides', err);
+
+        } finally {
+            dispatch(doneLoading());
 
         }
 
@@ -27,10 +37,19 @@ function setGuides(guides) {
 export function getGuide(guidId) {
 
     return async (dispatch) => {
+        try {
+            dispatch(loading());
+            const guide = await guideService.getGuideById(guidId)
+            dispatch({ type: 'GET_GUIDE', guide })
+        } catch (err) {
+            console.log('GuideActions: err in loadGuides', err);
 
-        const guide = await guideService.getGuideById(guidId)
+        } finally {
+            dispatch(doneLoading());
 
-        dispatch({ type: 'GET_GUID', guide })
+        }
+
+
     }
 }
 
@@ -69,8 +88,8 @@ export function logUser(user) {
     }
 }
 
-export function setUserLogIn(user){
-    return  (dispatch) => {
+export function setUserLogIn(user) {
+    return (dispatch) => {
         dispatch(setUser(user))
     }
 }

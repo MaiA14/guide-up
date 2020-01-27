@@ -1,6 +1,6 @@
 
 
-export function rootReducer(state = { guides: [] }, action = {}) {
+export default function (state = { guides: [] }, action = {}) {
     switch (action.type) {
 
         case 'SET_GUIDES':
@@ -9,7 +9,8 @@ export function rootReducer(state = { guides: [] }, action = {}) {
             return {
                 ...state, guides: [...state.guides, action.guide]
             }
-        case 'GET_GUID':
+        case 'GET_GUIDE':
+       
             return { ...state, guide: action.guide }
         case 'GUIDE_UPDATE':
             return { ...state, guide: action.newGuide }
