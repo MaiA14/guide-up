@@ -54,7 +54,6 @@ class LocalGuideApp extends Component {
                 {
                     this.props.guides &&
                     <section className="main-container">
-
                         <List  guides={this.props.guides} countries={this.state.countries}></List>
                     </section>
                 }

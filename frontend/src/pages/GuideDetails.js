@@ -1,131 +1,173 @@
-// import React, { Component } from 'react'
-// import quoryString from 'query-string'
-// import { connect } from 'react-redux'
-// import { Rating } from 'semantic-ui-react'
+import React, { Component } from 'react'
+import quoryString from 'query-string'
+import { connect } from 'react-redux'
+import { Rating } from 'semantic-ui-react'
+import { Icon } from 'semantic-ui-react'
+
+import Calendar from '../cmps/Calendar.js'
+import { getGuide } from '../reducers/guide/actionGuide.js'
+import Review from '../cmps/Review.js'
+import Navbar from '../cmps/Navbar.js'
+import ReviewView from '../cmps/Review-view.js'
+import Loading from '../cmps/Loading.js'
+import GuideTags from '../cmps/GuideTags.js'
+import Footer from '../cmps/Footer.js'
+
+class GuideDetails extends Component {
+    state = {
+        bookClassName: 'absolute'
+    }
+
+    componentWillMount() {
+        window.onscroll = () => {
+            let bookClassName
+            if (document.documentElement.scrollTop === 0) {
+
+                bookClassName = 'absolute'
+                this.setState({ bookClassName })
+            } else {
+                bookClassName = 'fixed'
+                this.setState({ bookClassName })
+            }
+        }
+        const items = quoryString.parse(this.props.location.search)
+        this.props.getGuide(items.guide_id);
+    }
+
+    backToListOfGuids = () => {
+        this.props.history.goBack()
+    }
+
+    onNewReview = (ev) => {
+        this.props.saveGuide(this.state)
+    }
+
+    render() {
+        const styleNavBar = {
+            backgroundColor: '#161f24'
+        }
+        if (this.props.isLoading) {
+            return <Loading></Loading>
+        }
 
 
-// import Calendar from '../cmps/Calendar.js'
-// import { getGuide } from '../reducers/guide/actionGuide.js'
-// import Review from '../cmps/Review.js'
-// import Navbar from '../cmps/Navbar.js'
+        const tagStyle = {
+            width: '10%;',
+            height: '100%;'
+        }
+        const iconClass = 'details-icon-style'
 
+        return (
+            <React.Fragment>
+                <Navbar styleNavBar={styleNavBar} ></Navbar>
+                {this.props.guide &&
+                    <div className="guide-details flex relative ">
+                        <div className="context-container">
+                            <div className="btn-container">
+                                <button onClick={this.backToListOfGuids}
+                                 className="back-btn">Back</button>
+                            </div>
+                            <h1 className="guide-header ">
+                                {this.props.guide.name}
+                            </h1>
+                            <div className="guide-short-desc">
+                                <div>{this.props.guide.shortDescription}</div>
+                            </div>
+                            <div className="guide-img-details">
+                                <img src={this.props.guide.imgUrl} ></img>
+                            </div>
+                            <div className="guide-tags">
+                            <GuideTags iconClass={iconClass} 
+                            guide={this.props.guide}></GuideTags>
+                            </div>
+                            <div class="lang-from-guide">
+                                <div className="from-guide">
+                                    <span className="guide-field-title">
+                                         From:  </span><span>{this.props.guide.city}
+                                         </span>
+                                </div>
+                                <div className="guide-lang">
+                                    <span className="guide-field-title">Langugages:
+                                     </span>
+                                    {
+                                        this.props.guide.langugages.map((langugage, index)=>
+                                         {
+                                            return (
+                                                ((this.props.guide.langugages.length - 1 >
+                                                     index)) ? <span>{langugage + ' , '}
+                                                     </span> : <span>{langugage}</span>
+                                            )
+                                        })}
+                                </div>
+                            </div>
 
-// class GuideDetails extends Component {
-//     state = {
-//         bookClassName: 'absolute'
-//     }
+                            <div className="guide-desc">
+                                {this.props.guide.description}
+                                <div className="guide-activites">
+                                    {this.props.guide.pics.map(img => {
+                                        return <img src={img} alt="guide-img" 
+                                        className="img-responsive" />
+                                    })}
+                                </div>
+                                <div class="divider"></div>
+                                <Review guide={this.props.guide} 
+                                onNewReview={this.onNewReview} ></Review>
+                                <div className="num-of-reviews">
+                                    Reviews ({this.props.guide.reviews.length})
+                                </div>
+                                {this.props.guide.reviews &&
+                                 this.props.guide.reviews.map(review => {
+                                    return (
+                                        <ReviewView review={review}></ReviewView>
+                                    )
+                                })}
+                            </div>
+                        </div>
 
-//     componentWillMount() {
-//         window.onscroll = () => {
-//             let bookClassName
-//             if (document.documentElement.scrollTop === 0) {
+                        <div className="calendar-container">
+                        
+                            <div className="calendar-content">
+                            {/* <h1 classname="calendar-title">Pick a date</h1> */}
+                                <Calendar></Calendar>
+                                <div className="num-of-people">
+                                    <h2>How many people?</h2>
+                                </div>
+                                <div className="book-btn-container">
+                                    <input type="number"className="book-btn-container 
+                                    book-input" placeholder="0"></input>
+                                    <button className="book-btn">Book</button>
+                                </div>
+                                <div class="price-rank flex column justify-center">
+                                    <div className="guide-price">${this.props.guide.price}  For my tour</div>
+                                    <div className="guide-rank">
+                                        <Icon size={'small'} 
+                                        disabled name='star' />{this.props.guide.avgRank}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+    <Footer ></Footer>
+            </React.Fragment>
+        )
+    }
+}
 
-//                 bookClassName = 'absolute'
-//                 this.setState({ bookClassName })
-//             } else {
-//                 bookClassName = 'fixed'
-//                 this.setState({ bookClassName })
+const mapStateToProps = (state) => {
+    return {
 
-//             }
+        guide: state.guides.guide,
+        isLoading: state.system.isLoading
+    }
+}
 
-//         }
+const mapDispatchToProps = {
+    getGuide,
+}
 
-
-//         const items = quoryString.parse(this.props.location.search)
-//         this.props.getGuide(items.guide_id);
-
-
-//     }
-//     backToListOfGuids = () => {
-
-//         this.props.history.goBack()
-
-//     }
-
-//     onNewReview = (ev) => {
-
-//         this.props.saveGuide(this.state)
-//     }
-//     render() {
-//         const styleNavBar = {
-//             backgroundColor: '#161f24'
-//         }
-//         return (
-
-//             <div >
-//                 <Navbar styleNavBar={styleNavBar} ></Navbar>
-//                 {this.props.guide &&
-//                     <div className="guide-details relative  ">
-//                         <div className="flex row ">
-//                             <div>
-//                                 <button onClick={this.backToListOfGuids} className="back-btn space">Back</button>
-//                                 <h1 className="guide-header ">{this.props.guide.name}</h1>
-//                                 <img src={this.props.guide.imgUrl} className="guide-img-details space" ></img>
-//                                 <h2 className="guide-desc space">{this.props.guide.shortDescription}</h2>
-//                                 <span> From: {this.props.guide.city}</span>
-//                                 <span>Langugages: {this.props.guide.langugages}</span>
-//                             </div>
-//                             <div >
-
-//                                 <Calendar></Calendar>
-//                             </div>
-//                         </div>
-
-//                         <div className="contanier-Details">
-//                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-//                                  Vestibulum vitae pulvinar felis,
-//                                   in sagittis libero. Donec at libero pulvinar,
-//                                    condimentum ex in, commodo quam. Nam et mollis nisl.
-//                                     Phasellus fringilla libero tortor,
-//                                     semper ultrices purus suscipit vel.
-//                                     Pellentesque in metus quis metus egestas blandit
-//                                      a sit amet purus. Vestibulum ante ipsum primis in
-//                                      faucibus orci luctus et ultrices posuere cubilia Curae;
-//                                      Maecenas rhoncus turpis porta rutrum pharetra. Fusce consectetur
-//                                       malesuada volutpat. Cras volutpat nunc libero, sed fermentum
-//                                       urna egestas congue. In vitae sapien mattis, vehicula lectus non,
-//                                            eleifend quam. Aliquam vitae enim eget felis faucibus dictum.</p>
-
-
-
-//                         </div>
-
-
-
-
-//                         <div className="space">
-//                             <Review guide={this.onNewReview} ></Review>
-//                         </div>
-//                         <div className="guide-reviews-title space">
-//                             {this.props.guide.reviews && this.props.guide.reviews.map(review => {
-//                                 return (
-//                                     <div className="review-contaner" key={review.id}>
-//                                         <h1>{review.title}</h1>
-//                                         <h2> {review.txt}</h2>
-//                                         <Rating disabled maxRating={5} defaultRating={review.rank} icon='star' size='massive' />
-
-//                                     </div>
-//                                 )
-//                             })}
-//                         </div>
-//                     </div>
-//                 }
-//             </div>
-//         )
-//     }
-// }
-// const mapStateToProps = (state) => {
-//     return {
-//         guide: state.guide
-//     }
-// }
-// const mapDispatchToProps = {
-//     getGuide,
-
-// }
-
-// export default connect(
-//     mapStateToProps,
-//     mapDispatchToProps
-// )(GuideDetails)
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(GuideDetails)
 

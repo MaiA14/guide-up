@@ -21,7 +21,6 @@ class MainSearch extends Component {
         if (this.state.city) {
             this.props.history.push(`/location/?city=${this.state.city}`)
             if (this.props.onSearch) {
-                console.log('exixttterws5gerg')
                 this.props.onSearch(this.state.city)
             }
         }
@@ -35,15 +34,12 @@ class MainSearch extends Component {
         if (this.props.style) {
             style = this.props.style
         } else style = ''
-
-        console.log(style)
-
         return (
             <div style={style.contanerStyle} className="search-container flex" >
                 <select style={style.selectStyle} value={this.state.city} onChange={this.onChange}>
                     <option value="" disabled selected>{
                         this.state.city ?
-                            this.state.city : 'select your destination'
+                            this.state.city : 'Select your destination'
                     }    </option>
                     <option value="tel-aviv">Tel Aviv</option>
                     <option value="paris">Paris</option>

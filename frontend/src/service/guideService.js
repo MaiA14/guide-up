@@ -62,7 +62,7 @@ function _calcGuideRank(guide) {
 
 export  function getIconTag() {
      const tag = {
-        Coffe:   'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126710/nx4zhbrtkfp5vybo2tvt.png' ,  
+        Coffee:   'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126710/nx4zhbrtkfp5vybo2tvt.png' ,  
         Outdoor: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126496/lvydnjcii7euhydeh8bi.png',
         Shopping: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580125153/musi4qk4n11vu1v2xcyp.png',
         Culture: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126878/mcjofjlxdzma6w9grpgj.png',

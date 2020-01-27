@@ -81,9 +81,6 @@ class GuidePreviewCard extends Component {
                         )
                     })}
                 <div className="container-tag">
-
-                  
-
                 </div>
                 <div className="container-data">
                     <span>From: {props.guide.city}</span>

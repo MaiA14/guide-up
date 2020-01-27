@@ -17,20 +17,15 @@ class CommentView extends Component {
     this.userImag()
   }
 
-
-
   userImag = async () => {
     const image = await axios.get('https://randomuser.me/api/')
     const userImg =image.data.results[0].picture.medium
     this.setState({ userImg })
   }
 
-
-
   render() {
 
     if (this.state.userImag === Object) return
-
     return (
       <Comment.Group >
         <Comment>
@@ -51,10 +46,6 @@ class CommentView extends Component {
       </Comment.Group >
     )
   }
-
-
-
-
 }
 
 export default CommentView

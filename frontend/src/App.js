@@ -5,7 +5,7 @@ import thunk from 'redux-thunk';
 
 import  '../src/assets/css/all.min.css'
 import LocalGuideApp from './pages/LocalGuideApp.js'
-import GuideDetails from '../src/pages/GuideDetails copy.js';
+import GuideDetails from '../src/pages/GuideDetails.js';
 import FilteredGuideList from '../src/pages/FilteredGuideList.js'
 import Footer from '../src/cmps/Footer.js'
 import global from '../src/assets/styles/global.scss'
