@@ -43,8 +43,6 @@ class Review extends Component {
     }
 
     render() {
-        console.log(this.state)
-
         return (
             <div>
                 <h2 className="guide-review-title">Write a review about &nbsp;

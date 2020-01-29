@@ -20,8 +20,8 @@ var Axios = axios.create({
     withCredentials: true
 });
 
-function query(city = '') {
-    let item = HttpService.get(`guide?city=${city}`)
+function query(filterBy='') {
+    let item = HttpService.get(`guide?city=${filterBy.city}&avgRank=${filterBy.avgRank}`)
     return item
 }
 

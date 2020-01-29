@@ -6,13 +6,11 @@ export function loadGuides(filterBy = '') {
     return async (dispatch) => {
         try {
             // console.log(loading())
-
-
             dispatch(loading());
 
             const guides = await guideService.query(filterBy);
             dispatch(setGuides(guides))
-            
+
 
         } catch (err) {
             console.log('GuideActions: err in loadGuides', err);
@@ -23,6 +21,7 @@ export function loadGuides(filterBy = '') {
         }
 
     }
+
 }
 
 function setGuides(guides) {

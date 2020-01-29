@@ -12,24 +12,19 @@ import Footer from '../cmps/Footer.js'
 
 class FilteredGuideList extends Component {
 
-    componentDidMount() {
-        document.body.style.paddingTop = '60px'
-        const items = queryString.parse(this.props.location.search)
-        this.props.loadGuides(items.city);
-
+    state = {
+        filterBy: { city: '', avgRank: ''}
     }
 
-    // componentWillMount() {
-
-
-
-    //     const items = queryString.parse(this.props.location.search)
-    //     this.props.loadGuides(items.city);
-    // }
-
-    onSearch = (city) => {
-        const items = queryString.parse(this.props.location.search)
-        this.props.loadGuides(city);
+    componentDidMount() {
+        document.body.style.paddingTop = '60px'
+        let items = queryString.parse(this.props.location.search)
+        let newCityToFilter = items.city
+        this.setState(prvState => ({ filterBy: { ...prvState.filterBy, ['city']: newCityToFilter } }), () => (this.props.loadGuides(this.state.filterBy)))
+    }
+    
+    onSearch = (newCityToFilter) => {
+        this.setState(prvState => ({ filterBy: { ...prvState.filterBy, ['city']: newCityToFilter } }), () => (this.props.loadGuides(this.state.filterBy)))
     }
 
     render() {
@@ -46,19 +41,14 @@ class FilteredGuideList extends Component {
             backgroundColor: '#161f24'
         }
 
-
-        console.log(this.props.isLoading)
-
         if (this.props.isLoading) {
             return <Loading></Loading>
         }
 
-
-
         return (
             <React.Fragment>
                 <Navbar styleNavBar={styleNavBar} ></Navbar>
-                <h1 className="filtered-guides-header main-container">{this.props.guides[0].city + '\'s guides'}</h1>
+                <h1 className="filtered-guides-header main-container">{this.state.filterBy.city + '\'s guides'}</h1>
                 <h2 className="guides-short-content main-container">Find your guides, let them share with you the insight on the city.  Enjoy from unforgatable trip</h2>
                 <div className="filtered-glist-container">
                     <MainSearch onSearch={this.onSearch} style={searchStyle} ></MainSearch>
@@ -83,15 +73,15 @@ class FilteredGuideList extends Component {
     }
 }
 const mappropsToProps = (state) => {
+
     return {
         guides: state.guides.guides,
         isLoading: state.system.isLoading,
-
     }
 }
+
 const mapDispatchToProps = {
-    loadGuides,
-    // loadTags
+    loadGuides
 }
 export default connect(
     mappropsToProps,

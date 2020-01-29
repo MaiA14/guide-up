@@ -18,10 +18,8 @@ const styleFont = {
     return props.guide.tags.map((tag, index) => {
         return (
             <div className="tags-container">  
-           <span style={labelStyle}> {tag} </span>            
+           <span style={labelStyle} key={props.guide._id + index}> {tag} </span>            
                 <img src={tagIcon[tag]}  className={props.iconClass}></img>
-                
-                {/* <i class={tagIcon[tag]}></i> */}
             </div>
         )
     })

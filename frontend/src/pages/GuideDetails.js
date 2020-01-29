@@ -18,7 +18,7 @@ class GuideDetails extends Component {
         bookClassName: 'absolute'
     }
 
-    componentWillMount() {
+    componentDidMount() {
         window.onscroll = () => {
             let bookClassName
             if (document.documentElement.scrollTop === 0) {
@@ -80,7 +80,7 @@ class GuideDetails extends Component {
                             <GuideTags iconClass={iconClass} 
                             guide={this.props.guide}></GuideTags>
                             </div>
-                            <div class="lang-from-guide">
+                            <div className="lang-from-guide">
                                 <div className="from-guide">
                                     <span className="guide-field-title">
                                          From:  </span><span>{this.props.guide.city}
@@ -104,12 +104,12 @@ class GuideDetails extends Component {
                             <div className="guide-desc">
                                 {this.props.guide.description}
                                 <div className="guide-activites">
-                                    {this.props.guide.pics.map(img => {
+                                    {this.props.guide.pics.map(img =>  {  
                                         return <img src={img} alt="guide-img" 
                                         className="img-responsive" />
                                     })}
                                 </div>
-                                <div class="divider"></div>
+                                <div className="divider"></div>
                                 <Review guide={this.props.guide} 
                                 onNewReview={this.onNewReview} ></Review>
                                 <div className="num-of-reviews">
@@ -118,7 +118,7 @@ class GuideDetails extends Component {
                                 {this.props.guide.reviews &&
                                  this.props.guide.reviews.map(review => {
                                     return (
-                                        <ReviewView review={review}></ReviewView>
+                                        <ReviewView review={review} key={this.props.guide._id}></ReviewView>
                                     )
                                 })}
                             </div>
@@ -135,7 +135,7 @@ class GuideDetails extends Component {
                                     book-input" placeholder="0"></input>
                                     <button className="book-btn">Book</button>
                                 </div>
-                                <div class="price-rank flex column justify-center">
+                                <div className="price-rank flex column justify-center">
                                     <div className="guide-price">${this.props.guide.price}  For my tour</div>
                                     <div className="guide-rank">
                                         <Icon size={'small'} 
