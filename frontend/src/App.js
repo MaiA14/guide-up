@@ -15,8 +15,9 @@ import BecomeGuide from './pages/BecomeGuide.js'
 import profile from './pages/profile.js'
 import "react-datepicker/dist/react-datepicker.css";
 
-
 function App() {
+
+
   return (
     <div className="App">
         <Router>

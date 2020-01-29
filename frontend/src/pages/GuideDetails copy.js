@@ -101,8 +101,7 @@ class GuideDetails extends Component {
                                             })}
                                     </div>
                                 </div>
-                                <div className="container-chat"></div>
-                                <div className="container-main-chat"></div>
+                     
                                 <Chat guide={this.props.guide}></Chat>
 
                             </div>
