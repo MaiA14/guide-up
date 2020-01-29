@@ -10,7 +10,7 @@ export default class Tags extends Component {
                 <label className="container">Art</label>
                 <input type="checkbox" checked="checked"></input>
                 <span className="checkmark"></span>
-                <label className="container">Coffe</label>
+                <label className="container">Coffee</label>
                 <input type="checkbox" checked="checked"></input>
                 <span className="checkmark"></span>
                 <label className="container">Music</label>

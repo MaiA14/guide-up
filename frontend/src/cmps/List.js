@@ -1,16 +1,15 @@
 import React from 'react';
-import ContryPreview from './ContryPreview.js'
+import CityPreview from './CityPreview.js'
 import GuidePreview from './GuidePreview.js'
 import { withRouter } from "react-router";
-
 
 function List(props) {
 
     return (
         <React.Fragment>
                 <h1 className="first-header-section">Popular Destinations</h1>
-            <section className="country-list">
-                {props.countries.map(country => <ContryPreview key={country} country={country}></ContryPreview>)}
+            <section className="city-list">
+                {props.cities.map(city => <CityPreview key={city} city={city}></CityPreview>)}
             </section>
             <h1 className="second-header-section">Popular guides</h1>
             <section className="cards-list">

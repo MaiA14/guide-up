@@ -5,23 +5,14 @@ import { loading, doneLoading } from '../SystemActions.js'
 export function loadGuides(filterBy = '') {
     return async (dispatch) => {
         try {
-            // console.log(loading())
-
-
             dispatch(loading());
-
             const guides = await guideService.query(filterBy);
             dispatch(setGuides(guides))
-            
-
         } catch (err) {
             console.log('GuideActions: err in loadGuides', err);
-
         } finally {
             dispatch(doneLoading());
-
         }
-
     }
 }
 

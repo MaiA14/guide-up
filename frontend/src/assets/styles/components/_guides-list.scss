@@ -8,14 +8,6 @@
   grid-gap: 22px;
   justify-content: space-between;
   }
-  // .cards-list {
-  //   display: flex;
-  //   flex-wrap: wrap;
-  //   }
-
-
-
-
 
   .cards-list > *:first-child {
     grid-row: 1 / 1;
@@ -23,12 +15,9 @@
   }
   
   /* Just to make the grid visible */
-  
-
-
   .first-header-section{
     font-family: "Lato-Bold";
-    font-size: 30px;
+    font-size: 35px;
     padding-top: 28px;
     color:$clr2;
     text-transform: uppercase;
@@ -37,7 +26,7 @@
   .second-header-section{
     border-top: 2px solid$clr2;
     font-family: "Lato-Bold";
-    font-size: 30px;
+    font-size: 35px;
     padding-top: 28px;
     color: $clr2;
     text-transform: uppercase;

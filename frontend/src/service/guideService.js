@@ -11,8 +11,7 @@ export default {
     save,
     addGuide,
     addReview,
-    checkCredentials,
-    
+    checkCredentials,   
 }
 
 const url = "http://localhost:3001/api/guide"
@@ -20,8 +19,8 @@ var Axios = axios.create({
     withCredentials: true
 });
 
-function query(city = '') {
-    let item = HttpService.get(`guide?city=${city}`)
+function query(filterBy='') {
+    let item = HttpService.get(`guide?city=${filterBy.city}&avgRank=${filterBy.avgRank}`)
     return item
 }
 
@@ -53,16 +52,15 @@ function deleteGuide(guideId) {
 
 function _calcGuideRank(guide) {
     let guideRank = guide.reviews.reduce((acc, currRank) => {
-        return acc + Number(currRank.rank)
+        let rank = +currRank.rank
+        return acc + rank;
     }, 0)
     return (guideRank / guide.reviews.length).toFixed(1);
 }
 
-
-
 export  function getIconTag() {
      const tag = {
-        Coffe:   'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126710/nx4zhbrtkfp5vybo2tvt.png' ,  
+        Coffee:   'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126710/nx4zhbrtkfp5vybo2tvt.png' ,  
         Outdoor: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126496/lvydnjcii7euhydeh8bi.png',
         Shopping: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580125153/musi4qk4n11vu1v2xcyp.png',
         Culture: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126878/mcjofjlxdzma6w9grpgj.png',
@@ -74,7 +72,6 @@ export  function getIconTag() {
         NightLife: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580125337/bjkqdxjjv2ifwrp4o9cz.png'
     }
     return tag
-
 }
 
 async function checkCredentials(loginData) {

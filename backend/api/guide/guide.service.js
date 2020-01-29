@@ -11,12 +11,11 @@ module.exports = {
 };
 
 async function query(filterBy) {
-
     const criteria = _buildCriteria(filterBy)
     const collection = await dbService.getCollection('guide')
-    
     try {
         const guides = await collection.find(criteria).toArray();
+        console.log('guides ', guides)
 
         return guides
     } catch (err) {
@@ -84,36 +83,25 @@ async function remove(guideId) {
     }
 }
 
-// function _buildCriteria(filterBy) {
-
-//     const criteria = {}
-//     try {
-//         if (filterBy.city) {
-
-//         }
-
-//     }
-
-// }
-
 function _buildCriteria(filterBy) {
+    console.log(filterBy)
     let criteria = {}
 
     try {
         if (filterBy.city) {
             criteria.city = filterBy.city
         }
-
     } catch (err) {
         console.log(err)
     }
 
-    // if (filterBy.wishedIds) {
-    //     criteria._id = {
-    //         $in: filterBy.wishedIds.map((id) => {
-    //             return ObjectId(id)
-    //         })
-    //     }
-    // }
+    try {
+        const num = (filterBy.avgRank)
+        if (filterBy.avgRank) {
+            criteria.avgRank = { "$gt": num }
+        }
+    } catch (err) {
+        console.log(err)
+    }
     return criteria;
 }

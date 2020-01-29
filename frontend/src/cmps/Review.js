@@ -13,17 +13,17 @@ class Review extends Component {
         txt: '',
         createBy: {
             id: "6436373453",
-            testName: "",
+            userName: "",
             fullName: "",
             imgUrl: "http://img.com"
         },
-        created_at: Date.now(),
+        createdAt: Date.now(),
         rank: null,
     }
 
     onChangeRateStar = (rating) => {
         this.setState((prevState) => {
-            return { ...prevState, ['rank']: rating }
+            return { ...prevState.state, ['rank']: rating }
         })
     }
 
@@ -32,7 +32,13 @@ class Review extends Component {
         const field = ev.target.name
         const value = ev.target.value
         if (field === 'userName') {
+<<<<<<< HEAD
             this.setState(prevState => ({createBy: { ...prevState.createBy, [field]: value }}))
+=======
+            this.setState(prevState => (
+                {createBy:{...prevState.createBy, [field]: value }
+            }))
+>>>>>>> 529a37525ad58d5fa4f044a4218e85896b90fc0a
         } else {
             this.setState((prevState) => {
                 return { ...prevState, [field]: value }
@@ -43,15 +49,19 @@ class Review extends Component {
     render() {
         return (
             <div>
-                <h2 className="guide-review-title">Write a review about {this.props.guide.name}</h2>
+                <h2 className="guide-review-title">Write a review about &nbsp;
+                 {this.props.guide.name}</h2>
                 <div>
                     <input onChange={this.onChange} name="userName"
-                        type="text" className="review-input" placeholder="user name"></input>
+                        type="text" className="review-input"
+                         placeholder="Name">
+                        </input>
                 </div>
                 <div>
-
                     <Form className="review-text">
-                        <TextArea rows={2} placeholder='What do you think about me?' onChange={this.onChange} name="txt" />
+                        <TextArea rows={2} 
+                        placeholder='What do you think about me?' 
+                        onChange={this.onChange} name="txt" />
                     </Form>
                 </div>
                 <div>Rate</div>

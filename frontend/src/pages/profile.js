@@ -26,10 +26,6 @@ class profile extends Component {
             <div>
                 <ProfileTab></ProfileTab>
                 <Profile user={this.props.user}></Profile>
-             
-
-
-
             </div>
         )
     }
