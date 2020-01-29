@@ -41,7 +41,7 @@ class FilteredGuideList extends Component {
         }
 
         const styleNavBar = {
-            backgroundColor: '#161f24'
+            backgroundColor: '#537580'
         }
 
         if (this.props.isLoading) {

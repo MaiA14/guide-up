@@ -3,9 +3,7 @@ import React, { Component } from 'react'
 import { Image } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 
-// class GuidePreviewCard extends Component
 class Navbar extends Component {
-
 
     render() {
         return <div className="main-navbar" style={this.props.styleNavBar}>
@@ -18,7 +16,7 @@ class Navbar extends Component {
             <div className=" nav-links">
                 <div className="nav-link"><NavLink activeClassName="active" to='/' exact>Home</NavLink></div>
                 <div className="nav-link"><NavLink activeClassName="active" to='/login' exact>Login</NavLink></div>
-                <div className="nav-link"><NavLink activeClassName="active" to='/join_us' exact>Become a guide</NavLink></div>
+                <div className="nav-link"><NavLink activeClassName="active" to='/join_us' exact>Become a Guide</NavLink></div>
                 <div className="nav-link"><NavLink activeClassName="active" to='/profile' exact>
                     {this.props.user &&
                         <Image size={'mini'} src={this.props.user.imgUrl} circular    ></Image>
@@ -37,8 +35,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
-
 }
+
 export default connect(
     mapStateToProps,
     mapDispatchToProps

@@ -52,7 +52,8 @@ function deleteGuide(guideId) {
 
 function _calcGuideRank(guide) {
     let guideRank = guide.reviews.reduce((acc, currRank) => {
-        return acc + Number(currRank.rank)
+        let rank = +currRank.rank
+        return acc + rank;
     }, 0)
     return (guideRank / guide.reviews.length).toFixed(1);
 }

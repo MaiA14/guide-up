@@ -44,7 +44,7 @@ class GuideDetails extends Component {
 
     render() {
         const styleNavBar = {
-            backgroundColor: '#161f24'
+            backgroundColor: '#537580'
         }
         if (this.props.isLoading) {
             return <Loading></Loading>
@@ -82,11 +82,11 @@ class GuideDetails extends Component {
                             <div className="lang-from-guide">
                                 <div className="from-guide">
                                     <span className="guide-field-title">
-                                         From:  </span><span>{this.props.guide.city}
+                                         From: &nbsp;</span><span>{this.props.guide.city}
                                          </span>
                                 </div>
                                 <div className="guide-lang">
-                                    <span className="guide-field-title">Langugages:
+                                    <span className="guide-field-title">Languages: &nbsp;
                                      </span>
                                     {
                                         this.props.guide.langugages.map((langugage, index)=>

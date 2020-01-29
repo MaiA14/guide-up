@@ -24,7 +24,7 @@ class LocalGuideApp extends Component {
         window.onscroll = () => {
             let styleNavBar;
             if (document.documentElement.scrollTop > 110) {
-                styleNavBar = { backgroundColor: '#161f24', transition: ' 0.8s' }
+                styleNavBar = { backgroundColor: '#537580', transition: ' 0.8s' }
                 this.setState({ styleNavBar })
             } else if (document.documentElement.scrollTop < 500)
                 styleNavBar = { backgroundColor: '', transition: ' 0.8s' }
@@ -38,7 +38,9 @@ class LocalGuideApp extends Component {
         }
         return (
             <div>
+                <div className="nav-container-header">
                 <Navbar styleNavBar={this.state.styleNavBar}></Navbar>
+                </div>
                 <Header ></Header> {
                     this.props.guides &&
                     <section className="main-container">

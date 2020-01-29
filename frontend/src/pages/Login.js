@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 
 import Navbar from '../cmps/Navbar.js'
 import { logUser } from '../reducers/guide/actionGuide.js'
+import Footer from '../cmps/Footer.js'
 
 class Login extends Component {
 
@@ -25,7 +26,7 @@ class Login extends Component {
 
     render() {
         const styleNavBar = {
-            backgroundColor: '#161f24'
+            backgroundColor: '#537580'
         }
         return (
 
@@ -49,6 +50,7 @@ class Login extends Component {
                         className="join-header">Not a member? Signup!</Link>
                     </div>
                 </div>
+                {/* <Footer></Footer> */}
             </div>
         )
     }

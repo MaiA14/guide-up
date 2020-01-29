@@ -50,7 +50,7 @@ class Review extends Component {
                 <div>
                     <input onChange={this.onChange} name="userName"
                         type="text" className="review-input"
-                         placeholder="username">
+                         placeholder="Name">
                         </input>
                 </div>
                 <div>

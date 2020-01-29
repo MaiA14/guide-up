@@ -8,7 +8,7 @@ const LoaderStyle = {
 }
 
 const styleNavBar = {
-  backgroundColor: '#161f24'
+  backgroundColor: '#537580'
 }
 
 const LoaderExampleActive = () => {
