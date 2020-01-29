@@ -22,7 +22,8 @@ const cardStyle = {
     paddingLeft: '2px',
     paddingRight: '2px',
     lineHeight: 2,
-    boxShadow: 'none'
+    boxShadow: 'none',
+    color: '#314952'
 }
 
 const cursor = {
@@ -42,7 +43,8 @@ const icon = {
 const header = {
     display: 'flex',
     justifyContent: 'space-between',
-    paddingTop: '16px'
+    paddingTop: '16px',
+    color: '#314952'
 }
 
 class GuidePreviewCard extends Component {
