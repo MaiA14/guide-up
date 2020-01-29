@@ -6,11 +6,8 @@ export default function (state = { guides: [] }, action = {}) {
         case 'SET_GUIDES':
             return { ...state, guides: action.guides }
         case 'ADD_GUIDE':
-            return {
-                ...state, guides: [...state.guides, action.guide]
-            }
+            return { ...state, guides: [...state.guides, action.guide] }
         case 'GET_GUIDE':
-       
             return { ...state, guide: action.guide }
         case 'GUIDE_UPDATE':
             return { ...state, guide: action.newGuide }
@@ -18,9 +15,6 @@ export default function (state = { guides: [] }, action = {}) {
             return { ...state, guide: action.newGuide }
         case 'SET_USER':
             return { ...state, user: action.user }
-
-
-
     }
     return state;
 }

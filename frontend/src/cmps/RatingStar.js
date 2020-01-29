@@ -7,15 +7,14 @@ export default class RatingStar extends Component {
     }
 
     handleRate = (e, { rating }) => {
-
         this.props.onChangeRateStar(rating)
     }
-
 
     render() {
         return (
             <div>
-                <Rating onRate={this.handleRate} maxRating={5}  defaultRating={0} icon='star' size='massive' />
+                <Rating onRate={this.handleRate} maxRating={5}  
+                defaultRating={0} icon='star' size='massive' />
             </div>
         )
     }

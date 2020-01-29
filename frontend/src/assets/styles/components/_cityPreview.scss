@@ -1,4 +1,4 @@
-.country-list {
+.city-list {
   display: grid;
   max-width: 100%;
   grid-template-columns: repeat(3, 1fr);
@@ -14,21 +14,18 @@
   text-align: center;
   z-index: 1;
   position: relative;
-  .country-list > a:hover & {
+  .city-list > a:hover & {
     visibility: visible;
   }
 
 }
 
-
-.country-list > * {
+.city-list > * {
   width: 150px;
   height: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
-  // background-color: #7c9eab;
-  // background-blend-mode: overlay;
   text-transform: uppercase;
   font-family: 'Lato-Bold';
   position: relative;
@@ -40,7 +37,6 @@
     width: 100%;
     height: 100%;
     background: transparent;
-
     transition: background .3s;
   }
   &:hover {
@@ -50,75 +46,71 @@
   }
 }
 
-.country-list > .paris {
+.city-list > .paris {
   background-image: url("https://www.jetsetter.com/uploads/sites/7/2019/04/GettyImages-924894324-1380x690.jpg");
   background-position: center;
   background-size: cover;
 }
 
 
-.country-list > .paris :hover .country-label{
+.city-list > .paris :hover .country-label{
   visibility:visible;
   color: black;
 }
 
-
-
-.country-list > .barcelona {
+.city-list > .barcelona {
   background-image: url("https://imgbbb.com/images/2020/01/16/barceolna.jpg");
   background-position: center;
   background-size: cover;
 }
 
-.country-list > .barcelona :hover .country-label{
+.city-list > .barcelona :hover .country-label{
   visibility:visible;
   color: black;
-  
 }
 
-
-.country-list > .new-york {
+.city-list > .new-york {
   background-image: url("https://images.unsplash.com/photo-1531558506007-fe311a2f4729?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1055&q=80");
   background-position: center;
   background-size: cover;
 }
 
-.country-list > .new-york :hover .country-label{
+.city-list > .new-york :hover .country-label{
   visibility:visible;
   color: black;
 }
 
-.country-list > .mexico-city {
+.city-list > .mexico-city {
   object-fit: cover;
   background-image: url("https://images.squarespace-cdn.com/content/v1/58b2f9802e69cf75a41179db/1516400521105-H1KNSLG0GVXB57LKOSM9/ke17ZwdGBToddI8pDm48kNhhLgcdU_WvGBc9Q-0GUP97gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UajNmZTwxd_gB5chSfoFJT1FYkMK7zQtwLKZOfss0fQDr6Osy_dUxNTp_VXDOR5Z4g/image-asset.jpeg");
   background-position: center;
   background-size: cover;
 }
 
-.country-list > .mexico-city :hover .country-label{
+.city-list > .mexico-city :hover .country-label{
   visibility:visible;
   color: black;
 }
-.country-list > .tel-aviv {
+.city-list > .tel-aviv {
   object-fit: cover;
   background-image: url("https://www.leonardo-hotels.com/octopus/upload/images/pages/110904200-1-.jpg");
   background-position: center;
   background-size: cover;
 }
 
-.country-list > .tel-aviv:hover .country-label{
+.city-list > .tel-aviv:hover .country-label{
   visibility:visible;
   color: black;
 }
 
-.country-list > .berlin {
+.city-list > .berlin {
   object-fit: cover;
   background-image: url("https://images.unsplash.com/photo-1559564484-e48b3e040ff4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
   background-position: center;
   background-size: cover;
 }
 
-.country-list > .berlin:hover .country-label{
+.city-list > .berlin:hover .country-label{
   visibility:visible;
   color: black;
 }

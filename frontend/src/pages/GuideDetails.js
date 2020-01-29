@@ -50,7 +50,6 @@ class GuideDetails extends Component {
             return <Loading></Loading>
         }
 
-
         const tagStyle = {
             width: '10%;',
             height: '100%;'

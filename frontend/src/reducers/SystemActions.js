@@ -1,7 +1,3 @@
-
-
-
-
 export function loading() {
   return { type: 'LOADING_START' }
 }

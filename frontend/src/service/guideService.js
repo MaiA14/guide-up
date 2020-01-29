@@ -11,8 +11,7 @@ export default {
     save,
     addGuide,
     addReview,
-    checkCredentials,
-    
+    checkCredentials,   
 }
 
 const url = "http://localhost:3001/api/guide"
@@ -58,8 +57,6 @@ function _calcGuideRank(guide) {
     return (guideRank / guide.reviews.length).toFixed(1);
 }
 
-
-
 export  function getIconTag() {
      const tag = {
         Coffee:   'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126710/nx4zhbrtkfp5vybo2tvt.png' ,  
@@ -74,7 +71,6 @@ export  function getIconTag() {
         NightLife: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580125337/bjkqdxjjv2ifwrp4o9cz.png'
     }
     return tag
-
 }
 
 async function checkCredentials(loginData) {

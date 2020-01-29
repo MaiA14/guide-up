@@ -2,11 +2,6 @@ import { Comment, Icon } from 'semantic-ui-react'
 import axios from 'axios';
 import React, { Component } from 'react'
 
-
-
-
-
-
 class CommentView extends Component {
 
   state = {
@@ -24,14 +19,14 @@ class CommentView extends Component {
   }
 
   render() {
-
     if (this.state.userImag === Object) return
     return (
       <Comment.Group >
         <Comment>
           <Comment.Avatar as='a' src={this.state.userImg} />
           <Comment.Content>
-            <Comment.Author>{this.props.review.createBy.userName}</Comment.Author>
+            <Comment.Author>{this.props.review.createBy.userName}
+            </Comment.Author>
             <Comment.Metadata>
               <div>2 days ago</div>
               <div>

@@ -47,7 +47,6 @@ class MainSearch extends Component {
                     <option value="mexico-city">Mexico-city</option>
                     <option value="barcelona">Barcelona</option>
                     <option value="berlin">Berlin</option>
-
                 </select>
                 <button className="search-btn" onClick={this.onSearch}>Search</button>
             </div>

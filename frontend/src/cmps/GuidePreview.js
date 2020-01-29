@@ -6,7 +6,6 @@ import { withRouter } from 'react-router-dom';
 import GuideTags from '../cmps/GuideTags.js'
 import Loader from '../cmps/Loading.js'
 
-
 const cardStyle = {
     marginTop: 0,
     maxWidth: '100%',
@@ -24,7 +23,6 @@ const cardStyle = {
     paddingRight: '2px',
     lineHeight: 2,
     boxShadow: 'none'
-
 }
 
 const cursor = {
@@ -53,16 +51,10 @@ class GuidePreviewCard extends Component {
         const { props } = this
 
         this.props.history.push(`/guides/?guide_id=${props.guide._id}`)
-
     }
 
-
-
     render() {
-
-
         const iconClass = 'home-icon-style'
-
         const { props } = this
         return (<Card style={cardStyle} >
             <Image onClick={this.onLink} style={imgStyle} src={props.guide.imgUrl} />
@@ -91,9 +83,6 @@ class GuidePreviewCard extends Component {
 
         )
     }
-
-
-
 }
 
 export default withRouter(GuidePreviewCard);

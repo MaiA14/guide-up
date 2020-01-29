@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Image from 'material-ui-image'
 
-export default class ContryPreview extends Component {
+export default class CityPreview extends Component {
 
     render() {
         const imgStyle = {
@@ -13,11 +13,12 @@ export default class ContryPreview extends Component {
         const { props } = this
         return (
 
-            <Link style={imgStyle} className={props.country} to={`/location/?city=${props.country}`}>
+            <Link style={imgStyle} className={props.city} 
+            to={`/location/?city=${props.city}`}>
                 <div>
                     <div className="country-preview-card">
                         <div className="country-label">
-                            {props.country}
+                            {props.city}
                         </div>
                     </div>
                 </div></Link>

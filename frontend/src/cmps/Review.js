@@ -49,12 +49,14 @@ class Review extends Component {
                  {this.props.guide.name}</h2>
                 <div>
                     <input onChange={this.onChange} name="userName"
-                        type="text" className="review-input" placeholder="username">
+                        type="text" className="review-input"
+                         placeholder="username">
                         </input>
                 </div>
                 <div>
                     <Form className="review-text">
-                        <TextArea rows={2} placeholder='What do you think about me?' 
+                        <TextArea rows={2} 
+                        placeholder='What do you think about me?' 
                         onChange={this.onChange} name="txt" />
                     </Form>
                 </div>

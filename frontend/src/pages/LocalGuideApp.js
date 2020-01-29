@@ -7,21 +7,18 @@ import Footer from '../cmps/Footer.js'
 import List from '../cmps/List.js'
 import { loadGuides, setUserLogIn } from '../reducers/guide/actionGuide.js'
 import Navbar from '../cmps/Navbar.js'
-import storageService from '../service/storageService.js'
 
 class LocalGuideApp extends Component {
     state = {
-        countries: ['tel-aviv', 'paris', 'barcelona', 'new-york', 'mexico-city', 'berlin'],
+        cities: ['tel-aviv', 'paris', 'barcelona', 'new-york', 'mexico-city', 'berlin'],
         styleNavBar: {
             backgroundColor: '',
             transition: 'backgroundColor'
         },
         filterBy: { city: '', avgRank: 4.5}
-
     }
 
     componentDidMount() {
-
         this.props.loadGuides(this.state.filterBy);
         document.body.style.paddingTop = 0
         window.onscroll = () => {
@@ -36,19 +33,17 @@ class LocalGuideApp extends Component {
     }
 
     render() {
-
-
         if (this.props.isLoading) {
             return <Loading></Loading>
         }
         return (
             <div>
                 <Navbar styleNavBar={this.state.styleNavBar}></Navbar>
-                <Header ></Header>
-                {
+                <Header ></Header> {
                     this.props.guides &&
                     <section className="main-container">
-                        <List guides={this.props.guides} countries={this.state.countries}></List>
+                        <List guides={this.props.guides} cities={this.state.cities}>
+                        </List>
                     </section>
                 }
                 <Footer ></Footer>
@@ -61,7 +56,6 @@ const mapStateToProps = (state) => {
         guides: state.guides.guides,
         user: state.user,
         isLoading: state.system.isLoading,
-
     }
 }
 
