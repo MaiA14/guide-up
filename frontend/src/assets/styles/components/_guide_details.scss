@@ -2,22 +2,20 @@
 .calendar-container {
   display: flex;
   flex-direction: column;
-  padding: 40px;
+  padding: 100px;
 }
 .calendar-content {
   border: 1px solid;
   border-radius: 12px;
   border-color: $clr2;
   padding: 23px;
+  padding-bottom: 5px;
+  padding-top: 5px;
   position: sticky;
   top: 80px;
 }
 
-.calendar-title{
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
+
 
 /* GUIDE DETAILS */
 
@@ -72,7 +70,6 @@
 }
 
 .guide-rank{
-  text-align: center;
   color: $clr2;
 }
 
@@ -139,9 +136,7 @@ border-bottom: 1px solid;
 
 .price-rank{
   display: flex;
-  justify-content: center;
-  margin-top: 10px;
-  margin-bottom: 10px;  
+  justify-content: center;  
   font-family: "Lato-Bold";
   font-size: rem(22px);
   line-height: 45px;
@@ -153,8 +148,20 @@ border-bottom: 1px solid;
   display: flex;
   justify-content: center;
   margin-top: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: $clr2;
+}
+
+.calendar-title {
+  display: flex;
+  justify-content: center;
+  font-size: rem(50px);
+  margin-bottom: 5px;
+  color: $clr2;
+}
+
+.calendar-title > * {
+  font-size: 35px;
 }
 
 .num-of-people > * {
@@ -162,13 +169,7 @@ border-bottom: 1px solid;
   font-size: 23px;
 }
 
-.calendar-title{
-  font-family: "Lato";
-  font-size: rem(27px);
-  line-height: 45px;
-  color: $clr2;
-  font-size: 23px;
-}
+
 
 /* BUTTONS */
 .back-btn {
@@ -187,6 +188,12 @@ border-bottom: 1px solid;
   margin-top: 10px;
   outline: 0;
 }
+
+.back-btn:hover{
+  background-color: $clr3;
+  color: white;
+}
+
 .container-book {
   margin-top: 140px;
 }
@@ -210,6 +217,7 @@ border-bottom: 1px solid;
 .book-input{
   padding-left: 20px;
   width: 100px;
+  border-right-style: none;
 }
 
 .book-btn:hover {
@@ -224,11 +232,13 @@ border-bottom: 1px solid;
 .book-input{
   outline: none;
   border: 1px solid $clr3;
+  border-right-style:none;
   border-radius: 9px 0 0 9px;
 }
 
 .book-input:focus{
   border: 1px solid $clr4;
+  border-right-style:none;
   outline: none;
 }
 
@@ -287,6 +297,7 @@ border-bottom: 1px solid;
 .divider{
   padding-top: 15px;
   border-bottom: 1px solid;
+  width: 575px;
 }
 
   

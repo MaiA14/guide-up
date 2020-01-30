@@ -58,22 +58,6 @@ function _calcGuideRank(guide) {
     return (guideRank / guide.reviews.length).toFixed(1);
 }
 
-export  function getIconTag() {
-     const tag = {
-        Coffee:   'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126710/nx4zhbrtkfp5vybo2tvt.png' ,  
-        Outdoor: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126496/lvydnjcii7euhydeh8bi.png',
-        Shopping: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580125153/musi4qk4n11vu1v2xcyp.png',
-        Culture: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126878/mcjofjlxdzma6w9grpgj.png',
-        Sport: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126246/uyzc16yl35u5j0pakrgq.png',
-        Food: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580125925/c4328sfxfhtobbhmeux3.png',
-        Music: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580124661/j4hs3vgcfjok0xsuffj4.png',
-        Art: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580125416/e7ncfe3ogdaeoajh83lx.png',
-        Photos: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126652/zeuynhclnuotvd5oat0s.png',
-        NightLife: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580125337/bjkqdxjjv2ifwrp4o9cz.png'
-    }
-    return tag
-}
-
 async function checkCredentials(loginData) {
     try {
         const res = await Axios.post("http://localhost:3001/api/auth" + '/login', loginData)
@@ -91,6 +75,23 @@ async function checkCredentials(loginData) {
         throw err
     }
 }
+
+export  function getIconTag() {
+    const tag = {
+       Coffee:   'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126710/nx4zhbrtkfp5vybo2tvt.png' ,  
+       Outdoor: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126496/lvydnjcii7euhydeh8bi.png',
+       Shopping: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580125153/musi4qk4n11vu1v2xcyp.png',
+       Culture: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126878/mcjofjlxdzma6w9grpgj.png',
+       Sport: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126246/uyzc16yl35u5j0pakrgq.png',
+       Food: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580125925/c4328sfxfhtobbhmeux3.png',
+       Music: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580124661/j4hs3vgcfjok0xsuffj4.png',
+       Art: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580125416/e7ncfe3ogdaeoajh83lx.png',
+       Photos: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126652/zeuynhclnuotvd5oat0s.png',
+       NightLife: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580125337/bjkqdxjjv2ifwrp4o9cz.png'
+   }
+   return tag
+}
+
 
 // function _saveLoggedin(user) {
 //     storageService.store('loggedinUser', user)

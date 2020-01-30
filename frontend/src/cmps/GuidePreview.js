@@ -79,7 +79,9 @@ class GuidePreviewCard extends Component {
                 <div className="container-data">
                     <span>From: {props.guide.city}</span>
                 </div>
+                <div className="flex">
                 <GuideTags iconClass={iconClass} guide={props.guide} ></GuideTags>
+                </div>
             </Card.Content>
         </Card >
 

@@ -35,7 +35,7 @@ class MainSearch extends Component {
             style = this.props.style
         } else style = ''
         return (
-            <div style={style.contanerStyle} className="search-container flex" >
+            <div style={style.containerStyle} className="search-container flex" >
                 <select style={style.selectStyle} value={this.state.city} onChange={this.onChange}>
                     <option value="" disabled selected>{
                         this.state.city ?

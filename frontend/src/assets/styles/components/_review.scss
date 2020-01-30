@@ -2,8 +2,17 @@
     border: none;
     border-bottom: 1px solid;
     margin-bottom: 20px;
+    color: $clr3;
     width: 230px;
     outline: none;
+}
+
+.review-input:focus{
+    color: $clr3;
+}
+
+.review-input:focus{
+    border-bottom: 1px solid $clr2;
 }
 
 .review-text{
@@ -22,6 +31,21 @@
 .ui.star.rating .active.icon {
     border-bottom: none;
     outline: none;
+}
+
+.ui.form textarea {
+    border: 1px solid $clr3;
+    padding-bottom: 60px;
+    width: 340px;
+    ::placeholder{
+        text-align: left;
+        // line-height: -30;
+ 
+    }
+}
+
+.ui.form textarea:focus {
+    border: 1px solid $clr2;
 }
 
 .send-btn {

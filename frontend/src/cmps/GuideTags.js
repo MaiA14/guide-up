@@ -1,22 +1,36 @@
 import React from 'react';
 import { getIconTag } from '../service/guideService.js'
-import { Icon } from 'semantic-ui-react'
+import { Icon, Popup, Image } from 'semantic-ui-react'
 
 export default function GuideTags(props) {
-const styleFont = {
-}
+    const styleFont = {
+    }
     const tagIcon = getIconTag()
 
     const labelStyle = {
         width: '183px',
         marginLeft: '4px'
     }
-    
+
+    const iconStyle = {
+        width: '9%',
+        height: '90%'
+    }
+
+    const img = {
+        width: '10%'
+    }
+
+    // console.log(props.guides[0].tags)
+
     return props.guide.tags.map((tag, index) => {
         return (
-            <div className="tags-container">  
-           <span style={labelStyle} key={props.guide._id + index}> {tag} </span>            
-                <img src={tagIcon[tag]}  className={props.iconClass}></img>
+            <div className="tags-container">
+                <Popup
+                    trigger={
+                        <Image src={tagIcon[tag]} className={iconStyle} />
+                    }>
+                    <Popup.Header>{tag}</Popup.Header></Popup>
             </div>
         )
     })
