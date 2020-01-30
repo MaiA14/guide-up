@@ -12,6 +12,7 @@ import ReviewView from '../cmps/Review-view.js'
 import Loading from '../cmps/Loading.js'
 import GuideTags from '../cmps/GuideTags.js'
 import Footer from '../cmps/Footer.js'
+import Chat from '../cmps/Chat.js'
 
 class GuideDetails extends Component {
     state = {
@@ -136,10 +137,10 @@ class GuideDetails extends Component {
                                 </div>
                                 <div className="price-rank flex column justify-center">
                                     <div className="guide-price">${this.props.guide.price}  For my tour</div>
-                                    <div className="guide-rank">
-                                        <Icon size={'small'} 
-                                        disabled name='star' />{this.props.guide.avgRank}
+                                    <div className="container-chet">
+                                    <Chat></Chat>
                                     </div>
+                               
                                 </div>
                             </div>
                         </div>

@@ -32,13 +32,9 @@ class Review extends Component {
         const field = ev.target.name
         const value = ev.target.value
         if (field === 'userName') {
-<<<<<<< HEAD
-            this.setState(prevState => ({createBy: { ...prevState.createBy, [field]: value }}))
-=======
             this.setState(prevState => (
                 {createBy:{...prevState.createBy, [field]: value }
             }))
->>>>>>> 529a37525ad58d5fa4f044a4218e85896b90fc0a
         } else {
             this.setState((prevState) => {
                 return { ...prevState, [field]: value }
