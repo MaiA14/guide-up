@@ -12,6 +12,7 @@ module.exports = {
 
 async function query(filterBy) {
     const criteria = _buildCriteria(filterBy)
+    console.log(criteria)
     const collection = await dbService.getCollection('guide')
     try {
         const guides = await collection.find(criteria).toArray();
@@ -83,7 +84,7 @@ async function remove(guideId) {
 }
 
 function _buildCriteria(filterBy) {
-    console.log(filterBy)
+    // console.log('_buildCriteria: ', filterBy)
     let criteria = {}
 
     try {
@@ -102,5 +103,18 @@ function _buildCriteria(filterBy) {
     } catch (err) {
         console.log(err)
     }
+
+    try {
+        const tag = (filterBy.tags)
+        // console.log('_buildCriteria: ',tag)
+        if (filterBy.tags) {
+            const tagsArray = tag.split(',')
+            console.log('_buildCriteria: ',tagsArray)
+            criteria.tags = { "$in": tagsArray }
+        }
+    } catch (err) {
+        console.log(err)
+    }
+
     return criteria;
 }

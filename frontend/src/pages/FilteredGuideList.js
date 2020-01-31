@@ -35,10 +35,17 @@ class FilteredGuideList extends Component {
     onSearch = (newCityToFilter) => {
         this.setState(prvState => ({
             filterBy: {
+                ...prvState.filterBy, ['tags']:
+                    ''
+            }
+        }))
+        this.setState(prvState => ({
+            filterBy: {
                 ...prvState.filterBy, ['city']:
                     newCityToFilter
             }
         }), () => (this.props.loadGuides(this.state.filterBy)))
+
     }
 
     onSubmitTags = (tags) => { 

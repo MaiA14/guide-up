@@ -6,7 +6,7 @@ export default class TagsView extends Component {
     state = {
         tags: getIconTag(),
         tagsCaption: [],
-        isSelected: false
+        isSelected: false,
     }
 
     onSelectTag = (ev) => {
@@ -18,17 +18,16 @@ export default class TagsView extends Component {
         if (ans) {
             this.setState(prevState => ({ tagsCaption:  this.state.tagsCaption.filter(tag1 => tag1 !== tag) }), () => console.log(this.state.tagsCaption))
             ev.target.className = ""
-
         }else{
             this.setState(prevState => ({ tagsCaption: [...prevState.tagsCaption, tag] }), () => console.log(this.state.tagsCaption))
             ev.target.className = "active-Selected"
-
         }
     }
 
   
 
     render() {
+        console.log(this.state)
 
         if (!this.state.tags) return <h1></h1>
         return (
