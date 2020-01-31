@@ -9,35 +9,50 @@ import MainSearch from '../cmps/MainSearch.js'
 import Loading from '../cmps/Loading.js'
 import Navbar from '../cmps/Navbar.js'
 import Footer from '../cmps/Footer.js'
+import { getIconTag } from '../service/guideService.js'
+import GuideTags from '../cmps/GuideTags.js'
+import TagsView from '../cmps/TagsView.js'
 
 class FilteredGuideList extends Component {
 
     state = {
-        filterBy: { city: '', avgRank: ''}
+        filterBy: { city: '', avgRank: '' }
     }
 
     componentDidMount() {
         document.body.style.paddingTop = '60px'
         let items = queryString.parse(this.props.location.search)
         let newCityToFilter = items.city
-        this.setState(prvState => ({ filterBy: { ...prvState.filterBy, 
-            ['city']: newCityToFilter } }), () => 
+        this.setState(prvState => ({
+            filterBy: {
+                ...prvState.filterBy,
+                ['city']: newCityToFilter
+            }
+        }), () =>
             (this.props.loadGuides(this.state.filterBy)))
     }
-    
+
     onSearch = (newCityToFilter) => {
-        this.setState(prvState => ({ filterBy: { ...prvState.filterBy, ['city']: 
-        newCityToFilter } }), () => (this.props.loadGuides(this.state.filterBy)))
+        this.setState(prvState => ({
+            filterBy: {
+                ...prvState.filterBy, ['city']:
+                    newCityToFilter
+            }
+        }), () => (this.props.loadGuides(this.state.filterBy)))
     }
 
     render() {
         const searchStyle = {
-            contanerStyle: {
+            containerStyle: {
                 marginTop: '20px'
             },
             selectStyle: {
                 border: '1px solid #ef8758',
             }
+        }
+
+        const iconStyle = {
+            width: '25px'
         }
 
         const styleNavBar = {
@@ -47,36 +62,26 @@ class FilteredGuideList extends Component {
         if (this.props.isLoading) {
             return <Loading></Loading>
         }
-
+        const iconClass = 'home-icon-style'
         return (
-            <React.Fragment>
+            <div className="">
                 <Navbar styleNavBar={styleNavBar} ></Navbar>
                 <h1 className="filtered-guides-header main-container">
                     {this.state.filterBy.city + '\'s guides'}</h1>
                 <h2 className="guides-short-content main-container">
-                    Find your guides, let them share with you the insight on the city. 
-                     Enjoy from unforgatable trip</h2>
-                <div className="filtered-glist-container">
+                    Find your guides, let them share with you the insight on the city.
+                     Enjoy from unforgettable trip</h2>
+            <div className="filtered-glist-container ">
                     <MainSearch onSearch={this.onSearch} style={searchStyle}>
                     </MainSearch>
-                    {/* choose tags:<input type="checkbox" checked="checked"></input>
-                    <span className="checkmark"></span>
-                    <label className="container">Art</label>
-                    <input type="checkbox" checked="checked"></input>
-                    <span className="checkmark"></span>
-                    <label className="container">Coffe</label>
-                    <input type="checkbox" checked="checked"></input>
-                    <span className="checkmark"></span>
-                    <label className="container">Music</label>
-                    <input type="checkbox" checked="checked"></input>
-                    <span className="checkmark"></span>
-                    <label className="container">Movies</label> */}
+                    <TagsView></TagsView>
                 </div>
                 <section className="cards-list main-container">
                     {this.props.guides.map(guide => <GuidePreview key={guide._id}
-                     guide={guide}></GuidePreview>)}
+                        guide={guide}></GuidePreview>)}
                 </section>
-            </React.Fragment>
+                <Footer></Footer>
+            </div>
         )
     }
 }

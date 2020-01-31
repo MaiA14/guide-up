@@ -35,6 +35,7 @@ class Review extends Component {
             this.setState(prevState => (
                 {createBy:{...prevState.createBy, [field]: value }
             }))
+            this.setState(prevState => ({createBy: { ...prevState.createBy, [field]: value }}))
         } else {
             this.setState((prevState) => {
                 return { ...prevState, [field]: value }

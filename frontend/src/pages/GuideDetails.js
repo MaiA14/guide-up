@@ -76,6 +76,10 @@ class GuideDetails extends Component {
                             <div className="guide-img-details">
                                 <img src={this.props.guide.imgUrl} ></img>
                             </div>
+                            <div className="guide-rank">
+                                        <Icon size={'small'} 
+                                        disabled name='star' />{this.props.guide.avgRank} (by {this.props.guide.reviews.length} reviewers)
+                                    </div>
                             <div className="guide-tags">
                             <GuideTags iconClass={iconClass} 
                             guide={this.props.guide}></GuideTags>
@@ -125,7 +129,11 @@ class GuideDetails extends Component {
                         </div>
                      
                         <div className="calendar-container">
+                       
                             <div className="calendar-content">
+                            <div className="calendar-title">
+                                    <h2>Pick a date</h2>
+                                </div>
                                 <Calendar></Calendar>
                                 <div className="num-of-people">
                                     <h2>How many people?</h2>
@@ -138,9 +146,10 @@ class GuideDetails extends Component {
                                 <div className="price-rank flex column justify-center">
                                     <div className="guide-price">${this.props.guide.price}  For my tour</div>
                                     <div className="container-chet">
-                                    <Chat></Chat>
+                                    <Chat guide={this.props.guide}></Chat>
                                     </div>
                                
+                                  
                                 </div>
                             </div>
                         </div>

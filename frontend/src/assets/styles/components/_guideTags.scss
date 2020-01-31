@@ -1,10 +1,8 @@
 
 .tags-container{
-    background-color: #f0f0f0;
     margin-top: 4px;
     display: flex;
     padding: 2px;
-    margin-right: 5px;
     align-items: center;
 }
 
@@ -15,9 +13,11 @@
 }
 
 .details-icon-style{
- 
-    width: 9%;
-    height: 90%;
+    width: 10%;
+}
+
+img.ui.image.width{
+    width: 60%;
 }
 
 .tag-label{
@@ -31,6 +31,18 @@
 }
 
 .tag-icon img{
-    height: 25px;
+    width: 20px;
+}
+
+.tag-view{
+    width: 300px;
+    margin-top: -29px;
+    margin-left: 100px;
+    // margin-right: 10px;
+    display: flex;
+  img {
+      width: 20px;
+      margin: 2px;
+  }  
 }
 

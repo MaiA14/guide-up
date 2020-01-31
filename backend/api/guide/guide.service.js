@@ -15,7 +15,6 @@ async function query(filterBy) {
     const collection = await dbService.getCollection('guide')
     try {
         const guides = await collection.find(criteria).toArray();
-        console.log('guides ', guides)
 
         return guides
     } catch (err) {
