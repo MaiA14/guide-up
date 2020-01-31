@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import quoryString from 'query-string'
 import { Card, Icon, Image } from 'semantic-ui-react'
+
 import { withRouter } from 'react-router-dom';
 import GuideTags from '../cmps/GuideTags.js'
-import Loader from '../cmps/Loading.js'
 
 const cardStyle = {
     marginTop: 0,
