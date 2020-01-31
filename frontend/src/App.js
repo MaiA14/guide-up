@@ -12,7 +12,7 @@ import global from '../src/assets/styles/global.scss'
 import Login from '../src/pages/Login.js'
 import Signup from '../src/pages/Signup'
 import BecomeGuide from './pages/BecomeGuide.js'
-import profile from './pages/profile.js'
+import Profile from './pages/Profile.js'
 import "react-datepicker/dist/react-datepicker.css";
 
 function App() {
@@ -25,10 +25,10 @@ function App() {
             <Route component={LocalGuideApp} path="/" exact></Route>
             <Route component={GuideDetails} path="/guides" exact></Route>
             <Route component={FilteredGuideList} path="/location" exact></Route>
-            <Route component={Login} path="/login" ></Route>
-            <Route component={Signup} path="/signup" ></Route>
-            <Route component={BecomeGuide} path="/join_us" ></Route>
-            <Route component={profile} path="/profile" ></Route>
+            <Route component={Login} path="/login"exact  ></Route>
+            <Route component={Signup} path="/signup"exact ></Route>
+            <Route component={BecomeGuide} path="/join_us"exact ></Route>
+            <Route component={Profile} path="/profile"exact ></Route>
 
 
           </Switch>

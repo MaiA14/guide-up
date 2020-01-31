@@ -16,7 +16,7 @@ import TagsView from '../cmps/TagsView.js'
 class FilteredGuideList extends Component {
 
     state = {
-        filterBy: { city: '', avgRank: '' }
+        filterBy: { city: '', avgRank: '', tags: '' }
     }
 
     componentDidMount() {
@@ -40,6 +40,19 @@ class FilteredGuideList extends Component {
             }
         }), () => (this.props.loadGuides(this.state.filterBy)))
     }
+
+    onSubmitTags = (tags) => { 
+       this.setState(prvState => ({
+            filterBy: {
+                ...prvState.filterBy,
+                ['tags']: tags
+            }
+        }), () =>
+            (this.props.loadGuides(this.state.filterBy)))
+    }
+
+
+
 
     render() {
         const searchStyle = {
@@ -71,10 +84,10 @@ class FilteredGuideList extends Component {
                 <h2 className="guides-short-content main-container">
                     Find your guides, let them share with you the insight on the city.
                      Enjoy from unforgettable trip</h2>
-            <div className="filtered-glist-container ">
+                <div className="filtered-glist-container ">
                     <MainSearch onSearch={this.onSearch} style={searchStyle}>
                     </MainSearch>
-                    <TagsView></TagsView>
+                    <TagsView onSubmitTags={this.onSubmitTags} filterByTag={this.filterByTag} ></TagsView>
                 </div>
                 <section className="cards-list main-container">
                     {this.props.guides.map(guide => <GuidePreview key={guide._id}
@@ -85,7 +98,7 @@ class FilteredGuideList extends Component {
         )
     }
 }
-const mappropsToProps = (state) => {
+const mapPropsToProps = (state) => {
 
     return {
         guides: state.guides.guides,
@@ -97,6 +110,6 @@ const mapDispatchToProps = {
     loadGuides
 }
 export default connect(
-    mappropsToProps,
+    mapPropsToProps,
     mapDispatchToProps
 )(FilteredGuideList)

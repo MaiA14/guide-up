@@ -5,27 +5,26 @@ import { connect } from 'react-redux'
 import { setUserLogIn } from '../reducers/guide/actionGuide.js'
 import ProfileTab from '../cmps/ProfileTab.js'
 import storageService from '../service/storageService.js'
-import Profile from '../cmps/Perview.js'
-class profile extends Component {
+import Overview from '../cmps/Overview.js'
+import Messenger from '../cmps/Messenger.js'
 
-    componentDidMount() {
-        if (storageService.load('loggedinUser')) {
-            const user = storageService.load('loggedinUser')
-            console.log(user)
-            this.props.setUserLogIn(user)
-        }
-    }
+class Profile extends Component {
+
+    // componentDidMount() {
+    //     if (storageService.load('loggedinUser')) {
+    //         const user = storageService.load('loggedinUser')
+    //         console.log(user)
+    //         this.props.setUserLogIn(user)
+    //     }
+    // }
 
 
     render() {
-        if (!this.props.user) {
-            return <h1>loading....</h1>
-        }
-
         return (
             <div>
                 <ProfileTab></ProfileTab>
-                <Profile user={this.props.user}></Profile>
+                <Overview></Overview>
+                <Messenger></Messenger>
             </div>
         )
     }
@@ -43,5 +42,6 @@ const mapDispatchToProps = {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(profile)
+)(Profile)
+
 

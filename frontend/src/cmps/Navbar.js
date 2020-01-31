@@ -17,10 +17,10 @@ class Navbar extends Component {
                 <div className="nav-link"><NavLink activeClassName="active" to='/' exact>Home</NavLink></div>
                 <div className="nav-link"><NavLink activeClassName="active" to='/login' exact>Login</NavLink></div>
                 <div className="nav-link"><NavLink activeClassName="active" to='/join_us' exact>Become a Guide</NavLink></div>
-                <div className="nav-link"><NavLink activeClassName="active" to='/profile' exact>
-                    {this.props.user &&
+                <div className="nav-link"><NavLink activeClassName="active" to='/profile' exact>Profile
+                    {/* {this.props.user &&
                         <Image size={'mini'} src={this.props.user.imgUrl} circular    ></Image>
-                    }
+                    } */}
                 </NavLink></div>
             </div>
         </div>

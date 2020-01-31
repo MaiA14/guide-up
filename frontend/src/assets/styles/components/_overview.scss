@@ -1,0 +1,42 @@
+.calendar-container-profile {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.calendar-content-profile {
+    border: 1px solid;
+    border-radius: 12px;
+    border-color: #445d66;
+    padding: 23px;
+    padding-top: 5px;
+    margin-top: 30px;
+    top: 80px;
+}
+
+.overview-elements{
+    height: 300px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.profile-img{
+    width: 300px;
+    height: 380px;
+    padding-top: 20px;
+    border-radius: 9%;
+}
+
+.main-container-profile{
+    margin: 0 auto;
+    max-width: 980px;
+    margin-bottom: 20px;
+}
+
+.profile-name{
+    justify-content: center;
+    font-size: rem(40px);
+    font-weight: bold;
+    margin-top: 30px;
+    color: #445d66;
+}

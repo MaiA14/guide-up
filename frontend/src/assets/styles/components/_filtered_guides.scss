@@ -17,3 +17,17 @@
   height: 50px;
 }
 
+.selected-tag:hover {
+  transform:scale(1.5);
+}
+
+.selected-tag {
+  color: white;
+}
+
+.active-Selected{
+  transform:scale(1.5);
+}
+
+
+

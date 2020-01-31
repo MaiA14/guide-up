@@ -15,7 +15,7 @@ class LocalGuideApp extends Component {
             backgroundColor: '',
             transition: 'backgroundColor'
         },
-        filterBy: { city: '', avgRank: 4.5}
+        filterBy: { city: '', avgRank: 4}
     }
 
     componentDidMount() {
