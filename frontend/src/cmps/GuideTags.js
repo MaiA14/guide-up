@@ -20,13 +20,13 @@ export default function GuideTags(props) {
     const img = {
         width: '10%'
     }
-    
+    console.log(tagIcon)
     return props.guide.tags.map((tag, index) => {
         return (
             <div className="tags-container">
                 <Popup
                     trigger={
-                        <Image src={tagIcon[tag]} className={iconStyle} />
+                        <Image src={tagIcon[tag].img} className={iconStyle} />
                     }>
                     <Popup.Header>{tag}</Popup.Header></Popup>
             </div>
