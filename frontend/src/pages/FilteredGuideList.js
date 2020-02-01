@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import queryString from 'query-string'
 import { Card, Icon, Image } from 'semantic-ui-react'
 
+
 import GuidePreview from '../cmps/GuidePreview.js'
 import { loadGuides, loadTags } from '../reducers/guide/actionGuide.js'
 import MainSearch from '../cmps/MainSearch.js'
@@ -16,7 +17,10 @@ import TagsView from '../cmps/TagsView.js'
 class FilteredGuideList extends Component {
 
     state = {
-        filterBy: { city: '', avgRank: '', tags: '' }
+        filterBy: { city: '', avgRank: '', tags: '' },
+            tags: getIconTag(),
+            tagsCaption: [],
+            // isSelected: false,
     }
 
     componentDidMount() {
@@ -33,6 +37,8 @@ class FilteredGuideList extends Component {
     }
 
     onSearch = (newCityToFilter) => {
+        this.setState({tags:getIconTag()})
+
         this.setState(prvState => ({
             filterBy: {
                 ...prvState.filterBy, ['tags']:
@@ -48,15 +54,39 @@ class FilteredGuideList extends Component {
 
     }
 
-    onSubmitTags = (tags) => { 
-       this.setState(prvState => ({
+    onSubmitTags = () => {
+        this.setState(prvState => ({
             filterBy: {
                 ...prvState.filterBy,
-                ['tags']: tags
+                ['tags']: this.state.tagsCaption
             }
         }), () =>
             (this.props.loadGuides(this.state.filterBy)))
     }
+
+    onSelectTag = (ev) => {
+        ev.stopPropagation()
+
+        const tagChoose = ev.target.name
+        const ans = this.state.tagsCaption.includes(tagChoose);
+        const imgTag = this.state.tags[tagChoose].img
+
+        if (ans) {
+            this.setState(prevState => ({ tagsCaption: this.state.tagsCaption.filter(tag => tag !== tagChoose) }), () => console.log(this.state.tagsCaption))
+            this.setState(prevState => ({ tags: { ...prevState.tags, [tagChoose]: { img: imgTag, isSelected: false } } }))
+
+        } else {
+            this.setState(prevState => ({ tagsCaption: [...prevState.tagsCaption, tagChoose] }))
+
+
+
+            this.setState(prevState => ({ tags: { ...prevState.tags, [tagChoose]: { img: imgTag, isSelected: true } } }))
+
+
+
+        }
+    }
+
 
 
 
@@ -95,7 +125,7 @@ class FilteredGuideList extends Component {
                 <div className="filtered-glist-container flex main-container">
                     <MainSearch onSearch={this.onSearch} style={searchStyle}>
                     </MainSearch>
-                    <TagsView onSubmitTags={this.onSubmitTags} filterByTag={this.filterByTag} ></TagsView>
+                    <TagsView tags={this.state.tags} onSelectTag={this.onSelectTag} onSubmitTags={this.onSubmitTags} filterByTag={this.filterByTag} ></TagsView>
                 </div>
                 <section className="cards-list main-container">
                     {this.props.guides.map(guide => <GuidePreview key={guide._id}
