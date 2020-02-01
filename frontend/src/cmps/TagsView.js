@@ -3,6 +3,7 @@ import { Icon, Popup, Image } from 'semantic-ui-react'
 
 export default class TagsView extends Component {
     render() {
+
         if (!this.props.tags) return <h1></h1>
         return (
             <div className="tag-view">

@@ -90,8 +90,7 @@ class FilteredGuideList extends Component {
                 marginTop: '0px'
             },
             selectStyle: {
-                width: '150px',
-                border: '1px solid #ef8758',
+                border: '1px solid #ef8758'
             }
         }
 
