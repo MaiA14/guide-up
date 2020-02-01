@@ -10,12 +10,16 @@ export default class TagsView extends Component {
                 {Object.keys(this.props.tags).map(key => {
                     return <Popup key={key}
                         trigger={
-                            <Image onClick={this.props.onSelectTag} className={this.props.tags[key].isSelected ? 'active-Selected' : ''} name={key} src={this.props.tags[key].img} />
+                            <Image onClick={this.props.onSelectTag} 
+                            className={this.props.tags[key].isSelected ?
+                                 'active-Selected' : ''} name={key} 
+                                 src={this.props.tags[key].img} />
                         }>
                         <Popup.Header>{key}</Popup.Header></Popup>
                 })}
                 </div>
-                <button onClick={() =>{this.props.onSubmitTags()}} className="search-btn flex"> Find</button>
+                <button onClick={() =>{this.props.onSubmitTags()}} 
+                className="search-btn flex"> Find</button>
             </div>
         )
     }

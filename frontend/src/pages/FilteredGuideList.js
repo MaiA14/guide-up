@@ -20,7 +20,6 @@ class FilteredGuideList extends Component {
         filterBy: { city: '', avgRank: '', tags: '' },
             tags: getIconTag(),
             tagsCaption: [],
-            // isSelected: false,
     }
 
     componentDidMount() {
@@ -66,30 +65,24 @@ class FilteredGuideList extends Component {
 
     onSelectTag = (ev) => {
         ev.stopPropagation()
-
         const tagChoose = ev.target.name
         const ans = this.state.tagsCaption.includes(tagChoose);
         const imgTag = this.state.tags[tagChoose].img
-
         if (ans) {
-            this.setState(prevState => ({ tagsCaption: this.state.tagsCaption.filter(tag => tag !== tagChoose) }), () => console.log(this.state.tagsCaption))
-            this.setState(prevState => ({ tags: { ...prevState.tags, [tagChoose]: { img: imgTag, isSelected: false } } }))
-
+            this.setState(prevState =>
+                 ({ tagsCaption: this.state.tagsCaption.filter(tag => 
+                    tag !== tagChoose) }))
+            this.setState(prevState =>
+                ({ tags: { ...prevState.tags, [tagChoose]:
+                     { img: imgTag, isSelected: false } } }))
         } else {
-            this.setState(prevState => ({ tagsCaption: [...prevState.tagsCaption, tagChoose] }))
-
-
-
-            this.setState(prevState => ({ tags: { ...prevState.tags, [tagChoose]: { img: imgTag, isSelected: true } } }))
-
-
-
+            this.setState(prevState =>
+                 ({ tagsCaption: [...prevState.tagsCaption, tagChoose] }))
+            this.setState(prevState => 
+                ({ tags: { ...prevState.tags, [tagChoose]:
+                     { img: imgTag, isSelected: true } } }))
         }
     }
-
-
-
-
 
     render() {
         const searchStyle = {
