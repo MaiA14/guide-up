@@ -145,7 +145,7 @@ class GuideDetails extends Component {
                                 </div>
                                 <div className="price-rank flex column justify-center">
                                     <div className="guide-price">${this.props.guide.price}  For my tour</div>
-                                    <div className="container-chet">
+                                    <div className="container-chat">
                                     <Chat guide={this.props.guide}></Chat>
                                     </div>
                                

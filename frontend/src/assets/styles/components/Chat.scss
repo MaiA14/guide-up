@@ -1,19 +1,8 @@
-// body{
-//     font-family: 'Nunito';
-// }
-
-// h2{
-//     font-size: 18px;
-//     padding: 10px 20px;
-//     color: #575ed8;
-// }
-
 .mario-chat {
   max-width: 600px;
   margin: 30px auto;
   border: 1px solid #ddd;
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.05);
-  border-radius: 2px;
 }
 
 .chat {
@@ -21,21 +10,22 @@
   width: 300px;
   position: absolute;
   height: 477px;
-  border: 1px solid;
-  border-radius: 9%;
+  box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.78);;
+  border-radius: 30px;
   left: 47px;
   bottom: 48px;
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 100;
+  font-family: "Lato";
 }
 
 .screen-window {
   background-color: black;
   width: 274px;
   height: 148px;
-  border-radius: 9;
+  // border-radius: 9;
 }
 
 .output p {
@@ -55,12 +45,6 @@
   color: #575ed8;
 }
 
-// label{
-//     box-sizing: border-box;
-//     display: block;
-//     padding: 10px 20px;
-// }
-
 .input-chat {
   padding: 10px 20px;
   box-sizing: border-box;
@@ -75,13 +59,11 @@
 }
 
 .button-chat {
-  background: #575ed8;
   color: #fff;
   font-size: 18px;
   border: 0;
   padding: 12px 0;
   width: 100%;
-  border-radius: 0 0 2px 2px;
 }
 
 .mail {
@@ -90,23 +72,38 @@
 }
 .ui {
   margin: 0 !important;
-  //   padding: 15px !important;
 }
+
+.ui.green.button,
+ .ui.green.buttons .button {
+    background-color: #7ca5b2; 
+    color: #fff;
+    font-family: "Lato";
+    text-shadow: none;
+    background-image: none;
+}
+
+.ui.green.button:hover{
+  background-color: #5b8595 !important;
+  color: #fff;
+  text-shadow: none;
+  background-image: none;
+}
+
 .container-ChatCmp {
   display: flex;
   justify-content: center;
 }
 .header-chat {
   width: 100%;
-  height: 61px;
-  background-color: #00800096;
+  height: 51px;
+  background: linear-gradient(rgb(82, 131, 146) 0%, rgba(124,165,178,1) 100%);
   border-radius: 30px 30px 0 0px;
   margin-top: -1px;
 }
 .window-chat {
   height: 262px;
   width: 100%;
-  background-color: #8080801c;
 }
 .textArea-chat {
   width: 298px !important;
@@ -114,11 +111,12 @@
   border-right: none !important;
   border-top: none !important;
   border-left: none !important;
-  border-bottom: 0.4px solid !important;
+  border-bottom: none !important;
   resize: none !important;
+  background-color: #8080801c !important;
 }
 
-.chat-buttom {
+.chat-button {
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
@@ -132,5 +130,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  
+ 
 }
+
