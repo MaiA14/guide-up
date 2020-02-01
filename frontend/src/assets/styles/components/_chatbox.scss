@@ -31,24 +31,23 @@
 	margin-left: -20px;
 }
 
-.chat-textarea{
-    margin-left: 20px;
-    width: 350px;
-    height: 40px;
-    border: none;
-    background-color: hsla(0,0%,91.4%,.774);
+.message-container{
+    height: 60px;
+    width: 500px;
+    border-top: 1px solid #a2b8c0;
     padding: 10px;
-    border-radius: 10px;
-    margin-right: 10px;
-    outline: none;
-    resize: none !important;
+    bottom: 133px;
+    margin-top:125px;
 }
 
-.chat-textarea-send-btn{
-    display: flex;
-    height: 50px;
-    margin:0;
-    padding: 0;
+.message-input{
+    border: none;
+    background-color: rgba(233, 233, 233, 0.774);
+    padding: 12px;
+    border-radius: 3px;
+    width: 250px;
+    margin-right: 10px;
+    outline: none;
 }
 
 
