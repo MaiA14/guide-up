@@ -35,10 +35,9 @@ img.ui.image.width{
 }
 
 .tag-view{
-    width: 300px;
-    margin-top: -29px;
-    margin-left: 100px;
-    // margin-right: 10px;
+    border: 1px solid rgb(239, 135, 88);
+    border-radius: 5px;
+    padding: 0.9375rem;
     display: flex;
   img {
       width: 20px;
