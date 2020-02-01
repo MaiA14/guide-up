@@ -20,7 +20,6 @@ export default function GuideTags(props) {
     const img = {
         width: '10%'
     }
-    console.log(tagIcon)
     return props.guide.tags.map((tag, index) => {
         return (
             <div className="tags-container">
