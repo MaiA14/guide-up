@@ -25,8 +25,6 @@ export default class TagsView extends Component {
     }
 
     render() {
-        console.log(this.state)
-
         if (!this.state.tags) return <h1></h1>
         return (
             <div className="tag-view">

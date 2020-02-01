@@ -20,9 +20,7 @@ var Axios = axios.create({
 });
 
 function query(filterBy='') {
-    console.log(filterBy)
     let item = HttpService.get(`guide?city=${filterBy.city}&avgRank=${filterBy.avgRank}&tags=${filterBy.tags}`)
-    console.log(item);
     return item
 }
 

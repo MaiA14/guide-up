@@ -130,6 +130,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
- 
+}
+
+.transition.fly {
+  animation-duration: .6s;
+  transition-timing-function: cubic-bezier(.215,.61,.355,1);
+  height: 470px;
 }
 
