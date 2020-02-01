@@ -7,6 +7,8 @@ import ProfileTab from '../cmps/ProfileTab.js'
 import storageService from '../service/storageService.js'
 import Overview from '../cmps/Overview.js'
 import Messenger from '../cmps/Messenger.js'
+import Bookings from '../cmps/Bookings'
+
 
 class Profile extends Component {
 
@@ -25,6 +27,7 @@ class Profile extends Component {
                 <ProfileTab></ProfileTab>
                 <Overview></Overview>
                 <Messenger></Messenger>
+                <Bookings></Bookings>
             </div>
         )
     }

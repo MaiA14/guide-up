@@ -3,7 +3,7 @@ import Chatbox from '../cmps/Chatbox.js'
 
 function Messenger(props) {
     return (
-        <div className="">
+        <div className="main-container-profile">
             <div className="chat-container">
                 <div className="chat-list flex column">
                     <div className="chat-title">Chat</div>
