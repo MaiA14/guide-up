@@ -94,9 +94,10 @@ class FilteredGuideList extends Component {
     render() {
         const searchStyle = {
             containerStyle: {
-                marginTop: '20px'
+                marginTop: '0px'
             },
             selectStyle: {
+                width: '150px',
                 border: '1px solid #ef8758',
             }
         }
@@ -121,7 +122,7 @@ class FilteredGuideList extends Component {
                 <h2 className="guides-short-content main-container">
                     Find your guides, let them share with you the insight on the city.
                      Enjoy from unforgettable trip</h2>
-                <div className="filtered-glist-container ">
+                <div className="filtered-glist-container flex main-container">
                     <MainSearch onSearch={this.onSearch} style={searchStyle}>
                     </MainSearch>
                     <TagsView tags={this.state.tags} onSelectTag={this.onSelectTag} onSubmitTags={this.onSubmitTags} filterByTag={this.filterByTag} ></TagsView>

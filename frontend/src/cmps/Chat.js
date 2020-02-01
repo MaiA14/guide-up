@@ -6,11 +6,8 @@ import utilsService from '../service/utilsService.js'
 import SocketService from '../service/SocketService.js'
 import quoryString from 'query-string'
 
-
-
 class Chat extends Component {
     state = { visible: true, comments: [] }
-
 
     componentDidMount() {
 
@@ -38,15 +35,6 @@ class Chat extends Component {
         SocketService.emit('new_message','newComment')
     }
 
-//     this.setState(prvState => ({
-//         filterBy: {
-//             ...prvState.filterBy,
-//             ['city']: newCityToFilter
-//         }
-//     }), () =>
-//         (this.props.loadGuides(this.state.filterBy)))
-// }
-
 toggleVisibility = () =>
     this.setState((prevState) => ({ visible: !prevState.visible }))
 
@@ -55,33 +43,24 @@ render() {
     const { visible } = this.state
 
     return (
-
         <React.Fragment>
             <Transition.Group animation={'fly down'} duration={1000}>
-
                 {visible &&
                     <div className="chat">
                         <div className="header-chat"></div>
                         <div className="window-chat"></div>
-                        <Form className="form-chat" success>
+                        <Form className="form-chat flex" success>
                             <TextArea className="textArea-chat" placeholder='Tell us more' />
-                            <Button className="chat-buttom" color='green'>Green</Button>
+                            <Button className="chat-button" color='green'>Send</Button>
                         </Form>
-
                     </div>
-
-
                 }
             </Transition.Group >
             <div className="container-ChatCmp">
-
-
-
                 <div className="container-chat-icon">
-
                     <Button content={visible ? 'Hide' : 'Show'}
                         onClick={this.toggleVisibility} color='facebook'>
-                        send message
+                        Send a message
                     </Button>
                 </div>
 
