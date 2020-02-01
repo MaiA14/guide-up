@@ -44,7 +44,7 @@ render() {
 
     return (
         <React.Fragment>
-            <Transition.Group animation={'fly down'} duration={1000}>
+            <Transition.Group animation={'fly left'} duration={1500}>
                 {visible &&
                     <div className="chat">
                         <div className="header-chat"></div>
