@@ -77,13 +77,7 @@ class FilteredGuideList extends Component {
 
         } else {
             this.setState(prevState => ({ tagsCaption: [...prevState.tagsCaption, tagChoose] }))
-
-
-
             this.setState(prevState => ({ tags: { ...prevState.tags, [tagChoose]: { img: imgTag, isSelected: true } } }))
-
-
-
         }
     }
 
