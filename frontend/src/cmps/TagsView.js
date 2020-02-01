@@ -39,7 +39,7 @@ export default class TagsView extends Component {
                         }>
                         <Popup.Header>{key}</Popup.Header></Popup>
                 })}
-                <button onClick={() =>{this.props.onSubmitTags(this.state.tagsCaption)}} className="search-btn">Find</button>
+                <button onClick={() =>{this.props.onSubmitTags(this.state.tagsCaption)}} className="search-btn flex">Find</button>
 
             </div>
         )
