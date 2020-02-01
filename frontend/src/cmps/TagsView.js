@@ -24,14 +24,13 @@ export default class TagsView extends Component {
         }
     }
 
-  
-
     render() {
         console.log(this.state)
 
         if (!this.state.tags) return <h1></h1>
         return (
             <div className="tag-view">
+                <div className="tags-img flex">
                 {Object.keys(this.state.tags).map(key => {
                     return <Popup key={key}
                         trigger={
@@ -39,8 +38,8 @@ export default class TagsView extends Component {
                         }>
                         <Popup.Header>{key}</Popup.Header></Popup>
                 })}
-                <button onClick={() =>{this.props.onSubmitTags(this.state.tagsCaption)}} className="search-btn flex">Find</button>
-
+                </div>
+                <button onClick={() =>{this.props.onSubmitTags(this.state.tagsCaption)}} className="search-btn flex"> Find</button>
             </div>
         )
     }

@@ -35,13 +35,18 @@ img.ui.image.width{
 }
 
 .tag-view{
-    border: 1px solid rgb(239, 135, 88);
     border-radius: 5px;
-    padding: 0.9375rem;
     display: flex;
   img {
       width: 20px;
       margin: 2px;
   }  
+}
+
+.tags-img{
+    padding: 0.9375rem;
+    width: 190px;
+    border: 1px solid rgb(239, 135, 88);
+    border-radius: 9px 0 0 9px;
 }
 
