@@ -19,7 +19,7 @@ export default class TagsView extends Component {
                 })}
                 </div>
                 <button onClick={() =>{this.props.onSubmitTags()}} 
-                className="search-btn flex"> Find</button>
+                className="search-btn flex"> Filter</button>
             </div>
         )
     }
