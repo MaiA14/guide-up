@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
-import { Image } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 
 import ProfileTab from '../cmps/ProfileTab.js'
-import storageService from '../service/storageService.js'
 import Overview from '../cmps/Overview.js'
 import Messenger from '../cmps/Messenger.js'
 import Bookings from '../cmps/Bookings'
 import Navbar from '../cmps/Navbar.js'
-
 
 class Profile extends Component {
     state = {
@@ -17,23 +14,21 @@ class Profile extends Component {
 
     componentDidMount() {
         window.onscroll = () => {
-            if (document.documentElement.scrollTop > 10) {
+            if (document.documentElement.scrollTop > 1) {
                 this.setState({ isScrolled: true })
-            }    if (document.documentElement.scrollTop < 10){
+            } if (document.documentElement.scrollTop < 1) {
                 this.setState({ isScrolled: false })
             }
-
         }
     }
 
-
     render() {
         const styleNavBar = {
-            backgroundColor: '#7badc0',
+            backgroundColor: '#537580',
             transition: 'backgroundColor',
             position: 'absolute'
         }
-    
+
 
 
         return (
