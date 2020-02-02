@@ -16,7 +16,7 @@ class Chat extends Component {
         SocketService.emit('chat topic', guide_id)// you're in the guides room
     
         SocketService.on('chat addMsg', (newComment) => {
-   
+            console.log('test chat2')
             this.setState(prevState => ({ comments: [...prevState.comments, newComment] }))
         }) //you're sending the guide you id
     }
@@ -31,6 +31,7 @@ class Chat extends Component {
         // this.setState({comments})
 
         SocketService.emit('chat newMsg', this.state.txt)
+        console.log('test chat')
     }
     handleChange = (ev) => {
         const value = ev.target.value
