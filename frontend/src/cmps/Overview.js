@@ -10,7 +10,7 @@ class Overview extends Component {
                 <div className="overview-elements">
                     <div className="profile-name">
                         <div>{this.props.loggedInUser.name}</div>
-                        <img src="https://res-console.cloudinary.com/dtwqtpteb/thumbnails/transform/v1/image/upload//v1580640789/b3A3bW5iOXQ4YnBlNWhsZHFzeHA=/drilldown" className="profile-img"></img>
+                        <img src="https://res.cloudinary.com/dtwqtpteb/image/upload/v1580645155/yvxjwedsvz7pvgqaibmr.jpg" className="profile-img"></img>
                     </div>
                     <div className="calendar-container-profile">
                         <div className="calendar-content-profile">
