@@ -35,11 +35,9 @@ class Profile extends Component {
             <React.Fragment>
                 <Navbar styleNavBar={styleNavBar}></Navbar>
                 {this.state.isScrolled &&
-
                     <ProfileTab></ProfileTab>
                 }
                 <div >
-
                     <Overview></Overview>
                     <Messenger></Messenger>
                     <Bookings></Bookings>
