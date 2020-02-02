@@ -5,7 +5,7 @@ import Loading from '../cmps/Loading.js'
 import Header from '../cmps/Header.js'
 import Footer from '../cmps/Footer.js'
 import List from '../cmps/List.js'
-import { loadGuides, setUserLogIn } from '../reducers/guide/actionGuide.js'
+import { loadGuides } from '../reducers/guide/actionGuide.js'
 import Navbar from '../cmps/Navbar.js'
 
 class LocalGuideApp extends Component {
@@ -63,7 +63,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
     loadGuides,
-    setUserLogIn
 }
 
 export default connect(

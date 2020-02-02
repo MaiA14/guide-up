@@ -5,7 +5,38 @@ import { connect } from 'react-redux'
 
 class Navbar extends Component {
 
+    state = {
+        loginUser: ''
+    }
+    componentDidMount() {
+        if (sessionStorage.user) {
+            const loginUser = JSON.parse(sessionStorage.user)
+
+            this.setState({ loginUser })
+
+        }
+
+    }
+    componentDidUpdate() {
+
+        const loginUser = this.props.user
+        this.loadUserLogin(loginUser)
+
+
+
+    }
+    loadUserLogin = (loginUser) => {
+        if (sessionStorage.user) {
+            const loginUser = JSON.parse(sessionStorage.user)
+
+            this.setState({ loginUser })
+
+        }
+
+    }
+
     render() {
+        
         return <div className="main-navbar" style={this.props.styleNavBar}>
             <Link to="/" > <div className="flex logo">
                 {/* <img src="https://i.ibb.co/8BxPMdT/logo.png" alt="logo"></img> */}
@@ -18,9 +49,9 @@ class Navbar extends Component {
                 <div className="nav-link"><NavLink activeClassName="active" to='/login' exact>Login</NavLink></div>
                 <div className="nav-link"><NavLink activeClassName="active" to='/join_us' exact>Become a Guide</NavLink></div>
                 <div className="nav-link"><NavLink activeClassName="active" to='/profile' exact>Profile
-                    {/* {this.props.user &&
-                        <Image size={'mini'} src={this.props.user.imgUrl} circular    ></Image>
-                    } */}
+                    {this.state.loginUser &&
+                        <Image size={'mini'} src={this.state.loginUser.imgUrl} circular    ></Image>
+                    }
                 </NavLink></div>
             </div>
         </div>
@@ -30,7 +61,7 @@ class Navbar extends Component {
 const mapStateToProps = (state) => {
     return {
         guides: state.guides,
-        user: state.user
+        user: state.guides.loggedInUser
     }
 }
 

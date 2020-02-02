@@ -1,3 +1,12 @@
+let localLoggedinUser = null;
+if (sessionStorage.user) localLoggedinUser = JSON.parse(sessionStorage.user);
+
+
+const initialState = {
+    loggedInUser: localLoggedinUser,
+    users: []
+};
+
 
 
 export default function (state = { guides: [] }, action = {}) {
@@ -14,7 +23,7 @@ export default function (state = { guides: [] }, action = {}) {
         case 'REVIEW_UPDATE':
             return { ...state, guide: action.newGuide }
         case 'SET_USER':
-            return { ...state, user: action.user }
+            return { ...state, loggedInUser: action.user };
     }
     return state;
 }

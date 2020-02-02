@@ -11,7 +11,7 @@ export default {
     save,
     addGuide,
     addReview,
-    checkCredentials,   
+    login,
 }
 
 const url = "http://localhost:3001/api/guide"
@@ -19,7 +19,7 @@ var Axios = axios.create({
     withCredentials: true
 });
 
-function query(filterBy='') {
+function query(filterBy = '') {
     let item = HttpService.get(`guide?city=${filterBy.city}&avgRank=${filterBy.avgRank}&tags=${filterBy.tags}`)
     return item
 }
@@ -58,70 +58,77 @@ function _calcGuideRank(guide) {
     return (guideRank / guide.reviews.length).toFixed(1);
 }
 
-async function checkCredentials(loginData) {
-    try {
-        const res = await Axios.post("http://localhost:3001/api/auth" + '/login', loginData)
-        const user = res.data;
-        // if (user) {
-        //     // _saveLoggedin(user)
-        // }
-        if (user) {
-            // _saveLoggedin(user)
-        }
-        return user
 
-        return res.data.answer
-    } catch (err) {
-        throw err
-    }
+
+async function login(loginData) {
+
+    const user = await HttpService.post('auth/login', loginData)
+
+    console.log(user)
+
+    return _handleLogin(user)
+}
+function _handleLogin(user) {
+    sessionStorage.setItem('user', JSON.stringify(user))
+    return user;
 }
 
-export  function getIconTag() {
+
+
+
+export function getIconTag() {
     const tag = {
-       Coffee: 
-       {   img:'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126710/nx4zhbrtkfp5vybo2tvt.png' ,
+        Coffee:
+        {
+            img: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126710/nx4zhbrtkfp5vybo2tvt.png',
             isSelected: false
         },
 
-       Outdoor:
-       { img:
-            'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126496/lvydnjcii7euhydeh8bi.png',
-        isSelected: false
-       },   
-       Shopping:
-       { img:'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580125153/musi4qk4n11vu1v2xcyp.png',
-        isSelected: false
-    },
-       Culture:
-       { img: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126878/mcjofjlxdzma6w9grpgj.png',
-        isSelected: false
-    },
-       Sport: {
-           img: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126246/uyzc16yl35u5j0pakrgq.png',
-           isSelected: false
-       },
-       Food: {
-           img:'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580125925/c4328sfxfhtobbhmeux3.png',
+        Outdoor:
+        {
+            img:
+                'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126496/lvydnjcii7euhydeh8bi.png',
             isSelected: false
-    },
-       Music: 
-       {img: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580124661/j4hs3vgcfjok0xsuffj4.png',
-       isSelected: false
-},
-       Art: {img: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580125416/e7ncfe3ogdaeoajh83lx.png',
-       isSelected: false
-},
-       Photos: {
-           img: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126652/zeuynhclnuotvd5oat0s.png',
-       isSelected: false
-    },
-       NightLife:
-       { img:
-       'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580125337/bjkqdxjjv2ifwrp4o9cz.png',
-       isSelected: false
-       }
-   }
-   return tag
+        },
+        Shopping:
+        {
+            img: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580125153/musi4qk4n11vu1v2xcyp.png',
+            isSelected: false
+        },
+        Culture:
+        {
+            img: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126878/mcjofjlxdzma6w9grpgj.png',
+            isSelected: false
+        },
+        Sport: {
+            img: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126246/uyzc16yl35u5j0pakrgq.png',
+            isSelected: false
+        },
+        Food: {
+            img: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580125925/c4328sfxfhtobbhmeux3.png',
+            isSelected: false
+        },
+        Music:
+        {
+            img: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580124661/j4hs3vgcfjok0xsuffj4.png',
+            isSelected: false
+        },
+        Art: {
+            img: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580125416/e7ncfe3ogdaeoajh83lx.png',
+            isSelected: false
+        },
+        Photos: {
+            img: 'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580126652/zeuynhclnuotvd5oat0s.png',
+            isSelected: false
+        },
+        NightLife:
+        {
+            img:
+                'https://res.cloudinary.com/dtwqtpteb/image/upload/v1580125337/bjkqdxjjv2ifwrp4o9cz.png',
+            isSelected: false
+        }
+    }
+    return tag
 }
 
 
