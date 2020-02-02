@@ -6,7 +6,9 @@
 }
 
 .bubble-message{
-    width: 120px;
+    // width: auto;
+    max-width: 150px;
+    word-break: break-all;
     margin-top: 10px;
     margin-left: 30px;
     padding: 10px;
@@ -37,7 +39,7 @@
     border-top: 1px solid #a2b8c0;
     padding: 10px;
     bottom: 133px;
-    margin-top:125px;
+    margin-top:275px;
 }
 
 .message-input{

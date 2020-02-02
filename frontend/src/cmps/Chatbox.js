@@ -19,14 +19,27 @@ class Chatbox extends Component {
         SocketService.on('chat addMsg', (newComment) => {
 
             this.props.toggleVisibility()
+            setTimeout(this.props.toggleVisibility ,3000)
             
             this.setState(prevState => ({ comments: [...prevState.comments, newComment] }))
         })
     }
+    handleSendMassage = () => {
+     
+        this.setState({ txt: '' })
+
+        SocketService.emit('chat newMsg', this.state.txt)
+
+    }
+    handleChange = (ev) => {
+        const value = ev.target.value
+        this.setState({ txt: value })
+
+    }
 
 
     render() {
-        console.log(this.state.comments)
+        console.log(this.state.txt)
         return (
             <div>
                 <div className="chat-messages-chatbox">
@@ -45,8 +58,8 @@ class Chatbox extends Component {
                         <div className="bubble-message">message</div> */}
                     </div>
                     <div className="message-container">
-                        <input type="text" className="message-input" placeholder="Type a message..."></input>
-                        <button className="send-btn">Send</button>
+                        <input value={this.state.txt} onChange={this.handleChange} type="text" className="message-input" placeholder="Type a message..."></input>
+                        <button onClick={this.handleSendMassage} className="send-btn">Send</button>
                     </div>
 
                 </div>
