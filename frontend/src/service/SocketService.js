@@ -2,8 +2,7 @@ import io from 'socket.io-client';
 
 const BASE_URL = process.env.NODE_ENV === 'production'
     ? '/api/'
-    : 'http://localhost:3001/api/'
-
+    : 'http://localhost:3030/api/'
 
 let socket;
 
