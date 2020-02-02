@@ -4,6 +4,7 @@ import { ButtonBase } from '@material-ui/core'
 function Bookings(props) {
     return (
         <div className="main-container-profile">
+            <div className="flex column">
             <div className="user-details">
                 <div></div>
                 <div className="user-booking-title">Booked by Ben</div>
@@ -20,6 +21,7 @@ function Bookings(props) {
                         window.scrollTo({top: 500, behavior: 'smooth'})}>
                             Send a message</button>
                 </div>
+            </div>
             </div>
             <div className="user-order">
                 <span>For 3 attendees<br></br>
