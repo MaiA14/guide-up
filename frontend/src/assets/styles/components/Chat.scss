@@ -10,10 +10,11 @@
   width: 300px;
   position: absolute;
   height: 477px;
-  box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.78);;
+  left: -324px;
+  bottom: 1px;
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.78);
   border-radius: 30px;
-  left: 341px;
-  bottom: 48px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -75,15 +76,15 @@
 }
 
 .ui.green.button,
- .ui.green.buttons .button {
-    background-color: #7ca5b2; 
-    color: #fff;
-    font-family: "Lato";
-    text-shadow: none;
-    background-image: none;
+.ui.green.buttons .button {
+  background-color: #7ca5b2;
+  color: #fff;
+  font-family: "Lato";
+  text-shadow: none;
+  background-image: none;
 }
 
-.ui.green.button:hover{
+.ui.green.button:hover {
   background-color: #5b8595 !important;
   color: #fff;
   text-shadow: none;
@@ -97,13 +98,14 @@
 .header-chat {
   width: 100%;
   height: 51px;
-  background: linear-gradient(rgb(82, 131, 146) 0%, rgba(124,165,178,1) 100%);
+  background: linear-gradient(rgb(82, 131, 146) 0%, rgba(124, 165, 178, 1) 100%);
   border-radius: 30px 30px 0 0px;
   margin-top: -1px;
 }
 .window-chat {
   height: 262px;
   width: 100%;
+  overflow-y: scroll;
 }
 .textArea-chat {
   width: 298px !important;
@@ -133,8 +135,7 @@
 }
 
 .transition.fly {
-  animation-duration: .6s;
-  transition-timing-function: cubic-bezier(.215,.61,.355,1);
+  animation-duration: 0.6s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   height: 470px;
 }
-

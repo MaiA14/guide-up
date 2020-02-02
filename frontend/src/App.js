@@ -14,6 +14,7 @@ import Signup from '../src/pages/Signup'
 import BecomeGuide from './pages/BecomeGuide.js'
 import Profile from './pages/Profile.js'
 import "react-datepicker/dist/react-datepicker.css";
+import 'react-notifications/lib/notifications.css';
 
 function App() {
 

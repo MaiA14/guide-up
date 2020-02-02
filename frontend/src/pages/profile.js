@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Icon, Button, Transition, Form, TextArea } from 'semantic-ui-react'
 
 import ProfileTab from '../cmps/ProfileTab.js'
 import Overview from '../cmps/Overview.js'
@@ -7,10 +8,16 @@ import Messenger from '../cmps/Messenger.js'
 import Bookings from '../cmps/Bookings'
 import Navbar from '../cmps/Navbar.js'
 
+import Snackbar from '../cmps/Snackbar.js'
+
+
+
 class Profile extends Component {
     state = {
-        isScrolled: false
+        isScrolled: false,
+        visible: false
     }
+
 
     componentDidMount() {
         window.onscroll = () => {
@@ -22,12 +29,17 @@ class Profile extends Component {
         }
     }
 
+    toggleVisibility = () =>
+        this.setState((prevState) => ({ visible: !prevState.visible }))
+
     render() {
         const styleNavBar = {
             backgroundColor: '#537580',
             transition: 'backgroundColor',
             position: 'absolute'
         }
+        const { visible } = this.state
+
 
 
 
@@ -39,9 +51,17 @@ class Profile extends Component {
                 }
                 <div >
                     <Overview></Overview>
-                    <Messenger></Messenger>
+                    <Messenger toggleVisibility={this.toggleVisibility}></Messenger>
                     <Bookings></Bookings>
                 </div>
+                <Transition visible={this.state.visible} animation={'scale'} duration={1500}>
+                    <Snackbar></Snackbar>
+
+                </Transition >
+
+
+
+
             </React.Fragment>
         )
     }
