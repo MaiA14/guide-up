@@ -27,7 +27,7 @@ function App() {
             <Route component={FilteredGuideList} path="/location" exact></Route>
             <Route component={Login} path="/login" exact></Route>
             <Route component={Signup} path="/signup"exact ></Route>
-            <Route component={BecomeGuide} path="/join_us"exact ></Route>
+            <Route component={BecomeGuide} path="/"exact ></Route>
             <Route component={Profile} path="/Profile"exact ></Route>
 
 
