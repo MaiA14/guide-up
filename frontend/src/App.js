@@ -28,7 +28,7 @@ function App() {
             <Route component={Login} path="/login"exact  ></Route>
             <Route component={Signup} path="/signup"exact ></Route>
             <Route component={BecomeGuide} path="/join_us"exact ></Route>
-            <Route component={Profile} path="/profile"exact ></Route>
+            <Route component={Profile} path="/Profile"exact ></Route>
 
 
           </Switch>

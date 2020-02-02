@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Image } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 
-// import {  } from '../reducers/guide/actionGuide.js'
 import ProfileTab from '../cmps/ProfileTab.js'
 import storageService from '../service/storageService.js'
 import Overview from '../cmps/Overview.js'
