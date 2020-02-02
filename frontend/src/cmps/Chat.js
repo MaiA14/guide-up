@@ -10,18 +10,13 @@ class Chat extends Component {
     state = { visible: false, txt: '', comments: [] }
     myRef = React.createRef();
     componentDidMount() {
-        
+
         const guide_id = this.props.guide._id
-        const my_id = utilsService.getRandomID()
         SocketService.setup()
         SocketService.emit('chat topic', guide_id)// you're in the guides room
-        // SocketService.emit('chat newMsg', my_id) //you're sending the guide you id
-        SocketService.off('chat topic') //you're exiting the room
-        SocketService.emit('chat topic', '123') //you're joining your room with the guide
-        // SocketService.emit('chat newMsg', { text: 'i have joined the chat' }) //you're joining your room with the guide
+    
         SocketService.on('chat addMsg', (newComment) => {
-            var element = this.myRef.current
-            element.scrollTop = element.scrollHeight ;
+   
             this.setState(prevState => ({ comments: [...prevState.comments, newComment] }))
         }) //you're sending the guide you id
     }
@@ -34,7 +29,6 @@ class Chat extends Component {
     handleSendMassage = () => {
         // const comments= [...this.state.comments,newComment]
         // this.setState({comments})
-
 
         SocketService.emit('chat newMsg', this.state.txt)
     }
@@ -52,14 +46,8 @@ class Chat extends Component {
     toggleVisibility = () =>
         this.setState((prevState) => ({ visible: !prevState.visible }))
 
-
-
-
-
-
     render() {
         const { visible } = this.state
-        console.log(this.state)
 
         return (
             <React.Fragment>

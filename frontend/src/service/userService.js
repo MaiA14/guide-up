@@ -7,7 +7,7 @@ export default {
     getUserById,
     editUser,
 };
-const url = "http://localhost:3001/api/user"
+const url = "http://localhost:3030/api/user"
 var Axios = axios.create({
     withCredentials: true
 });

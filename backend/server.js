@@ -14,7 +14,6 @@ const guideRoutes = require('./api/guide/guid.routes')
 const userRoutes = require('./api/user/user.routes')
 const connectSockets = require('./api/socket/socket.routes')
 
-
 app.use(cookieParser())
 app.use(bodyParser.json());
 app.use(session({
@@ -38,10 +37,11 @@ if (process.env.NODE_ENV === 'production') {
 app.use('/api/auth', authRoutes)
 app.use('/api/user', userRoutes)
 app.use('/api/guide', guideRoutes)
+app.use(express.static('public'));
 connectSockets(io)
 
 const logger = require('./services/logger.service')
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3030;
 http.listen(port, () => {
     logger.info('Server is running on port: ' + port)
 });

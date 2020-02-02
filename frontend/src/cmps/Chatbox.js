@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { TextArea } from 'semantic-ui-react'
+import { connect } from 'react-redux'
 
 import SocketService from '../service/SocketService.js'
 
 
-export default class Chatbox extends Component {
+class Chatbox extends Component {
 
     state = { visible: false, txt: '', comments: [] }
 
@@ -13,9 +14,12 @@ export default class Chatbox extends Component {
     componentDidMount() {
         SocketService.setup()
 
-        SocketService.emit('chat topic', '123') //you're joining your room with the guide
+        SocketService.emit('chat topic', this.props.loggedInUser._id) 
+
         SocketService.on('chat addMsg', (newComment) => {
-            console.log(newComment)
+
+            this.props.toggleVisibility()
+            
             this.setState(prevState => ({ comments: [...prevState.comments, newComment] }))
         })
     }
@@ -50,3 +54,17 @@ export default class Chatbox extends Component {
         )
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        guides: state.guides,
+        loggedInUser: state.guides.loggedInUser
+    }
+}
+
+const mapDispatchToProps = {
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Chatbox)

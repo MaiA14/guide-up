@@ -19,7 +19,7 @@ class Messenger extends Component {
                                     </div>
                                 </div>
                                 <div className="chat-box">
-                                    <Chatbox></Chatbox>
+                                    <Chatbox toggleVisibility={this.props.toggleVisibility}></Chatbox>
                                 </div>
                             </div>
                         </div>
@@ -32,6 +32,7 @@ class Messenger extends Component {
         )
     }
 }
+
 
 
 

@@ -2,8 +2,7 @@ import io from 'socket.io-client';
 
 const BASE_URL = process.env.NODE_ENV === 'production'
     ? '/api/'
-    : 'http://localhost:3001'
-
+    : 'http://localhost:3030'
 
 let socket;
 
@@ -34,3 +33,11 @@ function off(eventName, cb) {
 function emit(eventName, data) {
   socket.emit(eventName, data);
 }
+
+
+
+// function socketBroadcastEmit(eventName, data) {
+//   socket.broadcast.emit(eventName, data);
+// }
+
+

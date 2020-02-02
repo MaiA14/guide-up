@@ -5,6 +5,8 @@ import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import 'semantic-ui-css/semantic.min.css'
 
+
+
 import Store from './store';
 import App from './App';
 import * as serviceWorker from './serviceWorker';

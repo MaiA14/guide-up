@@ -21,8 +21,8 @@ class Navbar extends Component {
 
         const styleImg = {
             bordeRadius:  '50%',
-            height: '51px',
-            width: '61px'
+            height: '41px',
+            width: '45px'
         }
         return <div className="main-navbar" style={this.props.styleNavBar}>
             <Link to="/" > <div className="flex logo">

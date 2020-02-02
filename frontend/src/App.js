@@ -14,6 +14,7 @@ import Signup from '../src/pages/Signup'
 import BecomeGuide from './pages/BecomeGuide.js'
 import Profile from './pages/Profile.js'
 import "react-datepicker/dist/react-datepicker.css";
+import 'react-notifications/lib/notifications.css';
 
 function App() {
 
@@ -25,9 +26,9 @@ function App() {
             <Route component={LocalGuideApp} path="/" exact></Route>
             <Route component={GuideDetails} path="/guides" exact></Route>
             <Route component={FilteredGuideList} path="/location" exact></Route>
-            <Route component={Login} path="/login"exact  ></Route>
+            <Route component={Login} path="/login" exact></Route>
             <Route component={Signup} path="/signup"exact ></Route>
-            <Route component={BecomeGuide} path="/join_us"exact ></Route>
+            <Route component={BecomeGuide} path="/"exact ></Route>
             <Route component={Profile} path="/Profile"exact ></Route>
 
 

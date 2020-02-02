@@ -14,7 +14,6 @@ export default {
     login,
 }
 
-const url = "http://localhost:3001/api/guide"
 var Axios = axios.create({
     withCredentials: true
 });
