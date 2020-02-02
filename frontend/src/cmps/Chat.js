@@ -7,71 +7,94 @@ import SocketService from '../service/SocketService.js'
 import quoryString from 'query-string'
 
 class Chat extends Component {
-    state = { visible: false, comments: [] }
-
+    state = { visible: false, txt: '', comments: [] }
+    myRef = React.createRef();
     componentDidMount() {
-
+        
         const guide_id = this.props.guide._id
         const my_id = utilsService.getRandomID()
-
         SocketService.setup()
         SocketService.emit('chat topic', guide_id)// you're in the guides room
-        SocketService.emit('chat message', my_id) //you're sending the guide you id
+        // SocketService.emit('chat newMsg', my_id) //you're sending the guide you id
         SocketService.off('chat topic') //you're exiting the room
-        SocketService.emit('chat topic', guide_id + my_id) //you're joining your room with the guide
-        SocketService.emit('chat newMsg', { text: 'i have joined the chat' }) //you're joining your room with the guide
-        SocketService.on('chat message', this.addmessagefunction) //you're sending the guide you id
+        SocketService.emit('chat topic', '123') //you're joining your room with the guide
+        // SocketService.emit('chat newMsg', { text: 'i have joined the chat' }) //you're joining your room with the guide
+        SocketService.on('chat addMsg', (newComment) => {
+            var element = this.myRef.current
+            element.scrollTop = element.scrollHeight ;
+            this.setState(prevState => ({ comments: [...prevState.comments, newComment] }))
+        }) //you're sending the guide you id
     }
 
-    addmessagefunction = (newComment) => {
-        const comments= [...this.state.comments,newComment]
-        this.setState({comments})
-    }
+    // addmessagefunction = (newComment) => {
+    //     const comments = [...this.state.comments, newComment]
+    //     this.setState({ comments })
+    // }
 
-    sendMessage = () => {
+    handleSendMassage = () => {
         // const comments= [...this.state.comments,newComment]
         // this.setState({comments})
 
-        SocketService.emit('new_message','newComment')
+
+        SocketService.emit('chat newMsg', this.state.txt)
+    }
+    handleChange = (ev) => {
+        const value = ev.target.value
+        this.setState({ txt: value })
+
     }
 
-toggleVisibility = () =>
-    this.setState((prevState) => ({ visible: !prevState.visible }))
+    // updateScroll = () => {
+    //     var element = document.ge("window-chat");
+    //     element.scrollTop = element.scrollHeight;
+    // }
+
+    toggleVisibility = () =>
+        this.setState((prevState) => ({ visible: !prevState.visible }))
 
 
-render() {
-    const { visible } = this.state
 
-    return (
-        <React.Fragment>
-            <Transition.Group animation={'fly left'} duration={1500}>
-                {visible &&
-                    <div className="chat">
-                        <div className="header-chat"></div>
-                        <div className="window-chat"></div>
-                        <Form className="form-chat flex" success>
-                            <TextArea className="textArea-chat" placeholder='Tell us more' />
-                            <Button className="chat-button" color='green'>Send</Button>
-                        </Form>
-                    </div>
-                }
-            </Transition.Group >
-            <div className="container-ChatCmp">
-                <div className="container-chat-icon">
-                    <Button content={visible ? 'Hide' : 'Show'}
-                        onClick={this.toggleVisibility} color='facebook'>
-                        Send a message
+
+
+
+    render() {
+        const { visible } = this.state
+        console.log(this.state)
+
+        return (
+            <React.Fragment>
+                <Transition.Group animation={'fly left'} duration={1500}>
+                    {visible &&
+                        <div className="chat">
+                            <div className="header-chat"></div>
+                            <div ref={this.myRef} className="window-chat">
+                                {this.state.comments.map(comment => {
+                                    return <div className="bubble-message">{comment} </div>
+                                })}
+                            </div>
+                            <Form className="form-chat flex" success>
+                                <TextArea onChange={this.handleChange} className="textArea-chat" placeholder='Tell us more' />
+                                <Button onClick={this.handleSendMassage} className="chat-button" color='green'>Send</Button>
+                            </Form>
+                        </div>
+                    }
+                </Transition.Group >
+                <div className="container-ChatCmp">
+                    <div className="container-chat-icon">
+                        <Button content={visible ? 'Hide' : 'Show'}
+                            onClick={this.toggleVisibility} color='facebook'>
+                            Send a message
                     </Button>
-                </div>
+                    </div>
 
 
-            </div >
-        </React.Fragment>
-    )
+                </div >
+            </React.Fragment>
+        )
 
 
 
-}
+    }
 
 }
 

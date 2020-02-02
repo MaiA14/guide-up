@@ -5,14 +5,15 @@ function connectSockets(io) {
     io.on('connection', socket => {
         console.log('connection!!!!')
 
-        socket.on('chat newMsg', msg=>{
+        socket.on('chat newMsg', msg => {
             console.log(msg)
             // io.emit('chat addMsg', msg)
             // emits only to sockets in the same room
             io.to(socket.myTopic).emit('chat addMsg', msg)
         })
-        socket.on('chat topic', topic=>{
+        socket.on('chat topic', topic => {
             console.log(topic)
+            
             if (socket.myTopic) {
                 socket.leave(socket.myTopic)
             }
