@@ -7,6 +7,11 @@ import Tab from '@material-ui/core/Tab';
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
+    position: 'fixed',
+    width: '100%',
+    zIndex: 100,
+    marginBottom: '400px',
+    top: 0
   },
 });
 
@@ -20,16 +25,16 @@ export default function CenteredTabs() {
 
   return (
     <Paper className={classes.root}>
-      <Tabs
+      <Tabs className="MuiPaper-root"
         value={value}
         onChange={handleChange}
         indicatorColor="primary"
         textColor="primary"
         centered
       >
-        <Tab label="overview" />
-        <Tab label="messenger" />
-        <Tab label="bookings" />
+        <Tab label="overview" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} />
+        <Tab label="messenger" onClick={() => window.scrollTo({ top: 490, behavior: 'smooth' })} />
+        <Tab label="bookings" onClick={() => window.scrollTo({ top: 1000, behavior: 'smooth' })} />
       </Tabs>
     </Paper>
   );

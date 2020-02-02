@@ -8,27 +8,49 @@ import storageService from '../service/storageService.js'
 import Overview from '../cmps/Overview.js'
 import Messenger from '../cmps/Messenger.js'
 import Bookings from '../cmps/Bookings'
+import Navbar from '../cmps/Navbar.js'
 
 
 class Profile extends Component {
+    state = {
+        isScrolled: false
+    }
 
-    // componentDidMount() {
-    //     if (storageService.load('loggedinUser')) {
-    //         const user = storageService.load('loggedinUser')
-    //         console.log(user)
-    //         this.props.setUserLogIn(user)
-    //     }
-    // }
+    componentDidMount() {
+        window.onscroll = () => {
+            if (document.documentElement.scrollTop > 10) {
+                this.setState({ isScrolled: true })
+            }    if (document.documentElement.scrollTop < 10){
+                this.setState({ isScrolled: false })
+            }
+
+        }
+    }
 
 
     render() {
+        const styleNavBar = {
+            backgroundColor: '#7badc0',
+            transition: 'backgroundColor',
+            position: 'absolute'
+        }
+    
+
+
         return (
-            <div>
-                <ProfileTab></ProfileTab>
-                <Overview></Overview>
-                <Messenger></Messenger>
-                <Bookings></Bookings>
-            </div>
+            <React.Fragment>
+                <Navbar styleNavBar={styleNavBar}></Navbar>
+                {this.state.isScrolled &&
+
+                    <ProfileTab></ProfileTab>
+                }
+                <div >
+
+                    <Overview></Overview>
+                    <Messenger></Messenger>
+                    <Bookings></Bookings>
+                </div>
+            </React.Fragment>
         )
     }
 }
