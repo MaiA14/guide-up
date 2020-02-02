@@ -32,9 +32,9 @@ export default function CenteredTabs() {
         textColor="primary"
         centered
       >
-        <Tab label="overview" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} />
-        <Tab label="messenger" onClick={() => window.scrollTo({ top: 490, behavior: 'smooth' })} />
-        <Tab label="bookings" onClick={() => window.scrollTo({ top: 1000, behavior: 'smooth' })} />
+        <Tab label="overview" className="MuiTab-wrapper" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} />
+        <Tab label="messenger"  className="MuiTab-wrapper" onClick={() => window.scrollTo({ top: 490, behavior: 'smooth' })} />
+        <Tab label="bookings"  className="MuiTab-wrapper" onClick={() => window.scrollTo({ top: 1000, behavior: 'smooth' })} />
       </Tabs>
     </Paper>
   );
