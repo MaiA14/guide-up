@@ -3,6 +3,7 @@ import { Icon, Popup, Image } from 'semantic-ui-react'
 
 export default class TagsView extends Component {
     render() {
+
         if (!this.props.tags) return <h1></h1>
         return (
             <div className="tag-view">
@@ -19,7 +20,7 @@ export default class TagsView extends Component {
                 })}
                 </div>
                 <button onClick={() =>{this.props.onSubmitTags()}} 
-                className="search-btn flex"> Find</button>
+                className="search-btn flex"> Filter</button>
             </div>
         )
     }
