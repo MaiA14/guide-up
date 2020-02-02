@@ -45,10 +45,6 @@ function addReview(review, guide) {
     return save(newGuide)
 }
 
-function deleteGuide(guideId) {
-    return HttpService.delete(`guide${guideId}`).then(res => res.data);
-}
-
 function _calcGuideRank(guide) {
     let guideRank = guide.reviews.reduce((acc, currRank) => {
         let rank = +currRank.rank
@@ -57,7 +53,9 @@ function _calcGuideRank(guide) {
     return (guideRank / guide.reviews.length).toFixed(1);
 }
 
-
+function deleteGuide(guideId) {
+    return HttpService.delete(`guide${guideId}`).then(res => res.data);
+}
 
 async function login(loginData) {
 
