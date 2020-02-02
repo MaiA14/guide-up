@@ -29,6 +29,7 @@ class Chat extends Component {
     handleSendMassage = () => {
         // const comments= [...this.state.comments,newComment]
         // this.setState({comments})
+        this.setState({ txt: '' })
 
         SocketService.emit('chat newMsg', this.state.txt)
     }
@@ -61,7 +62,7 @@ class Chat extends Component {
                                 })}
                             </div>
                             <Form className="form-chat flex" success>
-                                <TextArea onChange={this.handleChange} className="textArea-chat" placeholder='Tell us more' />
+                                <TextArea value={this.state.txt} onChange={this.handleChange} className="textArea-chat" placeholder='Tell us more' />
                                 <Button onClick={this.handleSendMassage} className="chat-button" color='green'>Send</Button>
                             </Form>
                         </div>

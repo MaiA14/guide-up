@@ -54,10 +54,12 @@ class Profile extends Component {
                     <Messenger toggleVisibility={this.toggleVisibility}></Messenger>
                     <Bookings></Bookings>
                 </div>
-                <Transition visible={this.state.visible} animation={'scale'} duration={1500}>
-                    <Snackbar></Snackbar>
+                <Transition.Group animation={'fly left'} duration={1500}>
+                    {visible &&
+                        <Snackbar visible={this.state.visible} ></Snackbar>
 
-                </Transition >
+                    }
+                </Transition.Group >
 
 
 
