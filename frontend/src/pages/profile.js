@@ -51,7 +51,8 @@ class Profile extends Component {
 const mapStateToProps = (state) => {
     return {
         guides: state.guides,
-        user: state.user
+        loggedInUser: state.guides.loggedInUser
+
     }
 }
 const mapDispatchToProps = {

@@ -1,27 +1,48 @@
-import React from 'react'
+import { connect } from 'react-redux'
+
 import Calendar from '../cmps/Calendar.js'
+import React, { Component } from 'react'
 
-function Overview(props) {
-    return (
-        <div className="main-container-profile">
-            <div className="overview-elements">
-                <div className="profile-name">
-                    <div>Daniel</div>
-                    <img src="https://res.cloudinary.com/dtwqtpteb/image/upload/v1580392567/o1mykjnxhtugetebi53a.jpg" className="profile-img"></img>
-                </div>
-                <div className="calendar-container-profile">
-                    <div className="calendar-content-profile">
+class Overview extends Component {
+    render() {
+        return (
+            <div className="main-container-profile">
+                <div className="overview-elements">
+                    <div className="profile-name">
+                        <div>{this.props.loggedInUser.name}</div>
+                        <img src={this.props.loggedInUser.imgUrl} className="profile-img"></img>
+                    </div>
+                    <div className="calendar-container-profile">
+                        <div className="calendar-content-profile">
 
-                        <div className="calendar-title">
-                            <h2>Your Calendar</h2>
+                            <div className="calendar-title">
+                                <h2>Your Calendar</h2>
+                            </div>
+                            <Calendar></Calendar>
                         </div>
-                        <Calendar></Calendar>
                     </div>
                 </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
-export default Overview
+
+
+
+const mapStateToProps = (state) => {
+    return {
+        guides: state.guides,
+        loggedInUser: state.guides.loggedInUser
+
+    }
+}
+const mapDispatchToProps = {
+
+}
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Overview)
+
 

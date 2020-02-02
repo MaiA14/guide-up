@@ -7,7 +7,7 @@ import SocketService from '../service/SocketService.js'
 import quoryString from 'query-string'
 
 class Chat extends Component {
-    state = { visible: true, comments: [] }
+    state = { visible: false, comments: [] }
 
     componentDidMount() {
 

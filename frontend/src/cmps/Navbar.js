@@ -9,37 +9,23 @@ class Navbar extends Component {
         loginUser: ''
     }
     componentDidMount() {
-        if (sessionStorage.user) {
-            const loginUser = JSON.parse(sessionStorage.user)
+        if (this.props.user) {
+            const loginUser = this.props.user
 
             this.setState({ loginUser })
 
         }
-
-    }
-    componentDidUpdate() {
-
-        const loginUser = this.props.user
-        this.loadUserLogin(loginUser)
-
-
-
-    }
-    loadUserLogin = (loginUser) => {
-        if (sessionStorage.user) {
-            const loginUser = JSON.parse(sessionStorage.user)
-
-            this.setState({ loginUser })
-
-        }
-
     }
 
     render() {
-        
+
+        const styleImg = {
+            bordeRadius:  '50%',
+            height: '51px',
+            width: '61px'
+        }
         return <div className="main-navbar" style={this.props.styleNavBar}>
             <Link to="/" > <div className="flex logo">
-                {/* <img src="https://i.ibb.co/8BxPMdT/logo.png" alt="logo"></img> */}
                 <div className="logo-text">GuideUp</div>
             </div></Link>
             <div>
@@ -48,9 +34,9 @@ class Navbar extends Component {
                 <div className="nav-link"><NavLink activeClassName="active" to='/' exact>Home</NavLink></div>
                 <div className="nav-link"><NavLink activeClassName="active" to='/login' exact>Login</NavLink></div>
                 <div className="nav-link"><NavLink activeClassName="active" to='/join_us' exact>Become a Guide</NavLink></div>
-                <div className="nav-link"><NavLink activeClassName="active" to='/profile' exact>Profile
-                    {this.state.loginUser &&
-                        <Image size={'mini'} src={this.state.loginUser.imgUrl} circular    ></Image>
+                <div className="nav-link"><NavLink activeClassName="active" to='/profile' exact>
+                    {this.props.loggedInUser &&
+                        <Image style={styleImg} size={'mini'} src="https://res.cloudinary.com/dtwqtpteb/image/upload/v1580585567/liivrwjfvseuovfquyxp.png" circular    ></Image>
                     }
                 </NavLink></div>
             </div>
@@ -61,7 +47,7 @@ class Navbar extends Component {
 const mapStateToProps = (state) => {
     return {
         guides: state.guides,
-        user: state.guides.loggedInUser
+        loggedInUser: state.guides.loggedInUser
     }
 }
 
