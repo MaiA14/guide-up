@@ -88,9 +88,6 @@ class FilteredGuideList extends Component {
     }
 
 
-
-
-
     render() {
         const searchStyle = {
             containerStyle: {

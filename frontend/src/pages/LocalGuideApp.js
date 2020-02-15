@@ -21,8 +21,6 @@ class LocalGuideApp extends Component {
 
     }
 
-
-
     componentDidMount() {
         this.props.loadGuides(this.state.filterBy);
         this.resize()
