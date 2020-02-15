@@ -78,7 +78,8 @@ class GuideDetails extends Component {
                             </div>
                             <div className="guide-rank">
                                         <Icon size={'small'} 
-                                        disabled name='star' />{this.props.guide.avgRank} (by {this.props.guide.reviews.length} reviewers)
+                                        disabled name='star' />{this.props.guide.avgRank}
+                                         (by {this.props.guide.reviews.length} reviewers)
                                     </div>
                             <div className="guide-tags">
                             <GuideTags iconClass={iconClass} 
@@ -97,14 +98,13 @@ class GuideDetails extends Component {
                                         this.props.guide.langugages.map((langugage, index)=>
                                          {
                                             return (
-                                                ((this.props.guide.langugages.length - 1 >
+                                                ((this.props.guide.langugages.length - 1>
                                                      index)) ? <span>{langugage + ' , '}
                                                      </span> : <span>{langugage}</span>
                                             )
                                         })}
                                 </div>
                             </div>
-
                             <div className="guide-desc">
                                 {this.props.guide.description}
                                 <div className="guide-activites">
@@ -122,14 +122,14 @@ class GuideDetails extends Component {
                                 {this.props.guide.reviews &&
                                  this.props.guide.reviews.map(review => {
                                     return (
-                                        <ReviewView review={review} key={this.props.guide._id}></ReviewView>
+                                        <ReviewView review={review}
+                                         key={this.props.guide._id}> 
+                                         </ReviewView>
                                     )
                                 })}
                             </div>
                         </div>
-                     
                         <div className="calendar-container">
-                       
                             <div className="calendar-content">
                             <div className="calendar-title">
                                     <h2>Pick a date</h2>
@@ -139,17 +139,18 @@ class GuideDetails extends Component {
                                     <h2>How many people?</h2>
                                 </div>
                                 <div className="book-btn-container">
-                                    <input type="number"className="book-btn-container 
+                                    <input 
+                                    type="number"className="book-btn-container 
                                     book-input" placeholder="0"></input>
                                     <button className="book-btn">Book</button>
                                 </div>
-                                <div className="price-rank flex column justify-center">
-                                    <div className="guide-price">${this.props.guide.price}  For my tour</div>
+                                <div className="price-rank flex
+                                 column justify-center">
+                                    <div 
+                                    className="guide-price">${this.props.guide.price}  For my tour</div>
                                     <div className="container-chat">
                                     <Chat guide={this.props.guide}></Chat>
                                     </div>
-                               
-                                  
                                 </div>
                             </div>
                         </div>

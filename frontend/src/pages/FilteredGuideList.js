@@ -116,7 +116,8 @@ class FilteredGuideList extends Component {
                 <h1 className="filtered-guides-header main-container">
                     {this.state.filterBy.city + '\'s guides'}</h1>
                 <h2 className="guides-short-content main-container">
-                    Find your guides, let them share with you the insight on the city.
+                    Find your guides, let them share with you 
+                    the insight on the city.
                      Enjoy from unforgettable trip</h2>
                 <div className="filtered-glist-container flex main-container">
                     <MainSearch onSearch={this.onSearch} style={searchStyle}>
