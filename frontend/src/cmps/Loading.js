@@ -14,7 +14,7 @@ const styleNavBar = {
 const LoaderExampleActive = () => {
   return (
     <div>
-      <Navbar styleNavBar={styleNavBar} ></Navbar>
+
       <Loader size={'massive'} style={LoaderStyle} active />
     </div>
 

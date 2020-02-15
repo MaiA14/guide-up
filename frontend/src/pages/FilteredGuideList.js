@@ -18,9 +18,9 @@ class FilteredGuideList extends Component {
 
     state = {
         filterBy: { city: '', avgRank: '', tags: '' },
-            tags: getIconTag(),
-            tagsCaption: [],
-            // isSelected: false,
+        tags: getIconTag(),
+        tagsCaption: [],
+        // isSelected: false,
     }
 
     componentDidMount() {
@@ -37,18 +37,18 @@ class FilteredGuideList extends Component {
     }
 
     onSearch = (newCityToFilter) => {
-        this.setState({tags:getIconTag()})
+        this.setState({ tags: getIconTag() })
 
         this.setState(prvState => ({
             filterBy: {
-                ...prvState.filterBy, ['tags']:
-                    ''
+                ...prvState.filterBy,
+                ['tags']: []
             }
         }))
         this.setState(prvState => ({
             filterBy: {
-                ...prvState.filterBy, ['city']:
-                    newCityToFilter
+                ...prvState.filterBy,
+                ['city']: newCityToFilter
             }
         }), () => (this.props.loadGuides(this.state.filterBy)))
 
@@ -58,7 +58,7 @@ class FilteredGuideList extends Component {
         this.setState(prvState => ({
             filterBy: {
                 ...prvState.filterBy,
-                ['tags']: this.state.tagsCaption
+                tags: this.state.tagsCaption
             }
         }), () =>
             (this.props.loadGuides(this.state.filterBy)))
@@ -69,18 +69,21 @@ class FilteredGuideList extends Component {
 
         const tagChoose = ev.target.name
         const ans = this.state.tagsCaption.includes(tagChoose);
-        const imgTag = this.state.tags[tagChoose].img
+        const imgTag = this.state.tags[tagChoose].img;
 
         if (ans) {
-            this.setState(prevState => ({ tagsCaption: this.state.tagsCaption.filter(tag => tag !== tagChoose) }), () => console.log(this.state.tagsCaption))
-            this.setState(prevState => ({ tags: { ...prevState.tags, [tagChoose]: { img: imgTag, isSelected: false } } }))
+            this.setState(prevState =>
+                 ({ tagsCaption: this.state.tagsCaption.filter(tag =>
+                 tag !== tagChoose) }), () => console.log(this.state.tagsCaption))
+            this.setState(prevState => ({ tags: { ...prevState.tags, [tagChoose]:
+                 { img: imgTag, isSelected: false } } }))
 
         } else {
-            this.setState(prevState => ({ tagsCaption: [...prevState.tagsCaption, tagChoose] }))
-            this.setState(prevState => ({ tags: { ...prevState.tags, [tagChoose]: { img: imgTag, isSelected: true } } }))
-
-
-
+            this.setState(prevState => ({ tagsCaption: 
+                [...prevState.tagsCaption, tagChoose] }))
+            this.setState(prevState => 
+                ({ tags: { ...prevState.tags, [tagChoose]:
+                     { img: imgTag, isSelected: true } } }))
         }
     }
 

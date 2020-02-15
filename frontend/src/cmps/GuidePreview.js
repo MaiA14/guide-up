@@ -57,7 +57,7 @@ class GuidePreviewCard extends Component {
         const iconClass = 'home-icon-style'
         const { props } = this
         return (<Card style={cardStyle} >
-            <Image onClick={this.onLink} style={imgStyle} src={props.guide.imgUrl} />
+            <Image className="square-ratio" onClick={this.onLink} style={imgStyle} src={props.guide.imgUrl} />
             <Card.Content onClick={this.onLink} style={cursor} >
                 <Card.Header style={header} >
                     {props.guide.name}

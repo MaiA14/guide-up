@@ -33,7 +33,10 @@
 // Media helpers
 
 .square-ratio {
-    @include aspect-ratio(1, 1);
+    @include aspect-ratio(1, 1) ;
+    cursor: pointer;
+    height: 200px;
+    object-fit: cover;
 }
 
 li{

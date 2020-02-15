@@ -37,6 +37,7 @@ if (process.env.NODE_ENV === 'production') {
 app.use('/api/auth', authRoutes)
 app.use('/api/user', userRoutes)
 app.use('/api/guide', guideRoutes)
+// app.use('/api/guest', guestMode)
 app.use(express.static('public'));
 connectSockets(io)
 

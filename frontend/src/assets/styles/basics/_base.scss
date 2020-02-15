@@ -47,6 +47,39 @@ p {
     margin-bottom: 20px;
 }
 
+@media (max-width: 1040px){
+    .main-container {
+        max-width: 900px;
+  }
+}
+
+@media (max-width: 900px){
+    .main-container {
+        max-width: 760px;
+  }
+}
+
+@media (max-width: 760px){
+    .main-container {
+        max-width: 620px;
+  }
+}
+
+@media (max-width: 620px){
+    .main-container {
+        max-width: 480px;
+  }
+}
+
+@media (max-width: 480px){
+    .main-container {
+        max-width: 340px;
+  }
+}
+
+
+
+
 body::-webkit-scrollbar {
     width: 0.4em;
   }

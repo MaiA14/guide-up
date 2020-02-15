@@ -16,7 +16,7 @@ export default class CityPreview extends Component {
             <Link style={imgStyle} className={props.city} 
             to={`/location/?city=${props.city}`}>
                 <div>
-                    <div className="country-preview-card">
+                    <div className="country-preview-card square-ratio">
                         <div className="country-label">
                             {props.city}
                         </div>

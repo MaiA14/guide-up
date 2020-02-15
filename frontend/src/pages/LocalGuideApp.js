@@ -7,6 +7,7 @@ import Footer from '../cmps/Footer.js'
 import List from '../cmps/List.js'
 import { loadGuides } from '../reducers/guide/actionGuide.js'
 import Navbar from '../cmps/Navbar.js'
+import MobileNavbar from '../cmps/MobileNavbar.js'
 
 class LocalGuideApp extends Component {
     state = {
@@ -15,11 +16,16 @@ class LocalGuideApp extends Component {
             backgroundColor: '',
             transition: 'backgroundColor'
         },
-        filterBy: { city: '', avgRank: 4, tags: '' }
+        filterBy: { city: '', avgRank: 4, tags: '' },
+        isMobileNavbar: true
+
     }
+
+
 
     componentDidMount() {
         this.props.loadGuides(this.state.filterBy);
+        this.resize()
         document.body.style.paddingTop = 0
         window.onscroll = () => {
             let styleNavBar;
@@ -30,6 +36,16 @@ class LocalGuideApp extends Component {
                 styleNavBar = { backgroundColor: '', transition: ' 0.8s' }
             this.setState({ styleNavBar })
         }
+        window.addEventListener(('resize'), this.resize)
+
+    }
+
+    componentWillMount() {
+        window.removeEventListener(('resize'), this.resize)
+        window.onscroll = null
+    }
+    resize = () => {
+        this.setState({ isMobileNavbar: window.innerWidth < 650 ? true : false })
     }
 
     render() {
@@ -38,9 +54,15 @@ class LocalGuideApp extends Component {
         }
         return (
             <div>
-                <div className="nav-container-header">
-                <Navbar styleNavBar={this.state.styleNavBar}></Navbar>
-                </div>
+                {/* <div className="nav-container-header"> */}
+
+                {this.state.isMobileNavbar ?
+                    <MobileNavbar styleNavBar={this.state.styleNavBar} /> :
+                    <Navbar styleNavBar={this.state.styleNavBar} />
+
+
+                }
+                {/* </div> */}
                 <Header ></Header> {
                     this.props.guides &&
                     <section className="main-container">
