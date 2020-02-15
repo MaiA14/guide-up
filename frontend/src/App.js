@@ -17,7 +17,6 @@ import 'react-notifications/lib/notifications.css';
 
 function App() {
 
-
   return (
     <div className="App">
         <Router>
@@ -29,8 +28,6 @@ function App() {
             <Route component={Signup} path="/signup"exact ></Route>
             <Route component={BecomeGuide} path="/"exact ></Route>
             <Route component={Profile} path="/Profile"exact ></Route>
-
-
           </Switch>
       </Router>
     </div>
