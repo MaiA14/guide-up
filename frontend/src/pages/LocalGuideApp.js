@@ -21,8 +21,6 @@ class LocalGuideApp extends Component {
 
     }
 
-
-
     componentDidMount() {
         this.props.loadGuides(this.state.filterBy);
         this.resize()
@@ -54,15 +52,12 @@ class LocalGuideApp extends Component {
         }
         return (
             <div>
-                {/* <div className="nav-container-header"> */}
-
                 {this.state.isMobileNavbar ?
                     <MobileNavbar styleNavBar={this.state.styleNavBar} /> :
                     <Navbar styleNavBar={this.state.styleNavBar} />
 
 
                 }
-                {/* </div> */}
                 <Header ></Header> {
                     this.props.guides &&
                     <section className="main-container">
