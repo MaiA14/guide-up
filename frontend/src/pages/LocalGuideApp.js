@@ -17,7 +17,7 @@ class LocalGuideApp extends Component {
             transition: 'backgroundColor'
         },
         filterBy: { city: '', avgRank: 4, tags: '' },
-        isMobileNavbar: true
+        isMobile: false
 
     }
 
@@ -27,25 +27,39 @@ class LocalGuideApp extends Component {
         this.props.loadGuides(this.state.filterBy);
         this.resize()
         document.body.style.paddingTop = 0
-        window.onscroll = () => {
-            let styleNavBar;
-            if (document.documentElement.scrollTop > 110) {
-                styleNavBar = { backgroundColor: '#537580', transition: ' 0.8s' }
-                this.setState({ styleNavBar })
-            } else if (document.documentElement.scrollTop < 500)
-                styleNavBar = { backgroundColor: '', transition: ' 0.8s' }
-            this.setState({ styleNavBar })
-        }
+
+
+        window.addEventListener(('scroll'), this.scroll)
+
+
         window.addEventListener(('resize'), this.resize)
 
     }
 
     componentWillMount() {
         window.removeEventListener(('resize'), this.resize)
-        window.onscroll = null
+        window.removeEventListener(('scroll'), this.scroll)
+
     }
+
+    scroll = () => {
+        let styleNavBar;
+        if (!this.state.isMobile) {
+            if (document.documentElement.scrollTop > 110) {
+                styleNavBar = { backgroundColor: '#537580', transition: ' 0.8s' }
+                this.setState({ styleNavBar })
+            } else if (document.documentElement.scrollTop < 500)
+                styleNavBar = { backgroundColor: '', transition: ' 0.8s' }
+            this.setState({ styleNavBar })
+
+        }
+
+    }
+
+
     resize = () => {
-        this.setState({ isMobileNavbar: window.innerWidth < 650 ? true : false })
+        this.setState({ isMobile: window.innerWidth < 650 ? true : false })
+
     }
 
     render() {
@@ -54,23 +68,22 @@ class LocalGuideApp extends Component {
         }
         return (
             <div>
-                {/* <div className="nav-container-header"> */}
 
-                {this.state.isMobileNavbar ?
+                {this.state.isMobile ?
                     <MobileNavbar styleNavBar={this.state.styleNavBar} /> :
                     <Navbar styleNavBar={this.state.styleNavBar} />
 
-
                 }
-                {/* </div> */}
                 <Header ></Header> {
                     this.props.guides &&
                     <section className="main-container">
-                        <List guides={this.props.guides} cities={this.state.cities}>
+                        <List isMobile={this.state.isMobile} guides={this.props.guides} cities={this.state.cities}>
                         </List>
                     </section>
                 }
-                <Footer ></Footer>
+                {this.state.isMobile ?
+                    <Footer ></Footer> : ''
+                }
             </div>
         )
     }
