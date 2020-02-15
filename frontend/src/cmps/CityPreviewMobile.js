@@ -9,7 +9,7 @@ class DemoCarousel extends Component {
     render() {
 
         return (
-                <Carousel swiping={false} infiniteLoop={true} className="Carousel" showThumbs={false} itemSize={300} >
+                <Carousel transitionTime ={700} emulateTouch={false} infiniteLoop={true} className="Carousel" showThumbs={false} itemSize={300} >
                     <Link to={`/location/?city=paris`}>
                         <div  >
                             <img height="700"  src="https://www.jetsetter.com/uploads/sites/7/2019/04/GettyImages-924894324-1380x690.jpg" />
