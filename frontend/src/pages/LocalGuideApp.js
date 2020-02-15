@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 
 import Loading from '../cmps/Loading.js'
 import Header from '../cmps/Header.js'
-import Footer from '../cmps/Footer.js'
 import List from '../cmps/List.js'
 import { loadGuides } from '../reducers/guide/actionGuide.js'
 import Navbar from '../cmps/Navbar.js'
@@ -23,20 +22,13 @@ class LocalGuideApp extends Component {
 
     componentDidMount() {
         this.props.loadGuides(this.state.filterBy);
-        this.resize()
         document.body.style.paddingTop = 0
-
-
         window.addEventListener(('scroll'), this.scroll)
-
-
-        window.addEventListener(('resize'), this.resize)
 
     }
 
     componentWillMount() {
-        window.removeEventListener(('resize'), this.resize)
-        window.removeEventListener(('scroll'), this.scroll)
+        window.removeEventListener(('scroll'), this.resize)
 
     }
 
@@ -55,10 +47,6 @@ class LocalGuideApp extends Component {
     }
 
 
-    resize = () => {
-        this.setState({ isMobile: window.innerWidth < 650 ? true : false })
-
-    }
 
     render() {
         if (this.props.isLoading) {
@@ -79,9 +67,7 @@ class LocalGuideApp extends Component {
                         </List>
                     </section>
                 }
-                {this.state.isMobile ?
-                    <Footer ></Footer> : ''
-                }
+            
             </div>
         )
     }

@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 
 import Navbar from '../cmps/Navbar.js'
 import { login } from '../reducers/guide/actionGuide.js'
-import Footer from '../cmps/Footer.js'
 
 
 
@@ -40,7 +39,7 @@ class Login extends Component {
             this.props.login({ name, password });
             this.setState({ loginCred: { email: '', password: '' } });
             this.props.history.push('/')
-        } catch (err) { console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@") }
+        } catch (err) { console.log(err) }
     }
 
     render() {
@@ -69,7 +68,6 @@ class Login extends Component {
                             className="join-header">Not a member? Signup!</Link>
                     </div>
                 </div>
-                {/* <Footer></Footer> */}
             </div>
         )
     }

@@ -11,7 +11,6 @@ import Navbar from '../cmps/Navbar.js'
 import ReviewView from '../cmps/Review-view.js'
 import Loading from '../cmps/Loading.js'
 import GuideTags from '../cmps/GuideTags.js'
-import Footer from '../cmps/Footer.js'
 import Chat from '../cmps/Chat.js'
 
 class GuideDetails extends Component {
@@ -155,7 +154,6 @@ class GuideDetails extends Component {
                         </div>
                     </div>
                 }
-    <Footer ></Footer>
             </React.Fragment>
         )
     }

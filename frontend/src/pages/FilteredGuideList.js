@@ -9,7 +9,6 @@ import { loadGuides, loadTags } from '../reducers/guide/actionGuide.js'
 import MainSearch from '../cmps/MainSearch.js'
 import Loading from '../cmps/Loading.js'
 import Navbar from '../cmps/Navbar.js'
-import Footer from '../cmps/Footer.js'
 import { getIconTag } from '../service/guideService.js'
 import GuideTags from '../cmps/GuideTags.js'
 import TagsView from '../cmps/TagsView.js'
@@ -127,7 +126,6 @@ class FilteredGuideList extends Component {
                     {this.props.guides.map(guide => <GuidePreview key={guide._id}
                         guide={guide}></GuidePreview>)}
                 </section>
-                <Footer></Footer>
             </div>
         )
     }

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 import Navbar from '../cmps/Navbar.js'
-import Footer from '../cmps/Footer.js'
 
 export default class Login extends Component {
 
@@ -33,7 +32,6 @@ export default class Login extends Component {
                         Login!</Link>
                     </div>
                 </div>
-                {/* <Footer></Footer> */}
             </div>
 
         )
