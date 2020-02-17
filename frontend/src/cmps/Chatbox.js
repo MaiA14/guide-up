@@ -34,14 +34,13 @@ class Chatbox extends Component {
     handleChange = (ev) => {
         const value = ev.target.value
         this.setState({ txt: value })
-
     }
 
 
     render() {
         console.log(this.state.txt)
         return (
-            <div>
+        
                 <div className="chat-messages-chatbox">
                     <div className="chat-details">
                         <img src="https://res.cloudinary.com/dtwqtpteb/image/upload/v1580585567/liivrwjfvseuovfquyxp.png"
@@ -52,18 +51,18 @@ class Chatbox extends Component {
 
                         {this.state.comments.map(comment => {
                             return <div className="bubble-message">{comment}</div>
-
                         })}
                         {/* <div className="bubble-message">message</div>
                         <div className="bubble-message">message</div> */}
                     </div>
                     <div className="message-container">
-                        <input value={this.state.txt} onChange={this.handleChange} type="text" className="message-input" placeholder="Type a message..."></input>
-                        <button onClick={this.handleSendMassage} className="send-btn">Send</button>
+                        <input value={this.state.txt} onChange={this.handleChange}
+                        type="text" className="message-input"
+                        placeholder="Type a message..."></input>
+                        <button onClick={this.handleSendMassage} 
+                        className="send-btn">Send</button>
                     </div>
-
                 </div>
-            </div>
         )
     }
 }

@@ -11,14 +11,11 @@ class Navbar extends Component {
     componentDidMount() {
         if (this.props.user) {
             const loginUser = this.props.user
-
             this.setState({ loginUser })
-
         }
     }
 
     render() {
-
         const styleImg = {
             bordeRadius:  '50%',
             height: '41px',
@@ -31,12 +28,17 @@ class Navbar extends Component {
             <div>
             </div>
             <div className=" nav-links">
-                <div className="nav-link"><NavLink activeClassName="active" to='/' exact>Home</NavLink></div>
-                <div className="nav-link"><NavLink activeClassName="active" to='/login' exact>Login</NavLink></div>
-                <div className="nav-link"><NavLink activeClassName="active" to='/join_us' exact>Become a Guide</NavLink></div>
-                <div className="nav-link"><NavLink activeClassName="active" to='/profile' exact>
+                <div className="nav-link"><NavLink activeClassName="active" 
+                to='/' exact>Home</NavLink></div>
+                <div className="nav-link"><NavLink activeClassName="active" 
+                to='/login' exact>Login</NavLink></div>
+                {/* <div className="nav-link"><NavLink activeClassName="active"
+                to='/join_us' exact>Become a Guide</NavLink></div> */}
+                <div className="nav-link"><NavLink activeClassName="active" 
+                to='/profile' exact>
                     {this.props.loggedInUser &&
-                        <Image style={styleImg} size={'mini'} src="https://res.cloudinary.com/dtwqtpteb/image/upload/v1580585567/liivrwjfvseuovfquyxp.png" circular    ></Image>
+                        <Image style={styleImg} size={'mini'} 
+                        src="https://res.cloudinary.com/dtwqtpteb/image/upload/v1580585567/liivrwjfvseuovfquyxp.png" circular    ></Image>
                     }
                 </NavLink></div>
             </div>
@@ -58,5 +60,3 @@ export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(Navbar)
-
-

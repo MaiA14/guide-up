@@ -111,6 +111,58 @@ border-bottom: 1px solid;
   color: $clr2;
 }
 
+@media screen and (max-width: 1000px){
+.guide-details {
+  max-width: 900px;
+  color: #445d66;
+}
+}
+
+// width: 100%;
+
+@media screen and (max-width: 900px){
+  .guide-details {
+    max-width: 800px;
+    color: #445d66;
+  }
+  }
+
+  @media screen and (max-width: 750px){
+    .guide-details {
+      max-width: 650px;
+      color: #445d66;
+    }
+    }
+
+    @media screen and (max-width: 600px){
+      .guide-details {
+        margin: 20px auto;
+        max-width: 500px;
+        color: #445d66;
+      }
+
+      .guide-activites{
+        width: 60%;
+        flex-direction: column;
+      }
+      }
+      
+      @media screen and (max-width: 500px){
+        .guide-details {
+          margin: 0px auto;
+          max-width: 400px;
+          color: #445d66;
+        }
+        }
+
+        @media screen and (max-width: 400px){
+          .guide-details {
+            margin: 0px auto;
+            max-width: 280px;
+            color: #445d66;
+          }
+          }
+
 .guide-review-title{
   font-family: "Lato";
   font-size: rem(27px);
@@ -284,6 +336,8 @@ border-bottom: 1px solid;
   outline: none;
 }
 
+
+
 .guide-activites{
   display: flex;
   width: 50%;
@@ -293,6 +347,13 @@ border-bottom: 1px solid;
     margin: 3px;
   }
 }
+
+@media screen and (max-width: 950px){
+  .guide-activites {
+    width: 100%;
+    flex-direction: column;
+  }
+  }
 
 .divider{
   padding-top: 15px;

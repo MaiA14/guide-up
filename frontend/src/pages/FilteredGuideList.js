@@ -12,6 +12,7 @@ import Navbar from '../cmps/Navbar.js'
 import { getIconTag } from '../service/guideService.js'
 import GuideTags from '../cmps/GuideTags.js'
 import TagsView from '../cmps/TagsView.js'
+import Footer from '../cmps/Footer.js'
 
 class FilteredGuideList extends Component {
 
@@ -122,23 +123,28 @@ class FilteredGuideList extends Component {
         }
         const iconClass = 'home-icon-style'
         return (
-            <div className="">
+            <React.Fragment>
                 <Navbar styleNavBar={styleNavBar} ></Navbar>
-                <h1 className="filtered-guides-header main-container">
-                    {this.state.filterBy.city + '\'s guides'}</h1>
-                <h2 className="guides-short-content main-container">
-                    Find your guides, let them share with you the insight on the city.
+
+                <div className=" main-container">
+                    <h1 className="filtered-guides-header">
+                        {this.state.filterBy.city + '\'s guides'}</h1>
+                    <h2 className="guides-short-content">
+                        Find your guides, let them share with you
+                        the insight on the city.
                      Enjoy from unforgettable trip</h2>
-                <div className="filtered-glist-container flex main-container">
-                    <MainSearch onSearch={this.onSearch} style={searchStyle}>
-                    </MainSearch>
-                    <TagsView tags={this.state.tags} onSelectTag={this.onSelectTag} onSubmitTags={this.onSubmitTags} filterByTag={this.filterByTag} ></TagsView>
+                    <div className="filtered-glist-container flex">
+                        <MainSearch onSearch={this.onSearch} style={searchStyle}>
+                        </MainSearch>
+                        <TagsView tags={this.state.tags} onSelectTag={this.onSelectTag} onSubmitTags={this.onSubmitTags} filterByTag={this.filterByTag} ></TagsView>
+                    </div>
+                    <section className="cards-list">
+                        {this.props.guides.map(guide => <GuidePreview key={guide._id}
+                            guide={guide}></GuidePreview>)}
+                    </section>
                 </div>
-                <section className="cards-list main-container">
-                    {this.props.guides.map(guide => <GuidePreview key={guide._id}
-                        guide={guide}></GuidePreview>)}
-                </section>
-            </div>
+                <Footer></Footer>
+            </React.Fragment>
         )
     }
 }
