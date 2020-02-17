@@ -20,27 +20,25 @@ import React, { Component, NavLink } from "react";
 class app extends Component {
 
   state = {
-
     isMobile: false
-
   }
-
   componentDidMount() {
     window.addEventListener(('resize'), this.resize)
     this.setState({ isMobile: window.innerWidth < 650 ? true : false })
-
   }
 
+  componentWillMount() {
+    window.removeEventListener(('resize'), this.resize)
+  }
   resize = () => {
     this.setState({ isMobile: window.innerWidth < 650 ? true : false })
 
   }
 
 
+
   render() {
-
     return (
-
       <div className="App" >
         <Router>
           <Switch>
@@ -51,16 +49,11 @@ class app extends Component {
             <Route component={Signup} path="/signup" exact ></Route>
             <Route component={BecomeGuide} path="/" exact ></Route>
             <Route component={Profile} path="/Profile" exact ></Route>
-
-
           </Switch>
-
         </Router>
         {!this.state.isMobile && !this.props.isLoading ?
-
           <div><Footer></Footer></div> : ''
         }
-
       </div>
     );
   }

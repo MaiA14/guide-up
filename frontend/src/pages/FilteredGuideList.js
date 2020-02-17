@@ -13,6 +13,8 @@ import { getIconTag } from '../service/guideService.js'
 import GuideTags from '../cmps/GuideTags.js'
 import TagsView from '../cmps/TagsView.js'
 import Footer from '../cmps/Footer.js'
+import MobileNavbar from '../cmps/MobileNavbar.js'
+
 
 class FilteredGuideList extends Component {
 
@@ -20,10 +22,13 @@ class FilteredGuideList extends Component {
         filterBy: { city: '', avgRank: '', tags: '' },
         tags: getIconTag(),
         tagsCaption: [],
+        isMobile: false
         // isSelected: false,
     }
 
     componentDidMount() {
+        window.addEventListener(('resize'), this.resize)
+        this.setState({ isMobile: window.innerWidth < 650 ? true : false })
         document.body.style.paddingTop = '60px'
         let items = queryString.parse(this.props.location.search)
         let newCityToFilter = items.city
@@ -34,6 +39,13 @@ class FilteredGuideList extends Component {
             }
         }), () =>
             (this.props.loadGuides(this.state.filterBy)))
+    }
+
+    componentWillMount() {
+        window.removeEventListener(('resize'), this.resize)
+    }
+    resize = () => {
+        this.setState({ isMobile: window.innerWidth < 650 ? true : false })
     }
 
     onSearch = (newCityToFilter) => {
@@ -124,7 +136,11 @@ class FilteredGuideList extends Component {
         const iconClass = 'home-icon-style'
         return (
             <React.Fragment>
-                <Navbar styleNavBar={styleNavBar} ></Navbar>
+                {this.state.isMobile ?
+                    <MobileNavbar styleNavBar={this.state.styleNavBar} /> :
+                    <Navbar styleNavBar={styleNavBar} />
+
+                }
 
                 <div className=" main-container">
                     <h1 className="filtered-guides-header">
