@@ -72,17 +72,29 @@ class FilteredGuideList extends Component {
 
         if (ans) {
             this.setState(prevState =>
-                 ({ tagsCaption: this.state.tagsCaption.filter(tag =>
-                 tag !== tagChoose) }), () => console.log(this.state.tagsCaption))
-            this.setState(prevState => ({ tags: { ...prevState.tags, [tagChoose]:
-                 { img: imgTag, isSelected: false } } }))
+                ({
+                    tagsCaption: this.state.tagsCaption.filter(tag =>
+                        tag !== tagChoose)
+                }), () => console.log(this.state.tagsCaption))
+            this.setState(prevState => ({
+                tags: {
+                    ...prevState.tags, [tagChoose]:
+                        { img: imgTag, isSelected: false }
+                }
+            }))
 
         } else {
-            this.setState(prevState => ({ tagsCaption: 
-                [...prevState.tagsCaption, tagChoose] }))
-            this.setState(prevState => 
-                ({ tags: { ...prevState.tags, [tagChoose]:
-                     { img: imgTag, isSelected: true } } }))
+            this.setState(prevState => ({
+                tagsCaption:
+                    [...prevState.tagsCaption, tagChoose]
+            }))
+            this.setState(prevState =>
+                ({
+                    tags: {
+                        ...prevState.tags, [tagChoose]:
+                            { img: imgTag, isSelected: true }
+                    }
+                }))
         }
     }
 

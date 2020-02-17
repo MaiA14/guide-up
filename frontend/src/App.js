@@ -27,6 +27,7 @@ class app extends Component {
 
   componentDidMount() {
     window.addEventListener(('resize'), this.resize)
+    this.setState({ isMobile: window.innerWidth < 650 ? true : false })
 
   }
 
@@ -37,8 +38,7 @@ class app extends Component {
 
 
   render() {
-    console.log(this.props.isLoading )
-   
+
     return (
 
       <div className="App" >
@@ -54,10 +54,13 @@ class app extends Component {
 
 
           </Switch>
+
         </Router>
         {!this.state.isMobile && !this.props.isLoading ?
-          <Footer></Footer> : ''
+
+          <div><Footer></Footer></div> : ''
         }
+
       </div>
     );
   }
