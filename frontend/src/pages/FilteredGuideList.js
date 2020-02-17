@@ -143,7 +143,6 @@ class FilteredGuideList extends Component {
                             guide={guide}></GuidePreview>)}
                     </section>
                 </div>
-                <Footer></Footer>
             </React.Fragment>
         )
     }
