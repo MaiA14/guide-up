@@ -12,13 +12,18 @@ import ReviewView from '../cmps/Review-view.js'
 import Loading from '../cmps/Loading.js'
 import GuideTags from '../cmps/GuideTags.js'
 import Chat from '../cmps/Chat.js'
+import MobileNavbar from '../cmps/MobileNavbar.js'
 
 class GuideDetails extends Component {
     state = {
-        bookClassName: 'absolute'
+        bookClassName: 'absolute',
+        isMobile: false
     }
 
     componentDidMount() {
+
+        window.addEventListener(('resize'), this.resize)
+
         window.onscroll = () => {
             let bookClassName
             if (document.documentElement.scrollTop === 0) {
@@ -33,6 +38,10 @@ class GuideDetails extends Component {
         const items = quoryString.parse(this.props.location.search)
         this.props.getGuide(items.guide_id);
     }
+    componentWillMount() {
+        window.removeEventListener(('resize'), this.resize)
+    }
+
 
     backToListOfGuids = () => {
         this.props.history.goBack()
@@ -40,6 +49,9 @@ class GuideDetails extends Component {
 
     onNewReview = (ev) => {
         this.props.saveGuide(this.state)
+    }
+    resize = () => {
+        this.setState({ isMobile: window.innerWidth < 650 ? true : false })
     }
 
     render() {
@@ -50,15 +62,16 @@ class GuideDetails extends Component {
             return <Loading></Loading>
         }
 
-        const tagStyle = {
-            width: '10%;',
-            height: '100%;'
-        }
+
         const iconClass = 'details-icon-style'
 
         return (
             <React.Fragment>
-                <Navbar styleNavBar={styleNavBar} ></Navbar>
+                  {this.state.isMobile ?
+                    <MobileNavbar  /> :
+                    <Navbar styleNavBar={styleNavBar} />
+
+                }
                 {this.props.guide &&
                     <div className="guide-details flex relative ">
                         <div className="context-container">

@@ -16,6 +16,15 @@ export function loadGuides(filterBy = '') {
     }
 }
 
+export function isNotlLoading(){
+
+    return async (dispatch) => {
+        dispatch(doneLoading());
+    }
+}
+
+
+
 function setGuides(guides) {
     return {
         type: 'SET_GUIDES',

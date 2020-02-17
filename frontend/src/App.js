@@ -16,26 +16,19 @@ import 'react-notifications/lib/notifications.css';
 import { connect } from 'react-redux'
 import React, { Component, NavLink } from "react";
 
-
 class app extends Component {
-
   state = {
     isMobile: false
   }
+
   componentDidMount() {
     window.addEventListener(('resize'), this.resize)
     this.setState({ isMobile: window.innerWidth < 650 ? true : false })
   }
 
-  componentWillMount() {
-    window.removeEventListener(('resize'), this.resize)
-  }
   resize = () => {
     this.setState({ isMobile: window.innerWidth < 650 ? true : false })
-
   }
-
-
 
   render() {
     return (
@@ -58,9 +51,9 @@ class app extends Component {
     );
   }
 }
+
 const mapStateToProps = (state) => {
   return {
-
     isLoading: state.system.isLoading
   }
 }

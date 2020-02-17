@@ -4,7 +4,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import Navbar from '../cmps/Navbar.js'
-import { login } from '../reducers/guide/actionGuide.js'
+import { login , isNotlLoading } from '../reducers/guide/actionGuide.js'
+import MobileNavbar from '../cmps/MobileNavbar.js'
+import Loading from '../cmps/Loading.js'
+
+
 
 
 
@@ -15,8 +19,27 @@ class Login extends Component {
         loginCred: {
             email: '',
             password: ''
-        }, msg: ''
+        }, 
+        msg: '',
+        isMobile: false
+
     }
+
+
+    componentDidMount(){
+        window.addEventListener(('resize'), this.resize)
+        this.props.isNotlLoading()
+
+    }
+    componentWillMount() {
+        window.removeEventListener(('resize'), this.resize)
+    }
+
+
+    resize = () => {
+        this.setState({ isMobile: window.innerWidth < 650 ? true : false })
+    }
+
 
     loginHandleChange = ev => {
         const { name, value } = ev.target;
@@ -44,12 +67,22 @@ class Login extends Component {
 
     render() {
         const styleNavBar = {
-            backgroundColor: '#537580'
+            backgroundColor: '#537580',
+          
+        }
+
+        if (this.props.isLoading) {
+            return <Loading></Loading>
         }
         return (
 
-            <div className="flex column align-center justify-center">
-                <Navbar styleNavBar={styleNavBar} ></Navbar>
+            <div className="login-container flex column align-center justify-center">
+
+                {this.state.isMobile ?
+                    <MobileNavbar /> :
+                    <Navbar styleNavBar={styleNavBar} />
+
+                }
                 <div className="login-header">Login</div>
                 <div>
                     <div> <input name="name" onChange={this.loginHandleChange}
@@ -74,11 +107,14 @@ class Login extends Component {
 }
 const mapStateToProps = (state) => {
     return {
-        user: state.user
+        user: state.user,
+        isLoading: state.system.isLoading
+
     }
 }
 const mapDispatchToProps = {
-    login
+    login,
+    isNotlLoading
 }
 
 export default connect(

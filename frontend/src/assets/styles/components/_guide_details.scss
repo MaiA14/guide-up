@@ -4,6 +4,13 @@
   flex-direction: column;
   padding: 100px;
 }
+
+@media  (max-width: 850px){
+  .calendar-container {
+    display: none;
+  }
+}
+
 .calendar-content {
   border: 1px solid;
   border-radius: 12px;
@@ -13,6 +20,7 @@
   padding-top: 5px;
   position: sticky;
   top: 80px;
+  margin-left: 30px;
 }
 
 
@@ -39,11 +47,13 @@
   line-height: 1.8;
   border-radius: 15px;
   display: flex;
+  margin-right: 10px;
 }
+
 
 .from-guide{
   text-transform: capitalize;
-  width: 70%;
+  // width: 70%;
   color: $clr2;
   font-family: "Lato";
   font-weight: normal;
@@ -58,7 +68,7 @@
 .guide-lang{
   justify-content: flex-end;
   flex-direction: row;
-  width: 292px;
+  // width: 292px;
   color: $clr2;
   font-weight: normal;
   font-size: rem(20px);
@@ -81,7 +91,7 @@
   color: $clr2;
   padding: 0;
   word-break: break-word;
-  width: 567px;
+  // width: 567px;
 }
 
 .guide-desc {
@@ -91,7 +101,7 @@ line-height: 30px;
 color: $clr2;
 padding: 0;
 word-break: break-word;
-width: 567px;
+// width: 567px;
 border-bottom: 1px solid;
 }
 
@@ -105,63 +115,56 @@ border-bottom: 1px solid;
   padding: 0;
 }
 
+
 .guide-details {
   margin: 70px auto;
   max-width: 1100px;
-  color: $clr2;
+  padding: 0 10px;
 }
 
-@media screen and (max-width: 1000px){
-.guide-details {
-  max-width: 900px;
-  color: #445d66;
-}
-}
 
-// width: 100%;
+// @media screen and (max-width: 900px){
+//   .guide-details {
+//     max-width: 800px;
+//     color: #445d66;
+//   }
+//   }
 
-@media screen and (max-width: 900px){
-  .guide-details {
-    max-width: 800px;
-    color: #445d66;
-  }
-  }
+//   @media screen and (max-width: 750px){
+//     .guide-details {
+//       max-width: 650px;
+//       color: #445d66;
+//     }
+//     }
 
-  @media screen and (max-width: 750px){
-    .guide-details {
-      max-width: 650px;
-      color: #445d66;
-    }
-    }
+//     @media screen and (max-width: 600px){
+//       .guide-details {
+//         margin: 20px auto;
+//         max-width: 500px;
+//         color: #445d66;
+//       }
 
-    @media screen and (max-width: 600px){
-      .guide-details {
-        margin: 20px auto;
-        max-width: 500px;
-        color: #445d66;
-      }
-
-      .guide-activites{
-        width: 60%;
-        flex-direction: column;
-      }
-      }
+      // .guide-activites{
+      //   width: 60%;
+      //   flex-direction: column;
+      // }
+      // }
       
-      @media screen and (max-width: 500px){
-        .guide-details {
-          margin: 0px auto;
-          max-width: 400px;
-          color: #445d66;
-        }
-        }
+      // @media screen and (max-width: 500px){
+      //   .guide-details {
+      //     margin: 0px auto;
+      //     max-width: 400px;
+      //     color: #445d66;
+      //   }
+      //   }
 
-        @media screen and (max-width: 400px){
-          .guide-details {
-            margin: 0px auto;
-            max-width: 280px;
-            color: #445d66;
-          }
-          }
+      //   @media screen and (max-width: 400px){
+      //     .guide-details {
+      //       margin: 0px auto;
+      //       max-width: 280px;
+      //       color: #445d66;
+      //     }
+      //     }
 
 .guide-review-title{
   font-family: "Lato";
@@ -170,7 +173,7 @@ border-bottom: 1px solid;
   color: $clr2;
   padding: 0;
   word-break: break-word;
-  width: 567px;
+  // width: 567px;
 }
 
 .guide-header > * {
@@ -178,11 +181,11 @@ border-bottom: 1px solid;
   color: $clr2;
 }
 .guide-img-details {
-  width: 500px;
+  // width: 500px;
   color: $clr2;
 }
 .guide-img-details > * {
-  width: 68%;
+  // width: 68%;
   border-radius: 16px;
 }
 
@@ -307,7 +310,7 @@ border-bottom: 1px solid;
 
 /* CONTAINERS */
 .review-container {
-  width: 75%;
+  // width: 75%;
   height: auto;
   color: $clr2;
   text-align: inherit;
@@ -336,14 +339,13 @@ border-bottom: 1px solid;
   outline: none;
 }
 
-
-
 .guide-activites{
   display: flex;
   width: 50%;
   color: $clr2;
   img{
     padding-top: 20px;
+    padding-right: 8px;
     margin: 3px;
   }
 }
@@ -358,7 +360,7 @@ border-bottom: 1px solid;
 .divider{
   padding-top: 15px;
   border-bottom: 1px solid;
-  width: 575px;
+  // width: 575px;
 }
 
   
