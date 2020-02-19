@@ -5,11 +5,11 @@
   margin-bottom: 10px;
   background-repeat: no-repeat;
   width: 100%;
-  background-size: cover;
+  background-size: auto 100vmax;
   background-position: 0 -155px;
   background-color: #7c9eab;
   background-blend-mode: multiply;
-  background-attachment: fixed;
+  // background-attachment: fixed;
 
   h1 {
     font-family: "Lato-Bold";
@@ -93,6 +93,7 @@ img {
   .main-header {
     height: 80vh;
     background-position: 50%;
+    // background-attachment:scroll;
     padding: 30px;
   }
  

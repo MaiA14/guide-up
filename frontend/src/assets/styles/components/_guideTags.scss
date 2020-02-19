@@ -43,9 +43,10 @@ img.ui.image.width{
 }
 
 .tags-img{
-    padding: 1rem;
     width: 230px;
     border: 1px solid rgb(239, 135, 88);
     border-radius: 9px 0 0 9px;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(auto, 1fr));
 }
 
