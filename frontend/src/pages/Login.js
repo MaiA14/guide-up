@@ -2,7 +2,6 @@
 import { NavLink, Link } from 'react-router-dom';
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
 import Navbar from '../cmps/Navbar.js'
 import { login , isNotlLoading } from '../reducers/guide/actionGuide.js'
 import MobileNavbar from '../cmps/MobileNavbar.js'
