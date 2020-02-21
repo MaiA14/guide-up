@@ -29,7 +29,7 @@ class MainSearch extends Component {
     render() {
         let style = ''
         const selectStyle = {
-            background: ""
+            background: ""    
         }
         if (this.props.style) {
             style = this.props.style

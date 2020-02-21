@@ -8,11 +8,6 @@ import { login , isNotlLoading } from '../reducers/guide/actionGuide.js'
 import MobileNavbar from '../cmps/MobileNavbar.js'
 import Loading from '../cmps/Loading.js'
 
-
-
-
-
-
 class Login extends Component {
 
     state = {
@@ -25,21 +20,17 @@ class Login extends Component {
 
     }
 
-
     componentDidMount(){
         window.addEventListener(('resize'), this.resize)
         this.props.isNotlLoading()
-
     }
     componentWillMount() {
         window.removeEventListener(('resize'), this.resize)
     }
 
-
     resize = () => {
         this.setState({ isMobile: window.innerWidth < 650 ? true : false })
     }
-
 
     loginHandleChange = ev => {
         const { name, value } = ev.target;
@@ -109,7 +100,6 @@ const mapStateToProps = (state) => {
     return {
         user: state.user,
         isLoading: state.system.isLoading
-
     }
 }
 const mapDispatchToProps = {
