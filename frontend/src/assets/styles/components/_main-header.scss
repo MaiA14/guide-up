@@ -5,15 +5,16 @@
   margin-bottom: 10px;
   background-repeat: no-repeat;
   width: 100%;
-  background-size: auto 100vmax;
-  background-position: 0 -155px;
+  background-size: cover;
+  // background-size: auto 100vmax;
+  background-position: 0px -155px;
   background-color: #7c9eab;
   background-blend-mode: multiply;
-  // background-attachment: fixed;
+  background-attachment: fixed;
 
   h1 {
     font-family: "Lato-Bold";
-    padding: 120px;
+    padding: 80px;
     padding-bottom: 0;
     font-size: 40px;
     color: white;
@@ -93,7 +94,7 @@ img {
   .main-header {
     height: 80vh;
     background-position: 50%;
-    // background-attachment:scroll;
+    background-attachment: initial;
     padding: 30px;
   }
  
@@ -104,6 +105,7 @@ img {
   .main-header {
     height: 80vh;
     background-position: 50%;
+    background-attachment: initial;
     padding: 100px;
   }
  
@@ -115,6 +117,7 @@ img {
   .main-header {
     height: 80vh;
     background-position: 50%;
+    background-attachment: initial;
     padding: 35px;
   }
  }
@@ -124,6 +127,7 @@ img {
   .main-header {
     height: 80vh;
     background-position: 50%;
+    background-attachment: initial;
     padding: 10px;
   }
 }

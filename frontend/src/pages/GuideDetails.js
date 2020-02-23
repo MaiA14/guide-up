@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 import quoryString from 'query-string'
 import { connect } from 'react-redux'
 import { Rating } from 'semantic-ui-react'
@@ -154,7 +155,9 @@ class GuideDetails extends Component {
                                     <input 
                                     type="number"className="book-btn-container 
                                     book-input" placeholder="0"></input>
+                                    <Link to="/login">
                                     <button className="book-btn">Book</button>
+                                    </Link>
                                 </div>
                                 <div className="price-rank flex
                                  column justify-center">

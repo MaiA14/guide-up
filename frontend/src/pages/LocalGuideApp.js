@@ -61,7 +61,6 @@ class LocalGuideApp extends Component {
                 {this.state.isMobile ?
                     <MobileNavbar styleNavBar={this.state.styleNavBar} /> :
                     <Navbar styleNavBar={this.state.styleNavBar} />
-
                 }
                 <Header ></Header> {
                     this.props.guides &&
