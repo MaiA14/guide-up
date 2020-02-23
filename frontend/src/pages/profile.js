@@ -49,7 +49,7 @@ class Profile extends Component {
                 {this.state.isScrolled &&
                     <ProfileTab></ProfileTab>
                 }
-                <div >
+                <div className="main-container">
                     <Overview></Overview>
                     <Messenger ></Messenger>
                     <Bookings></Bookings>
