@@ -51,7 +51,7 @@ class GuideDetails extends Component {
         this.props.saveGuide(this.state)
     }
     resize = () => {
-        this.setState({ isMobile: window.innerWidth < 650 ? true : false })
+        this.setState({ isMobile: window.innerWidth <  806 ? true : false })
     }
 
     render() {

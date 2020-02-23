@@ -51,7 +51,7 @@ class Profile extends Component {
                 }
                 <div >
                     <Overview></Overview>
-                    <Messenger toggleVisibility={this.toggleVisibility}></Messenger>
+                    <Messenger ></Messenger>
                     <Bookings></Bookings>
                 </div>
                 <Transition.Group animation={'fly left'} duration={1500}>

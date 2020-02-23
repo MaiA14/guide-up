@@ -1,12 +1,11 @@
-import { connect } from 'react-redux'
 
 import Calendar from '../cmps/Calendar.js'
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 class Overview extends Component {
     render() {
         return (
-            <div className="main-container-profile">
                 <div className="overview-elements">
                     <div className="profile-name">
                         <div>{this.props.loggedInUser.name}</div>
@@ -22,7 +21,6 @@ class Overview extends Component {
                         </div>
                     </div>
                 </div>
-            </div>
         )
     }
 }

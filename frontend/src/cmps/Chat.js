@@ -16,16 +16,16 @@ class Chat extends Component {
         SocketService.emit('chat topic', guide_id)
     
         SocketService.on('chat addMsg', (newComment) => {
-            console.log('test chat2')
+            console.log('newComment ',newComment)
             this.setState(prevState => ({ comments: [...prevState.comments, newComment] }))
         }) 
     }
 
     handleSendMassage = () => {
-        this.setState({ txt: '' })
 
         SocketService.emit('chat newMsg', this.state.txt)
-        console.log('test chat')
+        this.setState({ txt: '' })
+
     }
 
     handleChange = (ev) => {
@@ -39,7 +39,6 @@ class Chat extends Component {
 
     render() {
         const { visible } = this.state
-
         return (
             <React.Fragment>
                 <Transition.Group animation={'fly left'} duration={1500}>

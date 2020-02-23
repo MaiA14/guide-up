@@ -1,53 +1,77 @@
-.chat-user-img{
-    width: 20%;
-    height: 61%;
-    border-radius: 67%;
+.messenger-container {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  flex-direction: column;
+  text-align: center;
 }
 
-.chat-container{
-    margin-top: 200px;
-    height: 500px;
-    width: 800px;
+.childs-container {
+  display: grid;
+  //   grid-template-columns: auto auto auto;
+  grid-template-areas:
+    "user-box chat-window chat-window"
+    "user-box chat-window chat-window"
+    "user-box chat-window chat-window"
+    "user-box output-box output-box";
+  height: 300px;
+  border: 1px solid;
+  max-width: 1000px;
 }
+//   grid-template-areas:
+//     "header header header header header header"
+//     "menu main main main right right"
+//     "menu footer footer footer footer footer";
 
-.chat-guide-name{
-    text-align: center;
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
+.user-box {
+  grid-area: user-box;
+  border: 1px solid;
 }
+.chat-window {
+  grid-area: chat-window;
+  overflow: auto;
 
-
-.chat-details{
-    margin-top: 10px;
-    margin-left: 20px;
-    display: flex;
+  border: 1px solid;
 }
-.chat-window{
-   overflow: auto; 
+.output-box {
+  grid-area: output-box;
+  border: 1px solid;
+  display: flex;
 }
-
-.chat-title{
-    padding: 0;
-    margin-left: 20px;
-    font-size: rem(25px);
-    margin-bottom: 10px;
-    color:#445d66;
-    font-family: "Lato-Bold";
+.output-box :first-child {
+  resize: none;
+  width: 77%;
+  height: 100%;
 }
-
-.chat-messages{
-    margin-bottom: 120px;
-    width: 300px;
-    height: 400px;
-    border: 1px solid #a2b8c0;
+.output-box :nth-child(2) {
+  width: 23% !important;
+  margin: 0 !important;
 }
-
-.chat-box{
-    width: 500px;
-    height: 400px;
-    border: 1px solid #a2b8c0;
-    border-left-style: none;
-    // border-right-style: none;
+.massage-container {
+  color: #000;
+  clear: both;
+  line-height: 18px;
+  font-size: 15px;
+  padding: 8px;
+  position: relative;
+  margin: 8px 0;
+  max-width: 85%;
+  word-wrap: break-word;
+  z-index: -1;
+  background: green;
+  border-radius: 0px 5px 5px 5px;
+  float: left;
+  margin-left: 10px;
 }
-
+// .massage-container::after {
+//   border-width: 0px 10px 10px 0;
+//   border-color:green;
+//   top: 0;
+//   left: -10px;
+//   position: absolute;
+//   content: "";
+//   width: 0;
+//   height: 0;
+//   border-style: solid;
+//   box-sizing: inherit;
+// }
