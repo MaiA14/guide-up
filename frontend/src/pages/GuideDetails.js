@@ -102,7 +102,7 @@ class GuideDetails extends Component {
                                 <div className="from-guide">
                                     <span className="guide-field-title">
                                          From: &nbsp;</span><span>{this.props.guide.city}
-                                         </span>
+                                         </span>	&nbsp;
                                 </div>
                                 <div className="guide-lang">
                                     <span className="guide-field-title">Languages: &nbsp;
