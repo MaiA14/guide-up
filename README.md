@@ -43,3 +43,5 @@ the requested tour.
 This page also contains reviews section, where you can add review and read reviews by other travelers.
 
 ![Image of guide](https://res.cloudinary.com/dtwqtpteb/image/upload/v1583355859/yqvmb8wxefwtuzv8wkxp.png)
+
+The app supports various mobile and browsers.
