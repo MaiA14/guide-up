@@ -1,6 +1,9 @@
-# Guideup
-React web application using Redux, NodeJS, MongoDB, HTML5 and web sockets. 
+# Guideup 
 An app where travelers can find a local guide at a desired destination in order to enjoy from an authentic tour.
+
+Technologies:\
+Front-end : React , Redux, Sass ,HTML5, Material-ui, Semantic-ui.\
+Back-end : Node.js ,MongoDB ,Express, Socket.io-client
 
 ![Image of guideup overview](https://res.cloudinary.com/dtwqtpteb/image/upload/v1583351041/bty9kjh68aq4c00b97es.png)
 
