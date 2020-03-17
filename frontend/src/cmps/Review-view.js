@@ -8,6 +8,14 @@ class CommentView extends Component {
     userImg: 'https://he.gravatar.com/userimage/131942614/161c0e6bc0868e9a0253707495c1c546.jpeg'
   }
 
+  formattedReviewDate() {
+    var today = new Date();
+    var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var dateTime = date + ' ' + time;
+    return dateTime
+  }
+
   render() {
     return (
       <Comment.Group >
@@ -17,7 +25,7 @@ class CommentView extends Component {
             <Comment.Author>{this.props.review.createBy.userName}
             </Comment.Author>
             <Comment.Metadata>
-              <div>2 days ago</div>
+              <div>{this.formattedReviewDate()}</div>
               <div>
                 <Icon color={'yellow'} name='star' />{this.props.review.rank}
               </div>
