@@ -56,17 +56,17 @@ class Chat extends Component {
                                 onChange={this.handleChange} 
                                 className="textArea-chat" placeholder='Tell us more' />
                                 <Button onClick={this.handleSendMassage} 
-                                className="chat-button" color='green'>Send</Button>
+                                className="chat-button">Send</Button>
                             </Form>
                         </div>
                     }
                 </Transition.Group >
                 <div className="container-ChatCmp">
                     <div className="container-chat-icon">
-                        <Button content={visible ? 'Hide' : 'Show'}
-                            onClick={this.toggleVisibility} color='facebook'>
+                        <button content={visible ? 'Hide' : 'Show'}
+                            onClick={this.toggleVisibility} className="send-message-details">
                             Send a message
-                    </Button>
+                    </button>
                     </div>
                 </div >
             </React.Fragment>

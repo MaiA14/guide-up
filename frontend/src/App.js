@@ -9,7 +9,7 @@ import Loading from './cmps/Loading.js'
 import Login from '../src/pages/Login.js'
 import Signup from '../src/pages/Signup'
 import BecomeGuide from './pages/BecomeGuide.js'
-import Profile from './pages/Profile.js'
+import Profile from '../src/pages/Profile.js'
 import "react-datepicker/dist/react-datepicker.css";
 import 'react-notifications/lib/notifications.css';
 import { connect } from 'react-redux'
