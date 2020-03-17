@@ -66,7 +66,7 @@ class Login extends Component {
         }
         return (
 
-            <div className="login-container flex column align-center justify-center">
+            <div style={{height: '91.2vh'}} className="login-container flex column align-center justify-center">
 
                 {this.state.isMobile ?
                     <MobileNavbar /> :

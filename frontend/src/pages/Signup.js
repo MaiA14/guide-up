@@ -10,7 +10,7 @@ export default class Login extends Component {
             backgroundColor: '#537580'
         }
         return (
-            <div className="flex column align-center justify-center">
+            <div style={{height: '91.2vh'}} className="flex column align-center justify-center">
                 <Navbar styleNavBar={styleNavBar} ></Navbar>
 
                 <div className="login-header">Signup</div>
