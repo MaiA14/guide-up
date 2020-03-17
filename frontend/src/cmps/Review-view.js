@@ -5,21 +5,10 @@ import React, { Component } from 'react'
 class CommentView extends Component {
 
   state = {
-    userImg: ''
-  }
-
-  componentDidMount(){
-    this.userImag()
-  }
-
-  userImag = async () => {
-    const image = await axios.get('https://randomuser.me/api/')
-    const userImg =image.data.results[0].picture.medium
-    this.setState({ userImg })
+    userImg: 'https://he.gravatar.com/userimage/131942614/161c0e6bc0868e9a0253707495c1c546.jpeg'
   }
 
   render() {
-    if (this.state.userImag === Object) return
     return (
       <Comment.Group >
         <Comment>
