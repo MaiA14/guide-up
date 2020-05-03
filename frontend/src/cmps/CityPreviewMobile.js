@@ -15,21 +15,21 @@ class DemoCarousel extends Component {
                     <Link to={`/location/?city=paris`}>
                         <div  >
                             <img height="700"  
-                            src="https://www.jetsetter.com/uploads/sites/7/2019/04/GettyImages-924894324-1380x690.jpg" />
+                            src="https://res.cloudinary.com/dtwqtpteb/image/upload/v1588530308/r1edsdbqjdbyk0wduyqu.jpg" />
                         </div>
                     </Link>
                     <Link to={`/location/?city=barceolna`}>
 
                         <div>
                             <img height="700" 
-                            src="https://imgbbb.com/images/2020/01/16/barceolna.jpg" />
+                            src="https://res.cloudinary.com/dtwqtpteb/image/upload/v1588542002/pi4mngy6jox4lgczckwa.jpg" />
                         </div>
                     </Link>
 
                     <Link to={`/location/?city=new-york`}>
                         <div>
                             <img height="700"  
-                            src="https://images.unsplash.com/photo-1531558506007-fe311a2f4729?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1055&q=80" />
+                            src="https://res.cloudinary.com/dtwqtpteb/image/upload/v1588530392/xskzqmpyw5hcj7tiljon.jpg" />
                         </div>
                     </Link>
 
@@ -43,13 +43,13 @@ class DemoCarousel extends Component {
                     <Link to={`/location/?city=tel-aviv`}>
                         <div>
                             <img height="700"  
-                            src="https://www.leonardo-hotels.com/octopus/upload/images/pages/110904200-1-.jpg" />
+                            src="https://res.cloudinary.com/dtwqtpteb/image/upload/v1588530446/ljkm1k2c2fktb0w9vup9.jpg" />
                         </div>
                     </Link>
                     <Link to={`/location/?city=berlin`}>
                         <div>
                             <img height="700"  
-                            src="https://images.unsplash.com/photo-1559564484-e48b3e040ff4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" />
+                            src="https://res.cloudinary.com/dtwqtpteb/image/upload/v1588530473/sqyt74caur2dyoogogsf.jpg" />
                         </div>
                     </Link>
                 </Carousel>

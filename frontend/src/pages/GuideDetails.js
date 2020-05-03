@@ -168,8 +168,7 @@ class GuideDetails extends Component {
                                  column justify-center"
                 >
                   <div className="guide-price">
-                    ${this.props.guide.price}
-                    For my tour
+                    ${this.props.guide.price} For my tour
                   </div>
                   <div className="container-chat">
                     <Chat guide={this.props.guide}></Chat>
