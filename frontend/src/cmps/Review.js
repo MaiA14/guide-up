@@ -7,6 +7,7 @@ import RatingStar from "./RatingStar.js";
 import { Form, TextArea } from "semantic-ui-react";
 
 class Review extends Component {
+
   state = {
     id: getRandomID(),
     title: "",
@@ -18,8 +19,9 @@ class Review extends Component {
       imgUrl: "http://img.com",
     },
     createdAt: Date.now(),
-    rank: null,
+    rank: 0,
   };
+  
 
   onChangeRateStar = (rating) => {
     this.setState((prevState) => {
@@ -45,6 +47,13 @@ class Review extends Component {
     }
   };
 
+  onSubmit = () => {
+    this.props.addReview(this.state, this.props.guide);
+    this.setState({ title: '', txt:'', rank: 0});
+    this.setState(state => ({ createBy: Object.assign({}, 
+      state.createBy, { userName: " " }) }));
+  }
+
   render() {
     return (
       <div>
@@ -59,7 +68,8 @@ class Review extends Component {
             type="text"
             className="review-input"
             placeholder="Name"
-          ></input>
+            value = {this.state.createBy.userName}>
+            </input>
         </div>
         <div>
           <Form className="review-text">
@@ -68,17 +78,17 @@ class Review extends Component {
               placeholder="What do you think about me?"
               onChange={this.onChange}
               name="txt"
+              value = {this.state.txt}
             />
           </Form>
         </div>
         <div>Rate</div>
         <div>
-          <RatingStar onChangeRateStar={this.onChangeRateStar}></RatingStar>
+          <RatingStar onChangeRateStar={this.onChangeRateStar} rank={this.state.rank}></RatingStar>
         </div>
         <button
           className="send-btn"
-          onClick={() => this.props.addReview(this.state, this.props.guide)}
-        >
+          onClick={ this.onSubmit}>
           Send
         </button>
       </div>

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { Rating } from 'semantic-ui-react'
 
 export default class RatingStar extends Component {
@@ -13,8 +13,8 @@ export default class RatingStar extends Component {
     render() {
         return (
             <div>
-                <Rating onRate={this.handleRate} maxRating={5}  
-                defaultRating={0} icon='star' size='massive' />
+                <Rating onRate={this.handleRate} maxRating={5} clearable
+                defaultRating={0} icon='star' size='massive' rating={this.props.rank} />
             </div>
         )
     }
