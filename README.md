@@ -47,4 +47,15 @@ This page also contains reviews section, where you can add review and read revie
 
 ![Image of guide](https://res.cloudinary.com/dtwqtpteb/image/upload/v1583355859/yqvmb8wxefwtuzv8wkxp.png)
 
+
 The app supports various mobile and browsers.
+
+![Image of guide](
+https://i.ibb.co/bgvQzgV/iphone-frame-play-button-white-tablet-frame-115629.png)
+
+![Image of guide](https://i.ibb.co/yyLrnCD/New-Project-6.png)
+
+![Image of guide](https://i.ibb.co/q9bDSbD/New-Project-7.png)
+
+![Image of guide](https://i.ibb.co/N3g2GKK/New-Project-8.png)
+
