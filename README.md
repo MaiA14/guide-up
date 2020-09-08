@@ -3,7 +3,7 @@ An app where travelers can find a local guide at a desired destination in order 
 
 Technologies:\
 Front-end : React , Redux, Scss ,HTML5, Material-ui, Semantic-ui.\
-Back-end : Node.js ,MongoDB ,Express, Socket.io-client
+Back-end : Node.js ,MongoDB ,Express, Bcrypt, Socket.io-client
 
 ![Image of guideup overview](https://res.cloudinary.com/dtwqtpteb/image/upload/v1583351041/bty9kjh68aq4c00b97es.png)
 
