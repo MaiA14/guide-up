@@ -27,10 +27,8 @@ async function deleteGuide(req, res) {
 }
 
 async function updateGuide(req, res) {
-    
     const guide = req.body;
     const id = req.params.id
-
 
     const newGuide = await guideService.update(id, guide)
     await res.send(newGuide)
